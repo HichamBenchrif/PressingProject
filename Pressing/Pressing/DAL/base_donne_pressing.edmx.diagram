@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="902e8266c8434fd08bafc718e7d6d62a" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="mld_pressing11Model.ACHETER" Width="1.5" PointX="12.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.ARTICLE" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.B_R" Width="1.5" PointX="7.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.BON_ACHAT" Width="1.5" PointX="11.125" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.BON_RECEPTION" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.BON_SORTIE" Width="1.5" PointX="5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.CATEGORIE_ARTILCLE" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.CLIENT" Width="1.5" PointX="1" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.DÉPENSES_ET_ENTRÉES" Width="1.5" PointX="7.375" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.FAMILL" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.FOURNISSEUR" Width="1.5" PointX="9.875" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.PAYE" Width="1.5" PointX="9.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.PRODUIT" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mld_pressing11Model.SERVICE" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="mld_pressing11Model.FK_ACHETER_BON_ACHAT" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_ACHETER_PRODUIT" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_ARTICLE_CATEGORIE_ARTILCLE" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_ARTICLE_FAMILL" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_B_R_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_PAYE_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_B_R_BON_RECEPTION" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_B_R_SERVICE" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_BON_RECEPTION_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_PAYE_BON_RECEPTION" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.FK_PAYE_BON_SORTIE" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.B_A_FR" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.DÉPENS" ManuallyRouted="false" />
+        <AssociationConnector Association="mld_pressing11Model.ENTRE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Pressing.PL.les_form_ventes;
+using Pressing.PL.les_form_client;
+using Pressing.PL.les_form_caisse;
+using Pressing.PL.les_form_depenses;
+
+namespace Pressing.PL
+{
+    public partial class FRM_Menu : Form
+
+    {
+        
+        public FRM_Menu()
+        {
+            InitializeComponent();
+
+            PNL_Menu.Visible = true;
+
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
+            if(PNL_Menu.Visible == false)
+            {
+                PNL_Menu.Visible = true;
+            }
+            else
+            {
+                PNL_Menu.Visible = false;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new FRM_Ventes().Show();
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new FRM_Depenses().Show();
+        }
+
+        private void Produits_Click(object sender, EventArgs e)
+        {
+
+
+            new FRM_Articl().Show();
+            
+
+
+        }
+
+        private void Clients_Click(object sender, EventArgs e)
+        {
+            new FRM_Client().Show();
+        }
+
+        private void Rapports_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+       
+
+        private void FRM_Menu_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelAjouteProduite_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelAficher_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new FRM_Caisse().Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PNL_Menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
