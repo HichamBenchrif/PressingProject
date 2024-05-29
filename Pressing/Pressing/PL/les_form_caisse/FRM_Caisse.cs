@@ -59,7 +59,7 @@ namespace Pressing.PL.les_form_caisse
             if (textBox1.Text == "Recherche")
             {
                 textBox1.Text = "";
-                textBox1.ForeColor = Color.WhiteSmoke;
+                textBox1.ForeColor = Color.Black;
             }
 
         }
@@ -71,6 +71,11 @@ namespace Pressing.PL.les_form_caisse
                 textBox1.Text = "Recherche";
                 textBox1.ForeColor = Color.FromArgb(255, 105, 0);
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

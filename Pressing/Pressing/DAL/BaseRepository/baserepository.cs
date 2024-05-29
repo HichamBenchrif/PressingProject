@@ -10,7 +10,7 @@ namespace Pressing.DAL.BaseRepository
     {
         protected BaseDonnePressing db = new BaseDonnePressing();
 
-        // this is q
+        
 
     }
 }
