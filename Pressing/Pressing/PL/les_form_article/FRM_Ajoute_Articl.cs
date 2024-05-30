@@ -72,7 +72,7 @@ namespace Pressing.PL
             //this.Location = new Point(FRM_Ajoute_Articl.parentX = 515, FRM_Ajoute_Articl.parentY = 220);
 
 
-            textBox1.Text = clientrepositry.GenerateID();
+            textBox1.Text = clientrepositry.GenerateIDClient();
         }
     }
 }

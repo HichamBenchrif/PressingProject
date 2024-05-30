@@ -12,7 +12,7 @@ namespace Pressing.BL.repository
     class clientrepository :baserepository
     {
 
-        public string GenerateID()
+        public string GenerateIDClient()
         {
             var count = db.ARTICLEs.Count();
             if ( count == 0)

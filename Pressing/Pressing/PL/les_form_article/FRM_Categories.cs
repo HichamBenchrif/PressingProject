@@ -27,7 +27,7 @@ namespace Pressing.PL.les_form_article
         
         private void button7_Click(object sender, EventArgs e)
         {
-            new FRM_Ajoute_Client().ShowDialog();
+            new FRM_Ajoute_Categories().ShowDialog();
 
         }
 

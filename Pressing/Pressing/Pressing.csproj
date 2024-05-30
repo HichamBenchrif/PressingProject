@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Extensions\TextBoxExtensions.cs" />
+    <Compile Include="BL\repository\CategorieRepository.cs" />
     <Compile Include="BL\repository\clientrepository.cs" />
     <Compile Include="DAL\ACHETER.cs">
       <DependentUpon>base_donne_pressing.tt</DependentUpon>
