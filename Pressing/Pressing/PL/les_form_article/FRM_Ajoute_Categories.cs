@@ -53,16 +53,17 @@ namespace Pressing.PL.les_form_article
             
             if (textBox1.IsEmpty() || textBox5.IsEmpty())
             {
-                MessageBox.Show("Please fill the required textboxes");
+                MessageBox.Show("Veuillez saisir les informations requises");
             }
             else
             {
-                var ID = textBox1.Text;
-                var STG = textBox5.Text;
+                var ID_cat = textBox1.Text;
+                var Name = textBox5.Text;
                
                 var repository = new CategorieRepository();
-                repository.Create(ID, STG, ABSDate);
-                MessageBox.Show("this creation succefly");
+                repository.Create(ID_cat , Name);
+                MessageBox.Show("Créé avec succès");
+                Close();
             }
 
         }

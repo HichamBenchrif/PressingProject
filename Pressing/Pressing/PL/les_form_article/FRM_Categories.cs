@@ -12,12 +12,13 @@ using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_article;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
+using Pressing.BL.repository;
 
 namespace Pressing.PL.les_form_article
 {
     public partial class FRM_Categories : Form
     {
-       
+        CategorieRepository categorierepository = new CategorieRepository();
         public FRM_Categories()
         {
             InitializeComponent();
@@ -86,6 +87,11 @@ namespace Pressing.PL.les_form_article
         {
             new FRM_Depenses().Show();
             Close();
+        }
+
+        private void FRM_Categories_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = categorierepository.GetAll();
         }
     }
 }
