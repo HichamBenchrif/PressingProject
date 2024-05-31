@@ -77,5 +77,10 @@ namespace Pressing.PL.les_form_caisse
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

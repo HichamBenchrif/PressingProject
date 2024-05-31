@@ -93,5 +93,33 @@ namespace Pressing.PL.les_form_article
         {
             dataGridView1.DataSource = categorierepository.GetAll();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = categorierepository.Search(textBox1.Text);
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Recherche")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Recherche";
+                textBox1.ForeColor = Color.FromArgb(255, 105, 0);
+            }
+        }
     }
 }
