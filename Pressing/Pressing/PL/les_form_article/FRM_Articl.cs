@@ -44,10 +44,7 @@ namespace Pressing.PL
             }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
 
         public static int parentX, parentY;
         private void button7_Click(object sender, EventArgs e)
@@ -108,6 +105,11 @@ namespace Pressing.PL
         {
             new FRM_Depenses().Show();
             Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new FRM_Famill().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

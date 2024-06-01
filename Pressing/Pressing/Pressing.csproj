@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\Extensions\TextBoxExtensions.cs" />
+    <Compile Include="BL\repository\ArticlRepository.cs" />
     <Compile Include="BL\repository\CategorieRepository.cs" />
     <Compile Include="BL\repository\clientrepository.cs" />
+    <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="DAL\ACHETER.cs">
       <DependentUpon>base_donne_pressing.tt</DependentUpon>
     </Compile>
@@ -136,6 +138,12 @@
     <Compile Include="PL\les_form_article\FRM_Ajoute_Categories.Designer.cs">
       <DependentUpon>FRM_Ajoute_Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_article\FRM_Ajoute_Famill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_article\FRM_Ajoute_Famill.Designer.cs">
+      <DependentUpon>FRM_Ajoute_Famill.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_article\FRM_Articl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +161,12 @@
     </Compile>
     <Compile Include="PL\FRM_Menu.Designer.cs">
       <DependentUpon>FRM_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\les_form_article\FRM_Famill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_article\FRM_Famill.Designer.cs">
+      <DependentUpon>FRM_Famill.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\les_form_caisse\FRM_Caisse.cs">
       <SubType>Form</SubType>
@@ -192,6 +206,9 @@
     <EmbeddedResource Include="PL\les_form_article\FRM_Ajoute_Categories.resx">
       <DependentUpon>FRM_Ajoute_Categories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_article\FRM_Ajoute_Famill.resx">
+      <DependentUpon>FRM_Ajoute_Famill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_article\FRM_Articl.resx">
       <DependentUpon>FRM_Articl.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Menu.resx">
       <DependentUpon>FRM_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_article\FRM_Famill.resx">
+      <DependentUpon>FRM_Famill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_caisse\FRM_Caisse.resx">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>

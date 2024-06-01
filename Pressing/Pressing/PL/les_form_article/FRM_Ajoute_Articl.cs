@@ -14,7 +14,7 @@ namespace Pressing.PL
 {
     public partial class FRM_Ajoute_Articl : Form
     {
-        clientrepository clientrepositry = new clientrepository();
+        ArticlRepository articlrepositry = new ArticlRepository();
         public FRM_Ajoute_Articl()
         {
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace Pressing.PL
             //this.Location = new Point(FRM_Ajoute_Articl.parentX = 515, FRM_Ajoute_Articl.parentY = 220);
 
 
-            textBox1.Text = clientrepositry.GenerateIDClient();
+            textBox1.Text = articlrepositry.GenerateIDArticl();
         }
     }
 }

@@ -133,5 +133,11 @@ namespace Pressing.PL.les_form_article
         {
             dataGridView1.DataSource = categorierepository.GetAll();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new FRM_Famill().Show();
+            Close();
+        }
     }
 }
