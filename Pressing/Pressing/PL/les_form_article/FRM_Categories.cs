@@ -92,6 +92,7 @@ namespace Pressing.PL.les_form_article
         private void FRM_Categories_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = categorierepository.GetAll();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -119,7 +120,18 @@ namespace Pressing.PL.les_form_article
             {
                 textBox1.Text = "Recherche";
                 textBox1.ForeColor = Color.FromArgb(255, 105, 0);
+                dataGridView1.DataSource = categorierepository.GetAll();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = categorierepository.GetAll();
         }
     }
 }

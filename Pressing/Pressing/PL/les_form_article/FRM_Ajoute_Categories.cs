@@ -16,7 +16,7 @@ namespace Pressing.PL.les_form_article
     public partial class FRM_Ajoute_Categories : Form
     {
         CategorieRepository categorierepository = new CategorieRepository();
-        baserepository db = new baserepository();
+       
         
         public FRM_Ajoute_Categories()
         {
@@ -64,6 +64,7 @@ namespace Pressing.PL.les_form_article
                 repository.Create(ID_cat , Name);
                 MessageBox.Show("Créé avec succès");
                 Close();
+
             }
 
         }

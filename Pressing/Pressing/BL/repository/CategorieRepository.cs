@@ -41,16 +41,16 @@ namespace Pressing.BL.repository
         }
         public dynamic Search(string value)
         {
-            var result = (from C in db.CATEGORIE_ARTILCLE.AsEnumerable()
-                          where C.ID_CATE.Contains(value) ||
-                          C.LIB_CAT_ART.Contains(value)
-                          select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
-            return result;
-
-            //return (from C in db.CATEGORIE_ARTILCLE
-            //        where C.ID_CATE.Contains(value)||
+            //var result = (from C in db.CATEGORIE_ARTILCLE.AsEnumerable()
+            //              where C.ID_CATE.Contains(value) ||
             //              C.LIB_CAT_ART.Contains(value)
-            //        select new {  C.ID_CATE, C.LIB_CAT_ART }).ToList();
+            //              select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
+            //return result;
+
+            return (from C in db.CATEGORIE_ARTILCLE
+                    where C.ID_CATE.Contains(value) ||
+                          C.LIB_CAT_ART.Contains(value)
+                    select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
         }
     }
 }
