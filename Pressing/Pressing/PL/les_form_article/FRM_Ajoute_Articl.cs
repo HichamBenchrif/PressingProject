@@ -15,6 +15,7 @@ namespace Pressing.PL
     public partial class FRM_Ajoute_Articl : Form
     {
         ArticlRepository articlrepositry = new ArticlRepository();
+        CategorieRepository categorierepository = new CategorieRepository();
         public FRM_Ajoute_Articl()
         {
             InitializeComponent();
@@ -64,6 +65,11 @@ namespace Pressing.PL
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void FRM_Ajoute_Articl_Load(object sender, EventArgs e)
