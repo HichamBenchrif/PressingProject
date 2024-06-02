@@ -86,13 +86,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.PNL_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelArticl.SuspendLayout();
-            this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +108,7 @@
             this.PNL_Menu.Controls.Add(this.btnProduits);
             this.PNL_Menu.Location = new System.Drawing.Point(0, 50);
             this.PNL_Menu.Name = "PNL_Menu";
-            this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
+            this.PNL_Menu.Size = new System.Drawing.Size(0, 519);
             this.PNL_Menu.TabIndex = 21;
             // 
             // pictureBox2
@@ -118,7 +116,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.Image = global::Pressing.Properties.Resources.shutdon_48px;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 450);
+            this.pictureBox2.Location = new System.Drawing.Point(-24, 450);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -138,7 +136,7 @@
             this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRapports.Location = new System.Drawing.Point(0, 292);
             this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.Size = new System.Drawing.Size(0, 73);
             this.btnRapports.TabIndex = 6;
             this.btnRapports.Text = "Rapports";
             this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -156,7 +154,7 @@
             this.btnDépenses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDépenses.Location = new System.Drawing.Point(0, 219);
             this.btnDépenses.Name = "btnDépenses";
-            this.btnDépenses.Size = new System.Drawing.Size(80, 73);
+            this.btnDépenses.Size = new System.Drawing.Size(0, 73);
             this.btnDépenses.TabIndex = 5;
             this.btnDépenses.Text = "Dépenses";
             this.btnDépenses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -174,7 +172,7 @@
             this.btnClients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClients.Location = new System.Drawing.Point(0, 146);
             this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(80, 73);
+            this.btnClients.Size = new System.Drawing.Size(0, 73);
             this.btnClients.TabIndex = 4;
             this.btnClients.Text = "Clients";
             this.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -192,7 +190,7 @@
             this.btnVentes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVentes.Location = new System.Drawing.Point(0, 73);
             this.btnVentes.Name = "btnVentes";
-            this.btnVentes.Size = new System.Drawing.Size(80, 73);
+            this.btnVentes.Size = new System.Drawing.Size(0, 73);
             this.btnVentes.TabIndex = 3;
             this.btnVentes.Text = "Ventes";
             this.btnVentes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -210,7 +208,7 @@
             this.btnProduits.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnProduits.Location = new System.Drawing.Point(0, 0);
             this.btnProduits.Name = "btnProduits";
-            this.btnProduits.Size = new System.Drawing.Size(80, 73);
+            this.btnProduits.Size = new System.Drawing.Size(0, 73);
             this.btnProduits.TabIndex = 2;
             this.btnProduits.Text = "Article";
             this.btnProduits.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -301,13 +299,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArticl.AutoScroll = true;
             this.panelArticl.BackColor = System.Drawing.Color.Silver;
+            this.panelArticl.Controls.Add(this.pictureBox3);
             this.panelArticl.Controls.Add(this.panel14);
+            this.panelArticl.Controls.Add(this.textBox1);
             this.panelArticl.Controls.Add(this.panel6);
             this.panelArticl.Controls.Add(this.button8);
             this.panelArticl.Controls.Add(this.button7);
             this.panelArticl.Controls.Add(this.button6);
             this.panelArticl.Controls.Add(this.button5);
-            this.panelArticl.Controls.Add(this.button4);
             this.panelArticl.Location = new System.Drawing.Point(0, 50);
             this.panelArticl.Name = "panelArticl";
             this.panelArticl.Size = new System.Drawing.Size(1267, 519);
@@ -321,8 +320,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel14.AutoScroll = true;
             this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel14.Controls.Add(this.pictureBox3);
-            this.panel14.Controls.Add(this.textBox1);
             this.panel14.Location = new System.Drawing.Point(829, 61);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(424, 446);
@@ -334,7 +331,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::Pressing.Properties.Resources.search_20px;
-            this.pictureBox3.Location = new System.Drawing.Point(322, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(1163, 20);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(47, 26);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -349,7 +346,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(24, 12);
+            this.textBox1.Location = new System.Drawing.Point(865, 20);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(345, 26);
@@ -889,9 +886,9 @@
             this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(707, 6);
+            this.button8.Location = new System.Drawing.Point(581, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(153, 49);
+            this.button8.Size = new System.Drawing.Size(116, 49);
             this.button8.TabIndex = 8;
             this.button8.Text = "Matelas";
             this.button8.UseVisualStyleBackColor = false;
@@ -904,7 +901,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(548, 6);
+            this.button7.Location = new System.Drawing.Point(422, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(153, 49);
             this.button7.TabIndex = 7;
@@ -919,7 +916,7 @@
             this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(389, 6);
+            this.button6.Location = new System.Drawing.Point(263, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(153, 49);
             this.button6.TabIndex = 6;
@@ -934,27 +931,12 @@
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(230, 6);
+            this.button5.Location = new System.Drawing.Point(104, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(153, 49);
             this.button5.TabIndex = 5;
             this.button5.Text = "Vêtements pour \r\nhommes";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(71, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 49);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Tout";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // FRM_Caisse
             // 
@@ -976,8 +958,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelArticl.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.panelArticl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -999,7 +980,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelArticl;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
