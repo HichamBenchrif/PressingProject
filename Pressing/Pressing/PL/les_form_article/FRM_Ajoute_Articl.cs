@@ -72,6 +72,27 @@ namespace Pressing.PL
             
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
+
+                if(dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                     imageLocation = dialog.FileName;
+
+                    image.ImageLocation = imageLocation;
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
         private void FRM_Ajoute_Articl_Load(object sender, EventArgs e)
         {
             i = FRM_Ajoute_Articl.parentY = 220;

@@ -56,7 +56,10 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.FRM_Ajoute_Articl_Timer = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.image = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -68,7 +71,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(177, 399);
+            this.button2.Location = new System.Drawing.Point(177, 504);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 30);
             this.button2.TabIndex = 29;
@@ -83,7 +86,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(42, 399);
+            this.button1.Location = new System.Drawing.Point(42, 504);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 30);
             this.button1.TabIndex = 28;
@@ -326,11 +329,39 @@
             this.FRM_Ajoute_Articl_Timer.Interval = 1;
             this.FRM_Ajoute_Articl_Timer.Tick += new System.EventHandler(this.FRM_Ajoute_Articl_Timer_Tick);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button3.Location = new System.Drawing.Point(42, 345);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 28);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Ajouter une icone";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // image
+            // 
+            this.image.Location = new System.Drawing.Point(177, 345);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(100, 100);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.image.TabIndex = 34;
+            this.image.TabStop = false;
+            // 
             // FRM_Ajoute_Articl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 600);
+            this.Controls.Add(this.image);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.textBox3);
@@ -364,6 +395,7 @@
             this.Text = "FRM_Ajoute_Articl";
             this.Load += new System.EventHandler(this.FRM_Ajoute_Articl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +430,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Timer FRM_Ajoute_Articl_Timer;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox image;
     }
 }
