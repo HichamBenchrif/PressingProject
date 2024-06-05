@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Pressing.DAL.BaseRepository;
 using Pressing.DAL;
+using System.Drawing.Imaging;
+using System.Windows.Forms;
 using System.Drawing;
 
 namespace Pressing.BL.repository
@@ -23,14 +25,23 @@ namespace Pressing.BL.repository
             return newID;
 
         }
-        public void Create(string id, string category, string name_art, string prix_R , string prix_L ,byte image )
+        public void Create(string id, string category, string name_art, decimal prix_R , decimal prix_L ,byte[] image )
         {
             var Article = new ARTICLE();
-            Article.
-            Article.
-            db.CATEGORIE_ARTILCLE.Add(categorie);
+            Article.REF_ARTICLE = id;
+            Article.CATEGORIE_ARTILCLE = category;
+            Article.LIB_ARTICLE = name_art;
+            Article.PRIX_REPASSAGE = prix_R;
+            Article.PRIX_LESSIVE = prix_L;
+            Article.IMAGE = image;
+            db.ARTICLEs.Add(Article);
             db.SaveChanges();
 
+        }
+
+        internal void Create(string iD_art, string name, object combo, string repasag, string lessiv, Image image)
+        {
+            throw new NotImplementedException();
         }
         //public dynamic GetAll()
         //{
