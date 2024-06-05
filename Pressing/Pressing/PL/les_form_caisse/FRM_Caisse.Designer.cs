@@ -41,8 +41,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelArticl = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -313,18 +313,6 @@
             this.panelArticl.TabIndex = 22;
             this.panelArticl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArticl_Paint);
             // 
-            // panel14
-            // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.AutoScroll = true;
-            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel14.Location = new System.Drawing.Point(829, 61);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(424, 446);
-            this.panel14.TabIndex = 22;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -338,6 +326,18 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.AutoScroll = true;
+            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.Location = new System.Drawing.Point(829, 61);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(424, 446);
+            this.panel14.TabIndex = 22;
             // 
             // textBox1
             // 
@@ -424,7 +424,7 @@
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel17.Location = new System.Drawing.Point(33, 191);
+            this.panel17.Location = new System.Drawing.Point(33, 510);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(102, 5);
             this.panel17.TabIndex = 41;
@@ -453,7 +453,7 @@
             this.button28.ForeColor = System.Drawing.Color.Black;
             this.button28.Image = global::Pressing.Properties.Resources.jeans_45px;
             this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button28.Location = new System.Drawing.Point(33, 194);
+            this.button28.Location = new System.Drawing.Point(33, 513);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(102, 73);
             this.button28.TabIndex = 42;

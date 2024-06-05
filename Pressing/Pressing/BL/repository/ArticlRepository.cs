@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pressing.DAL.BaseRepository;
+using Pressing.DAL;
+using System.Drawing;
 
 namespace Pressing.BL.repository
 {
@@ -11,7 +13,7 @@ namespace Pressing.BL.repository
     {
         public string GenerateIDArticl()
         {
-            var count = db.ARTICLEs.Count();
+             var count = db.ARTICLEs.Count();
             if (count == 0)
                 return "Art-1";
             var ids = db.ARTICLEs.Select(x => x.REF_ARTICLE).ToList();
@@ -19,6 +21,15 @@ namespace Pressing.BL.repository
             var max = numbres.Max();
             var newID = "Art-" + (max + 1);
             return newID;
+
+        }
+        public void Create(string id, string category, string name_art, string prix_R , string prix_L ,byte image )
+        {
+            var Article = new ARTICLE();
+            Article.
+            Article.
+            db.CATEGORIE_ARTILCLE.Add(categorie);
+            db.SaveChanges();
 
         }
         //public dynamic GetAll()

@@ -68,5 +68,20 @@ namespace Pressing.PL.les_form_depenses
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDépenses_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

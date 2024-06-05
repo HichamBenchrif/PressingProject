@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pressing.PL.les_form_article;
 using Pressing.BL.repository;
+using Pressing.BL.Extensions;
 
 namespace Pressing.PL
 {
@@ -64,12 +65,32 @@ namespace Pressing.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.IsEmpty() || textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox())
+            {
+                MessageBox.Show("Veuillez saisir les informations requises");
+            }
+            else
+            {
+                var ID_art = textBox1.Text;
+                var Combo = comboBox1.SelectedItem;
+                var Name = textBox5.Text;
+                var Repasag = textBox2.Text;
+                var Lessiv = textBox3.Text;
 
+                var repository = new ArticlRepository();
+                repository.Create(ID_cat, Name);
+                MessageBox.Show("Créé avec succès");
+                Close();
+
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //int selectedIndex = comboBox1.SelectedIndex;
+            //int selectVal = (int)comboBox1.SelectedValue;
+            //ComboBoxExtensions selectedCar = (ComboBoxExtensions)comboBox1.SelectedItem;
+            //MessageBox.Show(String.Format("Index: [{0}] CarName={1}; Value={2}", selectedIndex, selectedCar.Text, selectVal));
         }
 
         private void button3_Click(object sender, EventArgs e)
