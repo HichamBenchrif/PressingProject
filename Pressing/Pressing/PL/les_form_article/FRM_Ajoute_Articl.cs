@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Pressing.PL.les_form_article;
 using Pressing.BL.repository;
 using Pressing.BL.Extensions;
+using System.Drawing.Imaging;
+
 
 namespace Pressing.PL
 {
@@ -21,7 +23,7 @@ namespace Pressing.PL
         {
             InitializeComponent();
 
-            //this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,11 +54,11 @@ namespace Pressing.PL
             else
             {
                 var ID_art = label9.Text;
-                var Combo = comboBox1.SelectedItem;
+                var Combo = comboBox1.SelectedValue.ToString() ;
                 var Name = textBox5.Text;
-                var Repasag = textBox2.Text;
-                var Lessiv = textBox3.Text;
-                var Image = image.Image;
+                var Repasag = decimal.Parse( textBox2.Text);
+                var Lessiv =decimal.Parse( textBox3.Text);
+                var Image =image.Image;
 
                 var repository = new ArticlRepository();
                 repository.Create(ID_art, Name, Combo, Repasag, Lessiv, Image);
@@ -68,10 +70,6 @@ namespace Pressing.PL
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int selectedIndex = comboBox1.SelectedIndex;
-            //int selectVal = (int)comboBox1.SelectedValue;
-            //ComboBoxExtensions selectedCar = (ComboBoxExtensions)comboBox1.SelectedItem;
-            //MessageBox.Show(String.Format("Index: [{0}] CarName={1}; Value={2}", selectedIndex, selectedCar.Text, selectVal));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -98,10 +96,13 @@ namespace Pressing.PL
         private void FRM_Ajoute_Articl_Load(object sender, EventArgs e)
         {
 
-
+            //id dyal articl
             label9.Text = articlrepositry.GenerateIDArticl();
+            //combobox affiche
+            comboBox1.DataSource =  categorierepository.selctBox();
+            comboBox1.ValueMember = "ID_CATE";
+            comboBox1.DisplayMember = "name";
 
-            comboBox1.Items.Add.Get();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Pressing.PL
         {
 
 
-            new FRM_Articl().Show();
+            new FRM_Articl().ShowDialog();
           
             
 

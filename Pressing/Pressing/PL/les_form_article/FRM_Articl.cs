@@ -12,11 +12,13 @@ using Pressing.PL.les_form_ventes;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_depenses;
+using Pressing.BL.repository;
 
 namespace Pressing.PL
 {
     public partial class FRM_Articl : Form
     {
+        ArticlRepository articlerepository = new ArticlRepository();
         public FRM_Articl()
         {
             InitializeComponent();
@@ -45,11 +47,11 @@ namespace Pressing.PL
         }
 
 
-
+        public static int parentX, panrentY;
         private void button7_Click(object sender, EventArgs e)
         {
-           
-            new FRM_Ajoute_Articl().ShowDialog();
+            Form modelBackground = new Form();
+            using( modal = new modalForm())
 
         }
 
@@ -102,6 +104,11 @@ namespace Pressing.PL
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FRM_Articl_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = articlerepository.GetAll();
         }
     }
 }

@@ -39,29 +39,20 @@ namespace Pressing.BL.repository
 
         }
 
-        internal void Create(string iD_art, string name, object combo, string repasag, string lessiv, Image image)
+        internal void Create(string iD_art, string name, string combo, decimal repasag, decimal lessiv, Image image)
         {
             throw new NotImplementedException();
         }
 
 
+        public dynamic GetAll()
+        {
+            var result = (from A in db.ARTICLEs
+                          join C in db.CATEGORIE_ARTILCLE on A.ID_CATE equals C.ID_CATE
+                          select new { A.REF_ARTICLE, A.LIB_ARTICLE,A.PRIX_REPASSAGE, A.PRIX_LESSIVE,A.IMAGE, C.LIB_CAT_ART }).ToList();
 
-        //public dynamic GetAll()
-        //{
-        //    //var result = (from C in db.CATEGORIE_ARTILCLE
-        //    //              join A in db.ACHETERs on C.ID_CATE equals A.REF_PRODUIT
-        //    //              select new { A.REF_PRODUIT , C.LIB_CAT_ART ,  }).ToList();
-
-        //    //return result;
-
-
-
-
-
-        //    //var result = (from A in db.Absences
-        //    //              join S in db.Stagiaires on A.STG equals S.ID
-        //    //              join G in db.Groupes on S.GRP equals G.CODE
-        //    //              select new { A.ID, A.STG, A.ABSDate, S.Nom, S.Prenom, S.GRP, G.FL }).ToList();
-        //}
+            return result;
+          
+        }
     }
 }
