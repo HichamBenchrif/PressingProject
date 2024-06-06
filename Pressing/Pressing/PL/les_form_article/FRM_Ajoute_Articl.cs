@@ -21,7 +21,7 @@ namespace Pressing.PL
         {
             InitializeComponent();
 
-            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+            //this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,29 +34,9 @@ namespace Pressing.PL
             Close();
         }
         
-        private void FRM_Ajoute_Articl_Timer_Tick(object sender, EventArgs e)
-        {
-            //جزء من تحريك الفورم "التوقيت"ه 
-            if (Opacity >= 1)
-            {
-                FRM_Ajoute_Articl_Timer.Stop();
-            }
-            else
-            {
-                Opacity += .06 ;
+        
+        
 
-            }
-            int y = FRM_Articl.parentY += 3;
-            this.Location = new Point(FRM_Articl.parentX + 515, y);
-            if(y >= i)
-            {
-                FRM_Ajoute_Articl_Timer.Stop();
-            }
-        }
-        //جزء من تحريك الفورم 
-
-        int i;
-        private static int parentY, parentX ;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -65,13 +45,13 @@ namespace Pressing.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.IsEmpty() || textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox()  )
+            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox()  )
             {
                 MessageBox.Show("Veuillez saisir les informations requises");
             }
             else
             {
-                var ID_art = textBox1.Text;
+                var ID_art = label9.Text;
                 var Combo = comboBox1.SelectedItem;
                 var Name = textBox5.Text;
                 var Repasag = textBox2.Text;
@@ -117,11 +97,11 @@ namespace Pressing.PL
 
         private void FRM_Ajoute_Articl_Load(object sender, EventArgs e)
         {
-            i = FRM_Ajoute_Articl.parentY = 220;
-            //this.Location = new Point(FRM_Ajoute_Articl.parentX = 515, FRM_Ajoute_Articl.parentY = 220);
 
 
-            textBox1.Text = articlrepositry.GenerateIDArticl();
+            label9.Text = articlrepositry.GenerateIDArticl();
+
+            comboBox1.Items.Add.Get();
         }
     }
 }

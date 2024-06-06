@@ -35,13 +35,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FRM_Ajoute_Categories_Timer = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -112,16 +114,6 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Libeller";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(42, 147);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 19);
-            this.textBox1.TabIndex = 38;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
@@ -167,6 +159,24 @@
             this.FRM_Ajoute_Categories_Timer.Interval = 1;
             this.FRM_Ajoute_Categories_Timer.Tick += new System.EventHandler(this.FRM_Ajoute_Categories_Timer_Tick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "label4";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(42, 149);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(251, 19);
+            this.panel4.TabIndex = 51;
+            // 
             // FRM_Ajoute_Categories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,21 +184,23 @@
             this.ClientSize = new System.Drawing.Size(333, 600);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Ajoute_Categories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Ajoute_Categories";
             this.Load += new System.EventHandler(this.FRM_Ajoute_Categories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,10 +214,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer FRM_Ajoute_Categories_Timer;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel4;
     }
 }

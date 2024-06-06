@@ -46,29 +46,10 @@ namespace Pressing.PL
 
 
 
-        public static int parentX, parentY;
         private void button7_Click(object sender, EventArgs e)
         {
            
-            //تحريك الفورم
-            Form nodalBackground = new Form();
-            using (FRM_Ajoute_Articl modal = new FRM_Ajoute_Articl())
-            {
-                nodalBackground.FormBorderStyle = FormBorderStyle.None;
-                nodalBackground.Opacity = .50d;
-                nodalBackground.BackColor = Color.Black;
-                nodalBackground.Size = this.Size;
-                nodalBackground.Location = this.Location;
-                nodalBackground.ShowInTaskbar = false;
-                nodalBackground.Show();
-                modal.Owner = nodalBackground;
-
-                parentX = this.Location.X;
-                parentY = this.Location.Y;
-
-                modal.ShowDialog();
-                nodalBackground.Dispose();
-            }
+            new FRM_Ajoute_Articl().ShowDialog();
 
         }
 
@@ -116,6 +97,11 @@ namespace Pressing.PL
         {
             new FRM_Menu().Show();
             Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

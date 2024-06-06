@@ -43,6 +43,9 @@ namespace Pressing.BL.repository
         {
             throw new NotImplementedException();
         }
+
+
+
         //public dynamic GetAll()
         //{
         //    //var result = (from C in db.CATEGORIE_ARTILCLE

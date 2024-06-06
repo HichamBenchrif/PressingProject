@@ -45,19 +45,20 @@ namespace Pressing.PL.les_form_article
         
         private void FRM_Ajoute_Categories_Load(object sender, EventArgs e)
         {
-            textBox1.Text = categorierepository.GenerateIDCategorie();
+            //textBox1.Text = categorierepository.GenerateIDCategorie();
+            label4.Text = categorierepository.GenerateIDCategorie();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if (textBox1.IsEmpty() || textBox5.IsEmpty())
+            if ( textBox5.IsEmpty())
             {
                 MessageBox.Show("Veuillez saisir les informations requises");
             }
             else
             {
-                var ID_cat = textBox1.Text;
+                var ID_cat = label4.Text;
                 var Name = textBox5.Text;
                
                 var repository = new CategorieRepository();
@@ -67,6 +68,11 @@ namespace Pressing.PL.les_form_article
 
             }
             
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

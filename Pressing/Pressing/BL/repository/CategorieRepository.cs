@@ -39,6 +39,14 @@ namespace Pressing.BL.repository
 
             return result;
         }
+        public dynamic Get()
+        {
+            var result = (from C in db.CATEGORIE_ARTILCLE
+                          select new { C.LIB_CAT_ART }).FirstOrDefault();
+
+            return result;
+        }
+
         public dynamic Search(string value)
         {
             //var result = (from C in db.CATEGORIE_ARTILCLE.AsEnumerable()
