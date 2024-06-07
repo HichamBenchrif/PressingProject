@@ -46,7 +46,7 @@ namespace Pressing.BL.repository
         {
             var result = (from A in db.ARTICLEs
                           join C in db.CATEGORIE_ARTILCLE on A.ID_CATE equals C.ID_CATE
-                          select new { A.REF_ARTICLE, A.LIB_ARTICLE,A.PRIX_REPASSAGE, A.PRIX_LESSIVE,/*A.IMAGE,*/ C.LIB_CAT_ART }).ToList();
+                          select new { A.REF_ARTICLE, A.LIB_ARTICLE,A.PRIX_REPASSAGE, A.PRIX_LESSIVE, A.IMAGE, C.LIB_CAT_ART }).ToList();
 
             return result;
           

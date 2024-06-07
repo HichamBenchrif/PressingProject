@@ -45,7 +45,6 @@ namespace Pressing.PL.les_form_article
         
         private void FRM_Ajoute_Categories_Load(object sender, EventArgs e)
         {
-            //textBox1.Text = categorierepository.GenerateIDCategorie();
             label4.Text = categorierepository.GenerateIDCategorie();
         }
 

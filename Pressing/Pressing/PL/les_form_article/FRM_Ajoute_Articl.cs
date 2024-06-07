@@ -58,7 +58,7 @@ namespace Pressing.PL
                 var Name = textBox5.Text;
                 var Repasag = decimal.Parse( textBox2.Text);
                 var Lessiv =decimal.Parse( textBox3.Text);
-                var Image = image.Image;
+                var Image =image.Image;
 
                 var repository = new ArticlRepository();
                 repository.Create(ID_art, Name, Combo, Repasag, Lessiv, Image);
