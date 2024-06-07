@@ -47,7 +47,7 @@ namespace Pressing.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox()  )
+            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox())
             {
                 MessageBox.Show("Veuillez saisir les informations requises");
             }
@@ -58,7 +58,7 @@ namespace Pressing.PL
                 var Name = textBox5.Text;
                 var Repasag = decimal.Parse( textBox2.Text);
                 var Lessiv =decimal.Parse( textBox3.Text);
-                var Image =image.Image;
+                var Image = image.Image;
 
                 var repository = new ArticlRepository();
                 repository.Create(ID_art, Name, Combo, Repasag, Lessiv, Image);

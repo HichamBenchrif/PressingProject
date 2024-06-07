@@ -48,10 +48,16 @@ namespace Pressing.PL
 
 
         public static int parentX, panrentY;
+        
+
         private void button7_Click(object sender, EventArgs e)
         {
-            Form modelBackground = new Form();
-            using( modal = new modalForm())
+            new FRM_Ajoute_Articl().Show();
+            //Form modalBackground = new Form();
+            //using(modalForm modal = new modalForm())
+            //{
+                
+            //}
 
         }
 
@@ -112,3 +118,7 @@ namespace Pressing.PL
         }
     }
 }
+
+
+
+

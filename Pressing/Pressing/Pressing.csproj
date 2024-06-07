@@ -169,6 +169,7 @@
     <Compile Include="PL\les_form_article\FRM_Famill.Designer.cs">
       <DependentUpon>FRM_Famill.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_article\modalForm.cs" />
     <Compile Include="PL\les_form_caisse\FRM_Caisse.cs">
       <SubType>Form</SubType>
     </Compile>

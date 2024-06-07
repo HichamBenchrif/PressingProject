@@ -19,5 +19,15 @@ namespace Pressing.BL.Extensions
                 return false;
 
         }
+        public static bool IsEmptyCombobox(this ComboBox Box)
+        {
+            var Value = Box.SelectedValue;
+            if (Value == null)
+                return true;
+            else
+                return false;
+
+        }
+
     }
 }

@@ -10,14 +10,6 @@ namespace Pressing.BL.Extensions
 {
     public static class ComboBoxExtensions
     {
-        public static bool IsEmptyCombobox(this ComboBox Box)
-        {
-            var Value = Box.SelectedItem;
-            if (Value == null)
-                return true;
-            else
-                return false;
-
-        }
+       
     }
 }
