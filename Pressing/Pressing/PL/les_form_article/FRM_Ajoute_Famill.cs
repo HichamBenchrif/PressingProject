@@ -33,13 +33,13 @@ namespace Pressing.PL.les_form_article
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.IsEmpty() || textBox5.IsEmpty())
+            if ( textBox5.IsEmpty())
             {
                 MessageBox.Show("Veuillez saisir les informations requises");
             }
             else
             {
-                var ID_famil = textBox1.Text;
+                var ID_famil = label9.Text;
                 var Name_famil = textBox5.Text;
 
                 var repository = new FamillRepository();
@@ -52,7 +52,7 @@ namespace Pressing.PL.les_form_article
 
         private void FRM_Ajoute_Famill_Load(object sender, EventArgs e)
         {
-            textBox1.Text = famillrepository.GenerateIDFamill();
+            label9.Text = famillrepository.GenerateIDFamill();
         }
     }
 }

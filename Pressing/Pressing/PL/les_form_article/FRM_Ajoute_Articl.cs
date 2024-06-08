@@ -19,6 +19,7 @@ namespace Pressing.PL
     {
         ArticlRepository articlrepositry = new ArticlRepository();
         CategorieRepository categorierepository = new CategorieRepository();
+        FamillRepository famillrepository = new FamillRepository();
         public FRM_Ajoute_Articl()
         {
             InitializeComponent();
@@ -54,14 +55,21 @@ namespace Pressing.PL
             else
             {
                 var ID_art = label9.Text;
-                var Combo = comboBox1.SelectedValue.ToString() ;
+                var comboboxfamill = comboBox2.SelectedValue.ToString();
+                var Comboboxcategory = comboBox1.SelectedValue.ToString();
                 var Name = textBox5.Text;
-                var Repasag = decimal.Parse( textBox2.Text);
-                var Lessiv =decimal.Parse( textBox3.Text);
-                var Image =image.Image;
+                var Repasag = decimal.Parse(textBox2.Text);
+                var Lessiv = decimal.Parse(textBox3.Text);
+                var Image = imagebox.Image;
+
+                var ms = new System.IO.MemoryStream();
+
+                Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+
 
                 var repository = new ArticlRepository();
-                repository.Create(ID_art, Name, Combo, Repasag, Lessiv, Image);
+                repository.Create(ID_art, comboboxfamill, Comboboxcategory, Name, Repasag, Lessiv, ms.ToArray());
                 MessageBox.Show("Créé avec succès");
                 Close();
 
@@ -84,7 +92,7 @@ namespace Pressing.PL
                 {
                      imageLocation = dialog.FileName;
 
-                    image.ImageLocation = imageLocation;
+                    imagebox.ImageLocation = imageLocation;
                 }
             }
             catch(Exception)
@@ -98,10 +106,14 @@ namespace Pressing.PL
 
             //id dyal articl
             label9.Text = articlrepositry.GenerateIDArticl();
-            //combobox affiche
+            //combobox affiche category
             comboBox1.DataSource =  categorierepository.selctBox();
             comboBox1.ValueMember = "ID_CATE";
             comboBox1.DisplayMember = "name";
+            //combobox affiche famill
+            comboBox2.DataSource = famillrepository.selctBox();
+            comboBox2.ValueMember = "N_FAMILL";
+            comboBox2.DisplayMember = "name";
 
         }
     }

@@ -25,15 +25,19 @@ namespace Pressing.BL.repository
             return newID;
 
         }
-        public void Create(string id, string category, string name_art, decimal prix_R , decimal prix_L ,byte[] image )
+        public void Create(string id,string famill, string category, string name_art, decimal prix_R , decimal prix_L ,byte[] image )
         {
             var Article = new ARTICLE();
+
             Article.REF_ARTICLE = id;
-            Article.CATEGORIE_ARTILCLE = category;
+            Article.N_FAMILL = famill;
+            Article.ID_CATE = category;
             Article.LIB_ARTICLE = name_art;
             Article.PRIX_REPASSAGE = prix_R;
             Article.PRIX_LESSIVE = prix_L;
             Article.IMAGE = image;
+
+
             db.ARTICLEs.Add(Article);
             db.SaveChanges();
 
@@ -46,7 +50,7 @@ namespace Pressing.BL.repository
         {
             var result = (from A in db.ARTICLEs
                           join C in db.CATEGORIE_ARTILCLE on A.ID_CATE equals C.ID_CATE
-                          select new { A.REF_ARTICLE, A.LIB_ARTICLE,A.PRIX_REPASSAGE, A.PRIX_LESSIVE, A.IMAGE, C.LIB_CAT_ART }).ToList();
+                          select new { ID=A.REF_ARTICLE, Name=A.LIB_ARTICLE,PrixRepassage=A.PRIX_REPASSAGE,PrixLessive= A.PRIX_LESSIVE, Image=A.IMAGE,Category= C.LIB_CAT_ART }).ToList();
 
             return result;
           

@@ -27,14 +27,14 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARTICLE> ARTICLEs { get; set; }
 
-        public static implicit operator CATEGORIE_ARTILCLE(ComboBox v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static implicit operator CATEGORIE_ARTILCLE(ComboBox v)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public static implicit operator CATEGORIE_ARTILCLE(string v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static implicit operator CATEGORIE_ARTILCLE(string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

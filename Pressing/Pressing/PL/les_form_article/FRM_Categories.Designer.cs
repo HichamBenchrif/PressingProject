@@ -56,8 +56,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -394,8 +392,6 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column4,
             this.Column3,
             this.Column1});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -497,18 +493,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Catégories\r\n";
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Name";
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Column3
             // 
             this.Column3.HeaderText = "Edit";
@@ -580,8 +564,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }

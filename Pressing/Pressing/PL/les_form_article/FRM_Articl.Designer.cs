@@ -44,11 +44,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -66,6 +65,7 @@
             this.panelAficher.SuspendLayout();
             this.panelArticl.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PNL_Menu.SuspendLayout();
@@ -269,6 +269,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.dataGridView1);
@@ -277,12 +278,24 @@
             this.panel5.Size = new System.Drawing.Size(963, 416);
             this.panel5.TabIndex = 15;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
+            this.pictureBox5.Location = new System.Drawing.Point(29, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
-            this.pictureBox4.Location = new System.Drawing.Point(327, 19);
+            this.pictureBox4.Location = new System.Drawing.Point(372, 19);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(47, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -294,7 +307,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(29, 19);
+            this.textBox1.Location = new System.Drawing.Point(74, 19);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(345, 26);
@@ -309,6 +322,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -322,9 +336,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 25;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,22 +355,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(903, 300);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Delete";
-            this.Column3.Name = "Column3";
-            this.Column3.Text = "Delete";
-            this.Column3.UseColumnTextForButtonValue = true;
-            this.Column3.Width = 50;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Edite";
-            this.Column4.Name = "Column4";
-            this.Column4.Text = "Edite";
-            this.Column4.UseColumnTextForButtonValue = true;
-            this.Column4.Width = 50;
             // 
             // panel4
             // 
@@ -569,6 +564,7 @@
             this.panelArticl.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.PNL_Menu.ResumeLayout(false);
@@ -607,9 +603,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewButtonColumn Column3;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

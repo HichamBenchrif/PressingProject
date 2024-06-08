@@ -52,7 +52,7 @@ namespace Pressing.PL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new FRM_Ajoute_Articl().Show();
+            new FRM_Ajoute_Articl().ShowDialog();
             //Form modalBackground = new Form();
             //using(modalForm modal = new modalForm())
             //{
@@ -110,6 +110,11 @@ namespace Pressing.PL
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = articlerepository.GetAll();
         }
 
         private void FRM_Articl_Load(object sender, EventArgs e)

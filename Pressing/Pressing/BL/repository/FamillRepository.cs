@@ -25,7 +25,7 @@ namespace Pressing.BL.repository
         public dynamic GetAll()
         {
             var result = (from F in db.FAMILLs
-                          select new { F.N_FAMILL, F.LIB_FAMILL }).ToList();
+                          select new { ID=F.N_FAMILL, Name= F.LIB_FAMILL }).ToList();
 
             return result;
         }
@@ -41,10 +41,14 @@ namespace Pressing.BL.repository
         {
             
 
-            return (from C in db.CATEGORIE_ARTILCLE
-                    where C.ID_CATE.Contains(value) ||
-                          C.LIB_CAT_ART.Contains(value)
-                    select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
+            return (from C in db.FAMILLs
+                    where C.N_FAMILL.Contains(value) ||
+                          C.LIB_FAMILL.Contains(value)
+                    select new { ID=C.N_FAMILL, Name=C.LIB_FAMILL }).ToList();
+        }
+        public dynamic selctBox()
+        {
+            return db.FAMILLs.AsEnumerable().Select(x => new { name = x.LIB_FAMILL, x.N_FAMILL }).ToList();
         }
     }
 }
