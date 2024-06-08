@@ -46,14 +46,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -232,20 +236,6 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Ajouter un article\r\n";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "client",
-            "خياط"});
-            this.comboBox1.Location = new System.Drawing.Point(42, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 21);
-            this.comboBox1.TabIndex = 33;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -260,11 +250,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 93);
+            this.label2.Location = new System.Drawing.Point(42, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.Size = new System.Drawing.Size(20, 16);
             this.label2.TabIndex = 57;
-            this.label2.Text = "Type_Client";
+            this.label2.Text = "ID";
             // 
             // label4
             // 
@@ -302,11 +292,48 @@
             this.textBox1.Size = new System.Drawing.Size(251, 19);
             this.textBox1.TabIndex = 60;
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.panel11.Location = new System.Drawing.Point(43, 129);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(251, 2);
+            this.panel11.TabIndex = 62;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.panel12.Location = new System.Drawing.Point(43, 129);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(251, 2);
+            this.panel12.TabIndex = 63;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Silver;
+            this.panel13.Controls.Add(this.label9);
+            this.panel13.Location = new System.Drawing.Point(43, 112);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(251, 19);
+            this.panel13.TabIndex = 64;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "label9";
+            // 
             // FRM_Ajoute_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 473);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel13);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
@@ -331,12 +358,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Ajoute_Client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Ajoute_Client";
+            this.Load += new System.EventHandler(this.FRM_Ajoute_Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,12 +391,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -17,7 +17,7 @@ using Pressing.BL.repository;
 
 namespace Pressing.PL.les_form_article
 {
-    public partial class FRM_Categories : Form
+    public partial class FRM_Categories : Form 
     {
         CategorieRepository categorierepository = new CategorieRepository();
         public FRM_Categories()
@@ -127,7 +127,7 @@ namespace Pressing.PL.les_form_article
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

@@ -61,7 +61,7 @@
     <Compile Include="BL\Extensions\TextBoxExtensions.cs" />
     <Compile Include="BL\repository\ArticlRepository.cs" />
     <Compile Include="BL\repository\CategorieRepository.cs" />
-    <Compile Include="BL\repository\clientrepository.cs" />
+    <Compile Include="BL\repository\ClientRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="DAL\ACHETER.cs">
       <DependentUpon>base_donne_pressing.tt</DependentUpon>
@@ -169,7 +169,6 @@
     <Compile Include="PL\les_form_article\FRM_Famill.Designer.cs">
       <DependentUpon>FRM_Famill.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\les_form_article\modalForm.cs" />
     <Compile Include="PL\les_form_caisse\FRM_Caisse.cs">
       <SubType>Form</SubType>
     </Compile>

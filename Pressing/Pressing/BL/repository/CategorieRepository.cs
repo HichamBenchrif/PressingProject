@@ -9,7 +9,7 @@ using Pressing.DAL;
 namespace Pressing.BL.repository
 {
 
-    class CategorieRepository : baserepository
+    public class CategorieRepository : baserepository
     {
         public string GenerateIDCategorie()
         {
@@ -39,13 +39,13 @@ namespace Pressing.BL.repository
 
             return result;
         }
-        //public dynamic Get()
-        //{
-        //    var result = (from C in db.CATEGORIE_ARTILCLE
-        //                  select new { C.LIB_CAT_ART }).FirstOrDefault();
+        public dynamic Get()
+        {
+            var result = (from C in db.CATEGORIE_ARTILCLE
+                          select new { C.LIB_CAT_ART }).FirstOrDefault();
 
-        //    return result;
-        //}
+            return result;
+        }
 
         public dynamic Search(string value)
         {

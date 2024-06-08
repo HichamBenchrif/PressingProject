@@ -8,7 +8,7 @@ using Pressing.DAL;
 
 namespace Pressing.BL.repository
 {
-    class FamillRepository : baserepository
+     public class FamillRepository : baserepository
     {
         public string GenerateIDFamill()
         {

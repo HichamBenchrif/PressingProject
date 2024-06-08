@@ -20,6 +20,7 @@ namespace Pressing.PL
         ArticlRepository articlrepositry = new ArticlRepository();
         CategorieRepository categorierepository = new CategorieRepository();
         FamillRepository famillrepository = new FamillRepository();
+
         public FRM_Ajoute_Articl()
         {
             InitializeComponent();

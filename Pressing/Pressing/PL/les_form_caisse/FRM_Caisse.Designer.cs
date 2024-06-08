@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PNL_Menu = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRapports = new System.Windows.Forms.Button();
@@ -41,58 +45,32 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelArticl = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.button27 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button24 = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.PNL_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelArticl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PNL_Menu
@@ -299,45 +277,92 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArticl.AutoScroll = true;
             this.panelArticl.BackColor = System.Drawing.Color.Silver;
-            this.panelArticl.Controls.Add(this.pictureBox3);
+            this.panelArticl.Controls.Add(this.panel3);
+            this.panelArticl.Controls.Add(this.panel2);
             this.panelArticl.Controls.Add(this.panel14);
-            this.panelArticl.Controls.Add(this.textBox1);
             this.panelArticl.Controls.Add(this.panel6);
-            this.panelArticl.Controls.Add(this.button8);
-            this.panelArticl.Controls.Add(this.button7);
-            this.panelArticl.Controls.Add(this.button6);
-            this.panelArticl.Controls.Add(this.button5);
             this.panelArticl.Location = new System.Drawing.Point(0, 50);
             this.panelArticl.Name = "panelArticl";
             this.panelArticl.Size = new System.Drawing.Size(1267, 519);
             this.panelArticl.TabIndex = 22;
             this.panelArticl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArticl_Paint);
             // 
-            // pictureBox3
+            // panel3
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::Pressing.Properties.Resources.search_20px;
-            this.pictureBox3.Location = new System.Drawing.Point(1163, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.panel3.AutoScroll = true;
+            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.pictureBox5);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(12, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(811, 49);
+            this.panel3.TabIndex = 24;
             // 
-            // panel14
+            // pictureBox5
             // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
+            this.pictureBox5.Location = new System.Drawing.Point(390, 13);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Silver;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(99, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(285, 24);
+            this.comboBox1.TabIndex = 24;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(15, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Categorie";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.AutoScroll = true;
-            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel14.Location = new System.Drawing.Point(829, 61);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(424, 446);
-            this.panel14.TabIndex = 22;
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Location = new System.Drawing.Point(829, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(424, 49);
+            this.panel2.TabIndex = 23;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
+            this.pictureBox4.Location = new System.Drawing.Point(374, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(47, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
             // 
             // textBox1
             // 
@@ -346,10 +371,10 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(865, 20);
+            this.textBox1.Location = new System.Drawing.Point(3, 13);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(345, 26);
+            this.textBox1.Size = new System.Drawing.Size(418, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Recherche";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -357,586 +382,138 @@
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.AutoScroll = true;
+            this.panel14.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel14.Controls.Add(this.dataGridView2);
+            this.panel14.Location = new System.Drawing.Point(829, 61);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(424, 446);
+            this.panel14.TabIndex = 22;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 12);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.DividerHeight = 2;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(387, 380);
+            this.dataGridView2.TabIndex = 2;
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.AutoScroll = true;
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Controls.Add(this.panel17);
-            this.panel6.Controls.Add(this.button22);
-            this.panel6.Controls.Add(this.button28);
-            this.panel6.Controls.Add(this.button23);
-            this.panel6.Controls.Add(this.panel18);
-            this.panel6.Controls.Add(this.button9);
-            this.panel6.Controls.Add(this.button26);
-            this.panel6.Controls.Add(this.panel19);
-            this.panel6.Controls.Add(this.button27);
-            this.panel6.Controls.Add(this.panel12);
-            this.panel6.Controls.Add(this.button25);
-            this.panel6.Controls.Add(this.button19);
-            this.panel6.Controls.Add(this.panel13);
-            this.panel6.Controls.Add(this.panel16);
-            this.panel6.Controls.Add(this.button20);
-            this.panel6.Controls.Add(this.panel2);
-            this.panel6.Controls.Add(this.button10);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.button24);
-            this.panel6.Controls.Add(this.panel15);
-            this.panel6.Controls.Add(this.button11);
-            this.panel6.Controls.Add(this.panel11);
-            this.panel6.Controls.Add(this.panel4);
-            this.panel6.Controls.Add(this.button21);
-            this.panel6.Controls.Add(this.button12);
-            this.panel6.Controls.Add(this.button18);
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.button13);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.button14);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.button15);
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.button16);
-            this.panel6.Controls.Add(this.panel10);
-            this.panel6.Controls.Add(this.button17);
+            this.panel6.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Location = new System.Drawing.Point(12, 61);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(811, 446);
             this.panel6.TabIndex = 17;
             // 
-            // comboBox1
+            // dataGridView1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Blue",
-            "White",
-            "Vert",
-            "Rouge",
-            "Mix"});
-            this.comboBox1.Location = new System.Drawing.Point(228, 511);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(338, 21);
-            this.comboBox1.TabIndex = 29;
-            this.comboBox1.Text = "Couleur";
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel17.Location = new System.Drawing.Point(33, 510);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(102, 5);
-            this.panel17.TabIndex = 41;
-            // 
-            // button22
-            // 
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button22.Location = new System.Drawing.Point(228, 463);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(40, 42);
-            this.button22.TabIndex = 24;
-            this.button22.Text = "-";
-            this.button22.UseVisualStyleBackColor = false;
-            // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.LightGray;
-            this.button28.FlatAppearance.BorderSize = 0;
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.ForeColor = System.Drawing.Color.Black;
-            this.button28.Image = global::Pressing.Properties.Resources.jeans_45px;
-            this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button28.Location = new System.Drawing.Point(33, 513);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(102, 73);
-            this.button28.TabIndex = 42;
-            this.button28.Text = "Pantalon";
-            this.button28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button28.UseVisualStyleBackColor = false;
-            // 
-            // button23
-            // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.Color.White;
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button23.Location = new System.Drawing.Point(526, 463);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(40, 42);
-            this.button23.TabIndex = 25;
-            this.button23.Text = "+";
-            this.button23.UseVisualStyleBackColor = false;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel18.Location = new System.Drawing.Point(682, 102);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(102, 5);
-            this.panel18.TabIndex = 40;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(228, 550);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(338, 39);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "Ajouter";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.LightGray;
-            this.button26.FlatAppearance.BorderSize = 0;
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ForeColor = System.Drawing.Color.Black;
-            this.button26.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button26.Location = new System.Drawing.Point(682, 105);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(102, 73);
-            this.button26.TabIndex = 39;
-            this.button26.Text = "Tricot";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button26.UseVisualStyleBackColor = false;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel19.Location = new System.Drawing.Point(682, 12);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(102, 5);
-            this.panel19.TabIndex = 38;
-            // 
-            // button27
-            // 
-            this.button27.BackColor = System.Drawing.Color.LightGray;
-            this.button27.FlatAppearance.BorderSize = 0;
-            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.ForeColor = System.Drawing.Color.Black;
-            this.button27.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button27.Location = new System.Drawing.Point(682, 15);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(102, 73);
-            this.button27.TabIndex = 37;
-            this.button27.Text = "Tricot";
-            this.button27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button27.UseVisualStyleBackColor = false;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel12.Location = new System.Drawing.Point(556, 102);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(102, 5);
-            this.panel12.TabIndex = 36;
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.Color.LightGray;
-            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.ForeColor = System.Drawing.Color.Black;
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button25.Location = new System.Drawing.Point(267, 463);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(260, 42);
-            this.button25.TabIndex = 28;
-            this.button25.Text = "1";
-            this.button25.UseVisualStyleBackColor = false;
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.LightGray;
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.Black;
-            this.button19.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button19.Location = new System.Drawing.Point(556, 105);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(102, 73);
-            this.button19.TabIndex = 35;
-            this.button19.Text = "Tricot";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button19.UseVisualStyleBackColor = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel13.Location = new System.Drawing.Point(556, 12);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(102, 5);
-            this.panel13.TabIndex = 34;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel16.Location = new System.Drawing.Point(228, 412);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(338, 5);
-            this.panel16.TabIndex = 26;
-            // 
-            // button20
-            // 
-            this.button20.BackColor = System.Drawing.Color.LightGray;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ForeColor = System.Drawing.Color.Black;
-            this.button20.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button20.Location = new System.Drawing.Point(556, 15);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(102, 73);
-            this.button20.TabIndex = 33;
-            this.button20.Text = "Tricot";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button20.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel2.Location = new System.Drawing.Point(428, 102);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(102, 5);
-            this.panel2.TabIndex = 32;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.LightGray;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(428, 105);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(102, 73);
-            this.button10.TabIndex = 31;
-            this.button10.Text = "Tricot";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel3.Location = new System.Drawing.Point(296, 102);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(102, 5);
-            this.panel3.TabIndex = 30;
-            // 
-            // button24
-            // 
-            this.button24.BackColor = System.Drawing.Color.LightGray;
-            this.button24.FlatAppearance.BorderSize = 0;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.Color.Black;
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button24.Location = new System.Drawing.Point(228, 415);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(338, 42);
-            this.button24.TabIndex = 27;
-            this.button24.Text = "Lessive et Repassage";
-            this.button24.UseVisualStyleBackColor = false;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel15.Location = new System.Drawing.Point(228, 364);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(338, 5);
-            this.panel15.TabIndex = 22;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.LightGray;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(296, 105);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(102, 73);
-            this.button11.TabIndex = 29;
-            this.button11.Text = "Tricot";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel11.Location = new System.Drawing.Point(228, 316);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(338, 5);
-            this.panel11.TabIndex = 20;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel4.Location = new System.Drawing.Point(163, 102);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(102, 5);
-            this.panel4.TabIndex = 26;
-            // 
-            // button21
-            // 
-            this.button21.BackColor = System.Drawing.Color.LightGray;
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.ForeColor = System.Drawing.Color.Black;
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button21.Location = new System.Drawing.Point(228, 367);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(338, 42);
-            this.button21.TabIndex = 23;
-            this.button21.Text = "Repassage";
-            this.button21.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.LightGray;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Image = global::Pressing.Properties.Resources.t_shirt_45px;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(163, 105);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(102, 73);
-            this.button12.TabIndex = 28;
-            this.button12.Text = "T-Shirt";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button18
-            // 
-            this.button18.BackColor = System.Drawing.Color.LightGray;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.Black;
-            this.button18.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button18.Location = new System.Drawing.Point(228, 319);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(338, 42);
-            this.button18.TabIndex = 21;
-            this.button18.Text = "Lessive";
-            this.button18.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel5.Location = new System.Drawing.Point(33, 102);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(102, 5);
-            this.panel5.TabIndex = 25;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.LightGray;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Image = global::Pressing.Properties.Resources.jeans_45px;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(33, 105);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(102, 73);
-            this.button13.TabIndex = 27;
-            this.button13.Text = "Pantalon";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel7.Location = new System.Drawing.Point(428, 12);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(102, 5);
-            this.panel7.TabIndex = 24;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.LightGray;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(428, 15);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(102, 73);
-            this.button14.TabIndex = 23;
-            this.button14.Text = "Tricot";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel8.Location = new System.Drawing.Point(296, 12);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(102, 5);
-            this.panel8.TabIndex = 22;
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.LightGray;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Image = global::Pressing.Properties.Resources.jumper_45px;
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.Location = new System.Drawing.Point(296, 15);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(102, 73);
-            this.button15.TabIndex = 21;
-            this.button15.Text = "Tricot";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button15.UseVisualStyleBackColor = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel9.Location = new System.Drawing.Point(163, 12);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(102, 5);
-            this.panel9.TabIndex = 18;
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.LightGray;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.Black;
-            this.button16.Image = global::Pressing.Properties.Resources.t_shirt_45px;
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button16.Location = new System.Drawing.Point(163, 15);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(102, 73);
-            this.button16.TabIndex = 20;
-            this.button16.Text = "T-Shirt";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button16.UseVisualStyleBackColor = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.panel10.Location = new System.Drawing.Point(33, 12);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(102, 5);
-            this.panel10.TabIndex = 17;
-            // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.Color.LightGray;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.Black;
-            this.button17.Image = global::Pressing.Properties.Resources.jeans_45px;
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button17.Location = new System.Drawing.Point(33, 15);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(102, 73);
-            this.button17.TabIndex = 19;
-            this.button17.Text = "Pantalon";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button17.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(581, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 49);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Matelas";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(422, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 49);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Vêtements pour \r\nbébé";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(263, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 49);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Vêtements pour femmes";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(104, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 49);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Vêtements pour \r\nhommes";
-            this.button5.UseVisualStyleBackColor = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 12);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DividerHeight = 2;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(777, 380);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.Silver;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Client par défaut"});
+            this.comboBox2.Location = new System.Drawing.Point(542, 13);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(251, 24);
+            this.comboBox2.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(486, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Client";
             // 
             // FRM_Caisse
             // 
@@ -958,9 +535,16 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelArticl.ResumeLayout(false);
-            this.panelArticl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -980,50 +564,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelArticl;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

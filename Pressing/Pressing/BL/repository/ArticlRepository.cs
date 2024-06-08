@@ -11,7 +11,7 @@ using System.Drawing;
 
 namespace Pressing.BL.repository
 {
-    class ArticlRepository : baserepository
+    public class ArticlRepository : baserepository
     {
         public string GenerateIDArticl()
         {
