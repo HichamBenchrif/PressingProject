@@ -187,6 +187,12 @@
     <Compile Include="PL\les_form_client\FRM_Client.Designer.cs">
       <DependentUpon>FRM_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Ajoute_depens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Ajoute_depens.Designer.cs">
+      <DependentUpon>FRM_Ajoute_depens.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Depenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_client\FRM_Client.resx">
       <DependentUpon>FRM_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_depenses\FRM_Ajoute_depens.resx">
+      <DependentUpon>FRM_Ajoute_depens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Depenses.resx">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>

@@ -53,6 +53,8 @@ namespace Pressing.PL.les_form_client
                 var repository = new ClientRepository();
                 repository.Create(ID_Cli, Name,Prenom, tele, Adress);
                 MessageBox.Show("Créé avec succès");
+               
+
                 Close();
 
             }
