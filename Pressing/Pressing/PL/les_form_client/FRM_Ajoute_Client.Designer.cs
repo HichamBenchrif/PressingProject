@@ -179,6 +179,7 @@
             this.button1.TabIndex = 49;
             this.button1.Text = "Sauvegarder";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -242,9 +243,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.Size = new System.Drawing.Size(130, 16);
             this.label3.TabIndex = 56;
-            this.label3.Text = "Numero de télé\r\n";
+            this.label3.Text = "Numero de téléphon\r\n";
             // 
             // label2
             // 

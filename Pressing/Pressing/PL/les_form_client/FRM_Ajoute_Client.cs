@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pressing.BL.repository;
+using Pressing.BL.Extensions;
 
 namespace Pressing.PL.les_form_client
 {
@@ -33,6 +34,28 @@ namespace Pressing.PL.les_form_client
         {
             //id 
             label9.Text = clientrepository.GenerateIDClient();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox2.IsEmpty() || textBox3.IsEmpty() || textBox5.IsEmpty() || textBox1.IsEmpty())
+            {
+                MessageBox.Show("Veuillez saisir les informations requises");
+            }
+            else
+            {
+                var ID_Cli= label9.Text;
+                var Name = textBox2.Text;
+                var Prenom = textBox3.Text;
+                var tele = textBox5.Text;
+                var Adress = textBox1.Text;
+
+                var repository = new ClientRepository();
+                repository.Create(ID_Cli, Name,Prenom, tele, Adress);
+                MessageBox.Show("Créé avec succès");
+                Close();
+
+            }
         }
     }
 }

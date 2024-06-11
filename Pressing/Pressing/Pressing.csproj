@@ -397,6 +397,11 @@
       <DependentUpon>base_donne_pressing.edmx</DependentUpon>
       <LastGenOutput>base_donne_pressing.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\money_70px.png" />
+    <None Include="Resources\people_70px.png" />
+    <None Include="Resources\user_70px.png" />
+    <None Include="Resources\user_50px1.png" />
+    <None Include="Resources\user_50px.png" />
     <None Include="Resources\refresh_48px.png" />
     <None Include="Resources\refresh_18px.png" />
     <None Include="Resources\search_20px.png" />

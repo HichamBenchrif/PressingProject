@@ -11,12 +11,14 @@ using Pressing.PL.les_form_ventes;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
+using Pressing.BL.repository;
 
 namespace Pressing.PL
 {
     public partial class FRM_Menu : Form
 
     {
+        ClientRepository clientrepository = new ClientRepository();
         
         public FRM_Menu()
         {
@@ -76,7 +78,7 @@ namespace Pressing.PL
 
         private void FRM_Menu_Load(object sender, EventArgs e)
         {
-            
+            label1.Text = clientrepository.GetTotal();
         }
 
         private void panelAjouteProduite_Paint(object sender, PaintEventArgs e)

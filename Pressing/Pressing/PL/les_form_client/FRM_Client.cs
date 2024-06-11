@@ -12,11 +12,15 @@ using Pressing.PL.les_form_article;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_depenses;
+using Pressing.DAL.BaseRepository;
+using Pressing.DAL;
+using Pressing.BL.repository;
 
 namespace Pressing.PL.les_form_client
 {
     public partial class FRM_Client : Form
     {
+        ClientRepository clientrepository = new ClientRepository();
         public FRM_Client()
         {
             InitializeComponent();
@@ -77,6 +81,17 @@ namespace Pressing.PL.les_form_client
         {
             new FRM_Depenses().Show();
             Close();
+        }
+
+        private void FRM_Client_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = clientrepository.GetAll();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = clientrepository.GetAll();
+
         }
     }
 }
