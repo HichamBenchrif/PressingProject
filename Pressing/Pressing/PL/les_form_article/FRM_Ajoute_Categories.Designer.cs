@@ -49,27 +49,27 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(42, 259);
+            this.panel3.Location = new System.Drawing.Point(55, 270);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(251, 2);
+            this.panel3.Size = new System.Drawing.Size(338, 2);
             this.panel3.TabIndex = 39;
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(42, 238);
+            this.textBox5.Location = new System.Drawing.Point(55, 249);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 19);
+            this.textBox5.Size = new System.Drawing.Size(338, 19);
             this.textBox5.TabIndex = 41;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(42, 168);
+            this.panel2.Location = new System.Drawing.Point(55, 178);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 2);
+            this.panel2.Size = new System.Drawing.Size(338, 2);
             this.panel2.TabIndex = 37;
             // 
             // button2
@@ -81,9 +81,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(177, 335);
+            this.button2.Location = new System.Drawing.Point(232, 409);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 30);
+            this.button2.Size = new System.Drawing.Size(161, 30);
             this.button2.TabIndex = 48;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
@@ -96,9 +96,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(42, 335);
+            this.button1.Location = new System.Drawing.Point(55, 409);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 30);
+            this.button1.Size = new System.Drawing.Size(158, 30);
             this.button1.TabIndex = 47;
             this.button1.Text = "Sauvegarder";
             this.button1.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 220);
+            this.label3.Location = new System.Drawing.Point(52, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 40;
@@ -119,14 +119,14 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 2);
+            this.panel1.Size = new System.Drawing.Size(457, 2);
             this.panel1.TabIndex = 36;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 128);
+            this.label2.Location = new System.Drawing.Point(52, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 35;
@@ -145,7 +145,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Pressing.Properties.Resources.clos_18px1;
-            this.pictureBox2.Location = new System.Drawing.Point(290, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(404, 13);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -172,16 +172,16 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(42, 149);
+            this.panel4.Location = new System.Drawing.Point(55, 159);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(251, 19);
+            this.panel4.Size = new System.Drawing.Size(338, 19);
             this.panel4.TabIndex = 51;
             // 
             // FRM_Ajoute_Categories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 600);
+            this.ClientSize = new System.Drawing.Size(457, 600);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.pictureBox2);

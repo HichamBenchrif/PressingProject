@@ -47,17 +47,38 @@ namespace Pressing.PL
         }
 
 
-        public static int parentX, panrentY;
-        
+
+
+        public static int panrentX;
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new FRM_Ajoute_Articl().ShowDialog();
+            //new FRM_Ajoute_Articl().ShowDialog();
             //Form modalBackground = new Form();
             //using(modalForm modal = new modalForm())
             //{
-                
+
             //}
+
+            Form modelBackground = new Form();
+            using (FRM_Ajoute_Articl model = new FRM_Ajoute_Articl())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
 
         }
 

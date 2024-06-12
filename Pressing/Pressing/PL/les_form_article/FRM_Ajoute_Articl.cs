@@ -25,7 +25,8 @@ namespace Pressing.PL
         {
             InitializeComponent();
 
-            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Top = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace Pressing.PL
 
         private void FRM_Ajoute_Articl_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(FRM_Articl.panrentX = 460);
 
             //id dyal articl
             label9.Text = articlrepositry.GenerateIDArticl();
@@ -116,6 +118,18 @@ namespace Pressing.PL
             comboBox2.ValueMember = "N_FAMILL";
             comboBox2.DisplayMember = "name";
 
+        }
+
+        private void timerarticl_Tick(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                timerarticl.Stop();
+            }
+            else
+            {
+                Opacity += 0.03;
+            }
         }
     }
 }

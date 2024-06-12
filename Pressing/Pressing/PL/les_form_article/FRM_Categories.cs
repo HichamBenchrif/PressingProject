@@ -26,11 +26,29 @@ namespace Pressing.PL.les_form_article
 
            
         }
-        
+        public static int panrentX;
         private void button7_Click(object sender, EventArgs e)
         {
-            new FRM_Ajoute_Categories().ShowDialog();
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (FRM_Ajoute_Categories model = new FRM_Ajoute_Categories())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
 
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -89,11 +107,13 @@ namespace Pressing.PL.les_form_article
             new FRM_Depenses().Show();
             Close();
         }
-
+        
         private void FRM_Categories_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = categorierepository.GetAll();
+
             
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -139,6 +159,16 @@ namespace Pressing.PL.les_form_article
         {
             new FRM_Famill().Show();
             Close();
+        }
+
+        private void FRM_Categories_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRM_Categories_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
         }
     }
 }

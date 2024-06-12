@@ -30,88 +30,41 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnRapports = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDépenses = new System.Windows.Forms.Button();
-            this.btnClients = new System.Windows.Forms.Button();
-            this.btnVentes = new System.Windows.Forms.Button();
-            this.btnProduits = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panelArticl = new System.Windows.Forms.Panel();
-            this.PNL_Menu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PNL_Menu = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnRapports = new System.Windows.Forms.Button();
+            this.btnDépenses = new System.Windows.Forms.Button();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnVentes = new System.Windows.Forms.Button();
+            this.btnProduits = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelArticl.SuspendLayout();
-            this.PNL_Menu.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.PNL_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(68)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Pressing.Properties.Resources.cash_counter_18px1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(294, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Caisse";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Pressing.Properties.Resources.home_18px1;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(188, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Principal";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Pressing.Properties.Resources.menu_50px1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -127,56 +80,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 50);
             this.panel1.TabIndex = 17;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Pressing.Properties.Resources.settings_18px1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(83, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Réglages\r\n";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Image = global::Pressing.Properties.Resources.shutdon_48px;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 450);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btnRapports
-            // 
-            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRapports.FlatAppearance.BorderSize = 0;
-            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapports.Image = global::Pressing.Properties.Resources.combo_chart_50px;
-            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRapports.Location = new System.Drawing.Point(0, 292);
-            this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
-            this.btnRapports.TabIndex = 6;
-            this.btnRapports.Text = "Rapports";
-            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRapports.UseVisualStyleBackColor = false;
-            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
             // 
             // panel3
             // 
@@ -198,99 +101,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Liste des dépenses\r\n";
             // 
-            // btnDépenses
-            // 
-            this.btnDépenses.BackColor = System.Drawing.Color.Silver;
-            this.btnDépenses.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDépenses.FlatAppearance.BorderSize = 0;
-            this.btnDépenses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDépenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDépenses.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDépenses.Image = global::Pressing.Properties.Resources.general_ledger_50px;
-            this.btnDépenses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDépenses.Location = new System.Drawing.Point(0, 219);
-            this.btnDépenses.Name = "btnDépenses";
-            this.btnDépenses.Size = new System.Drawing.Size(80, 73);
-            this.btnDépenses.TabIndex = 5;
-            this.btnDépenses.Text = "Dépenses";
-            this.btnDépenses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDépenses.UseVisualStyleBackColor = false;
-            this.btnDépenses.Click += new System.EventHandler(this.btnDépenses_Click);
-            // 
-            // btnClients
-            // 
-            this.btnClients.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnClients.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClients.FlatAppearance.BorderSize = 0;
-            this.btnClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClients.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClients.Image = global::Pressing.Properties.Resources.customer_50px;
-            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClients.Location = new System.Drawing.Point(0, 146);
-            this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(80, 73);
-            this.btnClients.TabIndex = 4;
-            this.btnClients.Text = "Clients";
-            this.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClients.UseVisualStyleBackColor = false;
-            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
-            // 
-            // btnVentes
-            // 
-            this.btnVentes.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnVentes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentes.FlatAppearance.BorderSize = 0;
-            this.btnVentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnVentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentes.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentes.Image = global::Pressing.Properties.Resources.sales_performance_50px;
-            this.btnVentes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVentes.Location = new System.Drawing.Point(0, 73);
-            this.btnVentes.Name = "btnVentes";
-            this.btnVentes.Size = new System.Drawing.Size(80, 73);
-            this.btnVentes.TabIndex = 3;
-            this.btnVentes.Text = "Ventes";
-            this.btnVentes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVentes.UseVisualStyleBackColor = false;
-            this.btnVentes.Click += new System.EventHandler(this.btnVentes_Click);
-            // 
-            // btnProduits
-            // 
-            this.btnProduits.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnProduits.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProduits.FlatAppearance.BorderSize = 0;
-            this.btnProduits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnProduits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduits.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduits.Image = global::Pressing.Properties.Resources.product_50px1;
-            this.btnProduits.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProduits.Location = new System.Drawing.Point(0, 0);
-            this.btnProduits.Name = "btnProduits";
-            this.btnProduits.Size = new System.Drawing.Size(80, 73);
-            this.btnProduits.TabIndex = 2;
-            this.btnProduits.Text = "Article";
-            this.btnProduits.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduits.UseVisualStyleBackColor = false;
-            this.btnProduits.Click += new System.EventHandler(this.btnProduits_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::Pressing.Properties.Resources.add_user_male_18px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(22, 53);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(236, 32);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Ajouter un nouveau dépense\r\n\r\n";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // panelArticl
             // 
             this.panelArticl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -306,22 +116,6 @@
             this.panelArticl.Size = new System.Drawing.Size(990, 519);
             this.panelArticl.TabIndex = 19;
             // 
-            // PNL_Menu
-            // 
-            this.PNL_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.PNL_Menu.BackColor = System.Drawing.Color.Gainsboro;
-            this.PNL_Menu.Controls.Add(this.pictureBox2);
-            this.PNL_Menu.Controls.Add(this.btnRapports);
-            this.PNL_Menu.Controls.Add(this.btnDépenses);
-            this.PNL_Menu.Controls.Add(this.btnClients);
-            this.PNL_Menu.Controls.Add(this.btnVentes);
-            this.PNL_Menu.Controls.Add(this.btnProduits);
-            this.PNL_Menu.Location = new System.Drawing.Point(0, 50);
-            this.PNL_Menu.Name = "PNL_Menu";
-            this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
-            this.PNL_Menu.TabIndex = 18;
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -336,29 +130,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(963, 416);
             this.panel4.TabIndex = 15;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
-            this.pictureBox5.Location = new System.Drawing.Point(29, 19);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 15;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
-            this.pictureBox4.Location = new System.Drawing.Point(372, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(47, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
             // 
             // textBox1
             // 
@@ -441,6 +212,236 @@
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // PNL_Menu
+            // 
+            this.PNL_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.PNL_Menu.BackColor = System.Drawing.Color.Gainsboro;
+            this.PNL_Menu.Controls.Add(this.pictureBox2);
+            this.PNL_Menu.Controls.Add(this.btnRapports);
+            this.PNL_Menu.Controls.Add(this.btnDépenses);
+            this.PNL_Menu.Controls.Add(this.btnClients);
+            this.PNL_Menu.Controls.Add(this.btnVentes);
+            this.PNL_Menu.Controls.Add(this.btnProduits);
+            this.PNL_Menu.Location = new System.Drawing.Point(0, 50);
+            this.PNL_Menu.Name = "PNL_Menu";
+            this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
+            this.PNL_Menu.TabIndex = 18;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(168)))), ((int)(((byte)(68)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Pressing.Properties.Resources.cash_counter_18px1;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(294, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(79, 30);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Caisse";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Pressing.Properties.Resources.home_18px1;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(188, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 30);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Principal";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Pressing.Properties.Resources.settings_18px1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(83, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Réglages\r\n";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pressing.Properties.Resources.menu_50px1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
+            this.pictureBox5.Location = new System.Drawing.Point(29, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
+            this.pictureBox4.Location = new System.Drawing.Point(372, 19);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(47, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::Pressing.Properties.Resources.add_user_male_18px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.Location = new System.Drawing.Point(22, 53);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(236, 32);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "Ajouter un nouveau dépense\r\n\r\n";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox2.Image = global::Pressing.Properties.Resources.shutdon_48px;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 450);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnRapports
+            // 
+            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapports.FlatAppearance.BorderSize = 0;
+            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapports.Image = global::Pressing.Properties.Resources.combo_chart_50px;
+            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRapports.Location = new System.Drawing.Point(0, 292);
+            this.btnRapports.Name = "btnRapports";
+            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.TabIndex = 6;
+            this.btnRapports.Text = "Rapports";
+            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRapports.UseVisualStyleBackColor = false;
+            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
+            // 
+            // btnDépenses
+            // 
+            this.btnDépenses.BackColor = System.Drawing.Color.Silver;
+            this.btnDépenses.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDépenses.FlatAppearance.BorderSize = 0;
+            this.btnDépenses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDépenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDépenses.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDépenses.Image = global::Pressing.Properties.Resources.general_ledger_50px;
+            this.btnDépenses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDépenses.Location = new System.Drawing.Point(0, 219);
+            this.btnDépenses.Name = "btnDépenses";
+            this.btnDépenses.Size = new System.Drawing.Size(80, 73);
+            this.btnDépenses.TabIndex = 5;
+            this.btnDépenses.Text = "Dépenses";
+            this.btnDépenses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDépenses.UseVisualStyleBackColor = false;
+            this.btnDépenses.Click += new System.EventHandler(this.btnDépenses_Click);
+            // 
+            // btnClients
+            // 
+            this.btnClients.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnClients.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClients.FlatAppearance.BorderSize = 0;
+            this.btnClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClients.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClients.Image = global::Pressing.Properties.Resources.customer_50px;
+            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClients.Location = new System.Drawing.Point(0, 146);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Size = new System.Drawing.Size(80, 73);
+            this.btnClients.TabIndex = 4;
+            this.btnClients.Text = "Clients";
+            this.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClients.UseVisualStyleBackColor = false;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
+            // 
+            // btnVentes
+            // 
+            this.btnVentes.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnVentes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentes.FlatAppearance.BorderSize = 0;
+            this.btnVentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnVentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentes.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentes.Image = global::Pressing.Properties.Resources.sales_performance_50px;
+            this.btnVentes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVentes.Location = new System.Drawing.Point(0, 73);
+            this.btnVentes.Name = "btnVentes";
+            this.btnVentes.Size = new System.Drawing.Size(80, 73);
+            this.btnVentes.TabIndex = 3;
+            this.btnVentes.Text = "Ventes";
+            this.btnVentes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVentes.UseVisualStyleBackColor = false;
+            this.btnVentes.Click += new System.EventHandler(this.btnVentes_Click);
+            // 
+            // btnProduits
+            // 
+            this.btnProduits.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnProduits.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduits.FlatAppearance.BorderSize = 0;
+            this.btnProduits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnProduits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduits.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduits.Image = global::Pressing.Properties.Resources.product_50px1;
+            this.btnProduits.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProduits.Location = new System.Drawing.Point(0, 0);
+            this.btnProduits.Name = "btnProduits";
+            this.btnProduits.Size = new System.Drawing.Size(80, 73);
+            this.btnProduits.TabIndex = 2;
+            this.btnProduits.Text = "Article";
+            this.btnProduits.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduits.UseVisualStyleBackColor = false;
+            this.btnProduits.Click += new System.EventHandler(this.btnProduits_Click);
+            // 
             // FRM_Depenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,18 +455,19 @@
             this.Name = "FRM_Depenses";
             this.Text = "FRM_Depenses";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FRM_Depenses_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelArticl.ResumeLayout(false);
             this.panelArticl.PerformLayout();
-            this.PNL_Menu.ResumeLayout(false);
-            this.PNL_Menu.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.PNL_Menu.ResumeLayout(false);
+            this.PNL_Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
