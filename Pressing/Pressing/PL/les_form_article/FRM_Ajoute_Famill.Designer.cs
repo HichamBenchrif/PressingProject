@@ -37,7 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.FRM_Ajoute_Categories_Timer = new System.Windows.Forms.Timer(this.components);
+            this.Timer_famill = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -49,19 +49,19 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(42, 264);
+            this.panel3.Location = new System.Drawing.Point(57, 272);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(251, 2);
+            this.panel3.Size = new System.Drawing.Size(342, 2);
             this.panel3.TabIndex = 55;
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(42, 243);
+            this.textBox5.Location = new System.Drawing.Point(57, 251);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 19);
+            this.textBox5.Size = new System.Drawing.Size(342, 19);
             this.textBox5.TabIndex = 57;
             // 
             // button2
@@ -73,9 +73,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(177, 340);
+            this.button2.Location = new System.Drawing.Point(234, 378);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 30);
+            this.button2.Size = new System.Drawing.Size(165, 30);
             this.button2.TabIndex = 59;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(42, 340);
+            this.button1.Location = new System.Drawing.Point(57, 378);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 30);
+            this.button1.Size = new System.Drawing.Size(158, 30);
             this.button1.TabIndex = 58;
             this.button1.Text = "Sauvegarder";
             this.button1.UseVisualStyleBackColor = false;
@@ -100,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 225);
+            this.label3.Location = new System.Drawing.Point(54, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 56;
@@ -111,14 +111,14 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 2);
+            this.panel1.Size = new System.Drawing.Size(457, 2);
             this.panel1.TabIndex = 52;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 133);
+            this.label2.Location = new System.Drawing.Point(54, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 51;
@@ -134,15 +134,16 @@
             this.label1.TabIndex = 50;
             this.label1.Text = "Ajouter une nouvelle famill\r\n";
             // 
-            // FRM_Ajoute_Categories_Timer
+            // Timer_famill
             // 
-            this.FRM_Ajoute_Categories_Timer.Enabled = true;
-            this.FRM_Ajoute_Categories_Timer.Interval = 1;
+            this.Timer_famill.Enabled = true;
+            this.Timer_famill.Interval = 1;
+            this.Timer_famill.Tick += new System.EventHandler(this.Timer_famill_Tick);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Pressing.Properties.Resources.clos_18px1;
-            this.pictureBox2.Location = new System.Drawing.Point(290, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(405, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -153,18 +154,18 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel7.Location = new System.Drawing.Point(42, 170);
+            this.panel7.Location = new System.Drawing.Point(57, 178);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(251, 2);
+            this.panel7.Size = new System.Drawing.Size(342, 2);
             this.panel7.TabIndex = 61;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Silver;
             this.panel11.Controls.Add(this.label9);
-            this.panel11.Location = new System.Drawing.Point(42, 153);
+            this.panel11.Location = new System.Drawing.Point(57, 161);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(251, 19);
+            this.panel11.Size = new System.Drawing.Size(342, 19);
             this.panel11.TabIndex = 62;
             // 
             // label9
@@ -180,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 600);
+            this.ClientSize = new System.Drawing.Size(457, 600);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel3);
@@ -215,7 +216,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer FRM_Ajoute_Categories_Timer;
+        private System.Windows.Forms.Timer Timer_famill;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel11;

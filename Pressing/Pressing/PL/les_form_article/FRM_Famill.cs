@@ -76,11 +76,32 @@ namespace Pressing.PL.les_form_article
         {
             Application.Exit();
         }
+        public static int panrentX;
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new FRM_Ajoute_Famill().ShowDialog();
-          
+
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (FRM_Ajoute_Famill model = new FRM_Ajoute_Famill())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
+            
         }
 
         private void button6_Click(object sender, EventArgs e)

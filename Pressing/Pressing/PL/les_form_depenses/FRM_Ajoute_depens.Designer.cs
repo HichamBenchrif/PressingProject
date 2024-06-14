@@ -48,7 +48,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.timerdepens = new System.Windows.Forms.Timer(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +123,7 @@
             this.button1.TabIndex = 59;
             this.button1.Text = "Sauvegarder";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -247,26 +248,16 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel7.Location = new System.Drawing.Point(349, 260);
+            this.panel7.Location = new System.Drawing.Point(42, 477);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(256, 2);
+            this.panel7.Size = new System.Drawing.Size(251, 2);
             this.panel7.TabIndex = 69;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(349, 239);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(256, 19);
-            this.textBox3.TabIndex = 71;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(346, 221);
+            this.label7.Location = new System.Drawing.Point(39, 438);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 16);
             this.label7.TabIndex = 70;
@@ -362,11 +353,21 @@
             this.timerdepens.Interval = 1;
             this.timerdepens.Tick += new System.EventHandler(this.timerdepens_Tick);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(42, 457);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(251, 20);
+            this.dateTimePicker1.TabIndex = 78;
+            // 
             // FRM_Ajoute_depens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 600);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label10);
@@ -377,7 +378,6 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.textBox2);
@@ -431,7 +431,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox4;
@@ -443,5 +442,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Timer timerdepens;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

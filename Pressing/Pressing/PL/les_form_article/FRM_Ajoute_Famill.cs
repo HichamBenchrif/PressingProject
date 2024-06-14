@@ -19,6 +19,9 @@ namespace Pressing.PL.les_form_article
         public FRM_Ajoute_Famill()
         {
             InitializeComponent();
+            //
+            this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Top = 0;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -53,6 +56,21 @@ namespace Pressing.PL.les_form_article
         private void FRM_Ajoute_Famill_Load(object sender, EventArgs e)
         {
             label9.Text = famillrepository.GenerateIDFamill();
+            //
+            this.Location = new Point(FRM_Famill.panrentX = 460);
+
+        }
+
+        private void Timer_famill_Tick(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                Timer_famill.Stop();
+            }
+            else
+            {
+                Opacity += 0.03;
+            }
         }
     }
 }

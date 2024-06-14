@@ -62,6 +62,7 @@
     <Compile Include="BL\repository\ArticlRepository.cs" />
     <Compile Include="BL\repository\CategorieRepository.cs" />
     <Compile Include="BL\repository\ClientRepository.cs" />
+    <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="DAL\ACHETER.cs">
       <DependentUpon>base_donne_pressing.tt</DependentUpon>
