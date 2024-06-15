@@ -124,7 +124,6 @@ namespace Pressing.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new FRM_Menu().Show();
             Close();
         }
 
@@ -141,6 +140,17 @@ namespace Pressing.PL
         private void FRM_Articl_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = articlerepository.GetAll();
+
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = 100;
+                
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

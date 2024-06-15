@@ -19,6 +19,7 @@ namespace Pressing.PL.les_form_caisse
         
         CategorieRepository categorierepository = new CategorieRepository();
         ArticlRepository articlerepository = new ArticlRepository();
+        ClientRepository clientrepository = new ClientRepository();
 
         public FRM_Caisse()
         {
@@ -48,9 +49,13 @@ namespace Pressing.PL.les_form_caisse
             comboBox1.DataSource = categorierepository.selctBox();
             comboBox1.ValueMember = "ID_CATE";
             comboBox1.DisplayMember = "name";
+            //combobox affiche client
+            comboBox3.DataSource = clientrepository.selctBox3();
+            comboBox3.ValueMember = "ID_CLIENT";
+            comboBox3.DisplayMember = "Name";
             // menu mghadix tkon khdama
             PNL_Menu.Visible = false;
-            // combobox ghadi y3mr bhadi 
+            // lform ghadi y3mr bhadi 
             dataGridView1.DataSource = articlerepository.GetAll();
 
         }
@@ -112,6 +117,14 @@ namespace Pressing.PL.les_form_caisse
             {
                 
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //combobox affiche client
+            comboBox1.DataSource = categorierepository.selctBox();
+            comboBox1.ValueMember = "ID_CATE";
+            comboBox1.DisplayMember = "name";
         }
     }
 }

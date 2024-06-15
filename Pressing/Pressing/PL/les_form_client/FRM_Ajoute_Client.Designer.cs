@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.timerclient = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel13.SuspendLayout();
             this.SuspendLayout();
@@ -327,6 +329,12 @@
             this.label9.TabIndex = 50;
             this.label9.Text = "label9";
             // 
+            // timerclient
+            // 
+            this.timerclient.Enabled = true;
+            this.timerclient.Interval = 1;
+            this.timerclient.Tick += new System.EventHandler(this.timerclient_Tick);
+            // 
             // FRM_Ajoute_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,5 +410,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timerclient;
     }
 }

@@ -32,6 +32,8 @@ namespace Pressing.PL.les_form_client
 
         private void FRM_Ajoute_Client_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(FRM_Client.panrentX = 360);
+
             //id 
             label9.Text = clientrepository.GenerateIDClient();
         }
@@ -57,6 +59,18 @@ namespace Pressing.PL.les_form_client
 
                 Close();
 
+            }
+        }
+
+        private void timerclient_Tick(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                timerclient.Stop();
+            }
+            else
+            {
+                Opacity += 0.03;
             }
         }
     }
