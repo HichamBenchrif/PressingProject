@@ -17,16 +17,15 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FOURNISSEUR()
         {
-            this.BON_ACHAT = new HashSet<BON_ACHAT>();
+            this.DÉPENSES_ET_ENTRÉES = new HashSet<DÉPENSES_ET_ENTRÉES>();
         }
     
         public string ID_FR { get; set; }
-        public string RS_FR { get; set; }
         public string NOM_FR { get; set; }
         public string PRN_FR { get; set; }
         public string TEL_FR { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BON_ACHAT> BON_ACHAT { get; set; }
+        public virtual ICollection<DÉPENSES_ET_ENTRÉES> DÉPENSES_ET_ENTRÉES { get; set; }
     }
 }

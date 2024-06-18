@@ -28,8 +28,15 @@ namespace Pressing.PL.les_form_depenses
             this.Location = new Point(FRM_Depenses.panrentX = 360);
             //
             label4.Text = depensrepository.GenerateIDDepens();
+            //
+            label13.Text = depensrepository.GenerateIDfournisseur();
+            //combobox affiche fournisseur
+            comboBox1.DataSource = depensrepository.selctBox();
+            comboBox1.ValueMember = "ID_FR";
+            comboBox1.DisplayMember = "name";
+
         }
-       
+
         private void timerdepens_Tick(object sender, EventArgs e)
         {
             if (Opacity >= 1)
@@ -78,6 +85,36 @@ namespace Pressing.PL.les_form_depenses
             //    Close();
 
             //}
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox4.IsEmpty() || textBox7.IsEmpty() || textBox6.IsEmpty())
+            {
+                MessageBox.Show("Veuillez saisir les informations de fournisseur");
+            }
+            else
+            {
+                var ID = label13.Text;
+                var Prenom = textBox4.Text;
+                var Nom = textBox7.Text;
+                var Telephon = textBox6.Text;
+
+                var repository = new DepensRepository();
+                repository.Create(ID,Prenom ,Name , Telephon);
+                MessageBox.Show("Créé avec succès");
+                //
+                label13.Text = depensrepository.GenerateIDfournisseur();
+                textBox4.Clear();
+                textBox7.Clear();
+                textBox6.Clear();
+                //combobox affiche fournisseur
+                comboBox1.DataSource = depensrepository.selctBox();
+                comboBox1.ValueMember = "ID_FR";
+                comboBox1.DisplayMember = "name";
+
+
+            }
         }
     }
 }

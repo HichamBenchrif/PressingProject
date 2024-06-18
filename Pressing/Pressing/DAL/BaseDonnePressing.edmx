@@ -4,17 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mld_pressing11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ACHETER">
-          <Key>
-            <PropertyRef Name="N_B_A" />
-            <PropertyRef Name="REF_PRODUIT" />
-          </Key>
-          <Property Name="N_B_A" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="REF_PRODUIT" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="QNTE_ACH" Type="smallint" />
-          <Property Name="PU_ACH" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>
+      <Schema Namespace="DBpressingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -26,14 +16,6 @@
           <Property Name="PRIX_REPASSAGE" Type="decimal" Precision="10" Scale="2" />
           <Property Name="PRIX_LESSIVE" Type="decimal" Precision="10" Scale="2" />
           <Property Name="IMAGE" Type="image" />
-        </EntityType>
-        <EntityType Name="B_A_FR">
-          <Key>
-            <PropertyRef Name="N_B_A" />
-            <PropertyRef Name="ID_FR" />
-          </Key>
-          <Property Name="N_B_A" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="ID_FR" Type="char" MaxLength="32" Nullable="false" />
         </EntityType>
         <EntityType Name="B_R">
           <Key>
@@ -48,13 +30,6 @@
           <Property Name="COULEUR" Type="char" MaxLength="255" />
           <Property Name="DATE_DISP" Type="datetime" />
           <Property Name="REMIS" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>
-        <EntityType Name="BON_ACHAT">
-          <Key>
-            <PropertyRef Name="N_B_A" />
-          </Key>
-          <Property Name="N_B_A" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="DATE_B_A" Type="datetime" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
           <Key>
@@ -93,19 +68,15 @@
           <Property Name="ADRESSE" Type="char" MaxLength="255" />
           <Property Name="TYPE_CLT" Type="char" MaxLength="255" />
         </EntityType>
-        <EntityType Name="DÉPENS">
-          <Key>
-            <PropertyRef Name="REF_PRODUIT" />
-            <PropertyRef Name="ID_DÉPE_ENTR" />
-          </Key>
-          <Property Name="REF_PRODUIT" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="ID_DÉPE_ENTR" Type="char" MaxLength="32" Nullable="false" />
-        </EntityType>
         <EntityType Name="DÉPENSES_ET_ENTRÉES">
           <Key>
             <PropertyRef Name="ID_DÉPE_ENTR" />
           </Key>
           <Property Name="ID_DÉPE_ENTR" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="LIB_DEPENS" Type="char" MaxLength="32" />
+          <Property Name="Q" Type="smallint" />
+          <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="ENTRE">
           <Key>
@@ -127,10 +98,17 @@
             <PropertyRef Name="ID_FR" />
           </Key>
           <Property Name="ID_FR" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="RS_FR" Type="char" MaxLength="255" />
           <Property Name="NOM_FR" Type="char" MaxLength="255" />
           <Property Name="PRN_FR" Type="char" MaxLength="255" />
           <Property Name="TEL_FR" Type="char" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FR">
+          <Key>
+            <PropertyRef Name="ID_DÉPE_ENTR" />
+            <PropertyRef Name="ID_FR" />
+          </Key>
+          <Property Name="ID_DÉPE_ENTR" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ID_FR" Type="char" MaxLength="32" Nullable="false" />
         </EntityType>
         <EntityType Name="PAYE">
           <Key>
@@ -142,13 +120,6 @@
           <Property Name="ID_BON_R" Type="char" MaxLength="255" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="char" MaxLength="32" Nullable="false" />
         </EntityType>
-        <EntityType Name="PRODUIT">
-          <Key>
-            <PropertyRef Name="REF_PRODUIT" />
-          </Key>
-          <Property Name="REF_PRODUIT" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_PRODUIT" Type="char" MaxLength="32" />
-        </EntityType>
         <EntityType Name="SERVICE">
           <Key>
             <PropertyRef Name="ID_SERVICE" />
@@ -156,30 +127,6 @@
           <Property Name="ID_SERVICE" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="LIB_SERVICE" Type="char" MaxLength="255" />
         </EntityType>
-        <Association Name="FK_ACHETER_BON_ACHAT">
-          <End Role="BON_ACHAT" Type="Self.BON_ACHAT" Multiplicity="1" />
-          <End Role="ACHETER" Type="Self.ACHETER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_ACHAT">
-              <PropertyRef Name="N_B_A" />
-            </Principal>
-            <Dependent Role="ACHETER">
-              <PropertyRef Name="N_B_A" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACHETER_PRODUIT">
-          <End Role="PRODUIT" Type="Self.PRODUIT" Multiplicity="1" />
-          <End Role="ACHETER" Type="Self.ACHETER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUIT">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Principal>
-            <Dependent Role="ACHETER">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -201,30 +148,6 @@
             </Principal>
             <Dependent Role="ARTICLE">
               <PropertyRef Name="N_FAMILL" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_B_A_FR_BON_ACHAT">
-          <End Role="BON_ACHAT" Type="Self.BON_ACHAT" Multiplicity="1" />
-          <End Role="B_A_FR" Type="Self.B_A_FR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_ACHAT">
-              <PropertyRef Name="N_B_A" />
-            </Principal>
-            <Dependent Role="B_A_FR">
-              <PropertyRef Name="N_B_A" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_B_A_FR_FOURNISSEUR">
-          <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="1" />
-          <End Role="B_A_FR" Type="Self.B_A_FR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FOURNISSEUR">
-              <PropertyRef Name="ID_FR" />
-            </Principal>
-            <Dependent Role="B_A_FR">
-              <PropertyRef Name="ID_FR" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -276,30 +199,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DÉPENS_DÉPENSES_ET_ENTRÉES">
-          <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="1" />
-          <End Role="DÉPENS" Type="Self.DÉPENS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DÉPENSES_ET_ENTRÉES">
-              <PropertyRef Name="ID_DÉPE_ENTR" />
-            </Principal>
-            <Dependent Role="DÉPENS">
-              <PropertyRef Name="ID_DÉPE_ENTR" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DÉPENS_PRODUIT">
-          <End Role="PRODUIT" Type="Self.PRODUIT" Multiplicity="1" />
-          <End Role="DÉPENS" Type="Self.DÉPENS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUIT">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Principal>
-            <Dependent Role="DÉPENS">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ENTRE_BON_SORTIE">
           <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="1" />
           <End Role="ENTRE" Type="Self.ENTRE" Multiplicity="*" />
@@ -321,6 +220,30 @@
             </Principal>
             <Dependent Role="ENTRE">
               <PropertyRef Name="ID_DÉPE_ENTR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FR_DÉPENSES_ET_ENTRÉES">
+          <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="1" />
+          <End Role="FR" Type="Self.FR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DÉPENSES_ET_ENTRÉES">
+              <PropertyRef Name="ID_DÉPE_ENTR" />
+            </Principal>
+            <Dependent Role="FR">
+              <PropertyRef Name="ID_DÉPE_ENTR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FR_FOURNISSEUR">
+          <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="1" />
+          <End Role="FR" Type="Self.FR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FOURNISSEUR">
+              <PropertyRef Name="ID_FR" />
+            </Principal>
+            <Dependent Role="FR">
+              <PropertyRef Name="ID_FR" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -360,32 +283,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="mld_pressing11ModelStoreContainer">
-          <EntitySet Name="ACHETER" EntityType="Self.ACHETER" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="DBpressingModelStoreContainer">
           <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="B_A_FR" EntityType="Self.B_A_FR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="B_R" EntityType="Self.B_R" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BON_ACHAT" EntityType="Self.BON_ACHAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DÉPENS" EntityType="Self.DÉPENS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DÉPENSES_ET_ENTRÉES" EntityType="Self.DÉPENSES_ET_ENTRÉES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ENTRE" EntityType="Self.ENTRE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAMILL" EntityType="Self.FAMILL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FOURNISSEUR" EntityType="Self.FOURNISSEUR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FR" EntityType="Self.FR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PAYE" EntityType="Self.PAYE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUIT" EntityType="Self.PRODUIT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICE" EntityType="Self.SERVICE" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ACHETER_BON_ACHAT" Association="Self.FK_ACHETER_BON_ACHAT">
-            <End Role="BON_ACHAT" EntitySet="BON_ACHAT" />
-            <End Role="ACHETER" EntitySet="ACHETER" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACHETER_PRODUIT" Association="Self.FK_ACHETER_PRODUIT">
-            <End Role="PRODUIT" EntitySet="PRODUIT" />
-            <End Role="ACHETER" EntitySet="ACHETER" />
-          </AssociationSet>
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLE" />
@@ -393,14 +304,6 @@
           <AssociationSet Name="FK_ARTICLE_FAMILL" Association="Self.FK_ARTICLE_FAMILL">
             <End Role="FAMILL" EntitySet="FAMILL" />
             <End Role="ARTICLE" EntitySet="ARTICLE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_A_FR_BON_ACHAT" Association="Self.FK_B_A_FR_BON_ACHAT">
-            <End Role="BON_ACHAT" EntitySet="BON_ACHAT" />
-            <End Role="B_A_FR" EntitySet="B_A_FR" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_A_FR_FOURNISSEUR" Association="Self.FK_B_A_FR_FOURNISSEUR">
-            <End Role="FOURNISSEUR" EntitySet="FOURNISSEUR" />
-            <End Role="B_A_FR" EntitySet="B_A_FR" />
           </AssociationSet>
           <AssociationSet Name="FK_B_R_ARTICLE" Association="Self.FK_B_R_ARTICLE">
             <End Role="ARTICLE" EntitySet="ARTICLE" />
@@ -418,14 +321,6 @@
             <End Role="CLIENT" EntitySet="CLIENT" />
             <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
           </AssociationSet>
-          <AssociationSet Name="FK_DÉPENS_DÉPENSES_ET_ENTRÉES" Association="Self.FK_DÉPENS_DÉPENSES_ET_ENTRÉES">
-            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
-            <End Role="DÉPENS" EntitySet="DÉPENS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DÉPENS_PRODUIT" Association="Self.FK_DÉPENS_PRODUIT">
-            <End Role="PRODUIT" EntitySet="PRODUIT" />
-            <End Role="DÉPENS" EntitySet="DÉPENS" />
-          </AssociationSet>
           <AssociationSet Name="FK_ENTRE_BON_SORTIE" Association="Self.FK_ENTRE_BON_SORTIE">
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
             <End Role="ENTRE" EntitySet="ENTRE" />
@@ -433,6 +328,14 @@
           <AssociationSet Name="FK_ENTRE_DÉPENSES_ET_ENTRÉES" Association="Self.FK_ENTRE_DÉPENSES_ET_ENTRÉES">
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
             <End Role="ENTRE" EntitySet="ENTRE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FR_DÉPENSES_ET_ENTRÉES" Association="Self.FK_FR_DÉPENSES_ET_ENTRÉES">
+            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
+            <End Role="FR" EntitySet="FR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FR_FOURNISSEUR" Association="Self.FK_FR_FOURNISSEUR">
+            <End Role="FOURNISSEUR" EntitySet="FOURNISSEUR" />
+            <End Role="FR" EntitySet="FR" />
           </AssociationSet>
           <AssociationSet Name="FK_PAYE_ARTICLE" Association="Self.FK_PAYE_ARTICLE">
             <End Role="ARTICLE" EntitySet="ARTICLE" />
@@ -451,19 +354,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="mld_pressing11Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ACHETER">
-          <Key>
-            <PropertyRef Name="N_B_A" />
-            <PropertyRef Name="REF_PRODUIT" />
-          </Key>
-          <Property Name="N_B_A" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="REF_PRODUIT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="QNTE_ACH" Type="Int16" />
-          <Property Name="PU_ACH" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="BON_ACHAT" Relationship="Self.FK_ACHETER_BON_ACHAT" FromRole="ACHETER" ToRole="BON_ACHAT" />
-          <NavigationProperty Name="PRODUIT" Relationship="Self.FK_ACHETER_PRODUIT" FromRole="ACHETER" ToRole="PRODUIT" />
-        </EntityType>
+      <Schema Namespace="DBpressingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -496,15 +387,6 @@
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
           <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
           <NavigationProperty Name="SERVICE" Relationship="Self.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
-        </EntityType>
-        <EntityType Name="BON_ACHAT">
-          <Key>
-            <PropertyRef Name="N_B_A" />
-          </Key>
-          <Property Name="N_B_A" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DATE_B_A" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ACHETERs" Relationship="Self.FK_ACHETER_BON_ACHAT" FromRole="BON_ACHAT" ToRole="ACHETER" />
-          <NavigationProperty Name="FOURNISSEURs" Relationship="Self.B_A_FR" FromRole="BON_ACHAT" ToRole="FOURNISSEUR" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
           <Key>
@@ -555,8 +437,12 @@
             <PropertyRef Name="ID_DÉPE_ENTR" />
           </Key>
           <Property Name="ID_DÉPE_ENTR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PRODUITs" Relationship="Self.DÉPENS" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="PRODUIT" />
+          <Property Name="LIB_DEPENS" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="Q" Type="Int16" />
+          <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
           <NavigationProperty Name="BON_SORTIE" Relationship="Self.ENTRE" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="BON_SORTIE" />
+          <NavigationProperty Name="FOURNISSEURs" Relationship="Self.FR" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="FOURNISSEUR" />
         </EntityType>
         <EntityType Name="FAMILL">
           <Key>
@@ -571,11 +457,10 @@
             <PropertyRef Name="ID_FR" />
           </Key>
           <Property Name="ID_FR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="RS_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
           <Property Name="NOM_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
           <Property Name="PRN_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
           <Property Name="TEL_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="BON_ACHAT" Relationship="Self.B_A_FR" FromRole="FOURNISSEUR" ToRole="BON_ACHAT" />
+          <NavigationProperty Name="DÉPENSES_ET_ENTRÉES" Relationship="Self.FR" FromRole="FOURNISSEUR" ToRole="DÉPENSES_ET_ENTRÉES" />
         </EntityType>
         <EntityType Name="PAYE">
           <Key>
@@ -590,15 +475,6 @@
           <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_PAYE_BON_RECEPTION" FromRole="PAYE" ToRole="BON_RECEPTION" />
           <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_PAYE_BON_SORTIE" FromRole="PAYE" ToRole="BON_SORTIE" />
         </EntityType>
-        <EntityType Name="PRODUIT">
-          <Key>
-            <PropertyRef Name="REF_PRODUIT" />
-          </Key>
-          <Property Name="REF_PRODUIT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_PRODUIT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ACHETERs" Relationship="Self.FK_ACHETER_PRODUIT" FromRole="PRODUIT" ToRole="ACHETER" />
-          <NavigationProperty Name="DÉPENSES_ET_ENTRÉES" Relationship="Self.DÉPENS" FromRole="PRODUIT" ToRole="DÉPENSES_ET_ENTRÉES" />
-        </EntityType>
         <EntityType Name="SERVICE">
           <Key>
             <PropertyRef Name="ID_SERVICE" />
@@ -607,30 +483,6 @@
           <Property Name="LIB_SERVICE" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_SERVICE" FromRole="SERVICE" ToRole="B_R" />
         </EntityType>
-        <Association Name="FK_ACHETER_BON_ACHAT">
-          <End Role="BON_ACHAT" Type="Self.BON_ACHAT" Multiplicity="1" />
-          <End Role="ACHETER" Type="Self.ACHETER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_ACHAT">
-              <PropertyRef Name="N_B_A" />
-            </Principal>
-            <Dependent Role="ACHETER">
-              <PropertyRef Name="N_B_A" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACHETER_PRODUIT">
-          <End Role="PRODUIT" Type="Self.PRODUIT" Multiplicity="1" />
-          <End Role="ACHETER" Type="Self.ACHETER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUIT">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Principal>
-            <Dependent Role="ACHETER">
-              <PropertyRef Name="REF_PRODUIT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -739,23 +591,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="B_A_FR">
-          <End Role="BON_ACHAT" Type="Self.BON_ACHAT" Multiplicity="*" />
-          <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="*" />
-        </Association>
-        <Association Name="DÉPENS">
-          <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
-          <End Role="PRODUIT" Type="Self.PRODUIT" Multiplicity="*" />
-        </Association>
         <Association Name="ENTRE">
           <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
           <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="BaseDonnePressing" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ACHETERs" EntityType="Self.ACHETER" />
+        <Association Name="FR">
+          <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
+          <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DBpressingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARTICLEs" EntityType="Self.ARTICLE" />
           <EntitySet Name="B_R" EntityType="Self.B_R" />
-          <EntitySet Name="BON_ACHAT" EntityType="Self.BON_ACHAT" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" />
           <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" />
           <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" />
@@ -764,16 +610,7 @@
           <EntitySet Name="FAMILLs" EntityType="Self.FAMILL" />
           <EntitySet Name="FOURNISSEURs" EntityType="Self.FOURNISSEUR" />
           <EntitySet Name="PAYEs" EntityType="Self.PAYE" />
-          <EntitySet Name="PRODUITs" EntityType="Self.PRODUIT" />
           <EntitySet Name="SERVICEs" EntityType="Self.SERVICE" />
-          <AssociationSet Name="FK_ACHETER_BON_ACHAT" Association="Self.FK_ACHETER_BON_ACHAT">
-            <End Role="BON_ACHAT" EntitySet="BON_ACHAT" />
-            <End Role="ACHETER" EntitySet="ACHETERs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACHETER_PRODUIT" Association="Self.FK_ACHETER_PRODUIT">
-            <End Role="PRODUIT" EntitySet="PRODUITs" />
-            <End Role="ACHETER" EntitySet="ACHETERs" />
-          </AssociationSet>
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
@@ -810,17 +647,13 @@
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
             <End Role="PAYE" EntitySet="PAYEs" />
           </AssociationSet>
-          <AssociationSet Name="B_A_FR" Association="Self.B_A_FR">
-            <End Role="BON_ACHAT" EntitySet="BON_ACHAT" />
-            <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
-          </AssociationSet>
-          <AssociationSet Name="DÉPENS" Association="Self.DÉPENS">
-            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
-            <End Role="PRODUIT" EntitySet="PRODUITs" />
-          </AssociationSet>
           <AssociationSet Name="ENTRE" Association="Self.ENTRE">
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
+          </AssociationSet>
+          <AssociationSet Name="FR" Association="Self.FR">
+            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
+            <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -828,19 +661,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mld_pressing11ModelStoreContainer" CdmEntityContainer="BaseDonnePressing">
-          <EntitySetMapping Name="ACHETERs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.ACHETER">
-              <MappingFragment StoreEntitySet="ACHETER">
-                <ScalarProperty Name="N_B_A" ColumnName="N_B_A" />
-                <ScalarProperty Name="REF_PRODUIT" ColumnName="REF_PRODUIT" />
-                <ScalarProperty Name="QNTE_ACH" ColumnName="QNTE_ACH" />
-                <ScalarProperty Name="PU_ACH" ColumnName="PU_ACH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="DBpressingModelStoreContainer" CdmEntityContainer="DBpressingEntities">
           <EntitySetMapping Name="ARTICLEs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.ARTICLE">
+            <EntityTypeMapping TypeName="DBpressingModel.ARTICLE">
               <MappingFragment StoreEntitySet="ARTICLE">
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
@@ -853,7 +676,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="B_R">
-            <EntityTypeMapping TypeName="mld_pressing11Model.B_R">
+            <EntityTypeMapping TypeName="DBpressingModel.B_R">
               <MappingFragment StoreEntitySet="B_R">
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
@@ -865,16 +688,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BON_ACHAT">
-            <EntityTypeMapping TypeName="mld_pressing11Model.BON_ACHAT">
-              <MappingFragment StoreEntitySet="BON_ACHAT">
-                <ScalarProperty Name="N_B_A" ColumnName="N_B_A" />
-                <ScalarProperty Name="DATE_B_A" ColumnName="DATE_B_A" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BON_RECEPTION">
-            <EntityTypeMapping TypeName="mld_pressing11Model.BON_RECEPTION">
+            <EntityTypeMapping TypeName="DBpressingModel.BON_RECEPTION">
               <MappingFragment StoreEntitySet="BON_RECEPTION">
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
@@ -885,7 +700,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_SORTIE">
-            <EntityTypeMapping TypeName="mld_pressing11Model.BON_SORTIE">
+            <EntityTypeMapping TypeName="DBpressingModel.BON_SORTIE">
               <MappingFragment StoreEntitySet="BON_SORTIE">
                 <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
                 <ScalarProperty Name="DATE_B_S" ColumnName="DATE_B_S" />
@@ -894,7 +709,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIE_ARTILCLE">
-            <EntityTypeMapping TypeName="mld_pressing11Model.CATEGORIE_ARTILCLE">
+            <EntityTypeMapping TypeName="DBpressingModel.CATEGORIE_ARTILCLE">
               <MappingFragment StoreEntitySet="CATEGORIE_ARTILCLE">
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
                 <ScalarProperty Name="LIB_CAT_ART" ColumnName="LIB_CAT_ART" />
@@ -902,7 +717,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CLIENTs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.CLIENT">
+            <EntityTypeMapping TypeName="DBpressingModel.CLIENT">
               <MappingFragment StoreEntitySet="CLIENT">
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
                 <ScalarProperty Name="NOM_CLT" ColumnName="NOM_CLT" />
@@ -915,14 +730,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DÉPENSES_ET_ENTRÉES">
-            <EntityTypeMapping TypeName="mld_pressing11Model.DÉPENSES_ET_ENTRÉES">
+            <EntityTypeMapping TypeName="DBpressingModel.DÉPENSES_ET_ENTRÉES">
               <MappingFragment StoreEntitySet="DÉPENSES_ET_ENTRÉES">
                 <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
+                <ScalarProperty Name="LIB_DEPENS" ColumnName="LIB_DEPENS" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="PRIX" ColumnName="PRIX" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FAMILLs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.FAMILL">
+            <EntityTypeMapping TypeName="DBpressingModel.FAMILL">
               <MappingFragment StoreEntitySet="FAMILL">
                 <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
                 <ScalarProperty Name="LIB_FAMILL" ColumnName="LIB_FAMILL" />
@@ -930,10 +749,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FOURNISSEURs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.FOURNISSEUR">
+            <EntityTypeMapping TypeName="DBpressingModel.FOURNISSEUR">
               <MappingFragment StoreEntitySet="FOURNISSEUR">
                 <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
-                <ScalarProperty Name="RS_FR" ColumnName="RS_FR" />
                 <ScalarProperty Name="NOM_FR" ColumnName="NOM_FR" />
                 <ScalarProperty Name="PRN_FR" ColumnName="PRN_FR" />
                 <ScalarProperty Name="TEL_FR" ColumnName="TEL_FR" />
@@ -941,7 +759,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PAYEs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.PAYE">
+            <EntityTypeMapping TypeName="DBpressingModel.PAYE">
               <MappingFragment StoreEntitySet="PAYE">
                 <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
@@ -949,44 +767,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PRODUITs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.PRODUIT">
-              <MappingFragment StoreEntitySet="PRODUIT">
-                <ScalarProperty Name="REF_PRODUIT" ColumnName="REF_PRODUIT" />
-                <ScalarProperty Name="LIB_PRODUIT" ColumnName="LIB_PRODUIT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SERVICEs">
-            <EntityTypeMapping TypeName="mld_pressing11Model.SERVICE">
+            <EntityTypeMapping TypeName="DBpressingModel.SERVICE">
               <MappingFragment StoreEntitySet="SERVICE">
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="LIB_SERVICE" ColumnName="LIB_SERVICE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="B_A_FR" TypeName="mld_pressing11Model.B_A_FR" StoreEntitySet="B_A_FR">
-            <EndProperty Name="BON_ACHAT">
-              <ScalarProperty Name="N_B_A" ColumnName="N_B_A" />
-            </EndProperty>
-            <EndProperty Name="FOURNISSEUR">
-              <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="DÉPENS" TypeName="mld_pressing11Model.DÉPENS" StoreEntitySet="DÉPENS">
-            <EndProperty Name="DÉPENSES_ET_ENTRÉES">
-              <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
-            </EndProperty>
-            <EndProperty Name="PRODUIT">
-              <ScalarProperty Name="REF_PRODUIT" ColumnName="REF_PRODUIT" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="ENTRE" TypeName="mld_pressing11Model.ENTRE" StoreEntitySet="ENTRE">
+          <AssociationSetMapping Name="ENTRE" TypeName="DBpressingModel.ENTRE" StoreEntitySet="ENTRE">
             <EndProperty Name="BON_SORTIE">
               <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
             </EndProperty>
             <EndProperty Name="DÉPENSES_ET_ENTRÉES">
               <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FR" TypeName="DBpressingModel.FR" StoreEntitySet="FR">
+            <EndProperty Name="DÉPENSES_ET_ENTRÉES">
+              <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
+            </EndProperty>
+            <EndProperty Name="FOURNISSEUR">
+              <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

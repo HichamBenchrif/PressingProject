@@ -23,54 +23,42 @@ namespace Pressing.BL.repository
             return newID;
 
         }
-        //public void Create(string id, string name_produit , int quntite, decimal prix , DateTime date , string prenom , string nom , string telephon)
+        public string GenerateIDfournisseur()
+        {
+            var count = db.FOURNISSEURs.Count();
+            if (count == 0)
+                return "Fr-1";
+            var ids = db.FOURNISSEURs.Select(x => x.ID_FR).ToList();
+            var numbres = ids.Select(x => int.Parse(x.Substring(3, x.Length - 3)));
+            var max = numbres.Max();
+            var newID = "Fr-" + (max + 1);
+            return newID;
+
+        }
+        public void Create(string id, string prenom , string nom ,string telephon )
+        {
+            var fournisseur = new FOURNISSEUR();
+            fournisseur.ID_FR = id;
+            fournisseur.PRN_FR = prenom;
+            fournisseur.NOM_FR = nom;
+            fournisseur.TEL_FR = telephon;
+            db.FOURNISSEURs.Add(fournisseur);
+            db.SaveChanges();
+
+        }
+        public dynamic selctBox()
+        {
+            return db.FOURNISSEURs.AsEnumerable().Select(x => new { name = x.PRN_FR + x.NOM_FR, x.ID_FR }).ToList();
+        }
+
+
+        //public dynamic GetAll()
         //{
-        //    var depens = new DÉPENSES_ET_ENTRÉES();
-        //    depens.ID_DÉPE_ENTR = id;
+        //    var result = (from C in db.CATEGORIE_ARTILCLE
+        //                  select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
 
-        //    var lib_produit = new PRODUIT();
-        //    lib_produit.LIB_PRODUIT = name_produit;
-
-        //    var achete = new ACHETER();
-        //    achete.QNTE_ACH = (short)quntite;
-        //    achete.PU_ACH = prix;
-
-        //    var bon_achete = new BON_ACHAT();
-        //    bon_achete.DATE_B_A = date;
-
-        //    var fr = new FOURNISSEUR();
-        //    fr.PRN_FR = prenom;
-        //    fr.NOM_FR = nom;
-        //    fr.TEL_FR = telephon;
-        //    try
-        //    {
-        //        db.DÉPENSES_ET_ENTRÉES.Add(depens);
-        //        db.PRODUITs.Add(lib_produit);
-        //        db.ACHETERs.Add(achete);
-        //        db.BON_ACHAT.Add(bon_achete);
-        //        db.FOURNISSEURs.Add(fr);
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbEntityValidationException ex)
-        //    {
-        //        foreach (var ValidationErrors in ex.EntityValidationErrors)
-        //        {
-        //            foreach(var ValidationError in ValidationErrors.ValidationErrors)
-        //            {
-        //                Console.WriteLine($"Property: {ValidationError.PropertyName} Error:{ValidationError.ErrorMessage}");
-        //            }
-        //        }
-        //        throw;
-        //    }
-
-            //}
-            //public dynamic GetAll()
-            //{
-            //    var result = (from C in db.CATEGORIE_ARTILCLE
-            //                  select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
-
-            //    return result;
-            //}
+        //    return result;
+        //}
         //}
     }
 }

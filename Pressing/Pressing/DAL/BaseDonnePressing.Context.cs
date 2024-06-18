@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BaseDonnePressing : DbContext
+    public partial class DBpressingEntities : DbContext
     {
-        public BaseDonnePressing()
-            : base("name=BaseDonnePressing")
+        public DBpressingEntities()
+            : base("name=DBpressingEntities")
         {
         }
     
@@ -25,10 +25,8 @@ namespace Pressing.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ACHETER> ACHETERs { get; set; }
         public virtual DbSet<ARTICLE> ARTICLEs { get; set; }
         public virtual DbSet<B_R> B_R { get; set; }
-        public virtual DbSet<BON_ACHAT> BON_ACHAT { get; set; }
         public virtual DbSet<BON_RECEPTION> BON_RECEPTION { get; set; }
         public virtual DbSet<BON_SORTIE> BON_SORTIE { get; set; }
         public virtual DbSet<CATEGORIE_ARTILCLE> CATEGORIE_ARTILCLE { get; set; }
@@ -37,7 +35,6 @@ namespace Pressing.DAL
         public virtual DbSet<FAMILL> FAMILLs { get; set; }
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
         public virtual DbSet<PAYE> PAYEs { get; set; }
-        public virtual DbSet<PRODUIT> PRODUITs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
     }
 }

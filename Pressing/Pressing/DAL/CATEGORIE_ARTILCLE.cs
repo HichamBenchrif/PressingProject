@@ -11,8 +11,7 @@ namespace Pressing.DAL
 {
     using System;
     using System.Collections.Generic;
-    using System.Windows.Forms;
-
+    
     public partial class CATEGORIE_ARTILCLE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,15 +25,5 @@ namespace Pressing.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARTICLE> ARTICLEs { get; set; }
-
-        //public static implicit operator CATEGORIE_ARTILCLE(ComboBox v)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public static implicit operator CATEGORIE_ARTILCLE(string v)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

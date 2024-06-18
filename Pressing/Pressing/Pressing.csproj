@@ -64,63 +64,54 @@
     <Compile Include="BL\repository\ClientRepository.cs" />
     <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
-    <Compile Include="DAL\ACHETER.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BaseDonnePressing.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDonnePressing.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BaseDonnePressing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BaseDonnePressing.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
-    <Compile Include="DAL\base_donne_pressing.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base_donne_pressing.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\base_donne_pressing.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\base_donne_pressing.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base_donne_pressing.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\BON_ACHAT.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PAYE.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\PRODUIT.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>base_donne_pressing.tt</DependentUpon>
+      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -257,12 +248,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\base_donne_pressing.edmx">
+    <EntityDeploy Include="DAL\BaseDonnePressing.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>base_donne_pressing.Designer.cs</LastGenOutput>
+      <LastGenOutput>BaseDonnePressing.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\base_donne_pressing.edmx.diagram">
-      <DependentUpon>base_donne_pressing.edmx</DependentUpon>
+    <None Include="DAL\BaseDonnePressing.edmx.diagram">
+      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -278,7 +269,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DAL\BaseDonnePressing.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
+      <LastGenOutput>BaseDonnePressing.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\BaseDonnePressing.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
+      <LastGenOutput>BaseDonnePressing.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Actions-list-add-icon.png" />
   </ItemGroup>
@@ -397,16 +399,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\base_donne_pressing.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>base_donne_pressing.edmx</DependentUpon>
-      <LastGenOutput>base_donne_pressing.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\base_donne_pressing.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>base_donne_pressing.edmx</DependentUpon>
-      <LastGenOutput>base_donne_pressing.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\money_70px.png" />
     <None Include="Resources\people_70px.png" />
     <None Include="Resources\user_70px.png" />

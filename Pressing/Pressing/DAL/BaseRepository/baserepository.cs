@@ -8,7 +8,7 @@ namespace Pressing.DAL.BaseRepository
 {
     public class baserepository
     {
-        protected BaseDonnePressing db = new BaseDonnePressing();
+        protected DBpressingEntities db = new DBpressingEntities();
 
         
 
