@@ -77,7 +77,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(102, 338);
+            this.panel3.Location = new System.Drawing.Point(102, 388);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 2);
             this.panel3.TabIndex = 56;
@@ -86,7 +86,7 @@
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(102, 317);
+            this.textBox5.Location = new System.Drawing.Point(102, 367);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(434, 19);
@@ -139,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(99, 299);
+            this.label3.Location = new System.Drawing.Point(99, 349);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 57;
@@ -159,9 +159,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(99, 223);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 16);
+            this.label2.Size = new System.Drawing.Size(122, 16);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Numbre de fournisseur";
+            this.label2.Text = "Numbre de depens";
             // 
             // label1
             // 
@@ -202,7 +202,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(102, 495);
+            this.panel5.Location = new System.Drawing.Point(102, 545);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(434, 2);
             this.panel5.TabIndex = 63;
@@ -211,7 +211,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(102, 474);
+            this.textBox1.Location = new System.Drawing.Point(102, 524);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(434, 19);
@@ -221,7 +221,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(99, 456);
+            this.label5.Location = new System.Drawing.Point(99, 506);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 64;
@@ -230,7 +230,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(102, 567);
+            this.panel6.Location = new System.Drawing.Point(102, 617);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(434, 2);
             this.panel6.TabIndex = 66;
@@ -239,7 +239,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(102, 546);
+            this.textBox2.Location = new System.Drawing.Point(102, 596);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(434, 19);
@@ -249,7 +249,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(99, 528);
+            this.label6.Location = new System.Drawing.Point(99, 578);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 16);
             this.label6.TabIndex = 67;
@@ -258,7 +258,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel7.Location = new System.Drawing.Point(102, 413);
+            this.panel7.Location = new System.Drawing.Point(102, 463);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(434, 2);
             this.panel7.TabIndex = 69;
@@ -267,7 +267,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(99, 374);
+            this.label7.Location = new System.Drawing.Point(99, 424);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 16);
             this.label7.TabIndex = 70;
@@ -367,7 +367,7 @@
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Silver;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 393);
+            this.dateTimePicker1.Location = new System.Drawing.Point(102, 443);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(434, 20);
             this.dateTimePicker1.TabIndex = 78;
@@ -444,7 +444,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 629);
+            this.comboBox1.Location = new System.Drawing.Point(102, 308);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(434, 21);
             this.comboBox1.TabIndex = 84;
@@ -453,7 +453,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(99, 610);
+            this.label14.Location = new System.Drawing.Point(99, 289);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 16);
             this.label14.TabIndex = 85;

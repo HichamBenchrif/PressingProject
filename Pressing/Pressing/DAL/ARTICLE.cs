@@ -18,7 +18,7 @@ namespace Pressing.DAL
         public ARTICLE()
         {
             this.B_R = new HashSet<B_R>();
-            this.PAYEs = new HashSet<PAYE>();
+            this.BON_SORTIE = new HashSet<BON_SORTIE>();
         }
     
         public string REF_ARTICLE { get; set; }
@@ -34,6 +34,6 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<B_R> B_R { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PAYE> PAYEs { get; set; }
+        public virtual ICollection<BON_SORTIE> BON_SORTIE { get; set; }
     }
 }

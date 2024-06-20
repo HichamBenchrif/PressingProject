@@ -46,19 +46,46 @@ namespace Pressing.BL.repository
             db.SaveChanges();
 
         }
+        public void CreateDepens(string id, string fournisseur, string nom, DateTime date, short qntite, decimal prix)
+        {
+            var depens = new DÉPENSES_ET_ENTRÉES();
+            depens.ID_DÉPE_ENTR = id;
+            depens.ID_FR = fournisseur;
+            depens.LIB_DEPENS = nom;
+            depens.DATE = date;
+            depens.Q = qntite;
+            depens.PRIX = prix;
+
+            db.DÉPENSES_ET_ENTRÉES.Add(depens);
+            db.SaveChanges();
+
+        }
         public dynamic selctBox()
         {
-            return db.FOURNISSEURs.AsEnumerable().Select(x => new { name = x.PRN_FR + x.NOM_FR, x.ID_FR }).ToList();
+            return db.FOURNISSEURs
+                .Select(x => new
+                {
+                    FullName = x.PRN_FR + " "+ x.NOM_FR,
+                    x.ID_FR
+                }).ToList();
+         }
+
+
+        public dynamic GetAll()
+        {
+            var result = (from D in db.DÉPENSES_ET_ENTRÉES
+                          join F in db.FOURNISSEURs on D.ID_FR equals F.ID_FR
+                          select new
+                          {
+                              D.ID_DÉPE_ENTR,
+                              D.LIB_DEPENS,
+                              D.Q, D.PRIX,
+                              D.DATE,
+                              Namefournisseur = F.PRN_FR + " " + F.NOM_FR
+                          }).ToList();
+
+            return result;
         }
-
-
-        //public dynamic GetAll()
-        //{
-        //    var result = (from C in db.CATEGORIE_ARTILCLE
-        //                  select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
-
-        //    return result;
-        //}
-        //}
+        
     }
 }

@@ -12,24 +12,18 @@ namespace Pressing.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class BON_RECEPTION
+    public partial class FACTURE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BON_RECEPTION()
+        public FACTURE()
         {
-            this.B_R = new HashSet<B_R>();
             this.BON_SORTIE = new HashSet<BON_SORTIE>();
         }
     
-        public string ID_BON_R { get; set; }
-        public string ID_CLIENT { get; set; }
-        public Nullable<System.DateTime> DATE_BR { get; set; }
-        public string STATUT { get; set; }
-        public Nullable<System.DateTime> HEURE_BR { get; set; }
+        public string ID_FACTUE { get; set; }
+        public Nullable<System.DateTime> DATE_FACT { get; set; }
+        public Nullable<decimal> MNT_FACT { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<B_R> B_R { get; set; }
-        public virtual CLIENT CLIENT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BON_SORTIE> BON_SORTIE { get; set; }
     }

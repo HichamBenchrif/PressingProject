@@ -65,53 +65,53 @@
     <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\BaseDonnePressing.Context.cs">
+    <Compile Include="DAL\BaseDonneP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonnePressing.Context.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\BaseDonnePressing.cs">
+    <Compile Include="DAL\BaseDonneP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\BaseDonnePressing.Designer.cs">
+    <Compile Include="DAL\BaseDonneP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
+      <DependentUpon>BaseDonneP.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FACTURE.cs">
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\PAYE.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>BaseDonnePressing.tt</DependentUpon>
+      <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -248,12 +248,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\BaseDonnePressing.edmx">
+    <EntityDeploy Include="DAL\BaseDonneP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDonnePressing.Designer.cs</LastGenOutput>
+      <LastGenOutput>BaseDonneP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\BaseDonnePressing.edmx.diagram">
-      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
+    <None Include="DAL\BaseDonneP.edmx.diagram">
+      <DependentUpon>BaseDonneP.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -268,18 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DAL\BaseDonnePressing.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
-      <LastGenOutput>BaseDonnePressing.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\BaseDonnePressing.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseDonnePressing.edmx</DependentUpon>
-      <LastGenOutput>BaseDonnePressing.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Actions-list-add-icon.png" />
@@ -413,6 +401,18 @@
     <None Include="Resources\jeans_45px.png" />
     <None Include="Resources\jeans_20px.png" />
     <None Include="Resources\cancel_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\BaseDonneP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDonneP.edmx</DependentUpon>
+      <LastGenOutput>BaseDonneP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\BaseDonneP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDonneP.edmx</DependentUpon>
+      <LastGenOutput>BaseDonneP.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

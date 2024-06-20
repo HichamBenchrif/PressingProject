@@ -12,12 +12,13 @@ using Pressing.PL.les_form_ventes;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_depenses;
+using Pressing.BL.repository;
 
 namespace Pressing.PL.les_form_depenses
 {
     public partial class FRM_Depenses : Form
     {
-        
+        DepensRepository depensrepository = new DepensRepository();
         public FRM_Depenses()
         {
             InitializeComponent();
@@ -111,7 +112,8 @@ namespace Pressing.PL.les_form_depenses
 
         private void FRM_Depenses_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.DataSource = depensrepository.GetAll();
+
         }
     }
 }

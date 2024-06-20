@@ -24,10 +24,6 @@ namespace Pressing.PL
             InitializeComponent();
         }
 
-       
-
-        
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -53,12 +49,6 @@ namespace Pressing.PL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //new FRM_Ajoute_Articl().ShowDialog();
-            //Form modalBackground = new Form();
-            //using(modalForm modal = new modalForm())
-            //{
-
-            //}
 
             Form modelBackground = new Form();
             using (FRM_Ajoute_Articl model = new FRM_Ajoute_Articl())

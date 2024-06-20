@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBpressingEntities : DbContext
+    public partial class MLR2Entities : DbContext
     {
-        public DBpressingEntities()
-            : base("name=DBpressingEntities")
+        public MLR2Entities()
+            : base("name=MLR2Entities")
         {
         }
     
@@ -32,9 +32,9 @@ namespace Pressing.DAL
         public virtual DbSet<CATEGORIE_ARTILCLE> CATEGORIE_ARTILCLE { get; set; }
         public virtual DbSet<CLIENT> CLIENTs { get; set; }
         public virtual DbSet<DÉPENSES_ET_ENTRÉES> DÉPENSES_ET_ENTRÉES { get; set; }
+        public virtual DbSet<FACTURE> FACTUREs { get; set; }
         public virtual DbSet<FAMILL> FAMILLs { get; set; }
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
-        public virtual DbSet<PAYE> PAYEs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
     }
 }

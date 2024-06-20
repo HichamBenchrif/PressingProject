@@ -14,22 +14,13 @@ namespace Pressing.DAL
     
     public partial class DÉPENSES_ET_ENTRÉES
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DÉPENSES_ET_ENTRÉES()
-        {
-            this.BON_SORTIE = new HashSet<BON_SORTIE>();
-            this.FOURNISSEURs = new HashSet<FOURNISSEUR>();
-        }
-    
         public string ID_DÉPE_ENTR { get; set; }
+        public string ID_FR { get; set; }
         public string LIB_DEPENS { get; set; }
         public Nullable<short> Q { get; set; }
         public Nullable<decimal> PRIX { get; set; }
         public Nullable<System.DateTime> DATE { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BON_SORTIE> BON_SORTIE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FOURNISSEUR> FOURNISSEURs { get; set; }
+        public virtual FOURNISSEUR FOURNISSEUR { get; set; }
     }
 }

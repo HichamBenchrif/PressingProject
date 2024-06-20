@@ -14,20 +14,15 @@ namespace Pressing.DAL
     
     public partial class BON_SORTIE
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BON_SORTIE()
-        {
-            this.PAYEs = new HashSet<PAYE>();
-            this.DÉPENSES_ET_ENTRÉES = new HashSet<DÉPENSES_ET_ENTRÉES>();
-        }
-    
         public string N_B_S { get; set; }
+        public string ID_FACTUE { get; set; }
+        public string ID_BON_R { get; set; }
+        public string REF_ARTICLE { get; set; }
         public Nullable<System.DateTime> DATE_B_S { get; set; }
         public Nullable<System.DateTime> HEURE_B_S { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PAYE> PAYEs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DÉPENSES_ET_ENTRÉES> DÉPENSES_ET_ENTRÉES { get; set; }
+        public virtual ARTICLE ARTICLE { get; set; }
+        public virtual BON_RECEPTION BON_RECEPTION { get; set; }
+        public virtual FACTURE FACTURE { get; set; }
     }
 }

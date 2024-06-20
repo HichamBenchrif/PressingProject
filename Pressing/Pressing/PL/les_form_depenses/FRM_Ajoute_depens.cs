@@ -31,9 +31,21 @@ namespace Pressing.PL.les_form_depenses
             //
             label13.Text = depensrepository.GenerateIDfournisseur();
             //combobox affiche fournisseur
-            comboBox1.DataSource = depensrepository.selctBox();
+            var data = depensrepository.selctBox();
+            //
+            foreach(var item in data)
+            {
+                Console.WriteLine($"FullName:{item.FullName},ID_FR: {item.ID_FR}");
+            }
+
+            comboBox1.DataSource = null;
+            comboBox1.DisplayMember = string.Empty;
+            comboBox1.ValueMember = string.Empty;
+
+            comboBox1.DataSource = data;
             comboBox1.ValueMember = "ID_FR";
-            comboBox1.DisplayMember = "name";
+            comboBox1.DisplayMember = "FullName";
+            
 
         }
 
@@ -63,28 +75,24 @@ namespace Pressing.PL.les_form_depenses
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (textBox5.IsEmpty() || textBox1.IsEmpty() || textBox2.IsEmpty()  )
-            //{
-            //    MessageBox.Show("Veuillez saisir les informations requises");
-            //}
-            //else
-            //{
-            //    var ID = label4.Text;
-            //    var Name_produite = textBox5.Text;
-            //    var Qntite =int.Parse( textBox1.Text);
-            //    var Prix = decimal.Parse( textBox2.Text);
+            if (textBox5.IsEmpty() || textBox1.IsEmpty() || textBox2.IsEmpty())
+            {
+                MessageBox.Show("Veuillez saisir les informations requises");
+            }
+            else
+            {
+                var ID = label4.Text;
+                var Fournisseur = comboBox1.SelectedValue.ToString();
+                var Name = textBox5.Text;
+                var Date =DateTime.Parse (dateTimePicker1.Text);
+                var Qntite = short.Parse(textBox1.Text);
+                var Prix = decimal.Parse(textBox2.Text);
+                var repository = new DepensRepository();
+                repository.CreateDepens(ID,Fournisseur, Name, Date, Qntite, Prix);
+                MessageBox.Show("Créé avec succès");
+                Close();
 
-            //    var Date = DateTime.Parse( dateTimePicker1.Text);
-            //    var Prenom = textBox4.Text;
-            //    var Nom = textBox7.Text;
-            //    var Telephon = textBox6.Text;
-
-            //    var repository = new DepensRepository();
-            //    repository.Create(ID, Name_produite, Qntite, Prix, Date, Prenom, Nom, Telephon);
-            //    MessageBox.Show("Créé avec succès");
-            //    Close();
-
-            //}
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -111,7 +119,7 @@ namespace Pressing.PL.les_form_depenses
                 //combobox affiche fournisseur
                 comboBox1.DataSource = depensrepository.selctBox();
                 comboBox1.ValueMember = "ID_FR";
-                comboBox1.DisplayMember = "name";
+                comboBox1.DisplayMember = "FullName";
 
 
             }
