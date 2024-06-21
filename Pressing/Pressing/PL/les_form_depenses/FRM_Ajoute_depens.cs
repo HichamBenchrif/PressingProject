@@ -114,7 +114,7 @@ namespace Pressing.PL.les_form_depenses
                 //
                 label13.Text = depensrepository.GenerateIDfournisseur();
                 textBox4.Clear();
-                textBox7.Clear();
+                textBox7.Clear();   
                 textBox6.Clear();
                 //combobox affiche fournisseur
                 comboBox1.DataSource = depensrepository.selctBox();

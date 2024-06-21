@@ -64,6 +64,7 @@
     <Compile Include="BL\repository\ClientRepository.cs" />
     <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
+    <Compile Include="BL\repository\ServiceRepository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
       <DependentUpon>BaseDonneP.tt</DependentUpon>
     </Compile>
@@ -191,6 +192,18 @@
     <Compile Include="PL\les_form_depenses\FRM_Depenses.Designer.cs">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Les_form_services\FRM_Ajoute_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Les_form_services\FRM_Ajoute_Service.Designer.cs">
+      <DependentUpon>FRM_Ajoute_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Les_form_services\FRM_service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Les_form_services\FRM_service.Designer.cs">
+      <DependentUpon>FRM_service.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_ventes\FRM_Ventes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Depenses.resx">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Les_form_services\FRM_Ajoute_Service.resx">
+      <DependentUpon>FRM_Ajoute_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Les_form_services\FRM_service.resx">
+      <DependentUpon>FRM_service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_ventes\FRM_Ventes.resx">
       <DependentUpon>FRM_Ventes.cs</DependentUpon>

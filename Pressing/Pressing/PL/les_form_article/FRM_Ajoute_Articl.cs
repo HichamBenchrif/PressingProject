@@ -50,7 +50,7 @@ namespace Pressing.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox())
+            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox() || comboBox2.IsEmptyCombobox())
             {
                 MessageBox.Show("Veuillez saisir les informations requises");
             }

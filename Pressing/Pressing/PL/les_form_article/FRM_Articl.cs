@@ -13,6 +13,7 @@ using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_depenses;
 using Pressing.BL.repository;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL
 {
@@ -141,6 +142,11 @@ namespace Pressing.PL
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
         }
     }
 }
