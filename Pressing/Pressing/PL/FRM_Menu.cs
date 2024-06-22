@@ -12,6 +12,7 @@ using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
 using Pressing.BL.repository;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL
 {
@@ -24,7 +25,7 @@ namespace Pressing.PL
         {
             InitializeComponent();
 
-            PNL_Menu.Visible = true;
+            //PNL_Menu.Visible = true;
 
 
         }
@@ -109,6 +110,11 @@ namespace Pressing.PL
         private void button2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
         }
     }
 }

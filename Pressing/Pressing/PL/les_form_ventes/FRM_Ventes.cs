@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL.les_form_ventes
 {
@@ -74,6 +75,13 @@ namespace Pressing.PL.les_form_ventes
         {
             new FRM_Depenses().Show();
             Close();
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
+            Close();
+
         }
     }
 }

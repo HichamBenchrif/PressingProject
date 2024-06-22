@@ -15,6 +15,7 @@ using Pressing.PL.les_form_depenses;
 using Pressing.DAL.BaseRepository;
 using Pressing.DAL;
 using Pressing.BL.repository;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL.les_form_client
 {
@@ -111,6 +112,13 @@ namespace Pressing.PL.les_form_client
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = clientrepository.GetAll();
+
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
+            Close();
 
         }
     }

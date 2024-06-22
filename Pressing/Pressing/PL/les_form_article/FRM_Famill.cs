@@ -13,7 +13,7 @@ using Pressing.PL.les_form_article;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
 using Pressing.BL.repository;
-
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL.les_form_article
 {
@@ -148,6 +148,12 @@ namespace Pressing.PL.les_form_article
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
             }
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
+            Close();
         }
     }
 }

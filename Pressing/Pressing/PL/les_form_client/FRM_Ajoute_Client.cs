@@ -18,6 +18,9 @@ namespace Pressing.PL.les_form_client
         public FRM_Ajoute_Client()
         {
             InitializeComponent();
+            //
+            this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Top = 0;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace Pressing.PL.les_form_client
 
         private void FRM_Ajoute_Client_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(FRM_Client.panrentX = 360);
+            this.Location = new Point(FRM_Client.panrentX = 460);
 
             //id 
             label9.Text = clientrepository.GenerateIDClient();

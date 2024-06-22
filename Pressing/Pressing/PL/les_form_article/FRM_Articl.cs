@@ -147,6 +147,7 @@ namespace Pressing.PL
         private void btnRapports_Click(object sender, EventArgs e)
         {
             new FRM_service().Show();
+            Close();
         }
     }
 }

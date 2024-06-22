@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using Pressing.BL.repository;
 using Pressing.BL.Extensions;
 using Pressing.DAL.BaseRepository;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL.les_form_caisse
 {
     public partial class FRM_Caisse : Form 
     {
-        baserepository db = new baserepository();
+        //baserepository db = new baserepository();
         
         CategorieRepository categorierepository = new CategorieRepository();
         ArticlRepository articlerepository = new ArticlRepository();
@@ -24,6 +25,8 @@ namespace Pressing.PL.les_form_caisse
         public FRM_Caisse()
         {
             InitializeComponent();
+            PNL_Menu.Visible = false;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -125,6 +128,12 @@ namespace Pressing.PL.les_form_caisse
             comboBox1.DataSource = categorierepository.selctBox();
             comboBox1.ValueMember = "ID_CATE";
             comboBox1.DisplayMember = "name";
+        }
+
+        private void btnRapports_Click(object sender, EventArgs e)
+        {
+            new FRM_service().Show();
+            Close();
         }
     }
 }

@@ -13,6 +13,7 @@ using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_depenses;
 using Pressing.BL.repository;
+using Pressing.PL.Les_form_services;
 
 namespace Pressing.PL.les_form_depenses
 {
@@ -113,6 +114,13 @@ namespace Pressing.PL.les_form_depenses
         private void FRM_Depenses_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = depensrepository.GetAll();
+
+        }
+
+        private void btnRapports_Click_1(object sender, EventArgs e)
+        {
+            new FRM_service().Show(); 
+            Close(); 
 
         }
     }

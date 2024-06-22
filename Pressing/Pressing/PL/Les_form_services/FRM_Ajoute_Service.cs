@@ -19,6 +19,9 @@ namespace Pressing.PL.Les_form_services
         public FRM_Ajoute_Service()
         {
             InitializeComponent();
+            //
+            this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Top = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +60,16 @@ namespace Pressing.PL.Les_form_services
             {
                 Opacity += 0.03;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

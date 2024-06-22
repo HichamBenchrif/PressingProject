@@ -73,6 +73,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button2
             // 
@@ -89,6 +90,7 @@
             this.button2.TabIndex = 60;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -193,6 +195,7 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Ajoute_Service";
+            this.Opacity = 0D;
             this.Text = "FRM_Ajoute_Service";
             this.Load += new System.EventHandler(this.FRM_Ajoute_Service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
