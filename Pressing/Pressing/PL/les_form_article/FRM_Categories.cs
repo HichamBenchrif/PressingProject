@@ -178,5 +178,13 @@ namespace Pressing.PL.les_form_article
             Close();
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
+            dataGridView1.DataSource = categorierepository.Supprim(SelectCellValue);
+
+
+        }
     }
 }

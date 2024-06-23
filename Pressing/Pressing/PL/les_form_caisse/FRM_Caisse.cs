@@ -22,13 +22,17 @@ namespace Pressing.PL.les_form_caisse
         ArticlRepository articlerepository = new ArticlRepository();
         ClientRepository clientrepository = new ClientRepository();
 
+        private string SelectedItem;
+        private string SelectedService;
+        private Color defaultButtonColor;
+
         public FRM_Caisse()
         {
-            InitializeComponent();
+            InitializeComponent( );
             PNL_Menu.Visible = false;
 
         }
-
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PNL_Menu.Visible == false)
@@ -53,13 +57,18 @@ namespace Pressing.PL.les_form_caisse
             comboBox1.ValueMember = "ID_CATE";
             comboBox1.DisplayMember = "name";
             //combobox affiche client
-            comboBox3.DataSource = clientrepository.selctBox3();
-            comboBox3.ValueMember = "ID_CLIENT";
-            comboBox3.DisplayMember = "Name";
+            comboBox2.DataSource = clientrepository.selctBox3();
+            comboBox2.ValueMember = "ID_CLIENT";
+            comboBox2.DisplayMember = "Name";
             // menu mghadix tkon khdama
             PNL_Menu.Visible = false;
-            // lform ghadi y3mr bhadi 
-            dataGridView1.DataSource = articlerepository.GetAll();
+            //// lform ghadi y3mr bhadi 
+            //dataGridView1.DataSource = articlerepository.GetAll();
+            //
+            dataGridView2.Columns.Add("Column 1", "produit");
+            dataGridView2.Columns.Add("Column 2", "service");
+            //
+            defaultButtonColor = btn_tshirt.BackColor;
 
         }
 
@@ -115,11 +124,11 @@ namespace Pressing.PL.les_form_caisse
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            CategorieRepository obj = comboBox1.SelectedItem as CategorieRepository;
-            if(obj != null)
-            {
+            //CategorieRepository obj = comboBox1.SelectedItem as CategorieRepository;
+            //if(obj != null)
+            //{
                 
-            }
+            //}
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -134,6 +143,43 @@ namespace Pressing.PL.les_form_caisse
         {
             new FRM_service().Show();
             Close();
+        }
+
+        private void btn_ajt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SelectedItem)&& !string.IsNullOrEmpty(SelectedService))
+            {
+                int rowIndex = dataGridView2.Rows.Add();
+                DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                row.Cells[0].Value = SelectedItem;
+                row.Cells[1].Value = SelectedService;
+                SelectedItem = string.Empty;
+                SelectedService = string.Empty;
+                btn_rep.BackColor = defaultButtonColor;
+                btn_tshirt.BackColor = defaultButtonColor;
+
+
+            }
+            else
+            {
+                MessageBox.Show("please select an item first");
+            }
+        }
+
+        private void btn_tshirt_Click(object sender, EventArgs e)
+        {
+            SelectedItem = "T-Shirt";
+            //MessageBox.Show("t-shirt selected");
+            btn_tshirt.BackColor = Color.LightBlue;
+            btn_rep.BackColor = defaultButtonColor;
+        }
+
+        private void btn_rep_Click(object sender, EventArgs e)
+        {
+            SelectedService = "repassage";
+            //MessageBox.Show("repassage select");
+            btn_rep.BackColor = Color.LightBlue;
+            btn_tshirt.BackColor = defaultButtonColor;
         }
     }
 }
