@@ -12,6 +12,7 @@ using Pressing.BL.Extensions;
 using Pressing.DAL.BaseRepository;
 using Pressing.PL.Les_form_services;
 
+
 namespace Pressing.PL.les_form_caisse
 {
     public partial class FRM_Caisse : Form 
@@ -21,10 +22,15 @@ namespace Pressing.PL.les_form_caisse
         CategorieRepository categorierepository = new CategorieRepository();
         ArticlRepository articlerepository = new ArticlRepository();
         ClientRepository clientrepository = new ClientRepository();
+        CaisseRepository caisserepository = new CaisseRepository();
 
         private string SelectedItem;
         private string SelectedService;
         private Color defaultButtonColor;
+        private bool isTShirtSelect = false;
+        private bool isRepassageSelect = false;
+       
+
 
         public FRM_Caisse()
         {
@@ -69,8 +75,43 @@ namespace Pressing.PL.les_form_caisse
             dataGridView2.Columns.Add("Column 2", "service");
             //
             defaultButtonColor = btn_tshirt.BackColor;
-
+            //
+            LoadClothingButtons();
+            
         }
+        private void LoadClothingButtons()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            var clothingItems = caisserepository.Get();
+
+            foreach (var item in clothingItems)
+            {
+                var button = new Button
+                {
+                    Text = item.LIB_ARTICLE,
+                    Tag = item ,
+                    Size = new Size(75,75),
+                    Image = Image.FromFile(item.IMAGE),
+                    ImageAlign = ContentAlignment.TopCenter,
+                    TextAlign = ContentAlignment.BottomCenter
+
+                };
+                button.Click += new EventHandler(ClothingButton_Click);
+                flowLayoutPanel1.Controls.Add(button);
+            }
+        }
+        private void addNewClothingItem ( string libarticle, string image, decimal prixrepassage, decimal prixlessive, string id , string famill, string category)
+        {
+            var newItem = new ClothingItem
+            {
+                LIB_ARTICLE = libarticle,
+                IMAGE = image,
+                
+
+            };
+        }
+        
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -153,11 +194,12 @@ namespace Pressing.PL.les_form_caisse
                 DataGridViewRow row = dataGridView2.Rows[rowIndex];
                 row.Cells[0].Value = SelectedItem;
                 row.Cells[1].Value = SelectedService;
-                SelectedItem = string.Empty;
-                SelectedService = string.Empty;
+                SelectedItem = null;
+                SelectedService = null;
                 btn_rep.BackColor = defaultButtonColor;
                 btn_tshirt.BackColor = defaultButtonColor;
-
+                isTShirtSelect = false;
+                isRepassageSelect = false;
 
             }
             else
@@ -168,18 +210,37 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_tshirt_Click(object sender, EventArgs e)
         {
-            SelectedItem = "T-Shirt";
-            //MessageBox.Show("t-shirt selected");
-            btn_tshirt.BackColor = Color.LightBlue;
-            btn_rep.BackColor = defaultButtonColor;
+            if (!isTShirtSelect)
+            {
+                SelectedItem = "T-Shirt";
+                btn_tshirt.BackColor = Color.FromArgb(23, 162, 183);
+                isTShirtSelect = true;
+            }
+            else
+            {
+                SelectedItem = null ;
+                btn_tshirt.BackColor = defaultButtonColor;
+                isTShirtSelect = false;
+            }
         }
 
         private void btn_rep_Click(object sender, EventArgs e)
         {
-            SelectedService = "repassage";
-            //MessageBox.Show("repassage select");
-            btn_rep.BackColor = Color.LightBlue;
-            btn_tshirt.BackColor = defaultButtonColor;
+            if (!isRepassageSelect)
+            {
+                SelectedService = "repassage";
+                btn_rep.BackColor = Color.FromArgb(23, 162, 183);
+                isRepassageSelect = false;
+            }
+            else
+            {
+                SelectedService = null;
+                btn_rep.BackColor = defaultButtonColor;
+                isRepassageSelect = false;
+            }
+
+
+
         }
     }
 }
