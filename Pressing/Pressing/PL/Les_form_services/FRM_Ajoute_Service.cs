@@ -48,6 +48,8 @@ namespace Pressing.PL.Les_form_services
         private void FRM_Ajoute_Service_Load(object sender, EventArgs e)
         {
             this.Location = new Point(FRM_service.panrentX = 460);
+            //ID
+            label4.Text = servicerepository.GenerateIDService();
         }
 
         private void FRM_Ajoute_Categories_Timer_Tick(object sender, EventArgs e)

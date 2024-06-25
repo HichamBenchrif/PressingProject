@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PNL_Menu = new System.Windows.Forms.Panel();
             this.btnRapports = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,6 +43,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelArticl = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -52,11 +53,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btn_rep = new System.Windows.Forms.Button();
-            this.btn_ajt = new System.Windows.Forms.Button();
             this.btn_tshirt = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_ajt = new System.Windows.Forms.Button();
+            this.btn_rep = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.PNL_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -275,6 +276,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArticl.AutoScroll = true;
             this.panelArticl.BackColor = System.Drawing.Color.Silver;
+            this.panelArticl.Controls.Add(this.btn_rep);
+            this.panelArticl.Controls.Add(this.flowLayoutPanel2);
             this.panelArticl.Controls.Add(this.flowLayoutPanel1);
             this.panelArticl.Controls.Add(this.panel3);
             this.panelArticl.Controls.Add(this.panel2);
@@ -284,6 +287,16 @@
             this.panelArticl.Size = new System.Drawing.Size(1267, 519);
             this.panelArticl.TabIndex = 22;
             this.panelArticl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArticl_Paint);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 61);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 332);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel3
             // 
@@ -400,80 +413,11 @@
             this.panel14.BackColor = System.Drawing.Color.Gainsboro;
             this.panel14.Controls.Add(this.btn_tshirt);
             this.panel14.Controls.Add(this.btn_ajt);
-            this.panel14.Controls.Add(this.btn_rep);
             this.panel14.Controls.Add(this.dataGridView2);
             this.panel14.Location = new System.Drawing.Point(829, 61);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(424, 446);
             this.panel14.TabIndex = 22;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 12);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.DividerHeight = 2;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(387, 380);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // btn_rep
-            // 
-            this.btn_rep.BackColor = System.Drawing.Color.Gray;
-            this.btn_rep.FlatAppearance.BorderSize = 0;
-            this.btn_rep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rep.Location = new System.Drawing.Point(50, 211);
-            this.btn_rep.Name = "btn_rep";
-            this.btn_rep.Size = new System.Drawing.Size(176, 38);
-            this.btn_rep.TabIndex = 2;
-            this.btn_rep.Text = "repassage";
-            this.btn_rep.UseVisualStyleBackColor = true;
-            this.btn_rep.Click += new System.EventHandler(this.btn_rep_Click);
-            // 
-            // btn_ajt
-            // 
-            this.btn_ajt.BackColor = System.Drawing.Color.Maroon;
-            this.btn_ajt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ajt.ForeColor = System.Drawing.Color.White;
-            this.btn_ajt.Location = new System.Drawing.Point(50, 279);
-            this.btn_ajt.Name = "btn_ajt";
-            this.btn_ajt.Size = new System.Drawing.Size(156, 38);
-            this.btn_ajt.TabIndex = 1;
-            this.btn_ajt.Text = "ajoute";
-            this.btn_ajt.UseVisualStyleBackColor = true;
-            this.btn_ajt.Click += new System.EventHandler(this.btn_ajt_Click);
             // 
             // btn_tshirt
             // 
@@ -491,13 +435,82 @@
             this.btn_tshirt.UseVisualStyleBackColor = true;
             this.btn_tshirt.Click += new System.EventHandler(this.btn_tshirt_Click);
             // 
-            // flowLayoutPanel1
+            // btn_ajt
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 61);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 332);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.btn_ajt.BackColor = System.Drawing.Color.Maroon;
+            this.btn_ajt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ajt.ForeColor = System.Drawing.Color.White;
+            this.btn_ajt.Location = new System.Drawing.Point(50, 279);
+            this.btn_ajt.Name = "btn_ajt";
+            this.btn_ajt.Size = new System.Drawing.Size(156, 38);
+            this.btn_ajt.TabIndex = 1;
+            this.btn_ajt.Text = "ajoute";
+            this.btn_ajt.UseVisualStyleBackColor = true;
+            this.btn_ajt.Click += new System.EventHandler(this.btn_ajt_Click);
+            // 
+            // btn_rep
+            // 
+            this.btn_rep.BackColor = System.Drawing.Color.Gray;
+            this.btn_rep.FlatAppearance.BorderSize = 0;
+            this.btn_rep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rep.Location = new System.Drawing.Point(431, 424);
+            this.btn_rep.Name = "btn_rep";
+            this.btn_rep.Size = new System.Drawing.Size(392, 38);
+            this.btn_rep.TabIndex = 2;
+            this.btn_rep.Text = "repassage";
+            this.btn_rep.UseVisualStyleBackColor = true;
+            this.btn_rep.Click += new System.EventHandler(this.btn_rep_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView2.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 12);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.DividerHeight = 2;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(387, 380);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 393);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(395, 114);
+            this.flowLayoutPanel2.TabIndex = 25;
             // 
             // FRM_Caisse
             // 
@@ -559,5 +572,6 @@
         private System.Windows.Forms.Button btn_ajt;
         private System.Windows.Forms.Button btn_rep;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

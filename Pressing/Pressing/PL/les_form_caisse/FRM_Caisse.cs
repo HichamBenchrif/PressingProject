@@ -11,34 +11,38 @@ using Pressing.BL.repository;
 using Pressing.BL.Extensions;
 using Pressing.DAL.BaseRepository;
 using Pressing.PL.Les_form_services;
-
+using Pressing.DAL;
+using System.IO;
 
 namespace Pressing.PL.les_form_caisse
 {
-    public partial class FRM_Caisse : Form 
+    public partial class FRM_Caisse : Form
     {
         //baserepository db = new baserepository();
-        
+
         CategorieRepository categorierepository = new CategorieRepository();
         ArticlRepository articlerepository = new ArticlRepository();
         ClientRepository clientrepository = new ClientRepository();
         CaisseRepository caisserepository = new CaisseRepository();
+        ServiceRepository servicerepository = new ServiceRepository();
 
         private string SelectedItem;
         private string SelectedService;
         private Color defaultButtonColor;
         private bool isTShirtSelect = false;
         private bool isRepassageSelect = false;
-       
+        private Button selectedButton;
 
+        private Button selectedServiceButton;
+        private Color defaultServiceButtonColor = Color.Empty;
 
         public FRM_Caisse()
         {
-            InitializeComponent( );
+            InitializeComponent();
             PNL_Menu.Visible = false;
 
         }
-        
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PNL_Menu.Visible == false)
@@ -62,22 +66,26 @@ namespace Pressing.PL.les_form_caisse
             comboBox1.DataSource = categorierepository.selctBox();
             comboBox1.ValueMember = "ID_CATE";
             comboBox1.DisplayMember = "name";
+
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
             comboBox2.ValueMember = "ID_CLIENT";
             comboBox2.DisplayMember = "Name";
+
             // menu mghadix tkon khdama
             PNL_Menu.Visible = false;
-            //// lform ghadi y3mr bhadi 
-            //dataGridView1.DataSource = articlerepository.GetAll();
-            //
-            dataGridView2.Columns.Add("Column 1", "produit");
-            dataGridView2.Columns.Add("Column 2", "service");
+
+
+            dataGridView2.Columns.Add("Column 1", "article");
+            dataGridView2.Columns.Add("Column 2", "prix repassage");
+            dataGridView2.Columns.Add("Column 3", "prix lessive");
             //
             defaultButtonColor = btn_tshirt.BackColor;
             //
             LoadClothingButtons();
-            
+            //
+            LoadServiceButtons();
+
         }
         private void LoadClothingButtons()
         {
@@ -87,31 +95,165 @@ namespace Pressing.PL.les_form_caisse
 
             foreach (var item in clothingItems)
             {
+
+                Image image = null;
+                if (item.IMAGE != null && item.IMAGE.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(item.IMAGE as byte[]))
+                    {
+                        image = Image.FromStream(ms);
+                    }
+                }
+
                 var button = new Button
                 {
-                    Text = item.LIB_ARTICLE,
-                    Tag = item ,
-                    Size = new Size(75,75),
-                    Image = Image.FromFile(item.IMAGE),
-                    ImageAlign = ContentAlignment.TopCenter,
-                    TextAlign = ContentAlignment.BottomCenter
 
+
+                    Text = item.LIB_ARTICLE,
+                    Size = new Size(80, 70),
+                    Image = image,
+
+                    ImageAlign = ContentAlignment.TopCenter,
+                    TextAlign = ContentAlignment.BottomCenter,
+                    FlatStyle = FlatStyle.Flat,
+
+                    //TextImageRelation = TextImageRelation.Overlay,
+                    BackColor = defaultButtonColor
                 };
                 button.Click += new EventHandler(ClothingButton_Click);
+                button.Click += new EventHandler(Button_Enter);
+                button.Leave += new EventHandler(Button_Leave);
+
                 flowLayoutPanel1.Controls.Add(button);
+
+                if (defaultButtonColor == Color.Empty)
+                {
+                    defaultButtonColor = button.BackColor;
+                }
             }
         }
-        private void addNewClothingItem ( string libarticle, string image, decimal prixrepassage, decimal prixlessive, string id , string famill, string category)
+        private void Button_Enter(object sender, EventArgs e)
         {
-            var newItem = new ClothingItem
+            var button = sender as Button;
+            if (button != null && button != selectedButton)
             {
-                LIB_ARTICLE = libarticle,
-                IMAGE = image,
-                
-
-            };
+                button.BackColor = Color.LightGray;
+            }
         }
-        
+        private void Button_Leave(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null && button != selectedButton)
+            {
+                button.BackColor = defaultButtonColor;
+            }
+        }
+        public class ClothingItem
+        {
+            public string LIB_ARTICLE { get; set; }
+            public byte[] IMAGE { get; set; }
+            public decimal PRIX_REPASSAGE { get; set; }
+            public decimal PRIX_LESSIVE { get; set; }
+        }
+        private void ClothingButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                if (selectedButton != null)
+                {
+                    selectedButton.BackColor = defaultButtonColor;
+                }
+
+                // تغيير لون الخلفية للزر المحدد
+                button.BackColor = Color.FromArgb(23, 162, 183);
+                selectedButton = button;
+
+                var item = button.Tag as ClothingItem;
+                if (item != null)
+                {
+                    // إضافة اللباس إلى DataGridView
+                    dataGridView2.Rows.Add(item.LIB_ARTICLE, item.PRIX_REPASSAGE, item.PRIX_LESSIVE);
+                }
+            }
+        }
+        public class ServiceItem
+        {
+            public string LIB_SERVICE { get; set; }
+        }
+        private void LoadServiceButtons()
+        {
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown; // ترتيب الأزرار عموديًا
+
+            var serviceItems = servicerepository.Get(); // Assuming you have a repository for services
+
+            foreach (var item in serviceItems)
+            {
+                var button = new Button
+                {
+                    Text = item.LIB_SERVICE,
+                    Size = new Size(392, 38),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Tag = item // تعيين العنصر كـ Tag للزر
+                };
+
+                // إضافة الأحداث المطلوبة للزر
+                button.Click += new EventHandler(ServiceButton_Click);
+                button.Enter += new EventHandler(ButtonService_Enter);
+                button.Leave += new EventHandler(ButtonService_Leave);
+
+                flowLayoutPanel2.Controls.Add(button);
+
+                // حفظ اللون الافتراضي للزر الأول
+                if (defaultServiceButtonColor == Color.Empty)
+                {
+                    defaultServiceButtonColor = button.BackColor;
+                }
+            }
+        }
+        private void ServiceButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                // إعادة تعيين لون الخلفية للزر السابق المحدد
+                if (selectedServiceButton != null)
+                {
+                    selectedServiceButton.BackColor = defaultServiceButtonColor;
+                }
+
+                // تغيير لون الخلفية للزر المحدد
+                button.BackColor = Color.FromArgb(23, 162, 183);
+                selectedServiceButton = button;
+
+                var item = button.Tag as ServiceItem;
+                if (item != null)
+                {
+                    // إضافة الخدمة إلى DataGridView
+                    dataGridView2.Rows.Add(item.LIB_SERVICE);
+                }
+            }
+        }
+        private void ButtonService_Enter(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null && button != selectedServiceButton)
+            {
+                button.BackColor = Color.LightGray;
+            }
+        }
+        private void ButtonService_Leave(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null && button != selectedServiceButton)
+            {
+                button.BackColor = defaultServiceButtonColor;
+            }
+        }
+
+
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

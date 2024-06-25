@@ -38,6 +38,13 @@ namespace Pressing.BL.repository
 
             return result;
         }
+        public dynamic Get()
+        {
+            var result = (from S in db.SERVICEs
+                          select new { S.LIB_SERVICE }).ToList();
+
+            return result;
+        }
         //public dynamic Get()
         //{
         //    var result = (from C in db.CATEGORIE_ARTILCLE

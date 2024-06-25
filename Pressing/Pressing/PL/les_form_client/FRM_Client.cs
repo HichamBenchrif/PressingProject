@@ -42,6 +42,7 @@ namespace Pressing.PL.les_form_client
         private void button2_Click(object sender, EventArgs e)
         {
             
+            //new FRM_Menu().Show();
             Close();
         }
 

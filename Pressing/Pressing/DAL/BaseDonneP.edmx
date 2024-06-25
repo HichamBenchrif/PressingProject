@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MLR2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MLR2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="REF_ARTICLE" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="ID_CATE" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="N_FAMILL" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_ARTICLE" Type="char" MaxLength="255" />
+          <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_CATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="N_FAMILL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LIB_ARTICLE" Type="nvarchar" MaxLength="50" />
           <Property Name="PRIX_REPASSAGE" Type="decimal" Precision="10" Scale="2" />
           <Property Name="PRIX_LESSIVE" Type="decimal" Precision="10" Scale="2" />
           <Property Name="IMAGE" Type="image" />
@@ -23,11 +23,11 @@
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="ID_BON_R" Type="char" MaxLength="255" Nullable="false" />
-          <Property Name="ID_SERVICE" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="QNTE_S" Type="smallint" />
-          <Property Name="COULEUR" Type="char" MaxLength="255" />
+          <Property Name="COULEUR" Type="nvarchar" MaxLength="50" />
           <Property Name="DATE_DISP" Type="datetime" />
           <Property Name="REMIS" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
@@ -35,20 +35,20 @@
           <Key>
             <PropertyRef Name="ID_BON_R" />
           </Key>
-          <Property Name="ID_BON_R" Type="char" MaxLength="255" Nullable="false" />
-          <Property Name="ID_CLIENT" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_CLIENT" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DATE_BR" Type="datetime" />
-          <Property Name="STATUT" Type="char" MaxLength="255" />
+          <Property Name="STATUT" Type="nvarchar" MaxLength="50" />
           <Property Name="HEURE_BR" Type="datetime" />
         </EntityType>
         <EntityType Name="BON_SORTIE">
           <Key>
             <PropertyRef Name="N_B_S" />
           </Key>
-          <Property Name="N_B_S" Type="char" MaxLength="255" Nullable="false" />
-          <Property Name="ID_FACTUE" Type="char" MaxLength="32" />
-          <Property Name="ID_BON_R" Type="char" MaxLength="255" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="N_B_S" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_FACTUE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DATE_B_S" Type="datetime" />
           <Property Name="HEURE_B_S" Type="datetime" />
         </EntityType>
@@ -56,28 +56,28 @@
           <Key>
             <PropertyRef Name="ID_CATE" />
           </Key>
-          <Property Name="ID_CATE" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_CAT_ART" Type="char" MaxLength="255" />
+          <Property Name="ID_CATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LIB_CAT_ART" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="CLIENT">
           <Key>
             <PropertyRef Name="ID_CLIENT" />
           </Key>
-          <Property Name="ID_CLIENT" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="NOM_CLT" Type="char" MaxLength="255" />
-          <Property Name="PRENOM_CLT" Type="char" MaxLength="255" />
-          <Property Name="TEL_CLT" Type="char" MaxLength="255" />
+          <Property Name="ID_CLIENT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NOM_CLT" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRENOM_CLT" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEL_CLT" Type="nvarchar" MaxLength="50" />
           <Property Name="REMIS" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="ADRESSE" Type="char" MaxLength="255" />
-          <Property Name="TYPE_CLT" Type="char" MaxLength="255" />
+          <Property Name="ADRESSE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TYPE_CLT" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DÉPENSES_ET_ENTRÉES">
           <Key>
             <PropertyRef Name="ID_DÉPE_ENTR" />
           </Key>
-          <Property Name="ID_DÉPE_ENTR" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="ID_FR" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_DEPENS" Type="char" MaxLength="32" />
+          <Property Name="ID_DÉPE_ENTR" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_FR" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LIB_DEPENS" Type="nvarchar" MaxLength="50" />
           <Property Name="Q" Type="smallint" />
           <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
           <Property Name="DATE" Type="datetime" />
@@ -86,7 +86,7 @@
           <Key>
             <PropertyRef Name="ID_FACTUE" />
           </Key>
-          <Property Name="ID_FACTUE" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ID_FACTUE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DATE_FACT" Type="datetime" />
           <Property Name="MNT_FACT" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
@@ -94,24 +94,24 @@
           <Key>
             <PropertyRef Name="N_FAMILL" />
           </Key>
-          <Property Name="N_FAMILL" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_FAMILL" Type="char" MaxLength="255" />
+          <Property Name="N_FAMILL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LIB_FAMILL" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FOURNISSEUR">
           <Key>
             <PropertyRef Name="ID_FR" />
           </Key>
-          <Property Name="ID_FR" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="NOM_FR" Type="char" MaxLength="255" />
-          <Property Name="PRN_FR" Type="char" MaxLength="255" />
-          <Property Name="TEL_FR" Type="char" MaxLength="255" />
+          <Property Name="ID_FR" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NOM_FR" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRN_FR" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEL_FR" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SERVICE">
           <Key>
             <PropertyRef Name="ID_SERVICE" />
           </Key>
-          <Property Name="ID_SERVICE" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="LIB_SERVICE" Type="char" MaxLength="255" />
+          <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LIB_SERVICE" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
@@ -286,26 +286,78 @@
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MLR2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MLR2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTICLEs" EntityType="MLR2Model.ARTICLE" />
+          <EntitySet Name="B_R" EntityType="MLR2Model.B_R" />
+          <EntitySet Name="BON_RECEPTION" EntityType="MLR2Model.BON_RECEPTION" />
+          <EntitySet Name="BON_SORTIE" EntityType="MLR2Model.BON_SORTIE" />
+          <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="MLR2Model.CATEGORIE_ARTILCLE" />
+          <EntitySet Name="CLIENTs" EntityType="MLR2Model.CLIENT" />
+          <EntitySet Name="DÉPENSES_ET_ENTRÉES" EntityType="MLR2Model.DÉPENSES_ET_ENTRÉES" />
+          <EntitySet Name="FACTUREs" EntityType="MLR2Model.FACTURE" />
+          <EntitySet Name="FAMILLs" EntityType="MLR2Model.FAMILL" />
+          <EntitySet Name="FOURNISSEURs" EntityType="MLR2Model.FOURNISSEUR" />
+          <EntitySet Name="SERVICEs" EntityType="MLR2Model.SERVICE" />
+          <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="MLR2Model.FK_ARTICLE_CATEGORIE_ARTILCLE">
+            <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
+            <End Role="ARTICLE" EntitySet="ARTICLEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTICLE_FAMILL" Association="MLR2Model.FK_ARTICLE_FAMILL">
+            <End Role="FAMILL" EntitySet="FAMILLs" />
+            <End Role="ARTICLE" EntitySet="ARTICLEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_R_ARTICLE" Association="MLR2Model.FK_B_R_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLEs" />
+            <End Role="B_R" EntitySet="B_R" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_SORTIE_ARTICLE" Association="MLR2Model.FK_BON_SORTIE_ARTICLE">
+            <End Role="ARTICLE" EntitySet="ARTICLEs" />
+            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="MLR2Model.FK_B_R_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+            <End Role="B_R" EntitySet="B_R" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_R_SERVICE" Association="MLR2Model.FK_B_R_SERVICE">
+            <End Role="SERVICE" EntitySet="SERVICEs" />
+            <End Role="B_R" EntitySet="B_R" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_RECEPTION_CLIENT" Association="MLR2Model.FK_BON_RECEPTION_CLIENT">
+            <End Role="CLIENT" EntitySet="CLIENTs" />
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_SORTIE_BON_RECEPTION" Association="MLR2Model.FK_BON_SORTIE_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_SORTIE_FACTURE" Association="MLR2Model.FK_BON_SORTIE_FACTURE">
+            <End Role="FACTURE" EntitySet="FACTUREs" />
+            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" Association="MLR2Model.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
+            <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
+            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="REF_ARTICLE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ID_CATE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="N_FAMILL" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_ARTICLE" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="REF_ARTICLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CATE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="N_FAMILL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIB_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PRIX_REPASSAGE" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="PRIX_LESSIVE" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="CATEGORIE_ARTILCLE" Relationship="Self.FK_ARTICLE_CATEGORIE_ARTILCLE" FromRole="ARTICLE" ToRole="CATEGORIE_ARTILCLE" />
-          <NavigationProperty Name="FAMILL" Relationship="Self.FK_ARTICLE_FAMILL" FromRole="ARTICLE" ToRole="FAMILL" />
-          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_ARTICLE" FromRole="ARTICLE" ToRole="B_R" />
-          <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_ARTICLE" FromRole="ARTICLE" ToRole="BON_SORTIE" />
+          <NavigationProperty Name="CATEGORIE_ARTILCLE" Relationship="MLR2Model.FK_ARTICLE_CATEGORIE_ARTILCLE" FromRole="ARTICLE" ToRole="CATEGORIE_ARTILCLE" />
+          <NavigationProperty Name="FAMILL" Relationship="MLR2Model.FK_ARTICLE_FAMILL" FromRole="ARTICLE" ToRole="FAMILL" />
+          <NavigationProperty Name="B_R" Relationship="MLR2Model.FK_B_R_ARTICLE" FromRole="ARTICLE" ToRole="B_R" />
+          <NavigationProperty Name="BON_SORTIE" Relationship="MLR2Model.FK_BON_SORTIE_ARTICLE" FromRole="ARTICLE" ToRole="BON_SORTIE" />
         </EntityType>
         <EntityType Name="B_R">
           <Key>
@@ -313,115 +365,115 @@
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="ID_BON_R" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ID_SERVICE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_BON_R" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_SERVICE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REF_ARTICLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="QNTE_S" Type="Int16" />
-          <Property Name="COULEUR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="COULEUR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DATE_DISP" Type="DateTime" Precision="3" />
           <Property Name="REMIS" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="ARTICLE" Relationship="Self.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
-          <NavigationProperty Name="SERVICE" Relationship="Self.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
+          <NavigationProperty Name="ARTICLE" Relationship="MLR2Model.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="MLR2Model.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
+          <NavigationProperty Name="SERVICE" Relationship="MLR2Model.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
           <Key>
             <PropertyRef Name="ID_BON_R" />
           </Key>
-          <Property Name="ID_BON_R" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ID_CLIENT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_BON_R" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CLIENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DATE_BR" Type="DateTime" Precision="3" />
-          <Property Name="STATUT" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="STATUT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HEURE_BR" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
-          <NavigationProperty Name="CLIENT" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
-          <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
+          <NavigationProperty Name="B_R" Relationship="MLR2Model.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
+          <NavigationProperty Name="CLIENT" Relationship="MLR2Model.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
+          <NavigationProperty Name="BON_SORTIE" Relationship="MLR2Model.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
         </EntityType>
         <EntityType Name="BON_SORTIE">
           <Key>
             <PropertyRef Name="N_B_S" />
           </Key>
-          <Property Name="N_B_S" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ID_FACTUE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
-          <Property Name="ID_BON_R" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="N_B_S" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_FACTUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_BON_R" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REF_ARTICLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DATE_B_S" Type="DateTime" Precision="3" />
           <Property Name="HEURE_B_S" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ARTICLE" Relationship="Self.FK_BON_SORTIE_ARTICLE" FromRole="BON_SORTIE" ToRole="ARTICLE" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_SORTIE" ToRole="BON_RECEPTION" />
-          <NavigationProperty Name="FACTURE" Relationship="Self.FK_BON_SORTIE_FACTURE" FromRole="BON_SORTIE" ToRole="FACTURE" />
+          <NavigationProperty Name="ARTICLE" Relationship="MLR2Model.FK_BON_SORTIE_ARTICLE" FromRole="BON_SORTIE" ToRole="ARTICLE" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="MLR2Model.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_SORTIE" ToRole="BON_RECEPTION" />
+          <NavigationProperty Name="FACTURE" Relationship="MLR2Model.FK_BON_SORTIE_FACTURE" FromRole="BON_SORTIE" ToRole="FACTURE" />
         </EntityType>
         <EntityType Name="CATEGORIE_ARTILCLE">
           <Key>
             <PropertyRef Name="ID_CATE" />
           </Key>
-          <Property Name="ID_CATE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_CAT_ART" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ARTICLEs" Relationship="Self.FK_ARTICLE_CATEGORIE_ARTILCLE" FromRole="CATEGORIE_ARTILCLE" ToRole="ARTICLE" />
+          <Property Name="ID_CATE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIB_CAT_ART" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ARTICLEs" Relationship="MLR2Model.FK_ARTICLE_CATEGORIE_ARTILCLE" FromRole="CATEGORIE_ARTILCLE" ToRole="ARTICLE" />
         </EntityType>
         <EntityType Name="CLIENT">
           <Key>
             <PropertyRef Name="ID_CLIENT" />
           </Key>
-          <Property Name="ID_CLIENT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NOM_CLT" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <Property Name="PRENOM_CLT" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <Property Name="TEL_CLT" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="ID_CLIENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOM_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRENOM_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEL_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="REMIS" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="ADRESSE" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <Property Name="TYPE_CLT" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="CLIENT" ToRole="BON_RECEPTION" />
+          <Property Name="ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="MLR2Model.FK_BON_RECEPTION_CLIENT" FromRole="CLIENT" ToRole="BON_RECEPTION" />
         </EntityType>
         <EntityType Name="DÉPENSES_ET_ENTRÉES">
           <Key>
             <PropertyRef Name="ID_DÉPE_ENTR" />
           </Key>
-          <Property Name="ID_DÉPE_ENTR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ID_FR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_DEPENS" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="ID_DÉPE_ENTR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_FR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIB_DEPENS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Q" Type="Int16" />
           <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="DATE" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="FOURNISSEUR" Relationship="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="FOURNISSEUR" />
+          <NavigationProperty Name="FOURNISSEUR" Relationship="MLR2Model.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="FOURNISSEUR" />
         </EntityType>
         <EntityType Name="FACTURE">
           <Key>
             <PropertyRef Name="ID_FACTUE" />
           </Key>
-          <Property Name="ID_FACTUE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_FACTUE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DATE_FACT" Type="DateTime" Precision="3" />
           <Property Name="MNT_FACT" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_FACTURE" FromRole="FACTURE" ToRole="BON_SORTIE" />
+          <NavigationProperty Name="BON_SORTIE" Relationship="MLR2Model.FK_BON_SORTIE_FACTURE" FromRole="FACTURE" ToRole="BON_SORTIE" />
         </EntityType>
         <EntityType Name="FAMILL">
           <Key>
             <PropertyRef Name="N_FAMILL" />
           </Key>
-          <Property Name="N_FAMILL" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_FAMILL" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ARTICLEs" Relationship="Self.FK_ARTICLE_FAMILL" FromRole="FAMILL" ToRole="ARTICLE" />
+          <Property Name="N_FAMILL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIB_FAMILL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ARTICLEs" Relationship="MLR2Model.FK_ARTICLE_FAMILL" FromRole="FAMILL" ToRole="ARTICLE" />
         </EntityType>
         <EntityType Name="FOURNISSEUR">
           <Key>
             <PropertyRef Name="ID_FR" />
           </Key>
-          <Property Name="ID_FR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NOM_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <Property Name="PRN_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <Property Name="TEL_FR" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="DÉPENSES_ET_ENTRÉES" Relationship="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="FOURNISSEUR" ToRole="DÉPENSES_ET_ENTRÉES" />
+          <Property Name="ID_FR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOM_FR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRN_FR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEL_FR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DÉPENSES_ET_ENTRÉES" Relationship="MLR2Model.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="FOURNISSEUR" ToRole="DÉPENSES_ET_ENTRÉES" />
         </EntityType>
         <EntityType Name="SERVICE">
           <Key>
             <PropertyRef Name="ID_SERVICE" />
           </Key>
-          <Property Name="ID_SERVICE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LIB_SERVICE" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_SERVICE" FromRole="SERVICE" ToRole="B_R" />
+          <Property Name="ID_SERVICE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LIB_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="B_R" Relationship="MLR2Model.FK_B_R_SERVICE" FromRole="SERVICE" ToRole="B_R" />
         </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
-          <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
+          <End Type="MLR2Model.CATEGORIE_ARTILCLE" Role="CATEGORIE_ARTILCLE" Multiplicity="1" />
+          <End Type="MLR2Model.ARTICLE" Role="ARTICLE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CATEGORIE_ARTILCLE">
               <PropertyRef Name="ID_CATE" />
@@ -432,8 +484,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ARTICLE_FAMILL">
-          <End Role="FAMILL" Type="Self.FAMILL" Multiplicity="1" />
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
+          <End Type="MLR2Model.FAMILL" Role="FAMILL" Multiplicity="1" />
+          <End Type="MLR2Model.ARTICLE" Role="ARTICLE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FAMILL">
               <PropertyRef Name="N_FAMILL" />
@@ -444,8 +496,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_B_R_ARTICLE">
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
+          <End Type="MLR2Model.ARTICLE" Role="ARTICLE" Multiplicity="1" />
+          <End Type="MLR2Model.B_R" Role="B_R" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ARTICLE">
               <PropertyRef Name="REF_ARTICLE" />
@@ -456,8 +508,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BON_SORTIE_ARTICLE">
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
+          <End Type="MLR2Model.ARTICLE" Role="ARTICLE" Multiplicity="1" />
+          <End Type="MLR2Model.BON_SORTIE" Role="BON_SORTIE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ARTICLE">
               <PropertyRef Name="REF_ARTICLE" />
@@ -468,8 +520,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_B_R_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
+          <End Type="MLR2Model.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="1" />
+          <End Type="MLR2Model.B_R" Role="B_R" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BON_RECEPTION">
               <PropertyRef Name="ID_BON_R" />
@@ -480,8 +532,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_B_R_SERVICE">
-          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
+          <End Type="MLR2Model.SERVICE" Role="SERVICE" Multiplicity="1" />
+          <End Type="MLR2Model.B_R" Role="B_R" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SERVICE">
               <PropertyRef Name="ID_SERVICE" />
@@ -492,8 +544,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BON_RECEPTION_CLIENT">
-          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="*" />
+          <End Type="MLR2Model.CLIENT" Role="CLIENT" Multiplicity="1" />
+          <End Type="MLR2Model.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLIENT">
               <PropertyRef Name="ID_CLIENT" />
@@ -504,8 +556,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BON_SORTIE_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
+          <End Type="MLR2Model.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="1" />
+          <End Type="MLR2Model.BON_SORTIE" Role="BON_SORTIE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BON_RECEPTION">
               <PropertyRef Name="ID_BON_R" />
@@ -516,8 +568,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BON_SORTIE_FACTURE">
-          <End Role="FACTURE" Type="Self.FACTURE" Multiplicity="0..1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
+          <End Type="MLR2Model.FACTURE" Role="FACTURE" Multiplicity="0..1" />
+          <End Type="MLR2Model.BON_SORTIE" Role="BON_SORTIE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FACTURE">
               <PropertyRef Name="ID_FACTUE" />
@@ -528,8 +580,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
-          <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="1" />
-          <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
+          <End Type="MLR2Model.FOURNISSEUR" Role="FOURNISSEUR" Multiplicity="1" />
+          <End Type="MLR2Model.DÉPENSES_ET_ENTRÉES" Role="DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FOURNISSEUR">
               <PropertyRef Name="ID_FR" />
@@ -539,59 +591,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MLR2Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ARTICLEs" EntityType="Self.ARTICLE" />
-          <EntitySet Name="B_R" EntityType="Self.B_R" />
-          <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" />
-          <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" />
-          <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" />
-          <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
-          <EntitySet Name="DÉPENSES_ET_ENTRÉES" EntityType="Self.DÉPENSES_ET_ENTRÉES" />
-          <EntitySet Name="FACTUREs" EntityType="Self.FACTURE" />
-          <EntitySet Name="FAMILLs" EntityType="Self.FAMILL" />
-          <EntitySet Name="FOURNISSEURs" EntityType="Self.FOURNISSEUR" />
-          <EntitySet Name="SERVICEs" EntityType="Self.SERVICE" />
-          <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
-            <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
-            <End Role="ARTICLE" EntitySet="ARTICLEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ARTICLE_FAMILL" Association="Self.FK_ARTICLE_FAMILL">
-            <End Role="FAMILL" EntitySet="FAMILLs" />
-            <End Role="ARTICLE" EntitySet="ARTICLEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_R_ARTICLE" Association="Self.FK_B_R_ARTICLE">
-            <End Role="ARTICLE" EntitySet="ARTICLEs" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_ARTICLE" Association="Self.FK_BON_SORTIE_ARTICLE">
-            <End Role="ARTICLE" EntitySet="ARTICLEs" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
-            <End Role="SERVICE" EntitySet="SERVICEs" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_RECEPTION_CLIENT" Association="Self.FK_BON_RECEPTION_CLIENT">
-            <End Role="CLIENT" EntitySet="CLIENTs" />
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_BON_RECEPTION" Association="Self.FK_BON_SORTIE_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_FACTURE" Association="Self.FK_BON_SORTIE_FACTURE">
-            <End Role="FACTURE" EntitySet="FACTUREs" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" Association="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
-            <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
-            <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -601,117 +600,117 @@
           <EntitySetMapping Name="ARTICLEs">
             <EntityTypeMapping TypeName="MLR2Model.ARTICLE">
               <MappingFragment StoreEntitySet="ARTICLE">
-                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
-                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
-                <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
-                <ScalarProperty Name="LIB_ARTICLE" ColumnName="LIB_ARTICLE" />
-                <ScalarProperty Name="PRIX_REPASSAGE" ColumnName="PRIX_REPASSAGE" />
-                <ScalarProperty Name="PRIX_LESSIVE" ColumnName="PRIX_LESSIVE" />
                 <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="PRIX_LESSIVE" ColumnName="PRIX_LESSIVE" />
+                <ScalarProperty Name="PRIX_REPASSAGE" ColumnName="PRIX_REPASSAGE" />
+                <ScalarProperty Name="LIB_ARTICLE" ColumnName="LIB_ARTICLE" />
+                <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
+                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="B_R">
             <EntityTypeMapping TypeName="MLR2Model.B_R">
               <MappingFragment StoreEntitySet="B_R">
-                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
-                <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
-                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
-                <ScalarProperty Name="QNTE_S" ColumnName="QNTE_S" />
-                <ScalarProperty Name="COULEUR" ColumnName="COULEUR" />
-                <ScalarProperty Name="DATE_DISP" ColumnName="DATE_DISP" />
                 <ScalarProperty Name="REMIS" ColumnName="REMIS" />
+                <ScalarProperty Name="DATE_DISP" ColumnName="DATE_DISP" />
+                <ScalarProperty Name="COULEUR" ColumnName="COULEUR" />
+                <ScalarProperty Name="QNTE_S" ColumnName="QNTE_S" />
+                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
+                <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
+                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_RECEPTION">
             <EntityTypeMapping TypeName="MLR2Model.BON_RECEPTION">
               <MappingFragment StoreEntitySet="BON_RECEPTION">
-                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
-                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
-                <ScalarProperty Name="DATE_BR" ColumnName="DATE_BR" />
-                <ScalarProperty Name="STATUT" ColumnName="STATUT" />
                 <ScalarProperty Name="HEURE_BR" ColumnName="HEURE_BR" />
+                <ScalarProperty Name="STATUT" ColumnName="STATUT" />
+                <ScalarProperty Name="DATE_BR" ColumnName="DATE_BR" />
+                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_SORTIE">
             <EntityTypeMapping TypeName="MLR2Model.BON_SORTIE">
               <MappingFragment StoreEntitySet="BON_SORTIE">
-                <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
-                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
-                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
-                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
-                <ScalarProperty Name="DATE_B_S" ColumnName="DATE_B_S" />
                 <ScalarProperty Name="HEURE_B_S" ColumnName="HEURE_B_S" />
+                <ScalarProperty Name="DATE_B_S" ColumnName="DATE_B_S" />
+                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
+                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
+                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
+                <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIE_ARTILCLE">
             <EntityTypeMapping TypeName="MLR2Model.CATEGORIE_ARTILCLE">
               <MappingFragment StoreEntitySet="CATEGORIE_ARTILCLE">
-                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
                 <ScalarProperty Name="LIB_CAT_ART" ColumnName="LIB_CAT_ART" />
+                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CLIENTs">
             <EntityTypeMapping TypeName="MLR2Model.CLIENT">
               <MappingFragment StoreEntitySet="CLIENT">
-                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
-                <ScalarProperty Name="NOM_CLT" ColumnName="NOM_CLT" />
-                <ScalarProperty Name="PRENOM_CLT" ColumnName="PRENOM_CLT" />
-                <ScalarProperty Name="TEL_CLT" ColumnName="TEL_CLT" />
-                <ScalarProperty Name="REMIS" ColumnName="REMIS" />
-                <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
                 <ScalarProperty Name="TYPE_CLT" ColumnName="TYPE_CLT" />
+                <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+                <ScalarProperty Name="REMIS" ColumnName="REMIS" />
+                <ScalarProperty Name="TEL_CLT" ColumnName="TEL_CLT" />
+                <ScalarProperty Name="PRENOM_CLT" ColumnName="PRENOM_CLT" />
+                <ScalarProperty Name="NOM_CLT" ColumnName="NOM_CLT" />
+                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DÉPENSES_ET_ENTRÉES">
             <EntityTypeMapping TypeName="MLR2Model.DÉPENSES_ET_ENTRÉES">
               <MappingFragment StoreEntitySet="DÉPENSES_ET_ENTRÉES">
-                <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
-                <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
-                <ScalarProperty Name="LIB_DEPENS" ColumnName="LIB_DEPENS" />
-                <ScalarProperty Name="Q" ColumnName="Q" />
-                <ScalarProperty Name="PRIX" ColumnName="PRIX" />
                 <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PRIX" ColumnName="PRIX" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="LIB_DEPENS" ColumnName="LIB_DEPENS" />
+                <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
+                <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FACTUREs">
             <EntityTypeMapping TypeName="MLR2Model.FACTURE">
               <MappingFragment StoreEntitySet="FACTURE">
-                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
-                <ScalarProperty Name="DATE_FACT" ColumnName="DATE_FACT" />
                 <ScalarProperty Name="MNT_FACT" ColumnName="MNT_FACT" />
+                <ScalarProperty Name="DATE_FACT" ColumnName="DATE_FACT" />
+                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FAMILLs">
             <EntityTypeMapping TypeName="MLR2Model.FAMILL">
               <MappingFragment StoreEntitySet="FAMILL">
-                <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
                 <ScalarProperty Name="LIB_FAMILL" ColumnName="LIB_FAMILL" />
+                <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FOURNISSEURs">
             <EntityTypeMapping TypeName="MLR2Model.FOURNISSEUR">
               <MappingFragment StoreEntitySet="FOURNISSEUR">
-                <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
-                <ScalarProperty Name="NOM_FR" ColumnName="NOM_FR" />
-                <ScalarProperty Name="PRN_FR" ColumnName="PRN_FR" />
                 <ScalarProperty Name="TEL_FR" ColumnName="TEL_FR" />
+                <ScalarProperty Name="PRN_FR" ColumnName="PRN_FR" />
+                <ScalarProperty Name="NOM_FR" ColumnName="NOM_FR" />
+                <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SERVICEs">
             <EntityTypeMapping TypeName="MLR2Model.SERVICE">
               <MappingFragment StoreEntitySet="SERVICE">
-                <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="LIB_SERVICE" ColumnName="LIB_SERVICE" />
+                <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

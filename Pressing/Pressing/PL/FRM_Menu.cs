@@ -109,7 +109,7 @@ namespace Pressing.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            label1.Text = clientrepository.GetTotal();
         }
 
         private void btnRapports_Click(object sender, EventArgs e)

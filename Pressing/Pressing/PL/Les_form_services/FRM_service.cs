@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pressing.PL.les_form_caisse;
 
 namespace Pressing.PL.Les_form_services
 {
@@ -39,6 +40,17 @@ namespace Pressing.PL.Les_form_services
                 modelBackground.Dispose();
 
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new FRM_Caisse().Show();
+            Close();
         }
     }
 }

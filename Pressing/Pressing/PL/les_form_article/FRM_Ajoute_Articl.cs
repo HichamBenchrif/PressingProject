@@ -66,7 +66,7 @@ namespace Pressing.PL
 
                 var ms = new System.IO.MemoryStream();
 
-                Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
 
 
