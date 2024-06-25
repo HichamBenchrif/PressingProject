@@ -76,9 +76,9 @@ namespace Pressing.PL.les_form_caisse
             PNL_Menu.Visible = false;
 
 
-            dataGridView2.Columns.Add("Column 1", "article");
-            dataGridView2.Columns.Add("Column 2", "prix repassage");
-            dataGridView2.Columns.Add("Column 3", "prix lessive");
+            //dataGridView2.Columns.Add("Column 1", "article");
+            //dataGridView2.Columns.Add("Column 2", "prix repassage");
+            //dataGridView2.Columns.Add("Column 3", "prix lessive");
             //
             defaultButtonColor = btn_tshirt.BackColor;
             //
