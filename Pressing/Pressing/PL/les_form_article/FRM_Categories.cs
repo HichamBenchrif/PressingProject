@@ -186,5 +186,11 @@ namespace Pressing.PL.les_form_article
 
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var selectID = dataGridView1.CurrentCell.Value.ToString();
+            new FRM_Modify_Category(selectID).ShowDialog();
+        }
     }
 }

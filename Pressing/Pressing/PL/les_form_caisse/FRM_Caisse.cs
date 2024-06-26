@@ -62,10 +62,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void FRM_Caisse_Load(object sender, EventArgs e)
         {
-            //combobox affiche category
-            comboBox1.DataSource = categorierepository.selctBox();
-            comboBox1.ValueMember = "ID_CATE";
-            comboBox1.DisplayMember = "name";
+            
 
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
@@ -193,7 +190,7 @@ namespace Pressing.PL.les_form_caisse
                 var button = new Button
                 {
                     Text = item.LIB_SERVICE,
-                    Size = new Size(392, 38),
+                    Size = new Size(215, 38),
                     TextAlign = ContentAlignment.MiddleCenter,
                     Tag = item // تعيين العنصر كـ Tag للزر
                 };
@@ -316,10 +313,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            //combobox affiche client
-            comboBox1.DataSource = categorierepository.selctBox();
-            comboBox1.ValueMember = "ID_CATE";
-            comboBox1.DisplayMember = "name";
+           
         }
 
         private void btnRapports_Click(object sender, EventArgs e)
@@ -330,7 +324,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(SelectedItem)&& !string.IsNullOrEmpty(SelectedService))
+            if (!string.IsNullOrEmpty(selectedButton.ToString())&& !string.IsNullOrEmpty(selectedServiceButton.ToString()))
             {
                 int rowIndex = dataGridView2.Rows.Add();
                 DataGridViewRow row = dataGridView2.Rows[rowIndex];
@@ -383,6 +377,26 @@ namespace Pressing.PL.les_form_caisse
 
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int plusvaleu = int.Parse(number.Text);
+            if (plusvaleu < 1000)
+            {
+                plusvaleu++;
+                number.Text = plusvaleu.ToString();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int minvaleu = int.Parse(number.Text);
+            if(minvaleu > 1)
+            {
+                minvaleu--;
+                number.Text = minvaleu.ToString();
+            }
         }
     }
 }

@@ -203,6 +203,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_file_20px {
+            get {
+                object obj = ResourceManager.GetObject("edit_file_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expand_arrow_96px {
             get {
                 object obj = ResourceManager.GetObject("expand_arrow_96px", resourceCulture);
@@ -383,6 +393,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus_20px {
+            get {
+                object obj = ResourceManager.GetObject("minus_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap money_70px {
             get {
                 object obj = ResourceManager.GetObject("money_70px", resourceCulture);
@@ -406,6 +426,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap plus___18px {
             get {
                 object obj = ResourceManager.GetObject("plus_+_18px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plus_20px {
+            get {
+                object obj = ResourceManager.GetObject("Plus_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -576,6 +606,36 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap t_shirt_45px {
             get {
                 object obj = ResourceManager.GetObject("t-shirt_45px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_20pxl {
+            get {
+                object obj = ResourceManager.GetObject("trash_20pxl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_20pxy {
+            get {
+                object obj = ResourceManager.GetObject("trash_20pxy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_can_20px {
+            get {
+                object obj = ResourceManager.GetObject("trash_can_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

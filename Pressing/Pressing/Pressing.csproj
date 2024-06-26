@@ -163,6 +163,12 @@
     <Compile Include="PL\les_form_article\FRM_Famill.Designer.cs">
       <DependentUpon>FRM_Famill.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_article\FRM_Modify_Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_article\FRM_Modify_Category.Designer.cs">
+      <DependentUpon>FRM_Modify_Category.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_caisse\FRM_Caisse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_article\FRM_Famill.resx">
       <DependentUpon>FRM_Famill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_article\FRM_Modify_Category.resx">
+      <DependentUpon>FRM_Modify_Category.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_caisse\FRM_Caisse.resx">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
@@ -433,6 +442,12 @@
       <DependentUpon>BaseDonneP.edmx</DependentUpon>
       <LastGenOutput>BaseDonneP.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\trash_20pxy.png" />
+    <None Include="Resources\trash_20pxl.png" />
+    <None Include="Resources\trash_can_20px.png" />
+    <None Include="Resources\edit_file_20px.png" />
+    <None Include="Resources\minus_20px.png" />
+    <None Include="Resources\Plus_20px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

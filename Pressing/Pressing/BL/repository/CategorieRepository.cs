@@ -74,5 +74,17 @@ namespace Pressing.BL.repository
             return (from C in db.CATEGORIE_ARTILCLE
                     select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
         }
+        public CATEGORIE_ARTILCLE GetById(string id)
+        {
+            return db.CATEGORIE_ARTILCLE.Find(id);
+        }
+        public void Update (string id , CATEGORIE_ARTILCLE category)
+        {
+            CATEGORIE_ARTILCLE cat = GetById(id);
+            cat = category;
+            db.SaveChanges();
+        }
+
+
     }
 }
