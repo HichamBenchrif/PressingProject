@@ -79,6 +79,7 @@
             this.button2.TabIndex = 60;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -174,6 +175,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // FRM_Modify_Category
             // 
@@ -193,6 +195,7 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Modify_Category";
+            this.Opacity = 0D;
             this.Text = "FRM_Modify_Category";
             this.Load += new System.EventHandler(this.FRM_Modify_Category_Load);
             this.panel4.ResumeLayout(false);

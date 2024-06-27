@@ -15,16 +15,18 @@ namespace Pressing.PL.les_form_article
     public partial class FRM_Modify_Category : Form
     {
         CategorieRepository categorierepository = new CategorieRepository();
-        
+        string id;
         CATEGORIE_ARTILCLE category_article = new CATEGORIE_ARTILCLE();
         
 
-        public FRM_Modify_Category()
+        public FRM_Modify_Category( string id)
         {
 
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Top = 0;
+
+            this.id = id;
             
         }
 
@@ -63,6 +65,16 @@ namespace Pressing.PL.les_form_article
             category_article.LIB_CAT_ART = textBox5.Text;
             categorierepository.Update(id, category_article);
             MessageBox.Show("This Modification succefly");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

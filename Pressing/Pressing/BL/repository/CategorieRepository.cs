@@ -64,15 +64,14 @@ namespace Pressing.BL.repository
         {
             return db.CATEGORIE_ARTILCLE.AsEnumerable().Select(x => new { name = x.LIB_CAT_ART, x.ID_CATE }).ToList();
         }
-        public object Supprim( string value)
+        public void Supprim( string value)
         {
             var Obj = (from x in db.CATEGORIE_ARTILCLE
                           where x.ID_CATE == value
                           select x).FirstOrDefault();
             db.CATEGORIE_ARTILCLE.Remove(Obj);
             db.SaveChanges();
-            return (from C in db.CATEGORIE_ARTILCLE
-                    select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
+            
         }
         public CATEGORIE_ARTILCLE GetById(string id)
         {

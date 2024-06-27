@@ -181,16 +181,42 @@ namespace Pressing.PL.les_form_article
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
-            dataGridView1.DataSource = categorierepository.Supprim(SelectCellValue);
-
+           
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             var selectID = dataGridView1.CurrentCell.Value.ToString();
-            new FRM_Modify_Category(selectID).ShowDialog();
+            
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (FRM_Modify_Category model = new FRM_Modify_Category(selectID))
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
+            categorierepository.Supprim(SelectCellValue);
+            dataGridView1.DataSource = categorierepository.GetAll();
+
         }
     }
 }
