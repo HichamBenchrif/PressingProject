@@ -55,5 +55,15 @@ namespace Pressing.BL.repository
             return result;
           
         }
+        public ARTICLE GetById(string id)
+        {
+            return db.ARTICLEs.Find(id);
+        }
+        public void Update(string id, ARTICLE article)
+        {
+            ARTICLE cat = GetById(id);
+            cat = article;
+            db.SaveChanges();
+        }
     }
 }

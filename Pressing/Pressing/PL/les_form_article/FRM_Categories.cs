@@ -213,10 +213,20 @@ namespace Pressing.PL.les_form_article
 
         private void button9_Click(object sender, EventArgs e)
         {
-            var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
-            categorierepository.Supprim(SelectCellValue);
-            dataGridView1.DataSource = categorierepository.GetAll();
-
+            try
+            {
+                var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
+                DialogResult res = MessageBox.Show("Voullez vous vraiment supprimer cette ligne ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    categorierepository.Supprim(SelectCellValue);
+                    dataGridView1.DataSource = categorierepository.GetAll();
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("DataGridView est vide.");
+            }
         }
     }
 }
