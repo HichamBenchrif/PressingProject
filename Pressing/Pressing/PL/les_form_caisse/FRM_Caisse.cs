@@ -185,34 +185,34 @@ namespace Pressing.PL.les_form_caisse
         }
         private void LoadServiceButtons()
         {
-            flowLayoutPanel2.Controls.Clear();
-            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown; // ترتيب الأزرار عموديًا
+            //flowLayoutPanel2.Controls.Clear();
+            //flowLayoutPanel2.FlowDirection = FlowDirection.TopDown; // ترتيب الأزرار عموديًا
 
-            var serviceItems = servicerepository.Get(); // Assuming you have a repository for services
+            //var serviceItems =  servicerepository.Get() ; // Assuming you have a repository for services
 
-            foreach (var item in serviceItems)
-            {
-                var button = new Button
-                {
-                    Text = item.LIB_SERVICE,
-                    Size = new Size(215, 38),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Tag = item // تعيين العنصر كـ Tag للزر
-                };
+            //foreach (var item in serviceItems)
+            //{
+            //    var button = new Button
+            //    {
+            //        Text = item.LIB_SERVICE,
+            //        Size = new Size(215, 38),
+            //        TextAlign = ContentAlignment.MiddleCenter,
+            //        Tag = item // تعيين العنصر كـ Tag للزر
+            //    };
 
-                // إضافة الأحداث المطلوبة للزر
-                button.Click += new EventHandler(ServiceButton_Click);
-                button.Enter += new EventHandler(ButtonService_Enter);
-                button.Leave += new EventHandler(ButtonService_Leave);
+            //    // إضافة الأحداث المطلوبة للزر
+            //    button.Click += new EventHandler(ServiceButton_Click);
+            //    button.Enter += new EventHandler(ButtonService_Enter);
+            //    button.Leave += new EventHandler(ButtonService_Leave);
 
-                flowLayoutPanel2.Controls.Add(button);
+            //    flowLayoutPanel2.Controls.Add(button);
 
-                // حفظ اللون الافتراضي للزر الأول
-                if (defaultServiceButtonColor == Color.Empty)
-                {
-                    defaultServiceButtonColor = button.BackColor;
-                }
-            }
+            //    // حفظ اللون الافتراضي للزر الأول
+            //    if (defaultServiceButtonColor == Color.Empty)
+            //    {
+            //        defaultServiceButtonColor = button.BackColor;
+            //    }
+            //}
         }
         private void ServiceButton_Click(object sender, EventArgs e)
         {
@@ -331,7 +331,11 @@ namespace Pressing.PL.les_form_caisse
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Tu as vraiment envie de sortir ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -175,6 +175,12 @@
     <Compile Include="PL\les_form_article\FRM_Modify_Category.Designer.cs">
       <DependentUpon>FRM_Modify_Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_article\FRM_Modify_Famill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_article\FRM_Modify_Famill.Designer.cs">
+      <DependentUpon>FRM_Modify_Famill.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_caisse\FRM_Caisse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     <Compile Include="PL\les_form_client\FRM_Client.Designer.cs">
       <DependentUpon>FRM_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_client\FRM_Modify_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_client\FRM_Modify_Client.Designer.cs">
+      <DependentUpon>FRM_Modify_Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Ajoute_depens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Depenses.Designer.cs">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Modify_Depens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Modify_Depens.Designer.cs">
+      <DependentUpon>FRM_Modify_Depens.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Les_form_services\FRM_Ajoute_Service.cs">
       <SubType>Form</SubType>
@@ -252,6 +270,9 @@
     <EmbeddedResource Include="PL\les_form_article\FRM_Modify_Category.resx">
       <DependentUpon>FRM_Modify_Category.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_article\FRM_Modify_Famill.resx">
+      <DependentUpon>FRM_Modify_Famill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_caisse\FRM_Caisse.resx">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,11 +282,17 @@
     <EmbeddedResource Include="PL\les_form_client\FRM_Client.resx">
       <DependentUpon>FRM_Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_client\FRM_Modify_Client.resx">
+      <DependentUpon>FRM_Modify_Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Ajoute_depens.resx">
       <DependentUpon>FRM_Ajoute_depens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Depenses.resx">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_depenses\FRM_Modify_Depens.resx">
+      <DependentUpon>FRM_Modify_Depens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Les_form_services\FRM_Ajoute_Service.resx">
       <DependentUpon>FRM_Ajoute_Service.cs</DependentUpon>

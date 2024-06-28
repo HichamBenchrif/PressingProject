@@ -45,6 +45,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.PNL_Menu = new System.Windows.Forms.Panel();
+            this.btnRapports = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDépenses = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -55,7 +56,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRapports = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -159,6 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.textBox1);
@@ -301,6 +303,25 @@
             this.PNL_Menu.Name = "PNL_Menu";
             this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
             this.PNL_Menu.TabIndex = 12;
+            // 
+            // btnRapports
+            // 
+            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapports.FlatAppearance.BorderSize = 0;
+            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
+            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRapports.Location = new System.Drawing.Point(0, 292);
+            this.btnRapports.Name = "btnRapports";
+            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.TabIndex = 13;
+            this.btnRapports.Text = "Service";
+            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRapports.UseVisualStyleBackColor = false;
+            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
             // 
             // pictureBox2
             // 
@@ -468,24 +489,24 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnRapports
+            // button5
             // 
-            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRapports.FlatAppearance.BorderSize = 0;
-            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
-            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRapports.Location = new System.Drawing.Point(0, 292);
-            this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
-            this.btnRapports.TabIndex = 13;
-            this.btnRapports.Text = "Service";
-            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRapports.UseVisualStyleBackColor = false;
-            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::Pressing.Properties.Resources.edit_file_20px;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(819, 377);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(113, 30);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Modification";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // FRM_Famill
             // 
@@ -546,5 +567,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRapports;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -61,5 +61,15 @@ namespace Pressing.BL.repository
         {
             return db.CLIENTs.AsEnumerable().Select(x => new { Name = x.PRENOM_CLT +" " + x.NOM_CLT, x.ID_CLIENT }).ToList();
         }
+        public CLIENT GetById(string id)
+        {
+            return db.CLIENTs.Find(id);
+        }
+        public void Update(string id, CLIENT client)
+        {
+            CLIENT cat = GetById(id);
+            cat = client;
+            db.SaveChanges();
+        }
     }
 }

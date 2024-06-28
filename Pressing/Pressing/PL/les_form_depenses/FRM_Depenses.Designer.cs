@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,12 +45,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
             this.PNL_Menu = new System.Windows.Forms.Panel();
+            this.btnRapports = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDépenses = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnVentes = new System.Windows.Forms.Button();
             this.btnProduits = new System.Windows.Forms.Button();
-            this.btnRapports = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelArticl.SuspendLayout();
@@ -183,6 +184,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.textBox1);
@@ -239,23 +241,23 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
             this.dataGridView1.Location = new System.Drawing.Point(29, 51);
@@ -302,6 +304,25 @@
             this.PNL_Menu.Name = "PNL_Menu";
             this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
             this.PNL_Menu.TabIndex = 18;
+            // 
+            // btnRapports
+            // 
+            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapports.FlatAppearance.BorderSize = 0;
+            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
+            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRapports.Location = new System.Drawing.Point(0, 292);
+            this.btnRapports.Name = "btnRapports";
+            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.TabIndex = 16;
+            this.btnRapports.Text = "Service";
+            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRapports.UseVisualStyleBackColor = false;
+            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click_1);
             // 
             // pictureBox2
             // 
@@ -392,24 +413,24 @@
             this.btnProduits.UseVisualStyleBackColor = false;
             this.btnProduits.Click += new System.EventHandler(this.btnProduits_Click);
             // 
-            // btnRapports
+            // button5
             // 
-            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRapports.FlatAppearance.BorderSize = 0;
-            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
-            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRapports.Location = new System.Drawing.Point(0, 292);
-            this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
-            this.btnRapports.TabIndex = 16;
-            this.btnRapports.Text = "Service";
-            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRapports.UseVisualStyleBackColor = false;
-            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click_1);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::Pressing.Properties.Resources.edit_file_20px;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(819, 377);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(113, 30);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Modification";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // FRM_Depenses
             // 
@@ -464,5 +485,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnRapports;
+        private System.Windows.Forms.Button button5;
     }
 }

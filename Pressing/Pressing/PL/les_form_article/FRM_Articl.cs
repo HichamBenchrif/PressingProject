@@ -27,7 +27,11 @@ namespace Pressing.PL
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Tu as vraiment envie de sortir ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

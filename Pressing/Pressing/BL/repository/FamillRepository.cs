@@ -50,5 +50,15 @@ namespace Pressing.BL.repository
         {
             return db.FAMILLs.AsEnumerable().Select(x => new { name = x.LIB_FAMILL, x.N_FAMILL }).ToList();
         }
+        public FAMILL GetById(string id)
+        {
+            return db.FAMILLs.Find(id);
+        }
+        public void Update(string id, FAMILL famill)
+        {
+            FAMILL cat = GetById(id);
+            cat = famill;
+            db.SaveChanges();
+        }
     }
 }

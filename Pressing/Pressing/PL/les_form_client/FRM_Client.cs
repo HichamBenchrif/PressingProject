@@ -54,7 +54,11 @@ namespace Pressing.PL.les_form_client
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Tu as vraiment envie de sortir ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnVentes_Click(object sender, EventArgs e)
@@ -121,6 +125,32 @@ namespace Pressing.PL.les_form_client
             new FRM_service().Show();
             Close();
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var selectID = dataGridView1.CurrentCell.Value.ToString();
+
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (FRM_Modify_Client model = new FRM_Modify_Client(selectID))
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
         }
     }
 }

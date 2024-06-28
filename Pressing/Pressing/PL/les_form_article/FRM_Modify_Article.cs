@@ -120,9 +120,6 @@ namespace Pressing.PL.les_form_article
 
             article.IMAGE = ImageToByteArray(imagebox.Image);
 
-           
-
-
             articlerepository.Update(id, article);
             MessageBox.Show("This Modification succefly");
         }

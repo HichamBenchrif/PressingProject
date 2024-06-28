@@ -86,6 +86,25 @@ namespace Pressing.BL.repository
 
             return result;
         }
-        
+        public FOURNISSEUR GetById(string id)
+        {
+            return db.FOURNISSEURs.Find(id);
+        }
+        public void Update(string id, FOURNISSEUR fournisseur)
+        {
+            FOURNISSEUR cat = GetById(id);
+            cat = fournisseur;
+            db.SaveChanges();
+        }
+        public DÉPENSES_ET_ENTRÉES GetByIdDepens(string id)
+        {
+            return db.DÉPENSES_ET_ENTRÉES.Find(id);
+        }
+        public void UpdateDepens(string id, DÉPENSES_ET_ENTRÉES depens)
+        {
+            DÉPENSES_ET_ENTRÉES cat = GetByIdDepens(id);
+            cat = depens;
+            db.SaveChanges();
+        }
     }
 }
