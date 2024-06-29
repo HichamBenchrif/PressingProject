@@ -16,9 +16,10 @@ namespace Pressing.PL.les_form_depenses
     {
         DepensRepository depensrepository = new DepensRepository();
         string id;
+        
         FOURNISSEUR fournisseur = new FOURNISSEUR();
         DÉPENSES_ET_ENTRÉES depens = new DÉPENSES_ET_ENTRÉES();
-        public FRM_Modify_Depens(string id)
+        public FRM_Modify_Depens(string id )
         {
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.Bounds.Height;
@@ -39,13 +40,15 @@ namespace Pressing.PL.les_form_depenses
             textBox7.Text = obj.NOM_FR;
             textBox6.Text = obj.TEL_FR;
             //depnes
-            var obj1 = depensrepository.GetById(id);
+            var obj1 = depensrepository.GetByIdDepens(id);
             depens = obj1;
 
-            label4.Text = obj1.;
-            textBox4.Text = obj1.PRN_FR;
-            textBox7.Text = obj1.NOM_FR;
-            textBox6.Text = obj1.TEL_FR;
+            label4.Text = obj1.ID_DÉPE_ENTR;
+            comboBox1.Text= obj1.ID_FR;
+            textBox5.Text = obj1.LIB_DEPENS;
+            dateTimePicker1.Text = obj1.DATE.ToString() ;
+            textBox1.Text = obj1.Q.ToString();
+            textBox2.Text = obj1.PRIX.ToString();
 
 
 
@@ -89,10 +92,10 @@ namespace Pressing.PL.les_form_depenses
         {
             depens.ID_FR = comboBox1.SelectedValue.ToString();
             depens.LIB_DEPENS = textBox5.Text;
-            depens.DATE = DateTime.Parse( dateTimePicker1.Text);
-            depens.Q =short.Parse( textBox1.Text);
-            depens.PRIX =decimal.Parse( textBox2.Text);
-            depensrepository.Update(id, depens);
+            depens.DATE = DateTime.Parse(dateTimePicker1.Text);
+            depens.Q = short.Parse(textBox1.Text);
+            depens.PRIX = decimal.Parse(textBox2.Text);
+            depensrepository.UpdateDepens(id, depens);
             MessageBox.Show("This Modification succefly");
         }
     }

@@ -96,13 +96,13 @@ namespace Pressing.BL.repository
             cat = fournisseur;
             db.SaveChanges();
         }
-        public DÉPENSES_ET_ENTRÉES GetByIdDepens(string id)
+        public DÉPENSES_ET_ENTRÉES GetByIdDepens(string ID)
         {
-            return db.DÉPENSES_ET_ENTRÉES.Find(id);
+            return db.DÉPENSES_ET_ENTRÉES.Find(ID);
         }
-        public void UpdateDepens(string id, DÉPENSES_ET_ENTRÉES depens)
+        public void UpdateDepens(string ID, DÉPENSES_ET_ENTRÉES depens)
         {
-            DÉPENSES_ET_ENTRÉES cat = GetByIdDepens(id);
+            DÉPENSES_ET_ENTRÉES cat = GetByIdDepens(ID);
             cat = depens;
             db.SaveChanges();
         }

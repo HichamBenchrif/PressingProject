@@ -16,5 +16,14 @@ namespace Pressing.BL.repository
 
             return result;
         }
+
+        public dynamic GetByCategoryName(string CategoryName)
+        {
+            var result = (from A in db.ARTICLEs
+                          where A.CATEGORIE_ARTILCLE.LIB_CAT_ART == CategoryName
+                          select new { A.LIB_ARTICLE, A.IMAGE }).ToList();
+
+            return result;
+        }
     }
 }

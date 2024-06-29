@@ -183,6 +183,26 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_24px {
+            get {
+                object obj = ResourceManager.GetObject("delete_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_48px1 {
+            get {
+                object obj = ResourceManager.GetObject("delete_48px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Design_sans_titre__1__1_ {
             get {
                 object obj = ResourceManager.GetObject("Design_sans_titre_(1)[1]", resourceCulture);

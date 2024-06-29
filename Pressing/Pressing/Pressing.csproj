@@ -478,6 +478,8 @@
       <DependentUpon>BaseDonneP.edmx</DependentUpon>
       <LastGenOutput>BaseDonneP.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\delete_48px1.png" />
+    <None Include="Resources\delete_24px.png" />
     <None Include="Resources\trash_20pxy.png" />
     <None Include="Resources\trash_20pxl.png" />
     <None Include="Resources\trash_can_20px.png" />

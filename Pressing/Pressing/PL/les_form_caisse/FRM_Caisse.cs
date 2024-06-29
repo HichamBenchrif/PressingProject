@@ -26,6 +26,10 @@ namespace Pressing.PL.les_form_caisse
         CaisseRepository caisserepository = new CaisseRepository();
         ServiceRepository servicerepository = new ServiceRepository();
 
+        string CategoryName;
+        string ServiceName;
+        string ArticleName;
+
         private string SelectedItem;
         private string SelectedService;
         private Color defaultButtonColor;
@@ -80,17 +84,17 @@ namespace Pressing.PL.les_form_caisse
             //dataGridView2.Columns.Add("Column 2", "prix repassage");
             //dataGridView2.Columns.Add("Column 3", "prix lessive");
             //
-            defaultButtonColor = btn_tshirt.BackColor;
             //
             LoadClothingButtons();
             //
             LoadServiceButtons();
             //
-            //LoadCategoryButtons();
+            LoadCategoryButtons();
 
         }
         private void LoadClothingButtons()
         {
+ 
             flowLayoutPanel1.Controls.Clear();
 
             var clothingItems = caisserepository.Get();
@@ -160,6 +164,9 @@ namespace Pressing.PL.les_form_caisse
         private void ClothingButton_Click(object sender, EventArgs e)
         {
             var button = sender as Button;
+
+            ArticleName = button.Text;
+
             if (button != null)
             {
                 if (selectedButton != null)
@@ -185,38 +192,41 @@ namespace Pressing.PL.les_form_caisse
         }
         private void LoadServiceButtons()
         {
-            //flowLayoutPanel2.Controls.Clear();
-            //flowLayoutPanel2.FlowDirection = FlowDirection.TopDown; // ترتيب الأزرار عموديًا
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown; // ترتيب الأزرار عموديًا
 
-            //var serviceItems =  servicerepository.Get() ; // Assuming you have a repository for services
+            var serviceItems = servicerepository.Get(); // Assuming you have a repository for services
 
-            //foreach (var item in serviceItems)
-            //{
-            //    var button = new Button
-            //    {
-            //        Text = item.LIB_SERVICE,
-            //        Size = new Size(215, 38),
-            //        TextAlign = ContentAlignment.MiddleCenter,
-            //        Tag = item // تعيين العنصر كـ Tag للزر
-            //    };
+            foreach (var item in serviceItems)
+            {
+                var button = new Button
+                {
+                    Text = item.LIB_SERVICE,
+                    Size = new Size(215, 38),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Tag = item // تعيين العنصر كـ Tag للزر
+                };
 
-            //    // إضافة الأحداث المطلوبة للزر
-            //    button.Click += new EventHandler(ServiceButton_Click);
-            //    button.Enter += new EventHandler(ButtonService_Enter);
-            //    button.Leave += new EventHandler(ButtonService_Leave);
+                // إضافة الأحداث المطلوبة للزر
+                button.Click += new EventHandler(ServiceButton_Click);
+                button.Enter += new EventHandler(ButtonService_Enter);
+                button.Leave += new EventHandler(ButtonService_Leave);
 
-            //    flowLayoutPanel2.Controls.Add(button);
+                flowLayoutPanel2.Controls.Add(button);
 
-            //    // حفظ اللون الافتراضي للزر الأول
-            //    if (defaultServiceButtonColor == Color.Empty)
-            //    {
-            //        defaultServiceButtonColor = button.BackColor;
-            //    }
-            //}
+                // حفظ اللون الافتراضي للزر الأول
+                if (defaultServiceButtonColor == Color.Empty)
+                {
+                    defaultServiceButtonColor = button.BackColor;
+                }
+            }
         }
         private void ServiceButton_Click(object sender, EventArgs e)
         {
             var button = sender as Button;
+
+            ServiceName = button.Text;
+
             if (button != null)
             {
                 // إعادة تعيين لون الخلفية للزر السابق المحدد
@@ -269,7 +279,7 @@ namespace Pressing.PL.les_form_caisse
                 var button = new Button
                 {
                     Text = category.LIB_CAT_ART,
-                    Size = new Size(215, 38),
+                    Size = new Size(130, 38),
                     TextAlign = ContentAlignment.MiddleCenter,
                     Tag = category // تعيين العنصر كـ Tag للزر
                 };
@@ -306,26 +316,76 @@ namespace Pressing.PL.les_form_caisse
         }
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            var button = sender as Button;
-            if (button != null)
+            //var button = sender as Button;
+            //if (button != null)
+            //{
+            //    // إعادة تعيين لون الخلفية للزر السابق المحدد
+            //    if (selectedcategoryButton != null)
+            //    {
+            //        selectedcategoryButton.BackColor = defultcategoryButtonColor;
+            //    }
+
+            //    // تغيير لون الخلفية للزر المحدد
+            //    button.BackColor = Color.FromArgb(23, 162, 183);
+            //    selectedcategoryButton = button;
+
+            //    var category = button.Tag as CategoryItem;
+            //    if (category != null)
+            //    {
+            //        // إضافة الخدمة إلى DataGridView
+            //        dataGridView2.Rows.Add(category.LIB_CAT_ART);
+            //    }
+            //}
+
+            var categoryButton = sender as Button;
+
+            CategoryName = categoryButton.Text;
+
+
+
+            flowLayoutPanel1.Controls.Clear();
+
+            var clothingItems = caisserepository.GetByCategoryName(CategoryName);
+
+            foreach (var item in clothingItems)
             {
-                // إعادة تعيين لون الخلفية للزر السابق المحدد
-                if (selectedcategoryButton != null)
+
+                Image image = null;
+                if (item.IMAGE != null && item.IMAGE.Length > 0)
                 {
-                    selectedcategoryButton.BackColor = defultcategoryButtonColor;
+                    using (MemoryStream ms = new MemoryStream(item.IMAGE as byte[]))
+                    {
+                        image = Image.FromStream(ms);
+                    }
                 }
 
-                // تغيير لون الخلفية للزر المحدد
-                button.BackColor = Color.FromArgb(23, 162, 183);
-                selectedcategoryButton = button;
-
-                var category = button.Tag as CategoryItem;
-                if (category != null)
+                var button = new Button
                 {
-                    // إضافة الخدمة إلى DataGridView
-                    dataGridView2.Rows.Add(category.LIB_CAT_ART);
+
+
+                    Text = item.LIB_ARTICLE,
+                    Size = new Size(80, 70),
+                    Image = image,
+
+                    ImageAlign = ContentAlignment.TopCenter,
+                    TextAlign = ContentAlignment.BottomCenter,
+                    FlatStyle = FlatStyle.Flat,
+
+                    //TextImageRelation = TextImageRelation.Overlay,
+                    BackColor = defaultButtonColor
+                };
+                button.Click += new EventHandler(ClothingButton_Click);
+                button.Click += new EventHandler(Button_Enter);
+                button.Leave += new EventHandler(Button_Leave);
+
+                flowLayoutPanel1.Controls.Add(button);
+
+                if (defaultButtonColor == Color.Empty)
+                {
+                    defaultButtonColor = button.BackColor;
                 }
             }
+
         }
 
 
@@ -423,42 +483,11 @@ namespace Pressing.PL.les_form_caisse
             //{
             //    MessageBox.Show("please select an item first");
             //}
+
+            dataGridView2.Rows.Add(ArticleName, ServiceName, number.Text);
         }
 
-        private void btn_tshirt_Click(object sender, EventArgs e)
-        {
-            if (!isTShirtSelect)
-            {
-                SelectedItem = "T-Shirt";
-                btn_tshirt.BackColor = Color.FromArgb(23, 162, 183);
-                isTShirtSelect = true;
-            }
-            else
-            {
-                SelectedItem = null ;
-                btn_tshirt.BackColor = defaultButtonColor;
-                isTShirtSelect = false;
-            }
-        }
-
-        private void btn_rep_Click(object sender, EventArgs e)
-        {
-            if (!isRepassageSelect)
-            {
-                SelectedService = "repassage";
-                btn_rep.BackColor = Color.FromArgb(23, 162, 183);
-                isRepassageSelect = false;
-            }
-            else
-            {
-                SelectedService = null;
-                btn_rep.BackColor = defaultButtonColor;
-                isRepassageSelect = false;
-            }
-
-
-
-        }
+       
 
         private void button4_Click(object sender, EventArgs e)
         {

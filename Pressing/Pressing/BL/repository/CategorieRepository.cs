@@ -42,7 +42,7 @@ namespace Pressing.BL.repository
         public dynamic Get()
         {
             var result = (from C in db.CATEGORIE_ARTILCLE
-                          select new { C.LIB_CAT_ART }).FirstOrDefault();
+                          select new { C.LIB_CAT_ART }).ToList();
 
             return result;
         }
