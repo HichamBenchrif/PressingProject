@@ -85,7 +85,7 @@ namespace Pressing.PL
         private void btnVentes_Click(object sender, EventArgs e)
         {
             new FRM_Ventes().Show();
-            Close();
+            //Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -124,7 +124,12 @@ namespace Pressing.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = articlerepository.Search(textBox1.Text);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = 100;
 
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -182,6 +187,30 @@ namespace Pressing.PL
                 model.ShowDialog();
                 modelBackground.Dispose();
 
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Recherche")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Recherche";
+                textBox1.ForeColor = Color.FromArgb(255, 105, 0);
+                dataGridView1.DataSource = articlerepository.GetAll();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Height = 100;
+
+                }
             }
         }
     }

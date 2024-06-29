@@ -28,43 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAficher = new System.Windows.Forms.Panel();
+            this.panelArticl = new System.Windows.Forms.Panel();
+            this.PNL_Menu = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelAficher = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.panelArticl = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.PNL_Menu = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRapports = new System.Windows.Forms.Button();
             this.btnDépenses = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnVentes = new System.Windows.Forms.Button();
             this.btnProduits = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAficher.SuspendLayout();
             this.panelArticl.SuspendLayout();
             this.PNL_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +100,10 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(345, 26);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "\r\n";
+            this.textBox1.Text = "Recherche";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // dataGridView1
             // 
@@ -112,23 +117,23 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
             this.dataGridView1.Location = new System.Drawing.Point(29, 51);
@@ -137,7 +142,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.DividerHeight = 2;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(903, 300);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -147,6 +152,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.Controls.Add(this.button9);
+            this.panel5.Controls.Add(this.button6);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.textBox1);
@@ -155,29 +162,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(963, 416);
             this.panel5.TabIndex = 15;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
-            this.pictureBox5.Location = new System.Drawing.Point(29, 19);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
-            this.pictureBox4.Location = new System.Drawing.Point(372, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(47, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
             // 
             // panel2
             // 
@@ -210,6 +194,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 50);
             this.panel1.TabIndex = 5;
+            // 
+            // panelAficher
+            // 
+            this.panelAficher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAficher.BackColor = System.Drawing.Color.Silver;
+            this.panelAficher.Controls.Add(this.panel2);
+            this.panelAficher.Controls.Add(this.button4);
+            this.panelAficher.Controls.Add(this.button5);
+            this.panelAficher.Controls.Add(this.label1);
+            this.panelAficher.Controls.Add(this.panelArticl);
+            this.panelAficher.Controls.Add(this.PNL_Menu);
+            this.panelAficher.Location = new System.Drawing.Point(-33, -106);
+            this.panelAficher.Name = "panelAficher";
+            this.panelAficher.Size = new System.Drawing.Size(1136, 781);
+            this.panelAficher.TabIndex = 6;
+            // 
+            // panelArticl
+            // 
+            this.panelArticl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelArticl.Controls.Add(this.panel5);
+            this.panelArticl.Controls.Add(this.panel4);
+            this.panelArticl.Controls.Add(this.button7);
+            this.panelArticl.Controls.Add(this.label2);
+            this.panelArticl.Location = new System.Drawing.Point(114, 156);
+            this.panelArticl.Name = "panelArticl";
+            this.panelArticl.Size = new System.Drawing.Size(990, 519);
+            this.panelArticl.TabIndex = 9;
+            // 
+            // PNL_Menu
+            // 
+            this.PNL_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.PNL_Menu.BackColor = System.Drawing.Color.Gainsboro;
+            this.PNL_Menu.Controls.Add(this.pictureBox2);
+            this.PNL_Menu.Controls.Add(this.btnRapports);
+            this.PNL_Menu.Controls.Add(this.btnDépenses);
+            this.PNL_Menu.Controls.Add(this.btnClients);
+            this.PNL_Menu.Controls.Add(this.btnVentes);
+            this.PNL_Menu.Controls.Add(this.btnProduits);
+            this.PNL_Menu.Location = new System.Drawing.Point(33, 156);
+            this.PNL_Menu.Name = "PNL_Menu";
+            this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
+            this.PNL_Menu.TabIndex = 8;
             // 
             // button3
             // 
@@ -245,6 +276,7 @@
             this.button2.Text = "Principal";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -272,23 +304,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // panelAficher
-            // 
-            this.panelAficher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAficher.BackColor = System.Drawing.Color.Silver;
-            this.panelAficher.Controls.Add(this.panel2);
-            this.panelAficher.Controls.Add(this.button4);
-            this.panelAficher.Controls.Add(this.button5);
-            this.panelAficher.Controls.Add(this.label1);
-            this.panelAficher.Controls.Add(this.panelArticl);
-            this.panelAficher.Controls.Add(this.PNL_Menu);
-            this.panelAficher.Location = new System.Drawing.Point(-33, -106);
-            this.panelAficher.Name = "panelAficher";
-            this.panelAficher.Size = new System.Drawing.Size(1136, 781);
-            this.panelAficher.TabIndex = 6;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button4
             // 
@@ -324,19 +340,48 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // panelArticl
+            // button6
             // 
-            this.panelArticl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelArticl.Controls.Add(this.panel5);
-            this.panelArticl.Controls.Add(this.panel4);
-            this.panelArticl.Controls.Add(this.button7);
-            this.panelArticl.Controls.Add(this.label2);
-            this.panelArticl.Location = new System.Drawing.Point(114, 156);
-            this.panelArticl.Name = "panelArticl";
-            this.panelArticl.Size = new System.Drawing.Size(990, 519);
-            this.panelArticl.TabIndex = 9;
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = global::Pressing.Properties.Resources.edit_file_20px;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.Location = new System.Drawing.Point(819, 377);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(113, 30);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Modification";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::Pressing.Properties.Resources.refresh_48px;
+            this.pictureBox5.Location = new System.Drawing.Point(29, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::Pressing.Properties.Resources.search_20px;
+            this.pictureBox4.Location = new System.Drawing.Point(372, 19);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(47, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
             // 
             // button7
             // 
@@ -355,22 +400,6 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // PNL_Menu
-            // 
-            this.PNL_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.PNL_Menu.BackColor = System.Drawing.Color.Gainsboro;
-            this.PNL_Menu.Controls.Add(this.pictureBox2);
-            this.PNL_Menu.Controls.Add(this.btnRapports);
-            this.PNL_Menu.Controls.Add(this.btnDépenses);
-            this.PNL_Menu.Controls.Add(this.btnClients);
-            this.PNL_Menu.Controls.Add(this.btnVentes);
-            this.PNL_Menu.Controls.Add(this.btnProduits);
-            this.PNL_Menu.Location = new System.Drawing.Point(33, 156);
-            this.PNL_Menu.Name = "PNL_Menu";
-            this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
-            this.PNL_Menu.TabIndex = 8;
             // 
             // pictureBox2
             // 
@@ -420,6 +449,7 @@
             this.btnDépenses.Text = "Dépenses";
             this.btnDépenses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDépenses.UseVisualStyleBackColor = false;
+            this.btnDépenses.Click += new System.EventHandler(this.btnDépenses_Click);
             // 
             // btnClients
             // 
@@ -438,6 +468,7 @@
             this.btnClients.Text = "Clients";
             this.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClients.UseVisualStyleBackColor = false;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnVentes
             // 
@@ -456,6 +487,7 @@
             this.btnVentes.Text = "Ventes";
             this.btnVentes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentes.UseVisualStyleBackColor = false;
+            this.btnVentes.Click += new System.EventHandler(this.btnVentes_Click);
             // 
             // btnProduits
             // 
@@ -474,6 +506,26 @@
             this.btnProduits.Text = "Article";
             this.btnProduits.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProduits.UseVisualStyleBackColor = false;
+            this.btnProduits.Click += new System.EventHandler(this.btnProduits_Click);
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.BackColor = System.Drawing.Color.Red;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::Pressing.Properties.Resources.trash_20pxy;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.Location = new System.Drawing.Point(699, 377);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(101, 30);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "Supprimer";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // FRM_service
             // 
@@ -486,19 +538,20 @@
             this.Name = "FRM_service";
             this.Text = "FRM_service";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FRM_service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelAficher.ResumeLayout(false);
             this.panelAficher.PerformLayout();
             this.panelArticl.ResumeLayout(false);
             this.panelArticl.PerformLayout();
             this.PNL_Menu.ResumeLayout(false);
             this.PNL_Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -532,5 +585,7 @@
         private System.Windows.Forms.Panel panelAficher;
         private System.Windows.Forms.Panel panelArticl;
         private System.Windows.Forms.Panel PNL_Menu;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button9;
     }
 }

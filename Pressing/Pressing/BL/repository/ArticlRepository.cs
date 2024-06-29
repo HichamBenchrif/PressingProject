@@ -43,14 +43,24 @@ namespace Pressing.BL.repository
 
         }
 
-       
+        public dynamic Search(string value)
+        {
+            
+
+            return (from A in db.ARTICLEs
+                    join C in db.CATEGORIE_ARTILCLE on A.ID_CATE equals C.ID_CATE
+                    where A.REF_ARTICLE.Contains(value) ||
+                          A.LIB_ARTICLE.Contains(value) ||
+                          C.LIB_CAT_ART.Contains(value)
+                    select new { ID = A.REF_ARTICLE, Name = A.LIB_ARTICLE, PrixRepassage = A.PRIX_REPASSAGE, PrixLessive = A.PRIX_LESSIVE, Image = A.IMAGE, Categorie = C.LIB_CAT_ART }).ToList();
+        }
 
 
         public dynamic GetAll()
         {
             var result = (from A in db.ARTICLEs
                           join C in db.CATEGORIE_ARTILCLE on A.ID_CATE equals C.ID_CATE
-                          select new { ID=A.REF_ARTICLE, Name=A.LIB_ARTICLE,PrixRepassage=A.PRIX_REPASSAGE,PrixLessive= A.PRIX_LESSIVE, Image=A.IMAGE,Category= C.LIB_CAT_ART }).ToList();
+                          select new { ID=A.REF_ARTICLE, Name=A.LIB_ARTICLE,PrixRepassage=A.PRIX_REPASSAGE,PrixLessive= A.PRIX_LESSIVE, Image=A.IMAGE, Categorie = C.LIB_CAT_ART }).ToList();
 
             return result;
           

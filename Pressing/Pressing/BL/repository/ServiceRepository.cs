@@ -34,7 +34,7 @@ namespace Pressing.BL.repository
         public dynamic GetAll()
         {
             var result = (from S in db.SERVICEs
-                          select new { S.ID_SERVICE, S.LIB_SERVICE }).ToList();
+                          select new { ID = S.ID_SERVICE, NameService = S.LIB_SERVICE }).ToList();
 
             return result;
         }
@@ -45,27 +45,33 @@ namespace Pressing.BL.repository
 
             return result;
         }
-        //public dynamic Get()
-        //{
-        //    var result = (from C in db.CATEGORIE_ARTILCLE
-        //                  select new { C.LIB_CAT_ART }).FirstOrDefault();
+        public SERVICE GetById(string id)
+        {
+            return db.SERVICEs.Find(id);
+        }
+        public void Update(string id, SERVICE service)
+        {
+            SERVICE cat = GetById(id);
+            cat = service;
+            db.SaveChanges();
+        }
 
-        //    return result;
-        //}
+        public dynamic Search(string value)
+        {
+            return (from S in db.SERVICEs
+                    where S.ID_SERVICE.Contains(value) ||
+                          S.LIB_SERVICE.Contains(value)
+                    select new {ID= S.ID_SERVICE, NameService = S.LIB_SERVICE }).ToList();
+        }
+        public void Supprim(string value)
+        {
+            var Obj = (from x in db.SERVICEs
+                       where x.ID_SERVICE == value
+                       select x).FirstOrDefault();
+            db.SERVICEs.Remove(Obj);
+            db.SaveChanges();
 
-        //public dynamic Search(string value)
-        //{
-        //    //var result = (from C in db.CATEGORIE_ARTILCLE.AsEnumerable()
-        //    //              where C.ID_CATE.Contains(value) ||
-        //    //              C.LIB_CAT_ART.Contains(value)
-        //    //              select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
-        //    //return result;
-
-        //    return (from C in db.CATEGORIE_ARTILCLE
-        //            where C.ID_CATE.Contains(value) ||
-        //                  C.LIB_CAT_ART.Contains(value)
-        //            select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
-        //}
+        }
         //public dynamic selctBox()
         //{
         //    return db.CATEGORIE_ARTILCLE.AsEnumerable().Select(x => new { name = x.LIB_CAT_ART, x.ID_CATE }).ToList();

@@ -71,7 +71,8 @@ namespace Pressing.PL.les_form_article
             }
             catch (Exception)
             {
-                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
            
 
