@@ -13,6 +13,7 @@ using Pressing.DAL.BaseRepository;
 using Pressing.PL.Les_form_services;
 using Pressing.DAL;
 using System.IO;
+using Pressing.PL.les_form_client;
 
 namespace Pressing.PL.les_form_caisse
 {
@@ -507,6 +508,36 @@ namespace Pressing.PL.les_form_caisse
                 minvaleu--;
                 number.Text = minvaleu.ToString();
             }
+        }
+        public static int panrentX;
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (FRM_Ajoute_Client model = new FRM_Ajoute_Client())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
+        }
+
+        private void btnProduits_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

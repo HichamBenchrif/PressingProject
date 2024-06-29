@@ -161,6 +161,7 @@ namespace Pressing.PL
 
         private void button9_Click(object sender, EventArgs e)
         {
+            
             var selectID = dataGridView1.CurrentCell.Value.ToString();
 
             Form modelBackground = new Form();

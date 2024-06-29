@@ -45,27 +45,35 @@ namespace Pressing.PL.les_form_article
         {
             this.Location = new Point(FRM_Articl.panrentX = 460);
             //
-            //combobox affiche category
-            comboBox1.DataSource = categoryrepository.selctBox();
-            comboBox1.ValueMember = "ID_CATE";
-            comboBox1.DisplayMember = "name";
-            //combobox affiche famill
-            comboBox2.DataSource = famillrepository.selctBox();
-            comboBox2.ValueMember = "N_FAMILL";
-            comboBox2.DisplayMember = "name";
+            
 
-            var obj = articlerepository.GetById(id);
-            article = obj;
+            try {
+                //combobox affiche category
+                comboBox1.DataSource = categoryrepository.selctBox();
+                comboBox1.ValueMember = "ID_CATE";
+                comboBox1.DisplayMember = "name";
+                //combobox affiche famill
+                comboBox2.DataSource = famillrepository.selctBox();
+                comboBox2.ValueMember = "N_FAMILL";
+                comboBox2.DisplayMember = "name";
+                var obj = articlerepository.GetById(id);
+                article = obj;
 
 
-            label9.Text = obj.REF_ARTICLE;
-            comboBox2.SelectedValue = obj.N_FAMILL;
-            comboBox1.SelectedValue = obj.ID_CATE;
-            textBox5.Text = obj.LIB_ARTICLE;
-            textBox2.Text = obj.PRIX_REPASSAGE.ToString();
-            textBox3.Text = obj.PRIX_LESSIVE.ToString();
-            var ms = new System.IO.MemoryStream(obj.IMAGE);
-            imagebox.Image = Image.FromStream(ms);
+                label9.Text = obj.REF_ARTICLE;
+                comboBox2.SelectedValue = obj.N_FAMILL;
+                comboBox1.SelectedValue = obj.ID_CATE;
+                textBox5.Text = obj.LIB_ARTICLE;
+                textBox2.Text = obj.PRIX_REPASSAGE.ToString();
+                textBox3.Text = obj.PRIX_LESSIVE.ToString();
+                var ms = new System.IO.MemoryStream(obj.IMAGE);
+                imagebox.Image = Image.FromStream(ms);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
 
         }
