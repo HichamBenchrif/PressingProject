@@ -81,9 +81,7 @@ namespace Pressing.PL.les_form_caisse
             PNL_Menu.Visible = false;
 
 
-            //dataGridView2.Columns.Add("Column 1", "article");
-            //dataGridView2.Columns.Add("Column 2", "prix repassage");
-            //dataGridView2.Columns.Add("Column 3", "prix lessive");
+            
             //
             //
             LoadClothingButtons();
@@ -117,7 +115,7 @@ namespace Pressing.PL.les_form_caisse
 
 
                     Text = item.LIB_ARTICLE,
-                    Size = new Size(80, 70),
+                    Size = new Size(80, 100),
                     Image = image,
 
                     ImageAlign = ContentAlignment.TopCenter,
@@ -365,7 +363,7 @@ namespace Pressing.PL.les_form_caisse
 
 
                     Text = item.LIB_ARTICLE,
-                    Size = new Size(80, 70),
+                    Size = new Size(80, 100),
                     Image = image,
 
                     ImageAlign = ContentAlignment.TopCenter,

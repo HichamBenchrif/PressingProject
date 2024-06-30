@@ -73,7 +73,22 @@ namespace Pressing.PL
                 var repository = new ArticlRepository();
                 repository.Create(ID_art, comboboxfamill, Comboboxcategory, Name, Repasag, Lessiv, ms.ToArray());
                 MessageBox.Show("Créé avec succès");
-                
+                //id dyal articl
+                label9.Text = articlrepositry.GenerateIDArticl();
+                //combobox affiche category
+                comboBox1.DataSource = categorierepository.selctBox();
+                comboBox1.ValueMember = "ID_CATE";
+                comboBox1.DisplayMember = "name";
+                //combobox affiche famill
+                comboBox2.DataSource = famillrepository.selctBox();
+                comboBox2.ValueMember = "N_FAMILL";
+                comboBox2.DisplayMember = "name";
+                //
+                textBox5.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                imagebox.Image = null;
+
 
             }
         }
