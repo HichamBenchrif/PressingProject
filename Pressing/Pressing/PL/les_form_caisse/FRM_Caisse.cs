@@ -31,11 +31,9 @@ namespace Pressing.PL.les_form_caisse
         string ServiceName;
         string ArticleName;
 
-        private string SelectedItem;
-        private string SelectedService;
+        
         private Color defaultButtonColor;
-        private bool isTShirtSelect = false;
-        private bool isRepassageSelect = false;
+        
         private Button selectedButton;
 
         private Button selectedServiceButton;
@@ -117,7 +115,7 @@ namespace Pressing.PL.les_form_caisse
                     Text = item.LIB_ARTICLE,
                     Size = new Size(80, 100),
                     Image = image,
-
+                    
                     ImageAlign = ContentAlignment.TopCenter,
                     TextAlign = ContentAlignment.BottomCenter,
                     FlatStyle = FlatStyle.Flat,
@@ -125,10 +123,12 @@ namespace Pressing.PL.les_form_caisse
                     //TextImageRelation = TextImageRelation.Overlay,
                     BackColor = defaultButtonColor
                 };
-                button.Click += new EventHandler(ClothingButton_Click);
-                button.Click += new EventHandler(Button_Enter);
-                button.Leave += new EventHandler(Button_Leave);
 
+                button.FlatAppearance.BorderSize = 0;
+                button.BackColor = Color.WhiteSmoke;
+
+                button.Click += new EventHandler(ClothingButton_Click);
+                
                 flowLayoutPanel1.Controls.Add(button);
 
                 if (defaultButtonColor == Color.Empty)
@@ -137,22 +137,7 @@ namespace Pressing.PL.les_form_caisse
                 }
             }
         }
-        private void Button_Enter(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedButton)
-            {
-                button.BackColor = Color.LightGray;
-            }
-        }
-        private void Button_Leave(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedButton)
-            {
-                button.BackColor = defaultButtonColor;
-            }
-        }
+       
         public class ClothingItem
         {
             public string LIB_ARTICLE { get; set; }
@@ -177,12 +162,7 @@ namespace Pressing.PL.les_form_caisse
                 button.BackColor = Color.FromArgb(23, 162, 183);
                 selectedButton = button;
 
-                var item = button.Tag as ClothingItem;
-                if (item != null)
-                {
-                    // إضافة اللباس إلى DataGridView
-                    dataGridView2.Rows.Add(item.LIB_ARTICLE, item.PRIX_REPASSAGE, item.PRIX_LESSIVE);
-                }
+               
             }
         }
         public class ServiceItem
@@ -203,13 +183,15 @@ namespace Pressing.PL.les_form_caisse
                     Text = item.LIB_SERVICE,
                     Size = new Size(215, 38),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Tag = item // تعيين العنصر كـ Tag للزر
-                };
+                    FlatStyle = FlatStyle.Flat,
+                     
 
+                };
+                button.FlatAppearance.BorderSize = 0;
+                button.BackColor = Color.WhiteSmoke;
                 // إضافة الأحداث المطلوبة للزر
                 button.Click += new EventHandler(ServiceButton_Click);
-                button.Enter += new EventHandler(ButtonService_Enter);
-                button.Leave += new EventHandler(ButtonService_Leave);
+
 
                 flowLayoutPanel2.Controls.Add(button);
 
@@ -237,31 +219,10 @@ namespace Pressing.PL.les_form_caisse
                 // تغيير لون الخلفية للزر المحدد
                 button.BackColor = Color.FromArgb(23, 162, 183);
                 selectedServiceButton = button;
-
-                var item = button.Tag as ServiceItem;
-                if (item != null)
-                {
-                    // إضافة الخدمة إلى DataGridView
-                    dataGridView2.Rows.Add(item.LIB_SERVICE);
-                }
+               
             }
         }
-        private void ButtonService_Enter(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedServiceButton)
-            {
-                button.BackColor = Color.LightGray;
-            }
-        }
-        private void ButtonService_Leave(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedServiceButton)
-            {
-                button.BackColor = defaultServiceButtonColor;
-            }
-        }
+       
         public class CategoryItem
         {
             public string LIB_CAT_ART { get; set; }
@@ -280,13 +241,15 @@ namespace Pressing.PL.les_form_caisse
                     Text = category.LIB_CAT_ART,
                     Size = new Size(130, 38),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Tag = category // تعيين العنصر كـ Tag للزر
+                    ForeColor = Color.White,
+                    
+                    FlatStyle = FlatStyle.Flat,
                 };
-
+                button.BackColor = Color.FromArgb(255, 105, 0);
+                button.FlatAppearance.BorderSize = 0;
                 // إضافة الأحداث المطلوبة للزر
                 button.Click += new EventHandler(CategoryButton_Click);
-                button.Enter += new EventHandler(ButtonCategory_Enter);
-                button.Leave += new EventHandler(ButtonCategory_Leave);
+                
 
                 flowLayoutPanelCategory.Controls.Add(button);
 
@@ -297,44 +260,10 @@ namespace Pressing.PL.les_form_caisse
                 }
             }
         }
-        private void ButtonCategory_Enter(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedcategoryButton)
-            {
-                button.BackColor = Color.LightGray;
-            }
-        }
-        private void ButtonCategory_Leave(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            if (button != null && button != selectedcategoryButton)
-            {
-                button.BackColor = defultcategoryButtonColor;
-            }
-        }
+       
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            //var button = sender as Button;
-            //if (button != null)
-            //{
-            //    // إعادة تعيين لون الخلفية للزر السابق المحدد
-            //    if (selectedcategoryButton != null)
-            //    {
-            //        selectedcategoryButton.BackColor = defultcategoryButtonColor;
-            //    }
-
-            //    // تغيير لون الخلفية للزر المحدد
-            //    button.BackColor = Color.FromArgb(23, 162, 183);
-            //    selectedcategoryButton = button;
-
-            //    var category = button.Tag as CategoryItem;
-            //    if (category != null)
-            //    {
-            //        // إضافة الخدمة إلى DataGridView
-            //        dataGridView2.Rows.Add(category.LIB_CAT_ART);
-            //    }
-            //}
+           
 
             var categoryButton = sender as Button;
 
@@ -373,15 +302,32 @@ namespace Pressing.PL.les_form_caisse
                     //TextImageRelation = TextImageRelation.Overlay,
                     BackColor = defaultButtonColor
                 };
+
+                button.FlatAppearance.BorderSize = 0;
+                button.BackColor = Color.WhiteSmoke;
+
                 button.Click += new EventHandler(ClothingButton_Click);
-                button.Click += new EventHandler(Button_Enter);
-                button.Leave += new EventHandler(Button_Leave);
 
                 flowLayoutPanel1.Controls.Add(button);
 
                 if (defaultButtonColor == Color.Empty)
                 {
                     defaultButtonColor = button.BackColor;
+                }
+            
+                if (button != null)
+                {
+                    // إعادة تعيين لون الخلفية للزر السابق المحدد
+                    if (selectedButton != null)
+                    {
+                        selectedButton.BackColor = defaultButtonColor;
+                    }
+
+                    // تغيير لون الخلفية للزر المحدد
+                    button.BackColor = Color.FromArgb(23, 162, 183);
+                    selectedcategoryButton = button;
+
+
                 }
             }
 
@@ -408,24 +354,7 @@ namespace Pressing.PL.les_form_caisse
             
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Recherche")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Recherche";
-                textBox1.ForeColor = Color.FromArgb(255, 105, 0);
-            }
-        }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -464,24 +393,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(selectedButton.ToString())&& !string.IsNullOrEmpty(selectedServiceButton.ToString()))
-            //{
-            //    int rowIndex = dataGridView2.Rows.Add();
-            //    DataGridViewRow row = dataGridView2.Rows[rowIndex];
-            //    row.Cells[0].Value = SelectedItem;
-            //    row.Cells[1].Value = SelectedService;
-            //    SelectedItem = null;
-            //    SelectedService = null;
-            //    btn_rep.BackColor = defaultButtonColor;
-            //    btn_tshirt.BackColor = defaultButtonColor;
-            //    isTShirtSelect = false;
-            //    isRepassageSelect = false;
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("please select an item first");
-            //}
+            
 
             dataGridView2.Rows.Add(ArticleName, ServiceName, number.Text);
         }
