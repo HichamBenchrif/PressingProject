@@ -153,5 +153,10 @@ namespace Pressing.PL.les_form_depenses
 
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new FRM_Fournisseur().Show();
+        }
     }
 }

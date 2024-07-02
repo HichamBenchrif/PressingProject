@@ -65,6 +65,15 @@ namespace Pressing.BL.repository
             return result;
           
         }
+       
+        public dynamic GetPrix()
+        {
+            var result = (from A in db.ARTICLEs
+                          select new { A.PRIX_LESSIVE, A.PRIX_REPASSAGE }).ToList();
+
+            return result;
+        }
+
         public ARTICLE GetById(string id)
         {
             return db.ARTICLEs.Find(id);

@@ -30,8 +30,9 @@ namespace Pressing.PL.les_form_caisse
         string CategoryName;
         string ServiceName;
         string ArticleName;
+        decimal price = 0;
 
-        
+
         private Color defaultButtonColor;
         
         private Button selectedButton;
@@ -77,9 +78,9 @@ namespace Pressing.PL.les_form_caisse
 
             // menu mghadix tkon khdama
             PNL_Menu.Visible = false;
+            //
+            label1.Text = price.ToString();
 
-
-            
             //
             //
             LoadClothingButtons();
@@ -151,18 +152,20 @@ namespace Pressing.PL.les_form_caisse
 
             ArticleName = button.Text;
 
-            if (button != null)
+            
+                if (button != null)
             {
+
                 if (selectedButton != null)
                 {
                     selectedButton.BackColor = defaultButtonColor;
                 }
 
-                // تغيير لون الخلفية للزر المحدد
+                //تغيير لون الخلفية للزر المحدد
                 button.BackColor = Color.FromArgb(23, 162, 183);
                 selectedButton = button;
 
-               
+
             }
         }
         public class ServiceItem
@@ -207,9 +210,28 @@ namespace Pressing.PL.les_form_caisse
             var button = sender as Button;
 
             ServiceName = button.Text;
+            
 
             if (button != null)
             {
+                var Service = button.Tag as SERVICE;
+                if(Service != null)
+                {
+                    var prix = caisserepository.GetByServiceName(ServiceName);
+                    
+                    foreach ( var service in prix)
+                    {
+                        if(ServiceName.Contains("REPASSAGE"))
+                        {
+                            price = prix.PRIX_REPASSAGE;
+                        }
+                        else if (ServiceName.Contains("Nettoyage"))
+                        {
+                            price = prix.PRIX_LESSIVE;
+                        }
+                    }
+                    label1.Text =  price.ToString();
+                }
                 // إعادة تعيين لون الخلفية للزر السابق المحدد
                 if (selectedServiceButton != null)
                 {
@@ -268,7 +290,19 @@ namespace Pressing.PL.les_form_caisse
             var categoryButton = sender as Button;
 
             CategoryName = categoryButton.Text;
+            if (categoryButton != null)
+            {
 
+                // إعادة تعيين لون الخلفية للزر السابق المحدد
+                if (selectedcategoryButton != null)
+                {
+                    selectedcategoryButton.BackColor = defultcategoryButtonColor;
+                }
+
+                // تغيير لون الخلفية للزر المحدد
+                categoryButton.BackColor = Color.FromArgb(23, 162, 183);
+                selectedcategoryButton = categoryButton;
+            }
 
 
             flowLayoutPanel1.Controls.Clear();
@@ -313,22 +347,7 @@ namespace Pressing.PL.les_form_caisse
                 if (defaultButtonColor == Color.Empty)
                 {
                     defaultButtonColor = button.BackColor;
-                }
-            
-                if (button != null)
-                {
-                    // إعادة تعيين لون الخلفية للزر السابق المحدد
-                    if (selectedButton != null)
-                    {
-                        selectedButton.BackColor = defaultButtonColor;
-                    }
-
-                    // تغيير لون الخلفية للزر المحدد
-                    button.BackColor = Color.FromArgb(23, 162, 183);
-                    selectedcategoryButton = button;
-
-
-                }
+                }   
             }
 
         }
@@ -393,9 +412,16 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
-            
 
-            dataGridView2.Rows.Add(ArticleName, ServiceName, number.Text);
+            try
+            {
+                dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text , label1.Text);
+            }
+            catch (Exception)
+            {
+                 MessageBox.Show("Veuillez sélectionner", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                
+            }
         }
 
        
@@ -446,6 +472,16 @@ namespace Pressing.PL.les_form_caisse
         }
 
         private void btnProduits_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

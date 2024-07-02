@@ -65,6 +65,7 @@
     <Compile Include="BL\repository\ClientRepository.cs" />
     <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
+    <Compile Include="BL\repository\FournisseurRepository.cs" />
     <Compile Include="BL\repository\ServiceRepository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
       <DependentUpon>BaseDonneP.tt</DependentUpon>
@@ -211,11 +212,23 @@
     <Compile Include="PL\les_form_depenses\FRM_Ajoute_depens.Designer.cs">
       <DependentUpon>FRM_Ajoute_depens.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Ajoute_Fournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Ajoute_Fournisseur.Designer.cs">
+      <DependentUpon>FRM_Ajoute_Fournisseur.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Depenses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Depenses.Designer.cs">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Fournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_depenses\FRM_Fournisseur.Designer.cs">
+      <DependentUpon>FRM_Fournisseur.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Modify_Depens.cs">
       <SubType>Form</SubType>
@@ -294,8 +307,14 @@
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Ajoute_depens.resx">
       <DependentUpon>FRM_Ajoute_depens.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_depenses\FRM_Ajoute_Fournisseur.resx">
+      <DependentUpon>FRM_Ajoute_Fournisseur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Depenses.resx">
       <DependentUpon>FRM_Depenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_depenses\FRM_Fournisseur.resx">
+      <DependentUpon>FRM_Fournisseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Modify_Depens.resx">
       <DependentUpon>FRM_Modify_Depens.cs</DependentUpon>
@@ -487,6 +506,12 @@
       <DependentUpon>BaseDonneP.edmx</DependentUpon>
       <LastGenOutput>BaseDonneP.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\list_18px.png" />
+    <None Include="Resources\add_user_male_18px2.png" />
+    <None Include="Resources\image_gallery_18px.png" />
+    <None Include="Resources\search_20px1.png" />
+    <None Include="Resources\supplier_18px.png" />
+    <None Include="Resources\add_receipt_18px.png" />
     <None Include="Resources\add_user_male_18px1.png" />
     <None Include="Resources\delete_48px1.png" />
     <None Include="Resources\delete_24px.png" />

@@ -73,6 +73,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_receipt_18px {
+            get {
+                object obj = ResourceManager.GetObject("add_receipt_18px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_user_male_18px {
             get {
                 object obj = ResourceManager.GetObject("add_user_male_18px", resourceCulture);
@@ -86,6 +96,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap add_user_male_18px1 {
             get {
                 object obj = ResourceManager.GetObject("add_user_male_18px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_male_18px2 {
+            get {
+                object obj = ResourceManager.GetObject("add_user_male_18px2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +373,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_gallery_18px {
+            get {
+                object obj = ResourceManager.GetObject("image_gallery_18px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jeans_20px {
             get {
                 object obj = ResourceManager.GetObject("jeans_20px", resourceCulture);
@@ -386,6 +416,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap left_48px {
             get {
                 object obj = ResourceManager.GetObject("left_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_18px {
+            get {
+                object obj = ResourceManager.GetObject("list_18px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,6 +603,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("search_20px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap service_50px {
             get {
                 object obj = ResourceManager.GetObject("service_50px", resourceCulture);
@@ -626,6 +676,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap shutdown_12px {
             get {
                 object obj = ResourceManager.GetObject("shutdown_12px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap supplier_18px {
+            get {
+                object obj = ResourceManager.GetObject("supplier_18px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
