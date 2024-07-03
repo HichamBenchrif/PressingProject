@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تسجيل الدخول</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #00bcd4;
+        }
+
+        .login-container {
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 500px;
+            max-width: 100%;
+        }
+
+        .login-image {
+            background: #2c3e50;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-image img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .login-form {
+            padding: 40px;
+            flex-grow: 1;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background: #00bcd4;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .login-form a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-image">
+            <img src="https://img.icons8.com/color/96/000000/full-moon.png" alt="Moon">
+        </div>
+        <div class="login-form">
+            <h2>تسجيل الدخول</h2>
+            <form action="#">
+                <input type="text" placeholder="اسم المستخدم" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل الدخول</button>
+                <a href="#">تحتاج إلى حساب؟ سجل هنا</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

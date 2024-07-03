@@ -14,6 +14,8 @@ using Pressing.PL.Les_form_services;
 using Pressing.DAL;
 using System.IO;
 using Pressing.PL.les_form_client;
+using System.Globalization;
+
 
 namespace Pressing.PL.les_form_caisse
 {
@@ -30,7 +32,8 @@ namespace Pressing.PL.les_form_caisse
         string CategoryName;
         string ServiceName;
         string ArticleName;
-        decimal price = 0;
+        decimal? price = 0;
+        string selectedArticleID;
 
 
         private Color defaultButtonColor;
@@ -47,7 +50,9 @@ namespace Pressing.PL.les_form_caisse
         {
             InitializeComponent();
             PNL_Menu.Visible = false;
-
+            //dataGridView2.CellValueChanged += new DataGridViewCellEventHandler(dataGridView2_CellValueChanged);
+            //dataGridView2.RowsRemoved += new DataGridViewRowsRemovedEventHandler(dataGridView2_RowsRemoved);
+            //dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -66,10 +71,40 @@ namespace Pressing.PL.les_form_caisse
         {
 
         }
-
+        //private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex == dataGridView2.Columns["Prix"].Index)
+        //    {
+        //        CalculateTotal();
+        //    }
+        //}
+        //private void dataGridView2_RowsRemoved(object sender , DataGridViewRowsRemovedEventArgs e)
+        //{
+        //    CalculateTotal();
+        //}
+        //private void dataGridView2_RowsAdded(object sender , DataGridViewRowsAddedEventArgs e)
+        //{
+        //    CalculateTotal();
+        //}
+        //private void CalculateTotal()
+        //{
+        //    double total = 0;
+        //    foreach (DataGridViewRow row in dataGridView2.Rows)
+        //    {
+        //        if (row.Cells["Prix"].Value != null)
+        //        {
+        //            double price;
+        //            if (double.TryParse(row.Cells["Prix"].Value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out price))
+        //            {
+        //                total += price;
+        //            }
+        //        }
+        //    }
+        //    label6.Text = total.ToString("0.00");
+        //}
         private void FRM_Caisse_Load(object sender, EventArgs e)
         {
-            
+            //CalculateTotal();
 
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
@@ -80,8 +115,9 @@ namespace Pressing.PL.les_form_caisse
             PNL_Menu.Visible = false;
             //
             label1.Text = price.ToString();
-
             //
+            List<string> option = new List<string> { "rouge", "vert", "white", "mix", "blue" };
+            comboBox1.DataSource = option;
             //
             LoadClothingButtons();
             //
@@ -113,10 +149,12 @@ namespace Pressing.PL.les_form_caisse
                 {
 
 
-                    Text = item.LIB_ARTICLE,
+                    Text = item.LIB_ARTICLE ,
                     Size = new Size(80, 100),
                     Image = image,
-                    
+                    Tag = item.REF_ARTICLE,
+
+
                     ImageAlign = ContentAlignment.TopCenter,
                     TextAlign = ContentAlignment.BottomCenter,
                     FlatStyle = FlatStyle.Flat,
@@ -141,6 +179,7 @@ namespace Pressing.PL.les_form_caisse
        
         public class ClothingItem
         {
+            public string REF_ARTICLE { get; set; }
             public string LIB_ARTICLE { get; set; }
             public byte[] IMAGE { get; set; }
             public decimal PRIX_REPASSAGE { get; set; }
@@ -151,6 +190,8 @@ namespace Pressing.PL.les_form_caisse
             var button = sender as Button;
 
             ArticleName = button.Text;
+
+            selectedArticleID = button.Tag.ToString();
 
             
                 if (button != null)
@@ -214,22 +255,24 @@ namespace Pressing.PL.les_form_caisse
 
             if (button != null)
             {
-                var Service = button.Tag as SERVICE;
-                if(Service != null)
+                
+                if(ServiceName != null)
                 {
-                    var prix = caisserepository.GetByServiceName(ServiceName);
-                    
-                    foreach ( var service in prix)
-                    {
-                        if(ServiceName.Contains("REPASSAGE"))
+                    var art = caisserepository.GetArticleByID(selectedArticleID);
+
+                        if(ServiceName == "Repassage")
                         {
-                            price = prix.PRIX_REPASSAGE;
+                            price = art.PRIX_REPASSAGE;
                         }
                         else if (ServiceName.Contains("Nettoyage"))
                         {
-                            price = prix.PRIX_LESSIVE;
+                            price = art.PRIX_LESSIVE;
                         }
+                       
+                    {
+
                     }
+                    
                     label1.Text =  price.ToString();
                 }
                 // إعادة تعيين لون الخلفية للزر السابق المحدد
@@ -256,6 +299,17 @@ namespace Pressing.PL.les_form_caisse
 
             var categories = categorierepository.Get(); // Assuming you have a repository for services
 
+            //var button1 = new Button
+            //{
+            //    Text = "Touts",
+            //    Size = new Size(130, 38),
+            //    TextAlign = ContentAlignment.MiddleCenter,
+            //    ForeColor = Color.White,
+
+            //    FlatStyle = FlatStyle.Flat,
+            //};
+            //button1.BackColor = Color.FromArgb(23, 162, 183);
+            //button1.FlatAppearance.BorderSize = 0;
             foreach (var category in categories)
             {
                 var button = new Button
@@ -328,6 +382,8 @@ namespace Pressing.PL.les_form_caisse
                     Text = item.LIB_ARTICLE,
                     Size = new Size(80, 100),
                     Image = image,
+                    Tag = item.REF_ARTICLE,
+
 
                     ImageAlign = ContentAlignment.TopCenter,
                     TextAlign = ContentAlignment.BottomCenter,
@@ -347,7 +403,7 @@ namespace Pressing.PL.les_form_caisse
                 if (defaultButtonColor == Color.Empty)
                 {
                     defaultButtonColor = button.BackColor;
-                }   
+                }
             }
 
         }
@@ -416,12 +472,28 @@ namespace Pressing.PL.les_form_caisse
             try
             {
                 dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text , label1.Text);
+                label6.Text = "0";
+                for(int i = 0; i< dataGridView2.Rows.Count; i++)
+                {
+                    label6.Text = Convert.ToString(double.Parse(label6.Text) + double.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString()));
+                }
+
             }
             catch (Exception)
             {
-                 MessageBox.Show("Veuillez sélectionner", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                
+                MessageBox.Show("Veuillez sélectionner", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
             }
+            if (selectedButton != null)
+            {
+                selectedButton.BackColor = defaultButtonColor;
+            }
+            if (selectedServiceButton != null)
+            {
+                selectedServiceButton.BackColor = defaultServiceButtonColor;
+            }
+            label1.Text = 0.ToString();
+            number.Text = 1.ToString();
         }
 
        
@@ -478,12 +550,76 @@ namespace Pressing.PL.les_form_caisse
 
         private void button8_Click(object sender, EventArgs e)
         {
-            
+            //var articl = ArticleName;
+            //var color = comboBox1.SelectedValue.ToString();
+            //var service = ServiceName;
+            //var quntite = number.ToString();
+            //var prix = label1.ToString();
+
+
+            //var repository = new CategorieRepository();
+            //repository.Create(articl, Name);
+            //MessageBox.Show("Créé avec succès");
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            var clothingItems = caisserepository.Get();
+
+            foreach (var item in clothingItems)
+            {
+
+                Image image = null;
+                if (item.IMAGE != null && item.IMAGE.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(item.IMAGE as byte[]))
+                    {
+                        image = Image.FromStream(ms);
+                    }
+                }
+
+                var button = new Button
+                {
+
+
+                    Text = item.LIB_ARTICLE,
+                    Size = new Size(80, 100),
+                    Image = image,
+                    Tag = item.REF_ARTICLE,
+
+
+                    ImageAlign = ContentAlignment.TopCenter,
+                    TextAlign = ContentAlignment.BottomCenter,
+                    FlatStyle = FlatStyle.Flat,
+
+                    //TextImageRelation = TextImageRelation.Overlay,
+                    BackColor = defaultButtonColor
+                };
+
+                button.FlatAppearance.BorderSize = 0;
+                button.BackColor = Color.WhiteSmoke;
+
+                button.Click += new EventHandler(ClothingButton_Click);
+
+                flowLayoutPanel1.Controls.Add(button);
+
+                if (defaultButtonColor == Color.Empty)
+                {
+                    defaultButtonColor = button.BackColor;
+                }
+            }
         }
     }
 }

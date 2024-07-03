@@ -63,6 +63,7 @@
     <Compile Include="BL\repository\CaisseRepository.cs" />
     <Compile Include="BL\repository\CategorieRepository.cs" />
     <Compile Include="BL\repository\ClientRepository.cs" />
+    <Compile Include="BL\repository\CommandeRepository.cs" />
     <Compile Include="BL\repository\DepensRepository.cs" />
     <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="BL\repository\FournisseurRepository.cs" />

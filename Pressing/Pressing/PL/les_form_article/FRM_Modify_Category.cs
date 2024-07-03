@@ -53,10 +53,16 @@ namespace Pressing.PL.les_form_article
             //
             var obj = categorierepository.GetById(id);
             category_article = obj;
-
-            label4.Text = obj.ID_CATE;
-            textBox5.Text = obj.LIB_CAT_ART;
-
+            try
+            {
+                label4.Text = obj.ID_CATE;
+                textBox5.Text = obj.LIB_CAT_ART;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
 
         }
 
