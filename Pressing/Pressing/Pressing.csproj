@@ -69,53 +69,53 @@
     <Compile Include="BL\repository\FournisseurRepository.cs" />
     <Compile Include="BL\repository\ServiceRepository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\BaseDonneP.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonneP.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\BaseDonneP.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\BaseDonneP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDonneP.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FACTURE.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>BaseDonneP.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -188,6 +188,12 @@
     </Compile>
     <Compile Include="PL\les_form_caisse\FRM_Caisse.Designer.cs">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\les_form_caisse\FRM_Paye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_caisse\FRM_Paye.Designer.cs">
+      <DependentUpon>FRM_Paye.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\les_form_client\FRM_Ajoute_Client.cs">
       <SubType>Form</SubType>
@@ -296,6 +302,9 @@
     <EmbeddedResource Include="PL\les_form_caisse\FRM_Caisse.resx">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_caisse\FRM_Paye.resx">
+      <DependentUpon>FRM_Paye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_client\FRM_Ajoute_Client.resx">
       <DependentUpon>FRM_Ajoute_Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,12 +351,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\BaseDonneP.edmx">
+    <EntityDeploy Include="DAL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDonneP.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\BaseDonneP.edmx.diagram">
-      <DependentUpon>BaseDonneP.edmx</DependentUpon>
+    <None Include="DAL\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -497,16 +506,6 @@
     <None Include="Resources\cancel_18px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\BaseDonneP.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseDonneP.edmx</DependentUpon>
-      <LastGenOutput>BaseDonneP.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\BaseDonneP.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseDonneP.edmx</DependentUpon>
-      <LastGenOutput>BaseDonneP.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\list_18px.png" />
     <None Include="Resources\add_user_male_18px2.png" />
     <None Include="Resources\image_gallery_18px.png" />
@@ -522,6 +521,18 @@
     <None Include="Resources\edit_file_20px.png" />
     <None Include="Resources\minus_20px.png" />
     <None Include="Resources\Plus_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

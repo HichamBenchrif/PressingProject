@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MLR2Entities : DbContext
+    public partial class MLR1Entities : DbContext
     {
-        public MLR2Entities()
-            : base("name=MLR2Entities")
+        public MLR1Entities()
+            : base("name=MLR1Entities")
         {
         }
     

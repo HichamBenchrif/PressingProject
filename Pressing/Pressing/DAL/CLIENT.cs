@@ -24,9 +24,7 @@ namespace Pressing.DAL
         public string NOM_CLT { get; set; }
         public string PRENOM_CLT { get; set; }
         public string TEL_CLT { get; set; }
-        public Nullable<decimal> REMIS { get; set; }
         public string ADRESSE { get; set; }
-        public string TYPE_CLT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BON_RECEPTION> BON_RECEPTION { get; set; }

@@ -19,8 +19,8 @@ namespace Pressing.DAL
         public string REF_ARTICLE { get; set; }
         public Nullable<short> QNTE_S { get; set; }
         public string COULEUR { get; set; }
-        public Nullable<System.DateTime> DATE_DISP { get; set; }
         public Nullable<decimal> REMIS { get; set; }
+        public Nullable<decimal> MONTANT_TOTAL { get; set; }
     
         public virtual ARTICLE ARTICLE { get; set; }
         public virtual BON_RECEPTION BON_RECEPTION { get; set; }

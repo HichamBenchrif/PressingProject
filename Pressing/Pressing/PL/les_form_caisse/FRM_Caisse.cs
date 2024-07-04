@@ -50,9 +50,9 @@ namespace Pressing.PL.les_form_caisse
         {
             InitializeComponent();
             PNL_Menu.Visible = false;
-            //dataGridView2.CellValueChanged += new DataGridViewCellEventHandler(dataGridView2_CellValueChanged);
-            //dataGridView2.RowsRemoved += new DataGridViewRowsRemovedEventHandler(dataGridView2_RowsRemoved);
-            //dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
+            dataGridView2.CellValueChanged += new DataGridViewCellEventHandler(dataGridView2_CellValueChanged);
+            dataGridView2.RowsRemoved += new DataGridViewRowsRemovedEventHandler(dataGridView2_RowsRemoved);
+            dataGridView2.RowsAdded += new DataGridViewRowsAddedEventHandler(dataGridView2_RowsAdded);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -71,40 +71,52 @@ namespace Pressing.PL.les_form_caisse
         {
 
         }
-        //private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4 )
+            {
+                CalculateTotal();
+            }
+        }
+        private void dataGridView2_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            CalculateTotal();
+        }
+        private void dataGridView2_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            CalculateTotal();
+        }
+        private void CalculateTotal()
+        {
+           
+        
+            double total = 0;
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                if (dataGridView2.Rows[i].Cells[4].Value != null && dataGridView2.Rows[i].Cells[3].Value != null)
+                {
+                    double quantite = 0;
+                    double prix = 0;
+
+                    if (double.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out quantite) &&
+                        double.TryParse(dataGridView2.Rows[i].Cells[4].Value.ToString(), out prix))
+                    {
+                        total += quantite * prix;
+                    }
+                }
+            }
+            label6.Text = total.ToString()+" DH";
+        
+        //label6.Text = "0";
+        //for (int i = 0; i < dataGridView2.Rows.Count; i++)
         //{
-        //    if (e.ColumnIndex == dataGridView2.Columns["Prix"].Index)
-        //    {
-        //        CalculateTotal();
-        //    }
+        //    label6.Text = Convert.ToString(double.Parse(label6.Text) + double.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString()));
         //}
-        //private void dataGridView2_RowsRemoved(object sender , DataGridViewRowsRemovedEventArgs e)
-        //{
-        //    CalculateTotal();
-        //}
-        //private void dataGridView2_RowsAdded(object sender , DataGridViewRowsAddedEventArgs e)
-        //{
-        //    CalculateTotal();
-        //}
-        //private void CalculateTotal()
-        //{
-        //    double total = 0;
-        //    foreach (DataGridViewRow row in dataGridView2.Rows)
-        //    {
-        //        if (row.Cells["Prix"].Value != null)
-        //        {
-        //            double price;
-        //            if (double.TryParse(row.Cells["Prix"].Value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out price))
-        //            {
-        //                total += price;
-        //            }
-        //        }
-        //    }
-        //    label6.Text = total.ToString("0.00");
-        //}
+
+    }
         private void FRM_Caisse_Load(object sender, EventArgs e)
         {
-            //CalculateTotal();
+            CalculateTotal();
 
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
@@ -118,6 +130,8 @@ namespace Pressing.PL.les_form_caisse
             //
             List<string> option = new List<string> { "rouge", "vert", "white", "mix", "blue" };
             comboBox1.DataSource = option;
+            //
+           
             //
             LoadClothingButtons();
             //
@@ -471,12 +485,8 @@ namespace Pressing.PL.les_form_caisse
 
             try
             {
-                dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text , label1.Text);
-                label6.Text = "0";
-                for(int i = 0; i< dataGridView2.Rows.Count; i++)
-                {
-                    label6.Text = Convert.ToString(double.Parse(label6.Text) + double.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString()));
-                }
+                dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text, label1.Text);
+
 
             }
             catch (Exception)
@@ -574,51 +584,28 @@ namespace Pressing.PL.les_form_caisse
 
         private void button11_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
+            
+        }
 
-            var clothingItems = caisserepository.Get();
+        private void button9_Click(object sender, EventArgs e)
+        {
+           
 
-            foreach (var item in clothingItems)
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
             {
-
-                Image image = null;
-                if (item.IMAGE != null && item.IMAGE.Length > 0)
+                foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                 {
-                    using (MemoryStream ms = new MemoryStream(item.IMAGE as byte[]))
-                    {
-                        image = Image.FromStream(ms);
-                    }
+                    dataGridView2.Rows.Remove(row);
                 }
-
-                var button = new Button
-                {
-
-
-                    Text = item.LIB_ARTICLE,
-                    Size = new Size(80, 100),
-                    Image = image,
-                    Tag = item.REF_ARTICLE,
-
-
-                    ImageAlign = ContentAlignment.TopCenter,
-                    TextAlign = ContentAlignment.BottomCenter,
-                    FlatStyle = FlatStyle.Flat,
-
-                    //TextImageRelation = TextImageRelation.Overlay,
-                    BackColor = defaultButtonColor
-                };
-
-                button.FlatAppearance.BorderSize = 0;
-                button.BackColor = Color.WhiteSmoke;
-
-                button.Click += new EventHandler(ClothingButton_Click);
-
-                flowLayoutPanel1.Controls.Add(button);
-
-                if (defaultButtonColor == Color.Empty)
-                {
-                    defaultButtonColor = button.BackColor;
-                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a rien à supprimer");
             }
         }
     }
