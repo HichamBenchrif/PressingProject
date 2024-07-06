@@ -60,15 +60,7 @@ namespace Pressing.BL.repository
             db.SaveChanges();
 
         }
-        public dynamic selctBox()
-        {
-            return db.FOURNISSEURs
-                .Select(x => new
-                {
-                    FullName = x.PRN_FR + " "+ x.NOM_FR,
-                    x.ID_FR
-                }).ToList();
-         }
+       
 
 
         public dynamic GetAll()
@@ -77,11 +69,12 @@ namespace Pressing.BL.repository
                           join F in db.FOURNISSEURs on D.ID_FR equals F.ID_FR
                           select new
                           {
-                              D.ID_DÉPE_ENTR,
-                              D.LIB_DEPENS,
-                              D.Q, D.PRIX,
-                              D.DATE,
-                              Namefournisseur = F.PRN_FR + " " + F.NOM_FR
+                              ID=D.ID_DÉPE_ENTR,
+                              NOM=D.LIB_DEPENS,
+                              Quntite=D.Q,
+                              Prix=D.PRIX,
+                              Date=D.DATE,
+                              NameFournisseur = F.PRN_FR + " " + F.NOM_FR
                           }).ToList();
 
             return result;

@@ -91,6 +91,7 @@ namespace Pressing.PL.les_form_caisse
            
         
             double total = 0;
+            //textBox2.Text = 0.ToString();
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 if (dataGridView2.Rows[i].Cells[4].Value != null && dataGridView2.Rows[i].Cells[3].Value != null)
@@ -101,7 +102,8 @@ namespace Pressing.PL.les_form_caisse
                     if (double.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out quantite) &&
                         double.TryParse(dataGridView2.Rows[i].Cells[4].Value.ToString(), out prix))
                     {
-                        total += quantite * prix;
+                         //var txtremis = textBox2.Text;
+                        total += (quantite * prix) ;
                     }
                 }
             }
@@ -138,6 +140,8 @@ namespace Pressing.PL.les_form_caisse
             LoadServiceButtons();
             //
             LoadCategoryButtons();
+            //
+            textBox2.Text = 0.ToString();
 
         }
         private void LoadClothingButtons()
@@ -274,7 +278,9 @@ namespace Pressing.PL.les_form_caisse
                 {
                     var art = caisserepository.GetArticleByID(selectedArticleID);
 
-                        if(ServiceName == "Repassage")
+                    try
+                    {
+                        if (ServiceName == "Repassage")
                         {
                             price = art.PRIX_REPASSAGE;
                         }
@@ -282,22 +288,24 @@ namespace Pressing.PL.les_form_caisse
                         {
                             price = art.PRIX_LESSIVE;
                         }
-                       
-                    {
+                        // إعادة تعيين لون الخلفية للزر السابق المحدد
+                        if (selectedServiceButton != null)
+                        {
+                            selectedServiceButton.BackColor = defaultServiceButtonColor;
+                        }
 
+                        // تغيير لون الخلفية للزر المحدد
+                        button.BackColor = Color.FromArgb(23, 162, 183);
+                        selectedServiceButton = button;
                     }
-                    
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Veuillez sélectionner le vêtement", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        
+                    }
                     label1.Text =  price.ToString();
-                }
-                // إعادة تعيين لون الخلفية للزر السابق المحدد
-                if (selectedServiceButton != null)
-                {
-                    selectedServiceButton.BackColor = defaultServiceButtonColor;
-                }
-
-                // تغيير لون الخلفية للزر المحدد
-                button.BackColor = Color.FromArgb(23, 162, 183);
-                selectedServiceButton = button;
+               }
+                
                
             }
         }
@@ -485,8 +493,20 @@ namespace Pressing.PL.les_form_caisse
 
             try
             {
-                dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text, label1.Text);
-
+                if (selectedButton!=null && selectedServiceButton!=null)
+                {
+                    dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text, label1.Text);
+                }
+                if (selectedButton != null)
+                {
+                    selectedButton.BackColor = defaultButtonColor;
+                }
+                if (selectedServiceButton != null)
+                {
+                    selectedServiceButton.BackColor = defaultServiceButtonColor;
+                }
+                label1.Text = 0.ToString();
+                number.Text = 1.ToString();
 
             }
             catch (Exception)
@@ -494,16 +514,7 @@ namespace Pressing.PL.les_form_caisse
                 MessageBox.Show("Veuillez sélectionner", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
             }
-            if (selectedButton != null)
-            {
-                selectedButton.BackColor = defaultButtonColor;
-            }
-            if (selectedServiceButton != null)
-            {
-                selectedServiceButton.BackColor = defaultServiceButtonColor;
-            }
-            label1.Text = 0.ToString();
-            number.Text = 1.ToString();
+            
         }
 
        
@@ -560,16 +571,16 @@ namespace Pressing.PL.les_form_caisse
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //var articl = ArticleName;
-            //var color = comboBox1.SelectedValue.ToString();
-            //var service = ServiceName;
-            //var quntite = number.ToString();
-            //var prix = label1.ToString();
+            var articl = ArticleName;
+            var color = comboBox1.SelectedValue.ToString();
+            var service = ServiceName;
+            var quntite = number.ToString();
+            var prix = label1.ToString();
+            var remis =textBox2.Text;
 
-
-            //var repository = new CategorieRepository();
-            //repository.Create(articl, Name);
-            //MessageBox.Show("Créé avec succès");
+            var repository = new CommandeRepository();
+            repository.Create(articl, color, service, quntite, prix, remis);
+            MessageBox.Show("Créé avec succès");
         }
 
         private void label1_Click(object sender, EventArgs e)

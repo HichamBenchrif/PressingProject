@@ -21,5 +21,10 @@ namespace Pressing.PL.les_form_depenses
         {
             new FRM_Depenses().Show();
         }
+        public static int panrentX;
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

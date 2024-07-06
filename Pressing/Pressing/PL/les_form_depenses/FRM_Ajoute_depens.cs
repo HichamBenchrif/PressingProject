@@ -15,7 +15,7 @@ namespace Pressing.PL.les_form_depenses
     public partial class FRM_Ajoute_depens : Form
     {
         DepensRepository depensrepository = new DepensRepository();
-
+        FournisseurRepository fournisseurrepository = new FournisseurRepository();
         public FRM_Ajoute_depens()
         {
             InitializeComponent();
@@ -25,18 +25,17 @@ namespace Pressing.PL.les_form_depenses
         
         private void FRM_Ajoute_depens_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(FRM_Depenses.panrentX = 360);
+            this.Location = new Point(FRM_Depenses.panrentX = 460);
             //
             label4.Text = depensrepository.GenerateIDDepens();
-            //
-            label13.Text = depensrepository.GenerateIDfournisseur();
+            
             //combobox affiche fournisseur
-            var data = depensrepository.selctBox();
+            var data = fournisseurrepository.selctBox();
             //
-            foreach(var item in data)
-            {
-                Console.WriteLine($"FullName:{item.FullName},ID_FR: {item.ID_FR}");
-            }
+            //foreach(var item in data)
+            //{
+            //    Console.WriteLine($"FullName:{item.FullName},ID_FR: {item.ID_FR}");
+            //}
 
             comboBox1.DataSource = null;
             comboBox1.DisplayMember = string.Empty;
@@ -97,32 +96,37 @@ namespace Pressing.PL.les_form_depenses
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox4.IsEmpty() || textBox7.IsEmpty() || textBox6.IsEmpty())
-            {
-                MessageBox.Show("Veuillez saisir les informations de fournisseur");
-            }
-            else
-            {
-                var ID = label13.Text;
-                var Prenom = textBox4.Text;
-                var Nom = textBox7.Text;
-                var Telephon = textBox6.Text;
+            //if (textBox4.IsEmpty() || textBox7.IsEmpty() || textBox6.IsEmpty())
+            //{
+            //    MessageBox.Show("Veuillez saisir les informations de fournisseur");
+            //}
+            //else
+            //{
+            //    var ID = label13.Text;
+            //    var Prenom = textBox4.Text;
+            //    var Nom = textBox7.Text;
+            //    var Telephon = textBox6.Text;
 
-                var repository = new DepensRepository();
-                repository.Create(ID,Prenom ,Name , Telephon);
-                MessageBox.Show("Créé avec succès");
-                //
-                label13.Text = depensrepository.GenerateIDfournisseur();
-                textBox4.Clear();
-                textBox7.Clear();   
-                textBox6.Clear();
-                //combobox affiche fournisseur
-                comboBox1.DataSource = depensrepository.selctBox();
-                comboBox1.ValueMember = "ID_FR";
-                comboBox1.DisplayMember = "FullName";
+            //    var repository = new DepensRepository();
+            //    repository.Create(ID,Prenom ,Name , Telephon);
+            //    MessageBox.Show("Créé avec succès");
+            //    //
+            //    label13.Text = depensrepository.GenerateIDfournisseur();
+            //    textBox4.Clear();
+            //    textBox7.Clear();   
+            //    textBox6.Clear();
+            //    //combobox affiche fournisseur
+            //    comboBox1.DataSource = depensrepository.selctBox();
+            //    comboBox1.ValueMember = "ID_FR";
+            //    comboBox1.DisplayMember = "FullName";
 
 
-            }
+            //}
         }
+
+        //private void pictureBox1_Click(object sender, EventArgs e)
+        //{
+        //    Close();
+        //}
     }
 }

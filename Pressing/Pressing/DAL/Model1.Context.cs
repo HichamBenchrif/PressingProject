@@ -36,5 +36,6 @@ namespace Pressing.DAL
         public virtual DbSet<FAMILL> FAMILLs { get; set; }
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

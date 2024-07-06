@@ -158,5 +158,10 @@ namespace Pressing.PL.les_form_depenses
         {
             new FRM_Fournisseur().Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = depensrepository.GetAll();
+        }
     }
 }

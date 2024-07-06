@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pressing.DAL.BaseRepository;
-
+using Pressing.DAL;
 namespace Pressing.BL.repository
 {
     public class FournisseurRepository :baserepository 
@@ -22,17 +22,17 @@ namespace Pressing.BL.repository
             return newID;
 
         }
-        //public void Create(string id, string prenom, string nom, string telephon)
-        //{
-        //    var fournisseur = new FOURNISSEUR();
-        //    fournisseur.ID_FR = id;
-        //    fournisseur.PRN_FR = prenom;
-        //    fournisseur.NOM_FR = nom;
-        //    fournisseur.TEL_FR = telephon;
-        //    db.FOURNISSEURs.Add(fournisseur);
-        //    db.SaveChanges();
+        public void Create(string id, string prenom, string nom, string telephon)
+        {
+            var fournisseur = new FOURNISSEUR();
+            fournisseur.ID_FR = id;
+            fournisseur.PRN_FR = prenom;
+            fournisseur.NOM_FR = nom;
+            fournisseur.TEL_FR = telephon;
+            db.FOURNISSEURs.Add(fournisseur);
+            db.SaveChanges();
 
-        //}
+        }
         //public void CreateDepens(string id, string fournisseur, string nom, DateTime date, short qntite, decimal prix)
         //{
         //    var depens = new DÉPENSES_ET_ENTRÉES();
@@ -47,15 +47,15 @@ namespace Pressing.BL.repository
         //    db.SaveChanges();
 
         //}
-        //public dynamic selctBox()
-        //{
-        //    return db.FOURNISSEURs
-        //        .Select(x => new
-        //        {
-        //            FullName = x.PRN_FR + " " + x.NOM_FR,
-        //            x.ID_FR
-        //        }).ToList();
-        //}
+        public dynamic selctBox()
+        {
+            return db.FOURNISSEURs
+                .Select(x => new
+                {
+                    FullName = x.PRN_FR + " " + x.NOM_FR,
+                    x.ID_FR
+                }).ToList();
+        }
 
 
         //public dynamic GetAll()
