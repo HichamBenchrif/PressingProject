@@ -33,47 +33,33 @@ namespace Pressing.BL.repository
             db.SaveChanges();
 
         }
-        //public void CreateDepens(string id, string fournisseur, string nom, DateTime date, short qntite, decimal prix)
-        //{
-        //    var depens = new DÉPENSES_ET_ENTRÉES();
-        //    depens.ID_DÉPE_ENTR = id;
-        //    depens.ID_FR = fournisseur;
-        //    depens.LIB_DEPENS = nom;
-        //    depens.DATE = date;
-        //    depens.Q = qntite;
-        //    depens.PRIX = prix;
-
-        //    db.DÉPENSES_ET_ENTRÉES.Add(depens);
-        //    db.SaveChanges();
-
-        //}
+        
         public dynamic selctBox()
         {
-            return db.FOURNISSEURs
-                .Select(x => new
-                {
-                    FullName = x.PRN_FR + " " + x.NOM_FR,
-                    x.ID_FR
-                }).ToList();
+            //return db.FOURNISSEURs
+            //    .Select(x => new
+            //    {
+            //        FullName = x.PRN_FR + " " + x.NOM_FR,
+            //        x.ID_FR
+            //    }).ToList();
+            return db.FOURNISSEURs.AsEnumerable().Select(x => new { FullName = x.PRN_FR+" "+ x.NOM_FR, x.ID_FR }).ToList();
         }
 
 
-        //public dynamic GetAll()
-        //{
-        //    var result = (from D in db.DÉPENSES_ET_ENTRÉES
-        //                  join F in db.FOURNISSEURs on D.ID_FR equals F.ID_FR
-        //                  select new
-        //                  {
-        //                      D.ID_DÉPE_ENTR,
-        //                      D.LIB_DEPENS,
-        //                      D.Q,
-        //                      D.PRIX,
-        //                      D.DATE,
-        //                      Namefournisseur = F.PRN_FR + " " + F.NOM_FR
-        //                  }).ToList();
+        public dynamic GetAll()
+        {
+            var result = (from F in db.FOURNISSEURs
 
-        //    return result;
-        //}
+                          select new
+                          {
+                              ID=F.ID_FR,
+                              Prenom=F.PRN_FR,
+                              Nom=F.NOM_FR,
+                              Téléphone=F.TEL_FR,
+                          }).ToList();
+
+            return result;
+        }
         //public FOURNISSEUR GetById(string id)
         //{
         //    return db.FOURNISSEURs.Find(id);
@@ -84,15 +70,6 @@ namespace Pressing.BL.repository
         //    cat = fournisseur;
         //    db.SaveChanges();
         //}
-        //public DÉPENSES_ET_ENTRÉES GetByIdDepens(string ID)
-        //{
-        //    return db.DÉPENSES_ET_ENTRÉES.Find(ID);
-        //}
-        //public void UpdateDepens(string ID, DÉPENSES_ET_ENTRÉES depens)
-        //{
-        //    DÉPENSES_ET_ENTRÉES cat = GetByIdDepens(ID);
-        //    cat = depens;
-        //    db.SaveChanges();
-        //}
+
     }
 }

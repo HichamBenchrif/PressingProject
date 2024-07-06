@@ -463,6 +463,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Fournisseur";
             this.Text = "FRM_Fournisseur";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PNL_Menu.ResumeLayout(false);
             this.PNL_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

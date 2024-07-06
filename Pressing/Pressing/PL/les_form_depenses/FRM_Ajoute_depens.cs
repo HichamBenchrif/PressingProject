@@ -28,20 +28,9 @@ namespace Pressing.PL.les_form_depenses
             this.Location = new Point(FRM_Depenses.panrentX = 460);
             //
             label4.Text = depensrepository.GenerateIDDepens();
-            
+
             //combobox affiche fournisseur
-            var data = fournisseurrepository.selctBox();
-            //
-            //foreach(var item in data)
-            //{
-            //    Console.WriteLine($"FullName:{item.FullName},ID_FR: {item.ID_FR}");
-            //}
-
-            comboBox1.DataSource = null;
-            comboBox1.DisplayMember = string.Empty;
-            comboBox1.ValueMember = string.Empty;
-
-            comboBox1.DataSource = data;
+            comboBox1.DataSource = fournisseurrepository.selctBox();
             comboBox1.ValueMember = "ID_FR";
             comboBox1.DisplayMember = "FullName";
             
@@ -89,8 +78,16 @@ namespace Pressing.PL.les_form_depenses
                 var repository = new DepensRepository();
                 repository.CreateDepens(ID,Fournisseur, Name, Date, Qntite, Prix);
                 MessageBox.Show("Créé avec succès");
-                Close();
-
+                //
+                label4.Text = depensrepository.GenerateIDDepens();
+                //combobox affiche fournisseur
+                comboBox1.DataSource = fournisseurrepository.selctBox();
+                comboBox1.ValueMember = "ID_FR";
+                comboBox1.DisplayMember = "FullName";
+                //
+                textBox5.Clear();
+                textBox1.Clear();
+                textBox2.Clear();
             }
         }
 

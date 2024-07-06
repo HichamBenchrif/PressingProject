@@ -50,13 +50,13 @@ namespace Pressing.BL.repository
                           group x by x.ID_CLIENT).Count().ToString();
             return result;
         }
-        public dynamic selctBox()
-        {
-            var clients = db.CLIENTs.AsEnumerable().ToList();
-            var result = clients.Select(x => new { FullName = x.NOM_CLT + " " + x.PRENOM_CLT as string, ID_CLIENT = x.ID_CLIENT }).ToList();
+        //public dynamic selctBox()
+        //{
+        //    var clients = db.CLIENTs.AsEnumerable().ToList();
+        //    var result = clients.Select(x => new { FullName = x.NOM_CLT + " " + x.PRENOM_CLT as string, ID_CLIENT = x.ID_CLIENT }).ToList();
 
-            return result;
-        }
+        //    return result;
+        //}
         public dynamic selctBox3()
         {
             return db.CLIENTs.AsEnumerable().Select(x => new { Name = x.PRENOM_CLT +" " + x.NOM_CLT, x.ID_CLIENT }).ToList();

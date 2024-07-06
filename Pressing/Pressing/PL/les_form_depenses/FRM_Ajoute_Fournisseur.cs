@@ -55,7 +55,12 @@ namespace Pressing.PL.les_form_depenses
                 var repository = new FournisseurRepository();
                 repository.Create(ID_fr, prenom, Name, tele);
                 MessageBox.Show("Créé avec succès");
-                Close();
+                //ID
+                label13.Text = fournisseurrepository.GenerateIDfournisseur();
+                //
+                textBox4.Clear();
+                textBox7.Clear();
+                textBox6.Clear();
             }
         }
     }
