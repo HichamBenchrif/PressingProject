@@ -119,7 +119,7 @@ namespace Pressing.PL.les_form_caisse
         private void FRM_Caisse_Load(object sender, EventArgs e)
         {
             CalculateTotal();
-
+            textBox2.TextChanged += new EventHandler(textBox2_TextChanged);
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
             comboBox2.ValueMember = "ID_CLIENT";
@@ -571,18 +571,91 @@ namespace Pressing.PL.les_form_caisse
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var articl = ArticleName;
-            var color = comboBox1.SelectedValue.ToString();
-            var service = ServiceName;
-            var quntite = number.ToString();
-            var prix = label1.ToString();
-            var remis =textBox2.Text;
 
-            var repository = new CommandeRepository();
-            repository.Create(articl, color, service, quntite, prix, remis);
-            MessageBox.Show("Créé avec succès");
+            //var articl = ArticleName;
+            //var color = comboBox1.SelectedValue.ToString();
+            //var service = ServiceName;
+            //var quntite = number.ToString();
+            //var prix = label1.ToString();
+            //var remis =textBox2.Text;
+
+            //var repository = new CommandeRepository();
+            //repository.Create(articl, color, service, quntite, prix, remis);
+            //MessageBox.Show("Créé avec succès");
+            string article = ArticleName;
+            string color = comboBox1.SelectedValue.ToString();
+            string service = ServiceName;
+            string quntite = number.ToString();
+            string remis = textBox2.Text;
+            string montantTotal = label6.Text;
+            string clients = comboBox2.Text;
+
+            Form modelBackground = new Form();
+            using (FRM_Paye frm_paye = new FRM_Paye())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                frm_paye.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                frm_paye.Article = article;
+                frm_paye.Color = color;
+                frm_paye.Service = service;
+                frm_paye.Quntite = quntite;
+                frm_paye.Remis = remis;
+
+                frm_paye.MontantTotal = montantTotal;
+                frm_paye.Clients = clients;
+
+                frm_paye.ShowDialog();
+                modelBackground.Dispose();
+
+            }
         }
+        //private void CalcuateRemis()
+        //{
+        //    decimal total = 0;
+        //    decimal remis = 0;
+        //    if (decimal.TryParse(CalculateTotalRemis(), out total) && decimal.TryParse(textBox2.Text, out remis))
+        //    {
+        //        decimal Total = total - remis;
+        //        label6.Text = Total.ToString();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("entrée invalide");
+        //    }
+        //}
+        //private dynamic CalculateTotalRemis()
+        //{
 
+
+        //    double total = 0;
+        //    //textBox2.Text = 0.ToString();
+        //    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+        //    {
+        //        if (dataGridView2.Rows[i].Cells[4].Value != null && dataGridView2.Rows[i].Cells[3].Value != null)
+        //        {
+        //            double quantite = 0;
+        //            double prix = 0;
+
+        //            if (double.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out quantite) &&
+        //                double.TryParse(dataGridView2.Rows[i].Cells[4].Value.ToString(), out prix))
+        //            {
+        //                //var txtremis = textBox2.Text;
+        //                total += (quantite * prix);
+        //            }
+        //        }
+        //    }
+        //    return total;
+        //}
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -618,6 +691,11 @@ namespace Pressing.PL.les_form_caisse
             {
                 MessageBox.Show("Il n'y a rien à supprimer");
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //CalcuateRemis();
         }
     }
 }

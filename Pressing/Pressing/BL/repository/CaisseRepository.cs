@@ -17,7 +17,7 @@ namespace Pressing.BL.repository
 
             return result;
         }
-
+       
         public dynamic GetByCategoryName(string CategoryName)
         {
             var result = (from A in db.ARTICLEs

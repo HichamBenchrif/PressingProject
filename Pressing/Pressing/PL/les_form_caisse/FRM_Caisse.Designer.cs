@@ -68,12 +68,12 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.PNL_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -314,7 +314,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.btn_ajt);
-            this.panel3.Location = new System.Drawing.Point(617, 251);
+            this.panel3.Location = new System.Drawing.Point(616, 251);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(224, 256);
             this.panel3.TabIndex = 27;
@@ -545,6 +545,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 0;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -674,18 +675,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(386, 296);
             this.dataGridView2.TabIndex = 2;
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(616, 112);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(224, 139);
-            this.flowLayoutPanel2.TabIndex = 25;
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Article";
@@ -715,6 +704,18 @@
             this.Column4.HeaderText = "Prix";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(616, 112);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(224, 139);
+            this.flowLayoutPanel2.TabIndex = 25;
             // 
             // FRM_Caisse
             // 
