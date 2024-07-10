@@ -23,12 +23,17 @@ namespace Pressing.BL.repository
                 return newID;
 
             }
-            public void Create(string articl, string color, string service, string quntite, string prixtotal, string remis)
+            public void Create(string id, string client, string statut, string date, string heure)
         {
-            //var commande = new B_R();
-            //commande.REF_ARTICLE = articl;
-            //commande.COULEUR = color;
-            //commande.ID_SERVICE = service;
+            var commande = new BON_RECEPTION();
+            commande.ID_BON_R = id;
+            commande.ID_CLIENT = client;
+            commande.STATUT = statut;
+            commande.DATE_BR = DateTime.Parse(date);
+            commande.HEURE_BR = DateTime.Parse(heure);
+
+            db.BON_RECEPTION.Add(commande);
+            db.SaveChanges();
 
             //short parsedQuntite;
             //decimal parsedPrixtotal, parsedRemis;
@@ -41,6 +46,21 @@ namespace Pressing.BL.repository
             //    db.B_R.Add(commande);
             //    db.SaveChanges();
             //}
+        }
+        public void Crt(string id, string srv, string art, string q, string color, string remis, string montant)
+        {
+            var commande = new B_R();
+            commande.ID_BON_R = id;
+            commande.ID_SERVICE = srv;
+            commande.REF_ARTICLE = art;
+            commande.QNTE_S =short.Parse( q);
+            commande.COULEUR = color;
+            commande.REMIS =decimal.Parse( remis);
+            commande.MONTANT_TOTAL =decimal.Parse( montant);
+            db.B_R.Add(commande);
+            db.SaveChanges();
+
+            
         }
     }
 }

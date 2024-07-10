@@ -14,14 +14,18 @@ namespace Pressing.PL.les_form_caisse
     public partial class FRM_Paye : Form
     {
         CommandeRepository commanderepository = new CommandeRepository();
+        private string statut;
 
         public string Article { get; set; }
+        public string Art { get; set; }
         public string Color { get; set; }
         public string Service { get; set; }
+        public string Srv { get; set; }
         public string Quntite { get; set; }
         public string Remis { get; set; }
         public string MontantTotal { get; set; }
         public string Clients { get; set; }
+        public string Clt { get; set; }
         public FRM_Paye()
         {
             InitializeComponent();
@@ -51,7 +55,35 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
+            var id = label10.Text;
+            var client = Clt;
+            if (int.Parse(label9.Text)==0)
+            {
+                 statut = Text="payé";
+            }
+            else if (int.Parse(label9.Text) < int.Parse(label5.Text.Replace(" DH", "").Trim()) && int.Parse(label9.Text) != 0)
+            {
+                statut = Text = "Partie payante";
+            }
+            else if(int.Parse(label5.Text.Replace(" DH", "").Trim()) == int.Parse(label9.Text))
+            {
+                statut = Text = "No payé";
+            }
+            var date = DateTime.Now.ToShortDateString();
+            var heure = DateTime.Now.ToShortTimeString();
 
+            var repository = new CommandeRepository();
+            repository.Create(id, client, statut, date, heure);
+
+            var ID = label10.Text;
+            var service = Srv;
+            var article = Art;
+            var Q = Quntite;
+            var color = Color;
+            var remis = Remis;
+            var montant = MontantTotal;
+            repository.Crt(ID, service, article, Q, color, remis, montant);
+            MessageBox.Show("Créé avec succès");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,6 +115,11 @@ namespace Pressing.PL.les_form_caisse
             {
                 Opacity += 0.03;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Pressing.PL
                 PNL_Menu.Visible = true;
             }
             else
-            {
+            { 
                 PNL_Menu.Visible = false;
             }
         }

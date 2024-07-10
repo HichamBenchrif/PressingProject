@@ -34,6 +34,7 @@ namespace Pressing.PL.les_form_caisse
         string ArticleName;
         decimal? price = 0;
         string selectedArticleID;
+        string selectedServiceID;
 
 
         private Color defaultButtonColor;
@@ -229,6 +230,7 @@ namespace Pressing.PL.les_form_caisse
         }
         public class ServiceItem
         {
+            public string ID_SERVICE { get; set; }
             public string LIB_SERVICE { get; set; }
         }
         private void LoadServiceButtons()
@@ -246,7 +248,7 @@ namespace Pressing.PL.les_form_caisse
                     Size = new Size(215, 38),
                     TextAlign = ContentAlignment.MiddleCenter,
                     FlatStyle = FlatStyle.Flat,
-                     
+                    Tag = item.ID_SERVICE,
 
                 };
                 button.FlatAppearance.BorderSize = 0;
@@ -269,7 +271,7 @@ namespace Pressing.PL.les_form_caisse
             var button = sender as Button;
 
             ServiceName = button.Text;
-            
+            selectedServiceID = button.Tag.ToString();
 
             if (button != null)
             {
@@ -583,12 +585,16 @@ namespace Pressing.PL.les_form_caisse
             //repository.Create(articl, color, service, quntite, prix, remis);
             //MessageBox.Show("Créé avec succès");
             string article = ArticleName;
+            string art = selectedArticleID;
             string color = comboBox1.SelectedValue.ToString();
             string service = ServiceName;
+            string srv = selectedServiceID;
             string quntite = number.ToString();
             string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;
+            string clt = comboBox2.SelectedValue.ToString();
+            
 
             Form modelBackground = new Form();
             using (FRM_Paye frm_paye = new FRM_Paye())
@@ -606,14 +612,16 @@ namespace Pressing.PL.les_form_caisse
                 panrentX = this.Location.X;
 
                 frm_paye.Article = article;
+                frm_paye.Art = art;
                 frm_paye.Color = color;
                 frm_paye.Service = service;
+                frm_paye.Srv = srv;
                 frm_paye.Quntite = quntite;
                 frm_paye.Remis = remis;
 
                 frm_paye.MontantTotal = montantTotal;
                 frm_paye.Clients = clients;
-
+                frm_paye.Clt = clt;
                 frm_paye.ShowDialog();
                 modelBackground.Dispose();
 

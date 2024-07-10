@@ -41,7 +41,7 @@ namespace Pressing.BL.repository
         public dynamic Get()
         {
             var result = (from S in db.SERVICEs
-                          select new { S.LIB_SERVICE }).ToList();
+                          select new {S.ID_SERVICE, S.LIB_SERVICE }).ToList();
 
             return result;
         }
