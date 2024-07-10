@@ -523,7 +523,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int plusvaleu = int.Parse(number.Text);
+            short plusvaleu = short.Parse(number.Text);
             if (plusvaleu < 1000)
             {
                 plusvaleu++;
@@ -533,7 +533,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int minvaleu = int.Parse(number.Text);
+            short minvaleu = short.Parse(number.Text);
             if(minvaleu > 1)
             {
                 minvaleu--;
@@ -589,7 +589,7 @@ namespace Pressing.PL.les_form_caisse
             string color = comboBox1.SelectedValue.ToString();
             string service = ServiceName;
             string srv = selectedServiceID;
-            string quntite = number.ToString();
+            string quntite = dataGridView2.Rows[].Cells[3].Value.ToString();
             string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;

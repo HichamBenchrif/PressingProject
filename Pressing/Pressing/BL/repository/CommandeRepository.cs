@@ -53,10 +53,10 @@ namespace Pressing.BL.repository
             commande.ID_BON_R = id;
             commande.ID_SERVICE = srv;
             commande.REF_ARTICLE = art;
-            commande.QNTE_S =short.Parse( q);
+            commande.QNTE_S = short.Parse(q);
             commande.COULEUR = color;
             commande.REMIS =decimal.Parse( remis);
-            commande.MONTANT_TOTAL =decimal.Parse( montant);
+            commande.MONTANT_TOTAL =decimal.Parse( montant.Replace(" DH", "").Trim());
             db.B_R.Add(commande);
             db.SaveChanges();
 
