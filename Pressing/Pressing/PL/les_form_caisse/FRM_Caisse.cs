@@ -87,6 +87,19 @@ namespace Pressing.PL.les_form_caisse
         {
             CalculateTotal();
         }
+
+        public short CalculateQuntiteSum()
+        {
+            short sum = 0;
+            foreach(DataGridViewRow row in dataGridView2.Rows)
+            {
+                if(row.Cells[3].Value != null)
+                {
+                    sum += Convert.ToInt16(row.Cells[3].Value);
+                }
+            }
+            return sum;
+        }
         private void CalculateTotal()
         {
            
@@ -110,11 +123,7 @@ namespace Pressing.PL.les_form_caisse
             }
             label6.Text = total.ToString()+" DH";
         
-        //label6.Text = "0";
-        //for (int i = 0; i < dataGridView2.Rows.Count; i++)
-        //{
-        //    label6.Text = Convert.ToString(double.Parse(label6.Text) + double.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString()));
-        //}
+         
 
     }
         private void FRM_Caisse_Load(object sender, EventArgs e)
@@ -589,7 +598,7 @@ namespace Pressing.PL.les_form_caisse
             string color = comboBox1.SelectedValue.ToString();
             string service = ServiceName;
             string srv = selectedServiceID;
-            string quntite = dataGridView2.Rows[].Cells[3].Value.ToString();
+            short quntite = CalculateQuntiteSum();
             string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;

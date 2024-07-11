@@ -47,13 +47,13 @@ namespace Pressing.BL.repository
             //    db.SaveChanges();
             //}
         }
-        public void Crt(string id, string srv, string art, string q, string color, string remis, string montant)
+        public void Crt(string id, string srv, string art, short q, string color, string remis, string montant)
         {
             var commande = new B_R();
             commande.ID_BON_R = id;
             commande.ID_SERVICE = srv;
             commande.REF_ARTICLE = art;
-            commande.QNTE_S = short.Parse(q);
+            commande.QNTE_S = q;
             commande.COULEUR = color;
             commande.REMIS =decimal.Parse( remis);
             commande.MONTANT_TOTAL =decimal.Parse( montant.Replace(" DH", "").Trim());

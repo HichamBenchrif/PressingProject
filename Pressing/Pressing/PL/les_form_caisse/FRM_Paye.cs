@@ -21,7 +21,7 @@ namespace Pressing.PL.les_form_caisse
         public string Color { get; set; }
         public string Service { get; set; }
         public string Srv { get; set; }
-        public string Quntite { get; set; }
+        public short Quntite { get; set; }
         public string Remis { get; set; }
         public string MontantTotal { get; set; }
         public string Clients { get; set; }
