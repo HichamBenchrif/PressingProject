@@ -1,6 +1,6 @@
 ﻿namespace Pressing.PL.les_form_depenses
 {
-    partial class FRM_Ajoute_Fournisseur
+    partial class FRM_Modify_Fournisseur
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -45,41 +44,44 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timerdepens = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // button2
             // 
-            this.pictureBox2.Image = global::Pressing.Properties.Resources.clos_18px1;
-            this.pictureBox2.Location = new System.Drawing.Point(404, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 52;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.button2.Location = new System.Drawing.Point(238, 523);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 30);
+            this.button2.TabIndex = 114;
+            this.button2.Text = "Fermer";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // button1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(457, 2);
-            this.panel1.TabIndex = 51;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 21);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Ajouter une nouvelle Fournisseur";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(61, 523);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 30);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "Modify";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label12
             // 
@@ -88,7 +90,7 @@
             this.label12.Location = new System.Drawing.Point(92, 128);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(20, 16);
-            this.label12.TabIndex = 93;
+            this.label12.TabIndex = 110;
             this.label12.Text = "ID";
             // 
             // panel12
@@ -97,7 +99,7 @@
             this.panel12.Location = new System.Drawing.Point(92, 168);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(277, 2);
-            this.panel12.TabIndex = 94;
+            this.panel12.TabIndex = 111;
             // 
             // panel13
             // 
@@ -106,7 +108,7 @@
             this.panel13.Location = new System.Drawing.Point(92, 149);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(277, 19);
-            this.panel13.TabIndex = 95;
+            this.panel13.TabIndex = 112;
             // 
             // label13
             // 
@@ -123,7 +125,7 @@
             this.panel10.Location = new System.Drawing.Point(92, 322);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(277, 2);
-            this.panel10.TabIndex = 90;
+            this.panel10.TabIndex = 107;
             // 
             // textBox7
             // 
@@ -133,7 +135,7 @@
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(277, 19);
-            this.textBox7.TabIndex = 92;
+            this.textBox7.TabIndex = 109;
             // 
             // label10
             // 
@@ -142,7 +144,7 @@
             this.label10.Location = new System.Drawing.Point(89, 283);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 16);
-            this.label10.TabIndex = 91;
+            this.label10.TabIndex = 108;
             this.label10.Text = "Nom";
             // 
             // panel9
@@ -151,7 +153,7 @@
             this.panel9.Location = new System.Drawing.Point(92, 397);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(277, 2);
-            this.panel9.TabIndex = 87;
+            this.panel9.TabIndex = 104;
             // 
             // textBox6
             // 
@@ -161,7 +163,7 @@
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(277, 19);
-            this.textBox6.TabIndex = 89;
+            this.textBox6.TabIndex = 106;
             // 
             // label9
             // 
@@ -170,7 +172,7 @@
             this.label9.Location = new System.Drawing.Point(89, 358);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 16);
-            this.label9.TabIndex = 88;
+            this.label9.TabIndex = 105;
             this.label9.Text = "Téléphone";
             // 
             // panel8
@@ -179,7 +181,7 @@
             this.panel8.Location = new System.Drawing.Point(92, 245);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(277, 2);
-            this.panel8.TabIndex = 84;
+            this.panel8.TabIndex = 101;
             // 
             // textBox4
             // 
@@ -189,7 +191,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(277, 19);
-            this.textBox4.TabIndex = 86;
+            this.textBox4.TabIndex = 103;
             // 
             // label8
             // 
@@ -198,40 +200,36 @@
             this.label8.Location = new System.Drawing.Point(89, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
-            this.label8.TabIndex = 85;
+            this.label8.TabIndex = 102;
             this.label8.Text = "Prénom";
             // 
-            // button2
+            // panel1
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(238, 523);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 30);
-            this.button2.TabIndex = 97;
-            this.button2.Text = "Fermer";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(0, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(457, 2);
+            this.panel1.TabIndex = 99;
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(61, 523);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 30);
-            this.button1.TabIndex = 96;
-            this.button1.Text = "Sauvegarder";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 21);
+            this.label1.TabIndex = 98;
+            this.label1.Text = "Modification";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pressing.Properties.Resources.clos_18px1;
+            this.pictureBox2.Location = new System.Drawing.Point(404, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 100;
+            this.pictureBox2.TabStop = false;
             // 
             // timerdepens
             // 
@@ -239,7 +237,7 @@
             this.timerdepens.Interval = 1;
             this.timerdepens.Tick += new System.EventHandler(this.timerdepens_Tick);
             // 
-            // FRM_Ajoute_Fournisseur
+            // FRM_Modify_Fournisseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,16 +256,16 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FRM_Ajoute_Fournisseur";
-            this.Text = "FRM_Ajoute_Fournisseur";
-            this.Load += new System.EventHandler(this.FRM_Ajoute_Fournisseur_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Name = "FRM_Modify_Fournisseur";
+            this.Text = "FRM_Modify_Fournisseur";
+            this.Load += new System.EventHandler(this.FRM_Modify_Fournisseur_Load);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,9 +273,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
@@ -291,8 +288,9 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timerdepens;
     }
 }

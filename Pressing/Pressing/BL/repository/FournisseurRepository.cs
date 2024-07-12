@@ -60,16 +60,16 @@ namespace Pressing.BL.repository
 
             return result;
         }
-        //public FOURNISSEUR GetById(string id)
-        //{
-        //    return db.FOURNISSEURs.Find(id);
-        //}
-        //public void Update(string id, FOURNISSEUR fournisseur)
-        //{
-        //    FOURNISSEUR cat = GetById(id);
-        //    cat = fournisseur;
-        //    db.SaveChanges();
-        //}
+        public FOURNISSEUR GetById(string id)
+        {
+            return db.FOURNISSEURs.Find(id);
+        }
+        public void Update(string id, FOURNISSEUR fournisseur)
+        {
+            FOURNISSEUR cat = GetById(id);
+            cat = fournisseur;
+            db.SaveChanges();
+        }
 
     }
 }

@@ -53,7 +53,7 @@ namespace Pressing.PL.les_form_depenses
                 var nom = textBox7.Text;
                 var tele = textBox6.Text;
                 var repository = new FournisseurRepository();
-                repository.Create(ID_fr, prenom, Name, tele);
+                repository.Create(ID_fr, prenom, nom, tele);
                 MessageBox.Show("Créé avec succès");
                 //ID
                 label13.Text = fournisseurrepository.GenerateIDfournisseur();
@@ -61,6 +61,18 @@ namespace Pressing.PL.les_form_depenses
                 textBox4.Clear();
                 textBox7.Clear();
                 textBox6.Clear();
+            }
+        }
+
+        private void timerdepens_Tick(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                timerdepens.Stop();
+            }
+            else
+            {
+                Opacity += 0.03;
             }
         }
     }

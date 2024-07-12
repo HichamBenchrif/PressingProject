@@ -187,6 +187,7 @@
             this.btnVentes.Text = "Ventes";
             this.btnVentes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentes.UseVisualStyleBackColor = false;
+            this.btnVentes.Click += new System.EventHandler(this.btnVentes_Click);
             // 
             // btnProduits
             // 
@@ -257,6 +258,7 @@
             this.button2.Text = "Principal";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

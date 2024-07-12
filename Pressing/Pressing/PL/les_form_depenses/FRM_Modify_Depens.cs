@@ -17,7 +17,7 @@ namespace Pressing.PL.les_form_depenses
         DepensRepository depensrepository = new DepensRepository();
         string id;
         
-        FOURNISSEUR fournisseur = new FOURNISSEUR();
+       
         DÉPENSES_ET_ENTRÉES depens = new DÉPENSES_ET_ENTRÉES();
         public FRM_Modify_Depens(string id )
         {
@@ -30,15 +30,10 @@ namespace Pressing.PL.les_form_depenses
 
         private void FRM_Modify_Depens_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(FRM_Depenses.panrentX = 360);
-            //fournisseur
-            var obj = depensrepository.GetById(id);
-            fournisseur = obj;
+            this.Location = new Point(FRM_Depenses.panrentX = 460);
+            
 
-            label13.Text = obj.ID_FR;
-            textBox4.Text = obj.PRN_FR;
-            textBox7.Text = obj.NOM_FR;
-            textBox6.Text = obj.TEL_FR;
+            
             //depnes
             var obj1 = depensrepository.GetByIdDepens(id);
             depens = obj1;
@@ -81,11 +76,7 @@ namespace Pressing.PL.les_form_depenses
 
         private void button3_Click(object sender, EventArgs e)
         {
-            fournisseur.NOM_FR = textBox7.Text;
-            fournisseur.PRN_FR = textBox4.Text;
-            fournisseur.TEL_FR = textBox6.Text;
-            depensrepository.Update(id, fournisseur);
-            MessageBox.Show("This Modification succefly");
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

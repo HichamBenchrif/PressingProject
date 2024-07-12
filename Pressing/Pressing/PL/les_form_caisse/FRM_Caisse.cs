@@ -11,6 +11,7 @@ using Pressing.BL.repository;
 using Pressing.BL.Extensions;
 using Pressing.DAL.BaseRepository;
 using Pressing.PL.Les_form_services;
+using Pressing.PL.les_form_ventes;
 using Pressing.DAL;
 using System.IO;
 using Pressing.PL.les_form_client;
@@ -577,7 +578,8 @@ namespace Pressing.PL.les_form_caisse
 
         private void btnProduits_Click(object sender, EventArgs e)
         {
-
+            new FRM_Articl().Show();
+            Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -713,6 +715,17 @@ namespace Pressing.PL.les_form_caisse
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             //CalcuateRemis();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnVentes_Click(object sender, EventArgs e)
+        {
+            new FRM_Ventes().Show();
+            Close();
         }
     }
 }

@@ -92,7 +92,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 30);
             this.button1.TabIndex = 69;
-            this.button1.Text = "Sauvegarder";
+            this.button1.Text = "Modify";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -130,9 +130,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(15, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 21);
+            this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 63;
-            this.label1.Text = "Ajouter une nouvelle famill\r\n";
+            this.label1.Text = "Modificaction";
             // 
             // Timer_famill
             // 
