@@ -467,7 +467,7 @@ namespace Pressing.PL.les_form_caisse
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = caisserepository.Search(textBox1.Text);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

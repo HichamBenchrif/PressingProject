@@ -21,12 +21,17 @@ namespace Pressing.PL
         CategorieRepository categorierepository = new CategorieRepository();
         FamillRepository famillrepository = new FamillRepository();
 
+       
+
         public FRM_Ajoute_Articl()
         {
             InitializeComponent();
 
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Top = 0;
+            //
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,46 +55,58 @@ namespace Pressing.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ( textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox() || comboBox2.IsEmptyCombobox())
-            {
-                MessageBox.Show("Veuillez saisir les informations requises");
+            try {
+                if (checkBox2.Checked)
+                {
+                    textBox2.Text = null;
+                }
+                else if (textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox() || comboBox2.IsEmptyCombobox())
+                {
+
+                    MessageBox.Show("Veuillez saisir les informations requises");
+                }
+                else
+                {
+                    var ID_art = label9.Text;
+                    var comboboxfamill = comboBox2.SelectedValue.ToString();
+                    var Comboboxcategory = comboBox1.SelectedValue.ToString();
+                    var Name = textBox5.Text;
+                    var Repasag = decimal.Parse(textBox2.Text);
+                    var Lessiv = decimal.Parse(textBox3.Text);
+                    var Image = imagebox.Image;
+
+                    var ms = new System.IO.MemoryStream();
+
+                    Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+
+
+                    var repository = new ArticlRepository();
+                    repository.Create(ID_art, comboboxfamill, Comboboxcategory, Name, Repasag, Lessiv, ms.ToArray());
+                    MessageBox.Show("Créé avec succès");
+                    //id dyal articl
+                    label9.Text = articlrepositry.GenerateIDArticl();
+                    //combobox affiche category
+                    comboBox1.DataSource = categorierepository.selctBox();
+                    comboBox1.ValueMember = "ID_CATE";
+                    comboBox1.DisplayMember = "name";
+                    //combobox affiche famill
+                    comboBox2.DataSource = famillrepository.selctBox();
+                    comboBox2.ValueMember = "N_FAMILL";
+                    comboBox2.DisplayMember = "name";
+                    //
+                    textBox5.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    imagebox.Image = null;
+                }
+                
+
             }
-            else
+            catch (Exception)
             {
-                var ID_art = label9.Text;
-                var comboboxfamill = comboBox2.SelectedValue.ToString();
-                var Comboboxcategory = comboBox1.SelectedValue.ToString();
-                var Name = textBox5.Text;
-                var Repasag = decimal.Parse(textBox2.Text);
-                var Lessiv = decimal.Parse(textBox3.Text);
-                var Image = imagebox.Image;
-
-                var ms = new System.IO.MemoryStream();
-
-                Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-
-
-
-                var repository = new ArticlRepository();
-                repository.Create(ID_art, comboboxfamill, Comboboxcategory, Name, Repasag, Lessiv, ms.ToArray());
-                MessageBox.Show("Créé avec succès");
-                //id dyal articl
-                label9.Text = articlrepositry.GenerateIDArticl();
-                //combobox affiche category
-                comboBox1.DataSource = categorierepository.selctBox();
-                comboBox1.ValueMember = "ID_CATE";
-                comboBox1.DisplayMember = "name";
-                //combobox affiche famill
-                comboBox2.DataSource = famillrepository.selctBox();
-                comboBox2.ValueMember = "N_FAMILL";
-                comboBox2.DisplayMember = "name";
-                //
-                textBox5.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                imagebox.Image = null;
-
-
+                MessageBox.Show("Quelque chose ne va pas !", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 
@@ -144,6 +161,29 @@ namespace Pressing.PL
             else
             {
                 Opacity += 0.03;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                textBox2.Text = string.Empty;
+                textBox2.Enabled = false;
+            }
+            else
+            {
+                textBox2.Enabled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+                textBox2.Enabled = true;
             }
         }
     }

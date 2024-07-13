@@ -60,6 +60,9 @@
             this.imagebox = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -101,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(228, 367);
+            this.label6.Location = new System.Drawing.Point(228, 416);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 16);
             this.label6.TabIndex = 27;
@@ -111,7 +114,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(76, 366);
+            this.label5.Location = new System.Drawing.Point(76, 415);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 16);
             this.label5.TabIndex = 26;
@@ -206,7 +209,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(79, 406);
+            this.panel4.Location = new System.Drawing.Point(79, 455);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(146, 2);
             this.panel4.TabIndex = 23;
@@ -215,7 +218,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(79, 385);
+            this.textBox2.Location = new System.Drawing.Point(79, 434);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(146, 33);
@@ -224,7 +227,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(231, 406);
+            this.panel5.Location = new System.Drawing.Point(231, 455);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(149, 2);
             this.panel5.TabIndex = 31;
@@ -233,7 +236,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(231, 385);
+            this.textBox3.Location = new System.Drawing.Point(231, 434);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(149, 33);
@@ -276,7 +279,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel9.Location = new System.Drawing.Point(79, 406);
+            this.panel9.Location = new System.Drawing.Point(79, 455);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(146, 2);
             this.panel9.TabIndex = 23;
@@ -284,7 +287,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.panel10.Location = new System.Drawing.Point(231, 406);
+            this.panel10.Location = new System.Drawing.Point(231, 455);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(149, 2);
             this.panel10.TabIndex = 31;
@@ -336,7 +339,7 @@
             // 
             // imagebox
             // 
-            this.imagebox.Location = new System.Drawing.Point(252, 452);
+            this.imagebox.Location = new System.Drawing.Point(252, 501);
             this.imagebox.Name = "imagebox";
             this.imagebox.Size = new System.Drawing.Size(128, 125);
             this.imagebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,7 +357,7 @@
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
             this.button3.Image = global::Pressing.Properties.Resources.image_gallery_18px;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(79, 452);
+            this.button3.Location = new System.Drawing.Point(79, 501);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 28);
             this.button3.TabIndex = 33;
@@ -374,11 +377,46 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(271, 367);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 17);
+            this.checkBox1.TabIndex = 55;
+            this.checkBox1.Text = "Oui";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(328, 367);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(40, 17);
+            this.checkBox2.TabIndex = 56;
+            this.checkBox2.Text = "No";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(76, 367);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(176, 16);
+            this.label7.TabIndex = 57;
+            this.label7.Text = "Cet article est-il repassable ?";
+            // 
             // FRM_Ajoute_Articl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 701);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.imagebox);
@@ -456,5 +494,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Timer timerarticl;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label7;
     }
 }

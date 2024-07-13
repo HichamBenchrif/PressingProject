@@ -36,12 +36,7 @@ namespace Pressing.BL.repository
         
         public dynamic selctBox()
         {
-            //return db.FOURNISSEURs
-            //    .Select(x => new
-            //    {
-            //        FullName = x.PRN_FR + " " + x.NOM_FR,
-            //        x.ID_FR
-            //    }).ToList();
+           
             return db.FOURNISSEURs.AsEnumerable().Select(x => new { FullName = x.PRN_FR+" "+ x.NOM_FR, x.ID_FR }).ToList();
         }
 
@@ -59,6 +54,30 @@ namespace Pressing.BL.repository
                           }).ToList();
 
             return result;
+        }
+        public dynamic Search(string value)
+        {
+            return (from C in db.FOURNISSEURs
+                    where C.ID_FR.Contains(value) ||
+                          C.PRN_FR.Contains(value) ||
+                          C.NOM_FR.Contains(value) ||
+                          C.TEL_FR.Contains(value)
+                    select new
+                    {
+                        ID = C.ID_FR,
+                        Prenom = C.PRN_FR,
+                        Nom = C.NOM_FR,
+                        Téléphone = C.TEL_FR,
+                    }).ToList();
+        }
+        public void Supprim(string value)
+        {
+            var Obj = (from x in db.FOURNISSEURs
+                       where x.ID_FR == value
+                       select x).FirstOrDefault();
+            db.FOURNISSEURs.Remove(Obj);
+            db.SaveChanges();
+
         }
         public FOURNISSEUR GetById(string id)
         {

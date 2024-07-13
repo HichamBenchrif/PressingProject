@@ -17,7 +17,14 @@ namespace Pressing.BL.repository
 
             return result;
         }
-       
+        public dynamic Search(string value)
+        {
+           
+            return (from C in db.BON_RECEPTION
+                    where C.ID_BON_R.Contains(value)
+                    select new { C.ID_BON_R }).ToList();
+        }
+
         public dynamic GetByCategoryName(string CategoryName)
         {
             var result = (from A in db.ARTICLEs

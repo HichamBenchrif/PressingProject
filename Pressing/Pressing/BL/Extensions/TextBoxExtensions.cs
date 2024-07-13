@@ -15,6 +15,8 @@ namespace Pressing.BL.Extensions
             var Value = Box.Text;
             if (Value == "")
                 return true;
+            else if (Value == null)
+                return false;
             else
                 return false;
 
