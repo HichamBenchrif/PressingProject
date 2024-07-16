@@ -230,8 +230,9 @@ namespace Pressing.PL.les_form_article
             }
             catch(Exception)
             {
-                MessageBox.Show("DataGridView est vide.");
+                MessageBox.Show("seleced id please.");
             }
+            
         }
     }
 }

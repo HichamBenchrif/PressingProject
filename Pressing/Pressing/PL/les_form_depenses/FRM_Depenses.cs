@@ -164,5 +164,23 @@ namespace Pressing.PL.les_form_depenses
         {
             dataGridView1.DataSource = depensrepository.GetAll();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var SelectCellValue = dataGridView1.CurrentCell.Value.ToString();
+                DialogResult res = MessageBox.Show("Voullez vous vraiment supprimer cette ligne ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    depensrepository.Supprim(SelectCellValue);
+                    dataGridView1.DataSource = depensrepository.GetAll();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("seleced id please.");
+            }
+        }
     }
 }

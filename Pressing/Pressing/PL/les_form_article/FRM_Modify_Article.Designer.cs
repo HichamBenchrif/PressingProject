@@ -336,9 +336,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 21);
+            this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 56;
-            this.label1.Text = "Ajouter un article\r\n";
+            this.label1.Text = "Modificaction";
             // 
             // comboBox1
             // 

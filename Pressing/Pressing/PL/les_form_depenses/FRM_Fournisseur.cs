@@ -173,7 +173,7 @@ namespace Pressing.PL.les_form_depenses
             }
             catch (Exception)
             {
-                MessageBox.Show("DataGridView est vide.");
+                MessageBox.Show("seleced id please.");
             }
         }
     }

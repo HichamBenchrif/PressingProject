@@ -37,6 +37,18 @@ namespace Pressing.BL.repository
             db.SaveChanges();
 
         }
+        public dynamic Search(string value)
+        {
+           
+
+            return (from C in db.CLIENTs
+                    where C.ID_CLIENT.Contains(value) ||
+                          C.PRENOM_CLT.Contains(value)||
+                          C.NOM_CLT.Contains(value) ||
+                          C.TEL_CLT.Contains(value)||
+                          C.ADRESSE.Contains(value)
+                    select new { C.ID_CLIENT, C.NOM_CLT, C.PRENOM_CLT, C.TEL_CLT, C.ADRESSE }).ToList();
+        }
         public dynamic GetAll()
         {
             var result = (from C in db.CLIENTs

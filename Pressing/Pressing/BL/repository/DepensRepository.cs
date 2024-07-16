@@ -23,6 +23,15 @@ namespace Pressing.BL.repository
             return newID;
 
         }
+        public void Supprim(string value)
+        {
+            var Obj = (from x in db.DÉPENSES_ET_ENTRÉES
+                       where x.ID_DÉPE_ENTR == value
+                       select x).FirstOrDefault();
+            db.DÉPENSES_ET_ENTRÉES.Remove(Obj);
+            db.SaveChanges();
+
+        }
         public string GenerateIDfournisseur()
         {
             var count = db.FOURNISSEURs.Count();
@@ -35,17 +44,8 @@ namespace Pressing.BL.repository
             return newID;
 
         }
-        public void Create(string id, string prenom , string nom ,string telephon )
-        {
-            var fournisseur = new FOURNISSEUR();
-            fournisseur.ID_FR = id;
-            fournisseur.PRN_FR = prenom;
-            fournisseur.NOM_FR = nom;
-            fournisseur.TEL_FR = telephon;
-            db.FOURNISSEURs.Add(fournisseur);
-            db.SaveChanges();
-
-        }
+        
+        
         public void CreateDepens(string id, string fournisseur, string nom, DateTime date, short qntite, decimal prix)
         {
             var depens = new DÉPENSES_ET_ENTRÉES();
@@ -60,8 +60,8 @@ namespace Pressing.BL.repository
             db.SaveChanges();
 
         }
-       
 
+        
 
         public dynamic GetAll()
         {
@@ -79,16 +79,8 @@ namespace Pressing.BL.repository
 
             return result;
         }
-        public FOURNISSEUR GetById(string id)
-        {
-            return db.FOURNISSEURs.Find(id);
-        }
-        public void Update(string id, FOURNISSEUR fournisseur)
-        {
-            FOURNISSEUR cat = GetById(id);
-            cat = fournisseur;
-            db.SaveChanges();
-        }
+       
+       
         public DÉPENSES_ET_ENTRÉES GetByIdDepens(string ID)
         {
             return db.DÉPENSES_ET_ENTRÉES.Find(ID);

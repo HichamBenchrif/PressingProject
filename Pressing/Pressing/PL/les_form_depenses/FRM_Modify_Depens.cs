@@ -15,6 +15,7 @@ namespace Pressing.PL.les_form_depenses
     public partial class FRM_Modify_Depens : Form
     {
         DepensRepository depensrepository = new DepensRepository();
+        FournisseurRepository fournisseurrepository = new FournisseurRepository();
         string id;
         
        
@@ -34,21 +35,33 @@ namespace Pressing.PL.les_form_depenses
             
 
             
-            //depnes
-            var obj1 = depensrepository.GetByIdDepens(id);
-            depens = obj1;
+            
+            try
+            {
+                //combobox affiche category
+                comboBox1.DataSource = fournisseurrepository.selctBox();
+                comboBox1.ValueMember = "ID_FR";
+                comboBox1.DisplayMember = "FullName";
 
+                //depnes
+                var obj1 = depensrepository.GetByIdDepens(id);
+            depens = obj1;
             label4.Text = obj1.ID_DÉPE_ENTR;
-            comboBox1.Text= obj1.ID_FR;
+            comboBox1.SelectedValue = obj1.ID_FR;
             textBox5.Text = obj1.LIB_DEPENS;
             dateTimePicker1.Text = obj1.DATE.ToString() ;
             textBox1.Text = obj1.Q.ToString();
             textBox2.Text = obj1.PRIX.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
 
 
 
-
-        }
+          }
 
         private void timerdepens_Tick(object sender, EventArgs e)
         {

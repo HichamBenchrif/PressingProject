@@ -57,11 +57,19 @@ namespace Pressing.PL.les_form_client
             var obj = clientrepository.GetById(id);
             client = obj;
 
-            label9.Text = obj.ID_CLIENT;
+            try
+            {
+                label9.Text = obj.ID_CLIENT;
             textBox2.Text = obj.NOM_CLT;
             textBox3.Text = obj.PRENOM_CLT;
             textBox5.Text = obj.TEL_CLT;
             textBox1.Text = obj.ADRESSE;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("seleced id please ", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
 
         }
 
@@ -75,6 +83,7 @@ namespace Pressing.PL.les_form_client
 
             clientrepository.Update(id, client);
             MessageBox.Show("This Modification succefly");
+            Close();
         }
     }
 }

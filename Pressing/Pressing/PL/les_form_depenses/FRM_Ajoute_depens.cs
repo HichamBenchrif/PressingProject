@@ -16,6 +16,9 @@ namespace Pressing.PL.les_form_depenses
     {
         DepensRepository depensrepository = new DepensRepository();
         FournisseurRepository fournisseurrepository = new FournisseurRepository();
+        private short Qntite;
+        private decimal Prix;
+
         public FRM_Ajoute_depens()
         {
             InitializeComponent();
@@ -73,11 +76,21 @@ namespace Pressing.PL.les_form_depenses
                 var Fournisseur = comboBox1.SelectedValue.ToString();
                 var Name = textBox5.Text;
                 var Date =DateTime.Parse (dateTimePicker1.Text);
-                var Qntite = short.Parse(textBox1.Text);
-                var Prix = decimal.Parse(textBox2.Text);
+                try
+                {
+                    var Qntite = short.Parse(textBox1.Text);
+                    var Prix = decimal.Parse(textBox2.Text);
+
+                
+                
                 var repository = new DepensRepository();
                 repository.CreateDepens(ID,Fournisseur, Name, Date, Qntite, Prix);
                 MessageBox.Show("Créé avec succès");
+                }
+                catch
+                {
+                    MessageBox.Show("Entre les chiffres en quantité et en prix", "Alerte", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 //
                 label4.Text = depensrepository.GenerateIDDepens();
                 //combobox affiche fournisseur
