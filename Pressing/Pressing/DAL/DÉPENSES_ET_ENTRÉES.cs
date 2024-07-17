@@ -17,7 +17,7 @@ namespace Pressing.DAL
         public string ID_DÉPE_ENTR { get; set; }
         public string ID_FR { get; set; }
         public string LIB_DEPENS { get; set; }
-        public Nullable<short> Q { get; set; }
+        public Nullable<int> Q { get; set; }
         public Nullable<decimal> PRIX { get; set; }
         public Nullable<System.DateTime> DATE { get; set; }
     

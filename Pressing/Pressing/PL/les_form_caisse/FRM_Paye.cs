@@ -82,7 +82,7 @@ namespace Pressing.PL.les_form_caisse
             var color = Color;
             var remis = Remis;
             var montant = MontantTotal;
-            repository.Crt(ID, service, article, Q, color, remis, montant);
+            repository.Crt(ID, service, article, remis, montant);
             MessageBox.Show("Créé avec succès");
         }
 

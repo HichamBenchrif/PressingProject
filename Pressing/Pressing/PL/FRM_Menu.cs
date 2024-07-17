@@ -75,11 +75,34 @@ namespace Pressing.PL
             
         }
 
-       
+
+        public static int panrentX;
 
         private void FRM_Menu_Load(object sender, EventArgs e)
         {
             label1.Text = clientrepository.GetTotal();
+            
+            // إنشاء الفورم الجديدة
+            Form modelBackground = new Form();
+            using (Form1 model = new Form1())
+            {
+                modelBackground.StartPosition = FormStartPosition.Manual;
+                modelBackground.FormBorderStyle = FormBorderStyle.None;
+                modelBackground.Opacity = 0.50;
+                modelBackground.BackColor = Color.Black;
+                modelBackground.Size = this.Size;
+                modelBackground.Location = this.Location;
+                modelBackground.ShowInTaskbar = false;
+                modelBackground.Show();
+                model.Owner = modelBackground;
+
+                panrentX = this.Location.X;
+
+                model.ShowDialog();
+                modelBackground.Dispose();
+
+            }
+
         }
 
         private void panelAjouteProduite_Paint(object sender, PaintEventArgs e)
@@ -119,6 +142,11 @@ namespace Pressing.PL
         private void btnRapports_Click(object sender, EventArgs e)
         {
             new FRM_service().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new FRM_user().Show();
         }
     }
 }

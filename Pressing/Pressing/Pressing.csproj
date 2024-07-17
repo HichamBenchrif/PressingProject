@@ -68,63 +68,73 @@
     <Compile Include="BL\repository\FamillRepository.cs" />
     <Compile Include="BL\repository\FournisseurRepository.cs" />
     <Compile Include="BL\repository\ServiceRepository.cs" />
+    <Compile Include="BL\repository\User_Repository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ARTICLE_AJOUTE.cs">
+      <DependentUpon>base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\base.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>base.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\base.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\base.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>base.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FACTURE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Compile Include="DAL\Login.cs">
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>base.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="PL\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="PL\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_user.Designer.cs">
+      <DependentUpon>FRM_user.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\les_form_article\FRM_Ajoute_Articl.cs">
       <SubType>Form</SubType>
@@ -284,6 +294,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_user.resx">
+      <DependentUpon>FRM_user.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_article\FRM_Ajoute_Articl.resx">
       <DependentUpon>FRM_Ajoute_Articl.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,12 +388,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\Model1.edmx">
+    <EntityDeploy Include="DAL\base.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>base.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="DAL\base.edmx.diagram">
+      <DependentUpon>base.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -544,19 +560,23 @@
     <None Include="Resources\Plus_20px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DAL\base.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>base.edmx</DependentUpon>
+      <LastGenOutput>base.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\base.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>base.edmx</DependentUpon>
+      <LastGenOutput>base.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\blanchisserie %281%29.png" />
+    <None Include="Resources\blanchisserie.png" />
+    <None Include="Resources\lessive.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

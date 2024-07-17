@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MLR1Entities : DbContext
+    public partial class MLR1Entities2 : DbContext
     {
-        public MLR1Entities()
-            : base("name=MLR1Entities")
+        public MLR1Entities2()
+            : base("name=MLR1Entities2")
         {
         }
     
@@ -26,6 +26,7 @@ namespace Pressing.DAL
         }
     
         public virtual DbSet<ARTICLE> ARTICLEs { get; set; }
+        public virtual DbSet<ARTICLE_AJOUTE> ARTICLE_AJOUTE { get; set; }
         public virtual DbSet<B_R> B_R { get; set; }
         public virtual DbSet<BON_RECEPTION> BON_RECEPTION { get; set; }
         public virtual DbSet<BON_SORTIE> BON_SORTIE { get; set; }
@@ -36,6 +37,6 @@ namespace Pressing.DAL
         public virtual DbSet<FAMILL> FAMILLs { get; set; }
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }

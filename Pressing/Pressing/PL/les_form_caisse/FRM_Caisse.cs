@@ -29,7 +29,7 @@ namespace Pressing.PL.les_form_caisse
         ClientRepository clientrepository = new ClientRepository();
         CaisseRepository caisserepository = new CaisseRepository();
         ServiceRepository servicerepository = new ServiceRepository();
-
+        CommandeRepository commanderepository = new CommandeRepository();
         string CategoryName;
         string ServiceName;
         string ArticleName;
@@ -89,18 +89,18 @@ namespace Pressing.PL.les_form_caisse
             CalculateTotal();
         }
 
-        public short CalculateQuntiteSum()
-        {
-            short sum = 0;
-            foreach(DataGridViewRow row in dataGridView2.Rows)
-            {
-                if(row.Cells[3].Value != null)
-                {
-                    sum += Convert.ToInt16(row.Cells[3].Value);
-                }
-            }
-            return sum;
-        }
+        //public short CalculateQuntiteSum()
+        //{
+        //    short sum = 0;
+        //    foreach(DataGridViewRow row in dataGridView2.Rows)
+        //    {
+        //        if(row.Cells[3].Value != null)
+        //        {
+        //            sum += Convert.ToInt16(row.Cells[3].Value);
+        //        }
+        //    }
+        //    return sum;
+        //}
         private void CalculateTotal()
         {
            
@@ -502,6 +502,16 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
+            string id = commanderepository.ID();
+            
+            string art = selectedArticleID;
+            
+            string srv = selectedServiceID;
+            string color = comboBox1.SelectedValue.ToString();
+            string quntite =number.Text;
+            string prix = label1.Text;
+            var repository = new CommandeRepository();
+            repository.ajout_articl(id, art, srv,prix, color, quntite);
 
             try
             {
@@ -595,12 +605,12 @@ namespace Pressing.PL.les_form_caisse
             //var repository = new CommandeRepository();
             //repository.Create(articl, color, service, quntite, prix, remis);
             //MessageBox.Show("Créé avec succès");
-            string article = ArticleName;
-            string art = selectedArticleID;
-            string color = comboBox1.SelectedValue.ToString();
-            string service = ServiceName;
-            string srv = selectedServiceID;
-            short quntite = CalculateQuntiteSum();
+            ////////////////////////string article = ArticleName;
+            ////////////////////////string art = selectedArticleID;
+            ////////////////////////string color = comboBox1.SelectedValue.ToString();
+            ////////////////////////string service = ServiceName;
+            ////////////////////////string srv = selectedServiceID;
+            ////////////////////////short quntite = CalculateQuntiteSum();
             string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;
@@ -622,12 +632,7 @@ namespace Pressing.PL.les_form_caisse
 
                 panrentX = this.Location.X;
 
-                frm_paye.Article = article;
-                frm_paye.Art = art;
-                frm_paye.Color = color;
-                frm_paye.Service = service;
-                frm_paye.Srv = srv;
-                frm_paye.Quntite = quntite;
+                
                 frm_paye.Remis = remis;
 
                 frm_paye.MontantTotal = montantTotal;

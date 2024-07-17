@@ -12,16 +12,10 @@ namespace Pressing.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class B_R
+    public partial class Login
     {
-        public string ID_BON_R { get; set; }
-        public string ID_SERVICE { get; set; }
-        public string REF_ARTICLE { get; set; }
-        public Nullable<decimal> REMIS { get; set; }
-        public Nullable<decimal> MONTANT_TOTAL { get; set; }
-    
-        public virtual ARTICLE ARTICLE { get; set; }
-        public virtual BON_RECEPTION BON_RECEPTION { get; set; }
-        public virtual SERVICE SERVICE { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string ID { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ARTICLE()
         {
+            this.ARTICLE_AJOUTE = new HashSet<ARTICLE_AJOUTE>();
             this.B_R = new HashSet<B_R>();
             this.BON_SORTIE = new HashSet<BON_SORTIE>();
         }
@@ -29,6 +30,8 @@ namespace Pressing.DAL
         public Nullable<decimal> PRIX_LESSIVE { get; set; }
         public byte[] IMAGE { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARTICLE_AJOUTE> ARTICLE_AJOUTE { get; set; }
         public virtual CATEGORIE_ARTILCLE CATEGORIE_ARTILCLE { get; set; }
         public virtual FAMILL FAMILL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

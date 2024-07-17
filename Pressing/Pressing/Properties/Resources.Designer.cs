@@ -123,6 +123,26 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blanchisserie {
+            get {
+                object obj = ResourceManager.GetObject("blanchisserie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blanchisserie__1_ {
+            get {
+                object obj = ResourceManager.GetObject("blanchisserie (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_18px {
             get {
                 object obj = ResourceManager.GetObject("cancel_18px", resourceCulture);
@@ -426,6 +446,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap left_48px {
             get {
                 object obj = ResourceManager.GetObject("left_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lessive {
+            get {
+                object obj = ResourceManager.GetObject("lessive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

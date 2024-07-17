@@ -17,12 +17,15 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SERVICE()
         {
+            this.ARTICLE_AJOUTE = new HashSet<ARTICLE_AJOUTE>();
             this.B_R = new HashSet<B_R>();
         }
     
         public string ID_SERVICE { get; set; }
         public string LIB_SERVICE { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARTICLE_AJOUTE> ARTICLE_AJOUTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<B_R> B_R { get; set; }
     }

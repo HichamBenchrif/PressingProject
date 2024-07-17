@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PNL_Menu = new System.Windows.Forms.Panel();
+            this.btnRapports = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDépenses = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnRapports = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PNL_Menu.SuspendLayout();
@@ -116,6 +116,7 @@
             this.button1.Text = "Réglages\r\n";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -162,6 +163,25 @@
             this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
             this.PNL_Menu.TabIndex = 1;
             this.PNL_Menu.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Menu_Paint);
+            // 
+            // btnRapports
+            // 
+            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapports.FlatAppearance.BorderSize = 0;
+            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
+            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRapports.Location = new System.Drawing.Point(0, 292);
+            this.btnRapports.Name = "btnRapports";
+            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.TabIndex = 7;
+            this.btnRapports.Text = "Service";
+            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRapports.UseVisualStyleBackColor = false;
+            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
             // 
             // pictureBox2
             // 
@@ -418,25 +438,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(326, 462);
             this.panel5.TabIndex = 3;
-            // 
-            // btnRapports
-            // 
-            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRapports.FlatAppearance.BorderSize = 0;
-            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
-            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRapports.Location = new System.Drawing.Point(0, 292);
-            this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
-            this.btnRapports.TabIndex = 7;
-            this.btnRapports.Text = "Service";
-            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRapports.UseVisualStyleBackColor = false;
-            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
             // 
             // FRM_Menu
             // 

@@ -23,7 +23,19 @@ namespace Pressing.BL.repository
                 return newID;
 
             }
-            public void Create(string id, string client, string statut, string date, string heure)
+        public string ID()
+        {
+            var count = db.ARTICLE_AJOUTE.Count();
+            if (count == 0)
+                return "1";
+            var ids = db.ARTICLE_AJOUTE.Select(x => x.ID_ARTICLE_AJOUTE).ToList();
+            var numbres = ids.Select(x => int.Parse(x.Substring(0, x.Length - 0)));
+            var max = numbres.Max();
+            var newID = "" + (max + 1);
+            return newID;
+
+        }
+        public void Create(string id, string client, string statut, string date, string heure)
         {
             var commande = new BON_RECEPTION();
             commande.ID_BON_R = id;
@@ -47,20 +59,35 @@ namespace Pressing.BL.repository
             //    db.SaveChanges();
             //}
         }
-        public void Crt(string id, string srv, string art, short q, string color, string remis, string montant)
+        public void Crt(string id, string srv, string art,  string remis, string montant)
         {
             var commande = new B_R();
             commande.ID_BON_R = id;
             commande.ID_SERVICE = srv;
             commande.REF_ARTICLE = art;
-            commande.QNTE_S = q;
-            commande.COULEUR = color;
+           
             commande.REMIS =decimal.Parse( remis);
             commande.MONTANT_TOTAL =decimal.Parse( montant.Replace(" DH", "").Trim());
             db.B_R.Add(commande);
             db.SaveChanges();
 
             
+        }
+        public void ajout_articl(string id, string art, string srv, string prix, string color, string quantite)
+        {
+            var commande = new ARTICLE_AJOUTE();
+            commande.ID_ARTICLE_AJOUTE = id;
+            commande.ID_SERVICE = srv;
+            commande.REF_ARTICLE = art;
+            commande.PRIX =decimal.Parse( prix);
+            commande.COLOR = color;
+            commande.QUANTITE =int.Parse( quantite);
+
+            
+            db.ARTICLE_AJOUTE.Add(commande);
+            db.SaveChanges();
+
+
         }
     }
 }

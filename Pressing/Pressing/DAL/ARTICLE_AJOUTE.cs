@@ -12,12 +12,16 @@ namespace Pressing.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class ARTICLE_AJOUTE
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string ID_ARTICLE_AJOUTE { get; set; }
+        public string ID_SERVICE { get; set; }
+        public string REF_ARTICLE { get; set; }
+        public Nullable<decimal> PRIX { get; set; }
+        public string COLOR { get; set; }
+        public Nullable<int> QUANTITE { get; set; }
+    
+        public virtual ARTICLE ARTICLE { get; set; }
+        public virtual SERVICE SERVICE { get; set; }
     }
 }
