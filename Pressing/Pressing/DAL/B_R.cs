@@ -22,7 +22,7 @@ namespace Pressing.DAL
         public Nullable<decimal> PRIX { get; set; }
     
         public virtual ARTICLE ARTICLE { get; set; }
-        public virtual BON_RECEPTION BON_RECEPTION { get; set; }
         public virtual SERVICE SERVICE { get; set; }
+        public virtual BON_RECEPTION BON_RECEPTION { get; set; }
     }
 }

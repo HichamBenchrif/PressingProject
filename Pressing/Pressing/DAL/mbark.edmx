@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mbarkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="mbarkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -42,6 +42,7 @@
           <Property Name="RESTE" Type="nvarchar" MaxLength="50" />
           <Property Name="TYPE_PAIEMENT" Type="nvarchar" MaxLength="50" />
           <Property Name="MONTANTSTOTAL" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Paye" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="BON_SORTIE">
           <Key>
@@ -269,8 +270,7 @@
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="mbarkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -303,24 +303,8 @@
           <Property Name="COLOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
           <NavigationProperty Name="SERVICE" Relationship="Self.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
-        </EntityType>
-        <EntityType Name="BON_RECEPTION">
-          <Key>
-            <PropertyRef Name="ID_BON_R" />
-          </Key>
-          <Property Name="ID_BON_R" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ID_CLIENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DATE_BR" Type="DateTime" Precision="3" />
-          <Property Name="STATUT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HEURE_BR" Type="DateTime" Precision="3" />
-          <Property Name="RESTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TYPE_PAIEMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MONTANTSTOTAL" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
-          <NavigationProperty Name="CLIENT" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
-          <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="mbarkModel.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
         </EntityType>
         <EntityType Name="BON_SORTIE">
           <Key>
@@ -332,7 +316,7 @@
           <Property Name="DATE_B_S" Type="DateTime" Precision="3" />
           <Property Name="HEURE_B_S" Type="DateTime" Precision="3" />
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_BON_SORTIE_ARTICLE" FromRole="BON_SORTIE" ToRole="ARTICLE" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_SORTIE" ToRole="BON_RECEPTION" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="mbarkModel.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_SORTIE" ToRole="BON_RECEPTION" />
         </EntityType>
         <EntityType Name="CATEGORIE_ARTILCLE">
           <Key>
@@ -351,7 +335,7 @@
           <Property Name="PRENOM_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TEL_CLT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="CLIENT" ToRole="BON_RECEPTION" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="mbarkModel.FK_BON_RECEPTION_CLIENT" FromRole="CLIENT" ToRole="BON_RECEPTION" />
         </EntityType>
         <EntityType Name="DÉPENSES_ET_ENTRÉES">
           <Key>
@@ -447,18 +431,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_B_R_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_RECEPTION">
-              <PropertyRef Name="ID_BON_R" />
-            </Principal>
-            <Dependent Role="B_R">
-              <PropertyRef Name="ID_BON_R" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_B_R_SERVICE">
           <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1" />
           <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
@@ -468,30 +440,6 @@
             </Principal>
             <Dependent Role="B_R">
               <PropertyRef Name="ID_SERVICE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BON_RECEPTION_CLIENT">
-          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CLIENT">
-              <PropertyRef Name="ID_CLIENT" />
-            </Principal>
-            <Dependent Role="BON_RECEPTION">
-              <PropertyRef Name="ID_CLIENT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BON_SORTIE_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_RECEPTION">
-              <PropertyRef Name="ID_BON_R" />
-            </Principal>
-            <Dependent Role="BON_SORTIE">
-              <PropertyRef Name="ID_BON_R" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -510,7 +458,6 @@
         <EntityContainer Name="mbarkEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARTICLEs" EntityType="Self.ARTICLE" />
           <EntitySet Name="B_R" EntityType="Self.B_R" />
-          <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" />
           <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" />
           <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" />
           <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
@@ -535,27 +482,81 @@
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
           </AssociationSet>
-          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
           <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
             <End Role="SERVICE" EntitySet="SERVICEs" />
             <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_RECEPTION_CLIENT" Association="Self.FK_BON_RECEPTION_CLIENT">
-            <End Role="CLIENT" EntitySet="CLIENTs" />
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_BON_RECEPTION" Association="Self.FK_BON_SORTIE_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
           </AssociationSet>
           <AssociationSet Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" Association="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
             <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
           </AssociationSet>
+          <EntitySet Name="BON_RECEPTION" EntityType="mbarkModel.BON_RECEPTION" />
+          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="mbarkModel.FK_B_R_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+            <End Role="B_R" EntitySet="B_R" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_RECEPTION_CLIENT" Association="mbarkModel.FK_BON_RECEPTION_CLIENT">
+            <End Role="CLIENT" EntitySet="CLIENTs" />
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BON_SORTIE_BON_RECEPTION" Association="mbarkModel.FK_BON_SORTIE_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="BON_RECEPTION">
+          <Key>
+            <PropertyRef Name="ID_BON_R" />
+          </Key>
+          <Property Name="ID_BON_R" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CLIENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_BR" Type="DateTime" Precision="3" />
+          <Property Name="STATUT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HEURE_BR" Type="DateTime" Precision="3" />
+          <Property Name="RESTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE_PAIEMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MONTANTSTOTAL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Paye" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="B_R" Relationship="mbarkModel.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
+          <NavigationProperty Name="CLIENT" Relationship="mbarkModel.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
+          <NavigationProperty Name="BON_SORTIE" Relationship="mbarkModel.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
+        </EntityType>
+        <Association Name="FK_B_R_BON_RECEPTION">
+          <End Type="mbarkModel.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="1" />
+          <End Type="mbarkModel.B_R" Role="B_R" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BON_RECEPTION">
+              <PropertyRef Name="ID_BON_R" />
+            </Principal>
+            <Dependent Role="B_R">
+              <PropertyRef Name="ID_BON_R" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BON_RECEPTION_CLIENT">
+          <End Type="mbarkModel.CLIENT" Role="CLIENT" Multiplicity="1" />
+          <End Type="mbarkModel.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENT">
+              <PropertyRef Name="ID_CLIENT" />
+            </Principal>
+            <Dependent Role="BON_RECEPTION">
+              <PropertyRef Name="ID_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BON_SORTIE_BON_RECEPTION">
+          <End Type="mbarkModel.BON_RECEPTION" Role="BON_RECEPTION" Multiplicity="1" />
+          <End Type="mbarkModel.BON_SORTIE" Role="BON_SORTIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BON_RECEPTION">
+              <PropertyRef Name="ID_BON_R" />
+            </Principal>
+            <Dependent Role="BON_SORTIE">
+              <PropertyRef Name="ID_BON_R" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -584,20 +585,6 @@
                 <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
                 <ScalarProperty Name="COLOR" ColumnName="COLOR" />
                 <ScalarProperty Name="PRIX" ColumnName="PRIX" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BON_RECEPTION">
-            <EntityTypeMapping TypeName="mbarkModel.BON_RECEPTION">
-              <MappingFragment StoreEntitySet="BON_RECEPTION">
-                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
-                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
-                <ScalarProperty Name="DATE_BR" ColumnName="DATE_BR" />
-                <ScalarProperty Name="STATUT" ColumnName="STATUT" />
-                <ScalarProperty Name="HEURE_BR" ColumnName="HEURE_BR" />
-                <ScalarProperty Name="RESTE" ColumnName="RESTE" />
-                <ScalarProperty Name="TYPE_PAIEMENT" ColumnName="TYPE_PAIEMENT" />
-                <ScalarProperty Name="MONTANTSTOTAL" ColumnName="MONTANTSTOTAL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -675,6 +662,21 @@
               <MappingFragment StoreEntitySet="SERVICE">
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="LIB_SERVICE" ColumnName="LIB_SERVICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BON_RECEPTION">
+            <EntityTypeMapping TypeName="mbarkModel.BON_RECEPTION">
+              <MappingFragment StoreEntitySet="BON_RECEPTION">
+                <ScalarProperty Name="Paye" ColumnName="Paye" />
+                <ScalarProperty Name="MONTANTSTOTAL" ColumnName="MONTANTSTOTAL" />
+                <ScalarProperty Name="TYPE_PAIEMENT" ColumnName="TYPE_PAIEMENT" />
+                <ScalarProperty Name="RESTE" ColumnName="RESTE" />
+                <ScalarProperty Name="HEURE_BR" ColumnName="HEURE_BR" />
+                <ScalarProperty Name="STATUT" ColumnName="STATUT" />
+                <ScalarProperty Name="DATE_BR" ColumnName="DATE_BR" />
+                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

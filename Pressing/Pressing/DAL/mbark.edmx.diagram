@@ -7,7 +7,6 @@
       <Diagram DiagramId="b7d03bb8962c498cb82864d58937180c" Name="Diagram1">
         <EntityTypeShape EntityType="mbarkModel.ARTICLE" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="mbarkModel.B_R" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="mbarkModel.BON_RECEPTION" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="mbarkModel.BON_SORTIE" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="mbarkModel.CATEGORIE_ARTILCLE" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="mbarkModel.CLIENT" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
@@ -20,11 +19,12 @@
         <AssociationConnector Association="mbarkModel.FK_ARTICLE_FAMILL" ManuallyRouted="false" />
         <AssociationConnector Association="mbarkModel.FK_B_R_ARTICLE" ManuallyRouted="false" />
         <AssociationConnector Association="mbarkModel.FK_BON_SORTIE_ARTICLE" ManuallyRouted="false" />
-        <AssociationConnector Association="mbarkModel.FK_B_R_BON_RECEPTION" ManuallyRouted="false" />
         <AssociationConnector Association="mbarkModel.FK_B_R_SERVICE" ManuallyRouted="false" />
-        <AssociationConnector Association="mbarkModel.FK_BON_RECEPTION_CLIENT" ManuallyRouted="false" />
-        <AssociationConnector Association="mbarkModel.FK_BON_SORTIE_BON_RECEPTION" ManuallyRouted="false" />
         <AssociationConnector Association="mbarkModel.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="mbarkModel.BON_RECEPTION" Width="1.5" PointX="3" PointY="7.625" />
+        <AssociationConnector Association="mbarkModel.FK_B_R_BON_RECEPTION" />
+        <AssociationConnector Association="mbarkModel.FK_BON_RECEPTION_CLIENT" />
+        <AssociationConnector Association="mbarkModel.FK_BON_SORTIE_BON_RECEPTION" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

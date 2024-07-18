@@ -27,7 +27,6 @@ namespace Pressing.DAL
     
         public virtual DbSet<ARTICLE> ARTICLEs { get; set; }
         public virtual DbSet<B_R> B_R { get; set; }
-        public virtual DbSet<BON_RECEPTION> BON_RECEPTION { get; set; }
         public virtual DbSet<BON_SORTIE> BON_SORTIE { get; set; }
         public virtual DbSet<CATEGORIE_ARTILCLE> CATEGORIE_ARTILCLE { get; set; }
         public virtual DbSet<CLIENT> CLIENTs { get; set; }
@@ -36,5 +35,6 @@ namespace Pressing.DAL
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
         public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
+        public virtual DbSet<BON_RECEPTION> BON_RECEPTION { get; set; }
     }
 }

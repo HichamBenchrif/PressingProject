@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pressing.BL.repository;
+using Pressing.Raports;
 
 namespace Pressing.PL.les_form_caisse
 {
@@ -79,6 +80,10 @@ namespace Pressing.PL.les_form_caisse
             var montant = label5.Text;
             var repository = new CommandeRepository();
             repository.Create(id, client, statut, date, heure, mode_paye, reste, montant);
+            //
+            cryfrm frm = new cryfrm(Clt);
+            frm.ShowDialog();
+
 
             //var ID = label10.Text;
             //var service = Srv;

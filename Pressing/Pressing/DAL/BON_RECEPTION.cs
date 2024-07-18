@@ -29,6 +29,7 @@ namespace Pressing.DAL
         public string RESTE { get; set; }
         public string TYPE_PAIEMENT { get; set; }
         public Nullable<decimal> MONTANTSTOTAL { get; set; }
+        public Nullable<decimal> Paye { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<B_R> B_R { get; set; }
