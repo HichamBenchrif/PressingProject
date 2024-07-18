@@ -15,7 +15,6 @@ namespace Pressing.DAL
     public partial class BON_SORTIE
     {
         public string N_B_S { get; set; }
-        public string ID_FACTUE { get; set; }
         public string ID_BON_R { get; set; }
         public string REF_ARTICLE { get; set; }
         public Nullable<System.DateTime> DATE_B_S { get; set; }
@@ -23,6 +22,5 @@ namespace Pressing.DAL
     
         public virtual ARTICLE ARTICLE { get; set; }
         public virtual BON_RECEPTION BON_RECEPTION { get; set; }
-        public virtual FACTURE FACTURE { get; set; }
     }
 }

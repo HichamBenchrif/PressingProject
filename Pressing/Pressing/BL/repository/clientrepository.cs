@@ -47,12 +47,12 @@ namespace Pressing.BL.repository
                           C.NOM_CLT.Contains(value) ||
                           C.TEL_CLT.Contains(value)||
                           C.ADRESSE.Contains(value)
-                    select new { C.ID_CLIENT, C.NOM_CLT, C.PRENOM_CLT, C.TEL_CLT, C.ADRESSE }).ToList();
+                    select new { Client = C.ID_CLIENT, Nom = C.NOM_CLT, Prenom = C.PRENOM_CLT, Téléphone = C.TEL_CLT, Adresse = C.ADRESSE }).ToList();
         }
         public dynamic GetAll()
         {
             var result = (from C in db.CLIENTs
-                          select new { C.ID_CLIENT, C.NOM_CLT, C.PRENOM_CLT, C.TEL_CLT, C.ADRESSE }).ToList();
+                          select new { Client=C.ID_CLIENT, Nom=C.NOM_CLT,Prenom= C.PRENOM_CLT,Téléphone = C.TEL_CLT, Adresse=C.ADRESSE }).ToList();
 
             return result;
         }

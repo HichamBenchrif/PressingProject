@@ -131,6 +131,7 @@ namespace Pressing.PL.les_form_article
 
             articlerepository.Update(id, article);
             MessageBox.Show("This Modification succefly");
+            Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

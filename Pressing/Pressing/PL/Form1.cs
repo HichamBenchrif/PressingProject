@@ -21,7 +21,7 @@ namespace Pressing
             //this.Height = Screen.PrimaryScreen.Bounds.Height;
             //this.Top = 0;
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=PC_\SQLEXPRESS;Initial Catalog=MLR1;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=PC_\SQLEXPRESS;Initial Catalog=hicham2024;Integrated Security=True");
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -35,7 +35,7 @@ namespace Pressing
 
             try
             {
-                string querry = "SELECT * FROM Login WHERE username = '"+txtusername.Text+"' AND password = '"+txtpassword.Text+"'";
+                string querry = "SELECT * FROM LOGIN WHERE USERNAME = '"+txtusername.Text+"' AND PASSWORD = '"+txtpassword.Text+"'";
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
                 DataTable dtable = new DataTable();
@@ -78,6 +78,18 @@ namespace Pressing
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FRM_Ajoute_Categories_Timer_Tick(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                FRM_Ajoute_Categories_Timer.Stop();
+            }
+            else
+            {
+                Opacity += 0.03;
+            }
         }
     }
 }

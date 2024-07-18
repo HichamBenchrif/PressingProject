@@ -41,6 +41,9 @@ namespace Pressing.PL.les_form_caisse
             label3.Text = Clients;
             label5.Text = MontantTotal;
             textBox1.Text = MontantTotal.Replace(" DH","").Trim();
+            //
+            List<string> option = new List<string> { "Espèces" };
+            comboBox1.DataSource = option;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,19 +74,20 @@ namespace Pressing.PL.les_form_caisse
             }
             var date = DateTime.Now.ToShortDateString();
             var heure = DateTime.Now.ToShortTimeString();
-
+            var mode_paye = comboBox1.Text;
+            var reste = label9.Text;
+            var montant = label5.Text;
             var repository = new CommandeRepository();
-            repository.Create(id, client, statut, date, heure);
+            repository.Create(id, client, statut, date, heure, mode_paye, reste, montant);
 
-            var ID = label10.Text;
-            var service = Srv;
-            var article = Art;
-            var Q = Quntite;
-            var color = Color;
-            var remis = Remis;
-            var montant = MontantTotal;
-            repository.Crt(ID, service, article, remis, montant);
-            MessageBox.Show("Créé avec succès");
+            //var ID = label10.Text;
+            //var service = Srv;
+            //var article = Art;
+            //var remis = Remis;
+            //var montant = MontantTotal;
+            //repository.Crt(ID, service, article, remis, montant);
+            //MessageBox.Show("Créé avec succès");
+            //Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

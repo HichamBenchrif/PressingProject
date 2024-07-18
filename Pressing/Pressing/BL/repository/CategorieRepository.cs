@@ -35,14 +35,14 @@ namespace Pressing.BL.repository
         public dynamic GetAll()
         {
             var result = (from C in db.CATEGORIE_ARTILCLE
-                          select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
+                          select new {ID= C.ID_CATE,Name= C.LIB_CAT_ART }).ToList();
 
             return result;
         }
         public dynamic Get()
         {
             var result = (from C in db.CATEGORIE_ARTILCLE
-                          select new { C.LIB_CAT_ART }).ToList();
+                          select new {  C.LIB_CAT_ART }).ToList();
 
             return result;
         }
@@ -58,7 +58,7 @@ namespace Pressing.BL.repository
             return (from C in db.CATEGORIE_ARTILCLE
                     where C.ID_CATE.Contains(value) ||
                           C.LIB_CAT_ART.Contains(value)
-                    select new { C.ID_CATE, C.LIB_CAT_ART }).ToList();
+                    select new { ID = C.ID_CATE, Name = C.LIB_CAT_ART }).ToList();
         }
         public dynamic selctBox()
         {

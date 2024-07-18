@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MLR1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="hicham2024Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -17,28 +17,16 @@
           <Property Name="PRIX_LESSIVE" Type="decimal" Precision="10" Scale="2" />
           <Property Name="IMAGE" Type="image" />
         </EntityType>
-        <EntityType Name="ARTICLE_AJOUTE">
-          <Key>
-            <PropertyRef Name="ID_ARTICLE_AJOUTE" />
-          </Key>
-          <Property Name="ID_ARTICLE_AJOUTE" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="COLOR" Type="nvarchar" MaxLength="50" />
-          <Property Name="QUANTITE" Type="int" />
-        </EntityType>
         <EntityType Name="B_R">
           <Key>
-            <PropertyRef Name="ID_BON_R" />
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="REMIS" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="MONTANT_TOTAL" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="QUANTITE" Type="int" />
+          <Property Name="COLOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
           <Key>
@@ -49,13 +37,15 @@
           <Property Name="DATE_BR" Type="datetime" />
           <Property Name="STATUT" Type="nvarchar" MaxLength="50" />
           <Property Name="HEURE_BR" Type="datetime" />
+          <Property Name="RESTE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TYPE_PAIEMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="MONTANTSTOTAL" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="BON_SORTIE">
           <Key>
             <PropertyRef Name="N_B_S" />
           </Key>
           <Property Name="N_B_S" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ID_FACTUE" Type="nvarchar" MaxLength="50" />
           <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DATE_B_S" Type="datetime" />
@@ -89,14 +79,6 @@
           <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
           <Property Name="DATE" Type="datetime" />
         </EntityType>
-        <EntityType Name="FACTURE">
-          <Key>
-            <PropertyRef Name="ID_FACTUE" />
-          </Key>
-          <Property Name="ID_FACTUE" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DATE_FACT" Type="datetime" />
-          <Property Name="MNT_FACT" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>
         <EntityType Name="FAMILL">
           <Key>
             <PropertyRef Name="N_FAMILL" />
@@ -113,13 +95,13 @@
           <Property Name="PRN_FR" Type="nvarchar" MaxLength="50" />
           <Property Name="TEL_FR" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Login">
+        <EntityType Name="LOGIN">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SERVICE">
           <Key>
@@ -128,30 +110,16 @@
           <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LIB_SERVICE" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_ARTICLE_AJOUTE_ARTICLE">
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="1" />
-          <End Role="ARTICLE_AJOUTE" Type="Self.ARTICLE_AJOUTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ARTICLE">
-              <PropertyRef Name="REF_ARTICLE" />
-            </Principal>
-            <Dependent Role="ARTICLE_AJOUTE">
-              <PropertyRef Name="REF_ARTICLE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ARTICLE_AJOUTE_SERVICE">
-          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1" />
-          <End Role="ARTICLE_AJOUTE" Type="Self.ARTICLE_AJOUTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SERVICE">
-              <PropertyRef Name="ID_SERVICE" />
-            </Principal>
-            <Dependent Role="ARTICLE_AJOUTE">
-              <PropertyRef Name="ID_SERVICE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -185,18 +153,6 @@
             </Principal>
             <Dependent Role="B_R">
               <PropertyRef Name="REF_ARTICLE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_B_R_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_RECEPTION">
-              <PropertyRef Name="ID_BON_R" />
-            </Principal>
-            <Dependent Role="B_R">
-              <PropertyRef Name="ID_BON_R" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -248,18 +204,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BON_SORTIE_FACTURE">
-          <End Role="FACTURE" Type="Self.FACTURE" Multiplicity="0..1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FACTURE">
-              <PropertyRef Name="ID_FACTUE" />
-            </Principal>
-            <Dependent Role="BON_SORTIE">
-              <PropertyRef Name="ID_FACTUE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
           <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="1" />
           <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
@@ -272,28 +216,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MLR1ModelStoreContainer">
+        <EntityContainer Name="hicham2024ModelStoreContainer">
           <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ARTICLE_AJOUTE" EntityType="Self.ARTICLE_AJOUTE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="B_R" EntityType="Self.B_R" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DÉPENSES_ET_ENTRÉES" EntityType="Self.DÉPENSES_ET_ENTRÉES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FACTURE" EntityType="Self.FACTURE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAMILL" EntityType="Self.FAMILL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FOURNISSEUR" EntityType="Self.FOURNISSEUR" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICE" EntityType="Self.SERVICE" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ARTICLE_AJOUTE_ARTICLE" Association="Self.FK_ARTICLE_AJOUTE_ARTICLE">
-            <End Role="ARTICLE" EntitySet="ARTICLE" />
-            <End Role="ARTICLE_AJOUTE" EntitySet="ARTICLE_AJOUTE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ARTICLE_AJOUTE_SERVICE" Association="Self.FK_ARTICLE_AJOUTE_SERVICE">
-            <End Role="SERVICE" EntitySet="SERVICE" />
-            <End Role="ARTICLE_AJOUTE" EntitySet="ARTICLE_AJOUTE" />
-          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLE" />
@@ -304,10 +239,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_B_R_ARTICLE" Association="Self.FK_B_R_ARTICLE">
             <End Role="ARTICLE" EntitySet="ARTICLE" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
             <End Role="B_R" EntitySet="B_R" />
           </AssociationSet>
           <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
@@ -326,19 +257,16 @@
             <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
           </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_FACTURE" Association="Self.FK_BON_SORTIE_FACTURE">
-            <End Role="FACTURE" EntitySet="FACTURE" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
-          </AssociationSet>
           <AssociationSet Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" Association="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
             <End Role="FOURNISSEUR" EntitySet="FOURNISSEUR" />
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MLR1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="hicham2024Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -350,38 +278,22 @@
           <Property Name="PRIX_REPASSAGE" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="PRIX_LESSIVE" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="ARTICLE_AJOUTE" Relationship="Self.FK_ARTICLE_AJOUTE_ARTICLE" FromRole="ARTICLE" ToRole="ARTICLE_AJOUTE" />
           <NavigationProperty Name="CATEGORIE_ARTILCLE" Relationship="Self.FK_ARTICLE_CATEGORIE_ARTILCLE" FromRole="ARTICLE" ToRole="CATEGORIE_ARTILCLE" />
           <NavigationProperty Name="FAMILL" Relationship="Self.FK_ARTICLE_FAMILL" FromRole="ARTICLE" ToRole="FAMILL" />
           <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_ARTICLE" FromRole="ARTICLE" ToRole="B_R" />
           <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_ARTICLE" FromRole="ARTICLE" ToRole="BON_SORTIE" />
         </EntityType>
-        <EntityType Name="ARTICLE_AJOUTE">
-          <Key>
-            <PropertyRef Name="ID_ARTICLE_AJOUTE" />
-          </Key>
-          <Property Name="ID_ARTICLE_AJOUTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ID_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="REF_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="COLOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="QUANTITE" Type="Int32" />
-          <NavigationProperty Name="ARTICLE" Relationship="Self.FK_ARTICLE_AJOUTE_ARTICLE" FromRole="ARTICLE_AJOUTE" ToRole="ARTICLE" />
-          <NavigationProperty Name="SERVICE" Relationship="Self.FK_ARTICLE_AJOUTE_SERVICE" FromRole="ARTICLE_AJOUTE" ToRole="SERVICE" />
-        </EntityType>
         <EntityType Name="B_R">
           <Key>
-            <PropertyRef Name="ID_BON_R" />
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
           </Key>
-          <Property Name="ID_BON_R" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="REMIS" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="MONTANT_TOTAL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="QUANTITE" Type="Int32" />
+          <Property Name="COLOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
-          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
           <NavigationProperty Name="SERVICE" Relationship="Self.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
@@ -393,7 +305,9 @@
           <Property Name="DATE_BR" Type="DateTime" Precision="3" />
           <Property Name="STATUT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HEURE_BR" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
+          <Property Name="RESTE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TYPE_PAIEMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MONTANTSTOTAL" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="CLIENT" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
           <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
         </EntityType>
@@ -402,14 +316,12 @@
             <PropertyRef Name="N_B_S" />
           </Key>
           <Property Name="N_B_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ID_FACTUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID_BON_R" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DATE_B_S" Type="DateTime" Precision="3" />
           <Property Name="HEURE_B_S" Type="DateTime" Precision="3" />
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_BON_SORTIE_ARTICLE" FromRole="BON_SORTIE" ToRole="ARTICLE" />
           <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_SORTIE" ToRole="BON_RECEPTION" />
-          <NavigationProperty Name="FACTURE" Relationship="Self.FK_BON_SORTIE_FACTURE" FromRole="BON_SORTIE" ToRole="FACTURE" />
         </EntityType>
         <EntityType Name="CATEGORIE_ARTILCLE">
           <Key>
@@ -442,15 +354,6 @@
           <Property Name="DATE" Type="DateTime" Precision="3" />
           <NavigationProperty Name="FOURNISSEUR" Relationship="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="DÉPENSES_ET_ENTRÉES" ToRole="FOURNISSEUR" />
         </EntityType>
-        <EntityType Name="FACTURE">
-          <Key>
-            <PropertyRef Name="ID_FACTUE" />
-          </Key>
-          <Property Name="ID_FACTUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DATE_FACT" Type="DateTime" Precision="3" />
-          <Property Name="MNT_FACT" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_FACTURE" FromRole="FACTURE" ToRole="BON_SORTIE" />
-        </EntityType>
         <EntityType Name="FAMILL">
           <Key>
             <PropertyRef Name="N_FAMILL" />
@@ -469,27 +372,32 @@
           <Property Name="TEL_FR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DÉPENSES_ET_ENTRÉES" Relationship="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" FromRole="FOURNISSEUR" ToRole="DÉPENSES_ET_ENTRÉES" />
         </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="SERVICE">
           <Key>
             <PropertyRef Name="ID_SERVICE" />
           </Key>
           <Property Name="ID_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LIB_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ARTICLE_AJOUTE" Relationship="Self.FK_ARTICLE_AJOUTE_SERVICE" FromRole="SERVICE" ToRole="ARTICLE_AJOUTE" />
           <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_SERVICE" FromRole="SERVICE" ToRole="B_R" />
         </EntityType>
-        <Association Name="FK_ARTICLE_AJOUTE_ARTICLE">
-          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="1" />
-          <End Role="ARTICLE_AJOUTE" Type="Self.ARTICLE_AJOUTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ARTICLE">
-              <PropertyRef Name="REF_ARTICLE" />
-            </Principal>
-            <Dependent Role="ARTICLE_AJOUTE">
-              <PropertyRef Name="REF_ARTICLE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -538,30 +446,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ARTICLE_AJOUTE_SERVICE">
-          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1" />
-          <End Role="ARTICLE_AJOUTE" Type="Self.ARTICLE_AJOUTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SERVICE">
-              <PropertyRef Name="ID_SERVICE" />
-            </Principal>
-            <Dependent Role="ARTICLE_AJOUTE">
-              <PropertyRef Name="ID_SERVICE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_B_R_BON_RECEPTION">
-          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
-          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BON_RECEPTION">
-              <PropertyRef Name="ID_BON_R" />
-            </Principal>
-            <Dependent Role="B_R">
-              <PropertyRef Name="ID_BON_R" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_B_R_SERVICE">
           <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1" />
           <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
@@ -598,18 +482,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BON_SORTIE_FACTURE">
-          <End Role="FACTURE" Type="Self.FACTURE" Multiplicity="0..1" />
-          <End Role="BON_SORTIE" Type="Self.BON_SORTIE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FACTURE">
-              <PropertyRef Name="ID_FACTUE" />
-            </Principal>
-            <Dependent Role="BON_SORTIE">
-              <PropertyRef Name="ID_FACTUE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
           <End Role="FOURNISSEUR" Type="Self.FOURNISSEUR" Multiplicity="1" />
           <End Role="DÉPENSES_ET_ENTRÉES" Type="Self.DÉPENSES_ET_ENTRÉES" Multiplicity="*" />
@@ -622,23 +494,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MLR1Entities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="hicham2024Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARTICLEs" EntityType="Self.ARTICLE" />
-          <EntitySet Name="ARTICLE_AJOUTE" EntityType="Self.ARTICLE_AJOUTE" />
           <EntitySet Name="B_R" EntityType="Self.B_R" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" />
           <EntitySet Name="BON_SORTIE" EntityType="Self.BON_SORTIE" />
           <EntitySet Name="CATEGORIE_ARTILCLE" EntityType="Self.CATEGORIE_ARTILCLE" />
           <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
           <EntitySet Name="DÉPENSES_ET_ENTRÉES" EntityType="Self.DÉPENSES_ET_ENTRÉES" />
-          <EntitySet Name="FACTUREs" EntityType="Self.FACTURE" />
           <EntitySet Name="FAMILLs" EntityType="Self.FAMILL" />
           <EntitySet Name="FOURNISSEURs" EntityType="Self.FOURNISSEUR" />
+          <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
           <EntitySet Name="SERVICEs" EntityType="Self.SERVICE" />
-          <AssociationSet Name="FK_ARTICLE_AJOUTE_ARTICLE" Association="Self.FK_ARTICLE_AJOUTE_ARTICLE">
-            <End Role="ARTICLE" EntitySet="ARTICLEs" />
-            <End Role="ARTICLE_AJOUTE" EntitySet="ARTICLE_AJOUTE" />
-          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
@@ -655,14 +523,6 @@
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
           </AssociationSet>
-          <AssociationSet Name="FK_ARTICLE_AJOUTE_SERVICE" Association="Self.FK_ARTICLE_AJOUTE_SERVICE">
-            <End Role="SERVICE" EntitySet="SERVICEs" />
-            <End Role="ARTICLE_AJOUTE" EntitySet="ARTICLE_AJOUTE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
-            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
-            <End Role="B_R" EntitySet="B_R" />
-          </AssociationSet>
           <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
             <End Role="SERVICE" EntitySet="SERVICEs" />
             <End Role="B_R" EntitySet="B_R" />
@@ -675,32 +535,19 @@
             <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
           </AssociationSet>
-          <AssociationSet Name="FK_BON_SORTIE_FACTURE" Association="Self.FK_BON_SORTIE_FACTURE">
-            <End Role="FACTURE" EntitySet="FACTUREs" />
-            <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
-          </AssociationSet>
           <AssociationSet Name="FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" Association="Self.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR">
             <End Role="FOURNISSEUR" EntitySet="FOURNISSEURs" />
             <End Role="DÉPENSES_ET_ENTRÉES" EntitySet="DÉPENSES_ET_ENTRÉES" />
           </AssociationSet>
-          <EntitySet Name="Logins" EntityType="MLR1Model.Login" />
         </EntityContainer>
-        <EntityType Name="Login">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MLR1ModelStoreContainer" CdmEntityContainer="MLR1Entities2">
+        <EntityContainerMapping StorageEntityContainer="hicham2024ModelStoreContainer" CdmEntityContainer="hicham2024Entities">
           <EntitySetMapping Name="ARTICLEs">
-            <EntityTypeMapping TypeName="MLR1Model.ARTICLE">
+            <EntityTypeMapping TypeName="hicham2024Model.ARTICLE">
               <MappingFragment StoreEntitySet="ARTICLE">
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
@@ -712,45 +559,35 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ARTICLE_AJOUTE">
-            <EntityTypeMapping TypeName="MLR1Model.ARTICLE_AJOUTE">
-              <MappingFragment StoreEntitySet="ARTICLE_AJOUTE">
-                <ScalarProperty Name="ID_ARTICLE_AJOUTE" ColumnName="ID_ARTICLE_AJOUTE" />
-                <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
-                <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
-                <ScalarProperty Name="PRIX" ColumnName="PRIX" />
-                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
-                <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="B_R">
-            <EntityTypeMapping TypeName="MLR1Model.B_R">
+            <EntityTypeMapping TypeName="hicham2024Model.B_R">
               <MappingFragment StoreEntitySet="B_R">
-                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
-                <ScalarProperty Name="REMIS" ColumnName="REMIS" />
-                <ScalarProperty Name="MONTANT_TOTAL" ColumnName="MONTANT_TOTAL" />
+                <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="PRIX" ColumnName="PRIX" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_RECEPTION">
-            <EntityTypeMapping TypeName="MLR1Model.BON_RECEPTION">
+            <EntityTypeMapping TypeName="hicham2024Model.BON_RECEPTION">
               <MappingFragment StoreEntitySet="BON_RECEPTION">
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
                 <ScalarProperty Name="DATE_BR" ColumnName="DATE_BR" />
                 <ScalarProperty Name="STATUT" ColumnName="STATUT" />
                 <ScalarProperty Name="HEURE_BR" ColumnName="HEURE_BR" />
+                <ScalarProperty Name="RESTE" ColumnName="RESTE" />
+                <ScalarProperty Name="TYPE_PAIEMENT" ColumnName="TYPE_PAIEMENT" />
+                <ScalarProperty Name="MONTANTSTOTAL" ColumnName="MONTANTSTOTAL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_SORTIE">
-            <EntityTypeMapping TypeName="MLR1Model.BON_SORTIE">
+            <EntityTypeMapping TypeName="hicham2024Model.BON_SORTIE">
               <MappingFragment StoreEntitySet="BON_SORTIE">
                 <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
-                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
                 <ScalarProperty Name="DATE_B_S" ColumnName="DATE_B_S" />
@@ -759,7 +596,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIE_ARTILCLE">
-            <EntityTypeMapping TypeName="MLR1Model.CATEGORIE_ARTILCLE">
+            <EntityTypeMapping TypeName="hicham2024Model.CATEGORIE_ARTILCLE">
               <MappingFragment StoreEntitySet="CATEGORIE_ARTILCLE">
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
                 <ScalarProperty Name="LIB_CAT_ART" ColumnName="LIB_CAT_ART" />
@@ -767,7 +604,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CLIENTs">
-            <EntityTypeMapping TypeName="MLR1Model.CLIENT">
+            <EntityTypeMapping TypeName="hicham2024Model.CLIENT">
               <MappingFragment StoreEntitySet="CLIENT">
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
                 <ScalarProperty Name="NOM_CLT" ColumnName="NOM_CLT" />
@@ -778,7 +615,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DÉPENSES_ET_ENTRÉES">
-            <EntityTypeMapping TypeName="MLR1Model.DÉPENSES_ET_ENTRÉES">
+            <EntityTypeMapping TypeName="hicham2024Model.DÉPENSES_ET_ENTRÉES">
               <MappingFragment StoreEntitySet="DÉPENSES_ET_ENTRÉES">
                 <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
                 <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
@@ -789,17 +626,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FACTUREs">
-            <EntityTypeMapping TypeName="MLR1Model.FACTURE">
-              <MappingFragment StoreEntitySet="FACTURE">
-                <ScalarProperty Name="ID_FACTUE" ColumnName="ID_FACTUE" />
-                <ScalarProperty Name="DATE_FACT" ColumnName="DATE_FACT" />
-                <ScalarProperty Name="MNT_FACT" ColumnName="MNT_FACT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="FAMILLs">
-            <EntityTypeMapping TypeName="MLR1Model.FAMILL">
+            <EntityTypeMapping TypeName="hicham2024Model.FAMILL">
               <MappingFragment StoreEntitySet="FAMILL">
                 <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
                 <ScalarProperty Name="LIB_FAMILL" ColumnName="LIB_FAMILL" />
@@ -807,7 +635,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FOURNISSEURs">
-            <EntityTypeMapping TypeName="MLR1Model.FOURNISSEUR">
+            <EntityTypeMapping TypeName="hicham2024Model.FOURNISSEUR">
               <MappingFragment StoreEntitySet="FOURNISSEUR">
                 <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
                 <ScalarProperty Name="NOM_FR" ColumnName="NOM_FR" />
@@ -816,20 +644,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LOGINs">
+            <EntityTypeMapping TypeName="hicham2024Model.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SERVICEs">
-            <EntityTypeMapping TypeName="MLR1Model.SERVICE">
+            <EntityTypeMapping TypeName="hicham2024Model.SERVICE">
               <MappingFragment StoreEntitySet="SERVICE">
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="LIB_SERVICE" ColumnName="LIB_SERVICE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Logins">
-            <EntityTypeMapping TypeName="MLR1Model.Login">
-              <MappingFragment StoreEntitySet="Login">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="hicham2024Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

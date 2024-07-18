@@ -70,59 +70,56 @@
     <Compile Include="BL\repository\ServiceRepository.cs" />
     <Compile Include="BL\repository\User_Repository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>base.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\ARTICLE_AJOUTE.cs">
-      <DependentUpon>base.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\base.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\base.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\base.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>base.edmx</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>base.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\FACTURE.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Login.cs">
-      <DependentUpon>base.tt</DependentUpon>
+    <Compile Include="DAL\hichammmm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hichammmm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\hichammmm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hichammmm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\hichammmm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hichammmm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LOGIN.cs">
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>base.tt</DependentUpon>
+      <DependentUpon>hichammmm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sysdiagram.cs">
+      <DependentUpon>hichammmm.tt</DependentUpon>
     </Compile>
     <Compile Include="PL\Form1.cs">
       <SubType>Form</SubType>
@@ -201,6 +198,12 @@
     </Compile>
     <Compile Include="PL\les_form_caisse\FRM_Caisse.Designer.cs">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\les_form_caisse\FRM_Sortie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\les_form_caisse\FRM_Sortie.Designer.cs">
+      <DependentUpon>FRM_Sortie.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\les_form_depenses\FRM_Modify_Fournisseur.cs">
       <SubType>Form</SubType>
@@ -333,6 +336,9 @@
     <EmbeddedResource Include="PL\les_form_caisse\FRM_Caisse.resx">
       <DependentUpon>FRM_Caisse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\les_form_caisse\FRM_Sortie.resx">
+      <DependentUpon>FRM_Sortie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\les_form_depenses\FRM_Modify_Fournisseur.resx">
       <DependentUpon>FRM_Modify_Fournisseur.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,12 +394,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\base.edmx">
+    <EntityDeploy Include="DAL\hichammmm.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>base.Designer.cs</LastGenOutput>
+      <LastGenOutput>hichammmm.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\base.edmx.diagram">
-      <DependentUpon>base.edmx</DependentUpon>
+    <None Include="DAL\hichammmm.edmx.diagram">
+      <DependentUpon>hichammmm.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -563,19 +569,21 @@
     <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\base.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>base.edmx</DependentUpon>
-      <LastGenOutput>base.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\base.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>base.edmx</DependentUpon>
-      <LastGenOutput>base.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\blanchisserie %281%29.png" />
     <None Include="Resources\blanchisserie.png" />
     <None Include="Resources\lessive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\hichammmm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>hichammmm.edmx</DependentUpon>
+      <LastGenOutput>hichammmm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\hichammmm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>hichammmm.edmx</DependentUpon>
+      <LastGenOutput>hichammmm.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

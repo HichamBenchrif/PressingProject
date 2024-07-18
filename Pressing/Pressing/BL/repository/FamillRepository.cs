@@ -44,7 +44,7 @@ namespace Pressing.BL.repository
             return (from C in db.FAMILLs
                     where C.N_FAMILL.Contains(value) ||
                           C.LIB_FAMILL.Contains(value)
-                    select new { ID=C.N_FAMILL, Name=C.LIB_FAMILL }).ToList();
+                    select new { ID=C.N_FAMILL, Name =C.LIB_FAMILL }).ToList();
         }
         public dynamic selctBox()
         {

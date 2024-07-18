@@ -130,7 +130,7 @@ namespace Pressing.PL.les_form_caisse
         private void FRM_Caisse_Load(object sender, EventArgs e)
         {
             CalculateTotal();
-            textBox2.TextChanged += new EventHandler(textBox2_TextChanged);
+            //textBox2.TextChanged += new EventHandler(textBox2_TextChanged);
             //combobox affiche client
             comboBox2.DataSource = clientrepository.selctBox3();
             comboBox2.ValueMember = "ID_CLIENT";
@@ -152,7 +152,7 @@ namespace Pressing.PL.les_form_caisse
             //
             LoadCategoryButtons();
             //
-            textBox2.Text = 0.ToString();
+            //textBox2.Text = 0.ToString();
 
         }
         private void LoadClothingButtons()
@@ -502,16 +502,16 @@ namespace Pressing.PL.les_form_caisse
 
         private void btn_ajt_Click(object sender, EventArgs e)
         {
-            string id = commanderepository.ID();
+            //string id = commanderepository.ID();
             
-            string art = selectedArticleID;
+            //string art = selectedArticleID;
             
-            string srv = selectedServiceID;
-            string color = comboBox1.SelectedValue.ToString();
-            string quntite =number.Text;
-            string prix = label1.Text;
-            var repository = new CommandeRepository();
-            repository.ajout_articl(id, art, srv,prix, color, quntite);
+            //string srv = selectedServiceID;
+            //string color = comboBox1.SelectedValue.ToString();
+            //string quntite =number.Text;
+            //string prix = label1.Text;
+            //var repository = new CommandeRepository();
+            //repository.ajout_articl(id, art, srv,prix, color, quntite);
 
             try
             {
@@ -591,6 +591,13 @@ namespace Pressing.PL.les_form_caisse
             new FRM_Articl().Show();
             Close();
         }
+        private void AjouteArticles (string idRecu , List<ArticleDTO> articles)
+        {
+            using(var transaction = db.Datebase.Begin )
+            {
+
+            }
+        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -605,13 +612,13 @@ namespace Pressing.PL.les_form_caisse
             //var repository = new CommandeRepository();
             //repository.Create(articl, color, service, quntite, prix, remis);
             //MessageBox.Show("Créé avec succès");
-            ////////////////////////string article = ArticleName;
-            ////////////////////////string art = selectedArticleID;
+            string article = ArticleName;
+            string art = selectedArticleID;
             ////////////////////////string color = comboBox1.SelectedValue.ToString();
-            ////////////////////////string service = ServiceName;
-            ////////////////////////string srv = selectedServiceID;
+            string service = ServiceName;
+            string srv = selectedServiceID;
             ////////////////////////short quntite = CalculateQuntiteSum();
-            string remis = textBox2.Text;
+            //string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;
             string clt = comboBox2.SelectedValue.ToString();
@@ -633,11 +640,15 @@ namespace Pressing.PL.les_form_caisse
                 panrentX = this.Location.X;
 
                 
-                frm_paye.Remis = remis;
+                //frm_paye.Remis = remis;
 
                 frm_paye.MontantTotal = montantTotal;
                 frm_paye.Clients = clients;
                 frm_paye.Clt = clt;
+                frm_paye.Art = art;
+                frm_paye.Article = article;
+                frm_paye.Srv = srv;
+                frm_paye.Service = service;
                 frm_paye.ShowDialog();
                 modelBackground.Dispose();
 

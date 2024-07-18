@@ -71,6 +71,7 @@ namespace Pressing.PL.les_form_article
             category_article.LIB_CAT_ART = textBox5.Text;
             categorierepository.Update(id, category_article);
             MessageBox.Show("This Modification succefly");
+            Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

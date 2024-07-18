@@ -32,6 +32,7 @@ namespace Pressing.PL.les_form_article
             famill.LIB_FAMILL = textBox5.Text;
             famillrepository.Update(id, famill);
             MessageBox.Show("This Modification succefly");
+            Close();
         }
 
         private void Timer_famill_Tick(object sender, EventArgs e)

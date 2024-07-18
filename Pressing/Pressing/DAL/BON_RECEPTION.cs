@@ -17,7 +17,6 @@ namespace Pressing.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BON_RECEPTION()
         {
-            this.B_R = new HashSet<B_R>();
             this.BON_SORTIE = new HashSet<BON_SORTIE>();
         }
     
@@ -26,9 +25,10 @@ namespace Pressing.DAL
         public Nullable<System.DateTime> DATE_BR { get; set; }
         public string STATUT { get; set; }
         public Nullable<System.DateTime> HEURE_BR { get; set; }
+        public Nullable<decimal> RESTE { get; set; }
+        public string TYPE_PAIEMENT { get; set; }
+        public Nullable<decimal> MONTANTSTOTAL { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<B_R> B_R { get; set; }
         public virtual CLIENT CLIENT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BON_SORTIE> BON_SORTIE { get; set; }

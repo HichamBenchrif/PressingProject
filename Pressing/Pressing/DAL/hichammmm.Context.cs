@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MLR1Entities2 : DbContext
+    public partial class hicham2024Entities : DbContext
     {
-        public MLR1Entities2()
-            : base("name=MLR1Entities2")
+        public hicham2024Entities()
+            : base("name=hicham2024Entities")
         {
         }
     
@@ -26,17 +26,16 @@ namespace Pressing.DAL
         }
     
         public virtual DbSet<ARTICLE> ARTICLEs { get; set; }
-        public virtual DbSet<ARTICLE_AJOUTE> ARTICLE_AJOUTE { get; set; }
         public virtual DbSet<B_R> B_R { get; set; }
         public virtual DbSet<BON_RECEPTION> BON_RECEPTION { get; set; }
         public virtual DbSet<BON_SORTIE> BON_SORTIE { get; set; }
         public virtual DbSet<CATEGORIE_ARTILCLE> CATEGORIE_ARTILCLE { get; set; }
         public virtual DbSet<CLIENT> CLIENTs { get; set; }
         public virtual DbSet<DÉPENSES_ET_ENTRÉES> DÉPENSES_ET_ENTRÉES { get; set; }
-        public virtual DbSet<FACTURE> FACTUREs { get; set; }
         public virtual DbSet<FAMILL> FAMILLs { get; set; }
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
+        public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
-        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

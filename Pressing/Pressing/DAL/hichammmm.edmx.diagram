@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="415e80d0302c44e78c8010146322cf63" Name="Diagram1">
+        <EntityTypeShape EntityType="hicham2024Model.ARTICLE" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.B_R" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.BON_RECEPTION" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.BON_SORTIE" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.CATEGORIE_ARTILCLE" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.CLIENT" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.DÉPENSES_ET_ENTRÉES" Width="1.5" PointX="8" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.FAMILL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.FOURNISSEUR" Width="1.5" PointX="5.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.LOGIN" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.SERVICE" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hicham2024Model.sysdiagram" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="hicham2024Model.FK_ARTICLE_CATEGORIE_ARTILCLE" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_ARTICLE_FAMILL" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_B_R_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_BON_SORTIE_ARTICLE" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_B_R_SERVICE" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_BON_RECEPTION_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_BON_SORTIE_BON_RECEPTION" ManuallyRouted="false" />
+        <AssociationConnector Association="hicham2024Model.FK_DÉPENSES_ET_ENTRÉES_FOURNISSEUR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

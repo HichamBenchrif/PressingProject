@@ -12,10 +12,10 @@ namespace Pressing.BL.repository
     {
         public string GenerateID()
         {
-            var count = db.Logins.Count();
+            var count = db.LOGINs.Count();
             if (count == 0)
                 return "1";
-            var ids = db.Logins.Select(x => x.ID).ToList();
+            var ids = db.LOGINs.Select(x => x.ID).ToList();
             var numbres = ids.Select(x => int.Parse(x.Substring(0, x.Length - 0)));
             var max = numbres.Max();
             var newID = "" + (max + 1);
@@ -24,11 +24,11 @@ namespace Pressing.BL.repository
         }
         public void Create(string id, string username, string password)
         {
-            var log  = new Login();
+            var log  = new LOGIN();
             log.ID = id;
-            log.username = username;
-            log.password = password;
-            db.Logins.Add(log);
+            log.USERNAME = username;
+            log.PASSWORD = password;
+            db.LOGINs.Add(log);
             db.SaveChanges();
 
         }
