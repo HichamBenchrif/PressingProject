@@ -8,7 +8,7 @@ namespace Pressing.DAL.BaseRepository
 {
     public class baserepository
     {
-        protected hicham2024Entities db = new hicham2024Entities();
+        protected mbarkEntities db = new mbarkEntities();
 
         
 

@@ -16,7 +16,7 @@ using Pressing.DAL;
 using System.IO;
 using Pressing.PL.les_form_client;
 using System.Globalization;
-
+using System.Data.Entity;
 
 namespace Pressing.PL.les_form_caisse
 {
@@ -591,13 +591,21 @@ namespace Pressing.PL.les_form_caisse
             new FRM_Articl().Show();
             Close();
         }
-        private void AjouteArticles (string idRecu , List<ArticleDTO> articles)
-        {
-            using(var transaction = db.Datebase.Begin )
-            {
+        //public class MyDbContext : DbContext
+        //{
+        //    public DbSet<B_R> B_R { get; set; }
+        //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //    {
+        //        optionsBuilder.UserSqlServer();
+        //    }
+        //}
+        //private void AjouteArticles (string idRecu , List<B_R> articles)
+        //{
+        //    using(var transaction = db )
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
         private void button8_Click(object sender, EventArgs e)
         {

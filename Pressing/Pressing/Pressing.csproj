@@ -70,56 +70,53 @@
     <Compile Include="BL\repository\ServiceRepository.cs" />
     <Compile Include="BL\repository\User_Repository.cs" />
     <Compile Include="DAL\ARTICLE.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BaseRepository\baserepository.cs" />
     <Compile Include="DAL\BON_RECEPTION.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\BON_SORTIE.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\B_R.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CATEGORIE_ARTILCLE.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CLIENT.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DÉPENSES_ET_ENTRÉES.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FAMILL.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FOURNISSEUR.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\hichammmm.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hichammmm.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\hichammmm.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hichammmm.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\hichammmm.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hichammmm.edmx</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\LOGIN.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mbark.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mbark.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mbark.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mbark.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mbark.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mbark.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\SERVICE.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\sysdiagram.cs">
-      <DependentUpon>hichammmm.tt</DependentUpon>
+      <DependentUpon>mbark.tt</DependentUpon>
     </Compile>
     <Compile Include="PL\Form1.cs">
       <SubType>Form</SubType>
@@ -394,12 +391,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\hichammmm.edmx">
+    <EntityDeploy Include="DAL\mbark.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>hichammmm.Designer.cs</LastGenOutput>
+      <LastGenOutput>mbark.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\hichammmm.edmx.diagram">
-      <DependentUpon>hichammmm.edmx</DependentUpon>
+    <None Include="DAL\mbark.edmx.diagram">
+      <DependentUpon>mbark.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -574,15 +571,15 @@
     <None Include="Resources\lessive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\hichammmm.Context.tt">
+    <Content Include="DAL\mbark.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>hichammmm.edmx</DependentUpon>
-      <LastGenOutput>hichammmm.Context.cs</LastGenOutput>
+      <DependentUpon>mbark.edmx</DependentUpon>
+      <LastGenOutput>mbark.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAL\hichammmm.tt">
+    <Content Include="DAL\mbark.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>hichammmm.edmx</DependentUpon>
-      <LastGenOutput>hichammmm.cs</LastGenOutput>
+      <DependentUpon>mbark.edmx</DependentUpon>
+      <LastGenOutput>mbark.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

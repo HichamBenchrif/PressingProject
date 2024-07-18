@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="hicham2024Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="mbarkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -21,9 +21,11 @@
           <Key>
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
+            <PropertyRef Name="ID_BON_R" />
           </Key>
           <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_BON_R" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="QUANTITE" Type="int" />
           <Property Name="COLOR" Type="nvarchar" MaxLength="50" />
           <Property Name="PRIX" Type="decimal" Precision="10" Scale="2" />
@@ -37,7 +39,7 @@
           <Property Name="DATE_BR" Type="datetime" />
           <Property Name="STATUT" Type="nvarchar" MaxLength="50" />
           <Property Name="HEURE_BR" Type="datetime" />
-          <Property Name="RESTE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="RESTE" Type="nvarchar" MaxLength="50" />
           <Property Name="TYPE_PAIEMENT" Type="nvarchar" MaxLength="50" />
           <Property Name="MONTANTSTOTAL" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
@@ -110,16 +112,6 @@
           <Property Name="ID_SERVICE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LIB_SERVICE" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -153,6 +145,18 @@
             </Principal>
             <Dependent Role="B_R">
               <PropertyRef Name="REF_ARTICLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_B_R_BON_RECEPTION">
+          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
+          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BON_RECEPTION">
+              <PropertyRef Name="ID_BON_R" />
+            </Principal>
+            <Dependent Role="B_R">
+              <PropertyRef Name="ID_BON_R" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -216,7 +220,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="hicham2024ModelStoreContainer">
+        <EntityContainer Name="mbarkModelStoreContainer">
           <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="B_R" EntityType="Self.B_R" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" Schema="dbo" store:Type="Tables" />
@@ -228,7 +232,6 @@
           <EntitySet Name="FOURNISSEUR" EntityType="Self.FOURNISSEUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICE" EntityType="Self.SERVICE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLE" />
@@ -239,6 +242,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_B_R_ARTICLE" Association="Self.FK_B_R_ARTICLE">
             <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="B_R" EntitySet="B_R" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
             <End Role="B_R" EntitySet="B_R" />
           </AssociationSet>
           <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
@@ -266,7 +273,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="hicham2024Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="mbarkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ARTICLE">
           <Key>
             <PropertyRef Name="REF_ARTICLE" />
@@ -287,13 +294,16 @@
           <Key>
             <PropertyRef Name="ID_SERVICE" />
             <PropertyRef Name="REF_ARTICLE" />
+            <PropertyRef Name="ID_BON_R" />
           </Key>
           <Property Name="ID_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="REF_ARTICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_BON_R" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="QUANTITE" Type="Int32" />
           <Property Name="COLOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PRIX" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="ARTICLE" Relationship="Self.FK_B_R_ARTICLE" FromRole="B_R" ToRole="ARTICLE" />
+          <NavigationProperty Name="BON_RECEPTION" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="B_R" ToRole="BON_RECEPTION" />
           <NavigationProperty Name="SERVICE" Relationship="Self.FK_B_R_SERVICE" FromRole="B_R" ToRole="SERVICE" />
         </EntityType>
         <EntityType Name="BON_RECEPTION">
@@ -305,9 +315,10 @@
           <Property Name="DATE_BR" Type="DateTime" Precision="3" />
           <Property Name="STATUT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HEURE_BR" Type="DateTime" Precision="3" />
-          <Property Name="RESTE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RESTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TYPE_PAIEMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MONTANTSTOTAL" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="B_R" />
           <NavigationProperty Name="CLIENT" Relationship="Self.FK_BON_RECEPTION_CLIENT" FromRole="BON_RECEPTION" ToRole="CLIENT" />
           <NavigationProperty Name="BON_SORTIE" Relationship="Self.FK_BON_SORTIE_BON_RECEPTION" FromRole="BON_RECEPTION" ToRole="BON_SORTIE" />
         </EntityType>
@@ -388,16 +399,6 @@
           <Property Name="LIB_SERVICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="B_R" Relationship="Self.FK_B_R_SERVICE" FromRole="SERVICE" ToRole="B_R" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <Association Name="FK_ARTICLE_CATEGORIE_ARTILCLE">
           <End Role="CATEGORIE_ARTILCLE" Type="Self.CATEGORIE_ARTILCLE" Multiplicity="1" />
           <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="*" />
@@ -443,6 +444,18 @@
             </Principal>
             <Dependent Role="BON_SORTIE">
               <PropertyRef Name="REF_ARTICLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_B_R_BON_RECEPTION">
+          <End Role="BON_RECEPTION" Type="Self.BON_RECEPTION" Multiplicity="1" />
+          <End Role="B_R" Type="Self.B_R" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BON_RECEPTION">
+              <PropertyRef Name="ID_BON_R" />
+            </Principal>
+            <Dependent Role="B_R">
+              <PropertyRef Name="ID_BON_R" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -494,7 +507,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="hicham2024Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="mbarkEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARTICLEs" EntityType="Self.ARTICLE" />
           <EntitySet Name="B_R" EntityType="Self.B_R" />
           <EntitySet Name="BON_RECEPTION" EntityType="Self.BON_RECEPTION" />
@@ -506,7 +519,6 @@
           <EntitySet Name="FOURNISSEURs" EntityType="Self.FOURNISSEUR" />
           <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
           <EntitySet Name="SERVICEs" EntityType="Self.SERVICE" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_ARTICLE_CATEGORIE_ARTILCLE" Association="Self.FK_ARTICLE_CATEGORIE_ARTILCLE">
             <End Role="CATEGORIE_ARTILCLE" EntitySet="CATEGORIE_ARTILCLE" />
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
@@ -522,6 +534,10 @@
           <AssociationSet Name="FK_BON_SORTIE_ARTICLE" Association="Self.FK_BON_SORTIE_ARTICLE">
             <End Role="ARTICLE" EntitySet="ARTICLEs" />
             <End Role="BON_SORTIE" EntitySet="BON_SORTIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_R_BON_RECEPTION" Association="Self.FK_B_R_BON_RECEPTION">
+            <End Role="BON_RECEPTION" EntitySet="BON_RECEPTION" />
+            <End Role="B_R" EntitySet="B_R" />
           </AssociationSet>
           <AssociationSet Name="FK_B_R_SERVICE" Association="Self.FK_B_R_SERVICE">
             <End Role="SERVICE" EntitySet="SERVICEs" />
@@ -545,9 +561,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="hicham2024ModelStoreContainer" CdmEntityContainer="hicham2024Entities">
+        <EntityContainerMapping StorageEntityContainer="mbarkModelStoreContainer" CdmEntityContainer="mbarkEntities">
           <EntitySetMapping Name="ARTICLEs">
-            <EntityTypeMapping TypeName="hicham2024Model.ARTICLE">
+            <EntityTypeMapping TypeName="mbarkModel.ARTICLE">
               <MappingFragment StoreEntitySet="ARTICLE">
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
@@ -560,10 +576,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="B_R">
-            <EntityTypeMapping TypeName="hicham2024Model.B_R">
+            <EntityTypeMapping TypeName="mbarkModel.B_R">
               <MappingFragment StoreEntitySet="B_R">
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="REF_ARTICLE" ColumnName="REF_ARTICLE" />
+                <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
                 <ScalarProperty Name="COLOR" ColumnName="COLOR" />
                 <ScalarProperty Name="PRIX" ColumnName="PRIX" />
@@ -571,7 +588,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_RECEPTION">
-            <EntityTypeMapping TypeName="hicham2024Model.BON_RECEPTION">
+            <EntityTypeMapping TypeName="mbarkModel.BON_RECEPTION">
               <MappingFragment StoreEntitySet="BON_RECEPTION">
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
@@ -585,7 +602,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BON_SORTIE">
-            <EntityTypeMapping TypeName="hicham2024Model.BON_SORTIE">
+            <EntityTypeMapping TypeName="mbarkModel.BON_SORTIE">
               <MappingFragment StoreEntitySet="BON_SORTIE">
                 <ScalarProperty Name="N_B_S" ColumnName="N_B_S" />
                 <ScalarProperty Name="ID_BON_R" ColumnName="ID_BON_R" />
@@ -596,7 +613,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIE_ARTILCLE">
-            <EntityTypeMapping TypeName="hicham2024Model.CATEGORIE_ARTILCLE">
+            <EntityTypeMapping TypeName="mbarkModel.CATEGORIE_ARTILCLE">
               <MappingFragment StoreEntitySet="CATEGORIE_ARTILCLE">
                 <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
                 <ScalarProperty Name="LIB_CAT_ART" ColumnName="LIB_CAT_ART" />
@@ -604,7 +621,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CLIENTs">
-            <EntityTypeMapping TypeName="hicham2024Model.CLIENT">
+            <EntityTypeMapping TypeName="mbarkModel.CLIENT">
               <MappingFragment StoreEntitySet="CLIENT">
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
                 <ScalarProperty Name="NOM_CLT" ColumnName="NOM_CLT" />
@@ -615,7 +632,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DÉPENSES_ET_ENTRÉES">
-            <EntityTypeMapping TypeName="hicham2024Model.DÉPENSES_ET_ENTRÉES">
+            <EntityTypeMapping TypeName="mbarkModel.DÉPENSES_ET_ENTRÉES">
               <MappingFragment StoreEntitySet="DÉPENSES_ET_ENTRÉES">
                 <ScalarProperty Name="ID_DÉPE_ENTR" ColumnName="ID_DÉPE_ENTR" />
                 <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
@@ -627,7 +644,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FAMILLs">
-            <EntityTypeMapping TypeName="hicham2024Model.FAMILL">
+            <EntityTypeMapping TypeName="mbarkModel.FAMILL">
               <MappingFragment StoreEntitySet="FAMILL">
                 <ScalarProperty Name="N_FAMILL" ColumnName="N_FAMILL" />
                 <ScalarProperty Name="LIB_FAMILL" ColumnName="LIB_FAMILL" />
@@ -635,7 +652,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FOURNISSEURs">
-            <EntityTypeMapping TypeName="hicham2024Model.FOURNISSEUR">
+            <EntityTypeMapping TypeName="mbarkModel.FOURNISSEUR">
               <MappingFragment StoreEntitySet="FOURNISSEUR">
                 <ScalarProperty Name="ID_FR" ColumnName="ID_FR" />
                 <ScalarProperty Name="NOM_FR" ColumnName="NOM_FR" />
@@ -645,7 +662,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOGINs">
-            <EntityTypeMapping TypeName="hicham2024Model.LOGIN">
+            <EntityTypeMapping TypeName="mbarkModel.LOGIN">
               <MappingFragment StoreEntitySet="LOGIN">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
@@ -654,21 +671,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SERVICEs">
-            <EntityTypeMapping TypeName="hicham2024Model.SERVICE">
+            <EntityTypeMapping TypeName="mbarkModel.SERVICE">
               <MappingFragment StoreEntitySet="SERVICE">
                 <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
                 <ScalarProperty Name="LIB_SERVICE" ColumnName="LIB_SERVICE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="hicham2024Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

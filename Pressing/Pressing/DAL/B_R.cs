@@ -16,11 +16,13 @@ namespace Pressing.DAL
     {
         public string ID_SERVICE { get; set; }
         public string REF_ARTICLE { get; set; }
+        public string ID_BON_R { get; set; }
         public Nullable<int> QUANTITE { get; set; }
         public string COLOR { get; set; }
         public Nullable<decimal> PRIX { get; set; }
     
         public virtual ARTICLE ARTICLE { get; set; }
+        public virtual BON_RECEPTION BON_RECEPTION { get; set; }
         public virtual SERVICE SERVICE { get; set; }
     }
 }

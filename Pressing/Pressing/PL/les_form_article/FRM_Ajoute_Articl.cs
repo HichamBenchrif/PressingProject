@@ -56,11 +56,14 @@ namespace Pressing.PL
         private void button1_Click(object sender, EventArgs e)
         {
             try {
+
                 if (checkBox2.Checked)
                 {
-                    textBox2.Text = null;
+                    textBox2.Text = "";
                 }
-                else if (textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox() || comboBox2.IsEmptyCombobox())
+
+
+                if (textBox5.IsEmpty() || textBox2.IsEmpty() || textBox3.IsEmpty() || comboBox1.IsEmptyCombobox() || comboBox2.IsEmptyCombobox())
                 {
 
                     MessageBox.Show("Veuillez saisir les informations requises");
@@ -169,7 +172,7 @@ namespace Pressing.PL
             if (checkBox2.Checked)
             {
                 checkBox1.Checked = false;
-                textBox2.Text = string.Empty;
+                textBox2.Text = "0";
                 textBox2.Enabled = false;
             }
             else

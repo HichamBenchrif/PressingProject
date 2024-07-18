@@ -44,7 +44,7 @@ namespace Pressing.BL.repository
             commande.DATE_BR = DateTime.Parse(date);
             commande.HEURE_BR = DateTime.Parse(heure);
             commande.TYPE_PAIEMENT = modepaye;
-            commande.RESTE = decimal.Parse( reste);
+            commande.RESTE = reste;
             commande.MONTANTSTOTAL =decimal.Parse( montant);
 
             db.BON_RECEPTION.Add(commande);

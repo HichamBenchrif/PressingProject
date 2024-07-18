@@ -13,10 +13,10 @@ namespace Pressing.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class hicham2024Entities : DbContext
+    public partial class mbarkEntities : DbContext
     {
-        public hicham2024Entities()
-            : base("name=hicham2024Entities")
+        public mbarkEntities()
+            : base("name=mbarkEntities")
         {
         }
     
@@ -36,6 +36,5 @@ namespace Pressing.DAL
         public virtual DbSet<FOURNISSEUR> FOURNISSEURs { get; set; }
         public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<SERVICE> SERVICEs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

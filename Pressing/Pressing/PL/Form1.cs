@@ -21,7 +21,7 @@ namespace Pressing
             //this.Height = Screen.PrimaryScreen.Bounds.Height;
             //this.Top = 0;
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=PC_\SQLEXPRESS;Initial Catalog=hicham2024;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=PC_\SQLEXPRESS;Initial Catalog=mbark;Integrated Security=True");
         private void Form1_Load(object sender, EventArgs e)
         {
 
