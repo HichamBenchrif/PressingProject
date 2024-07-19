@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="BL\Extensions\ComboBoxExtensions.cs" />
     <Compile Include="BL\Extensions\TextBoxExtensions.cs" />
+    <Compile Include="BL\repository\ArticleDTO.cs" />
     <Compile Include="BL\repository\ArticlRepository.cs" />
     <Compile Include="BL\repository\CaisseRepository.cs" />
     <Compile Include="BL\repository\CategorieRepository.cs" />

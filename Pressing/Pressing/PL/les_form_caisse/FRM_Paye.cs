@@ -27,12 +27,18 @@ namespace Pressing.PL.les_form_caisse
         public string MontantTotal { get; set; }
         public string Clients { get; set; }
         public string Clt { get; set; }
-        public FRM_Paye()
+
+        private List<ArticleDTO> _article;
+        public FRM_Paye(List<ArticleDTO> articles)
         {
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Top = 0;
+
+            _article = articles;
+            
         }
+       
 
         private void FRM_Paye_Load(object sender, EventArgs e)
         {

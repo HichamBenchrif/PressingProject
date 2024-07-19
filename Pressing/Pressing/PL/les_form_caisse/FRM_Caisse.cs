@@ -518,6 +518,7 @@ namespace Pressing.PL.les_form_caisse
                 if (selectedButton!=null && selectedServiceButton!=null)
                 {
                     dataGridView2.Rows.Add(ArticleName, comboBox1.SelectedValue.ToString(), ServiceName, number.Text, label1.Text);
+
                 }
                 if (selectedButton != null)
                 {
@@ -606,10 +607,49 @@ namespace Pressing.PL.les_form_caisse
 
         //    }
         //}
+        
+        private List<ArticleDTO> GetSelectedArticleFromDataGridView()
+        {
+            List<ArticleDTO> articles = new List<ArticleDTO>();
+            foreach(DataGridViewRow row in dataGridView2.Rows)
+            {
+                if (row.IsNewRow) continue;
+                try
+                {
+                    string service = row.Cells["Service"].Value.ToString();
+                    string article = row.Cells["Article"].Value.ToString();
+                    string color = row.Cells["Couleur"].Value.ToString();
+                    string quantite = row.Cells["Quntite"].Value.ToString();
+                    string prix = row.Cells["Prix"].Value.ToString();
 
+                    ArticleDTO art = new ArticleDTO
+                    {
+                        Article = article,
+                        Service = service,
+                        Color = color,
+                        Quantite = quantite,
+                        Prix = prix
+                    };
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("error");
+                }
+            }
+            return articles;
+        }
         private void button8_Click(object sender, EventArgs e)
         {
-
+            List<ArticleDTO> articles = GetSelectedArticleFromDataGridView();
+            if(articles.Count > 0)
+            {
+                FRM_Paye frm_paye = new FRM_Paye(articles);
+                frm_paye.Show();
+            }
+            else
+            {
+                MessageBox.Show("datagridview null");
+            }
             //var articl = ArticleName;
             //var color = comboBox1.SelectedValue.ToString();
             //var service = ServiceName;
@@ -625,7 +665,19 @@ namespace Pressing.PL.les_form_caisse
             ////////////////////////string color = comboBox1.SelectedValue.ToString();
             string service = ServiceName;
             string srv = selectedServiceID;
-            ////////////////////////short quntite = CalculateQuntiteSum();
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                if (dataGridView2.Rows[i].Cells[3].Value != null)
+                {
+                    double quantite = 0;
+                    
+
+                    if (double.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out quantite) )
+                    {
+                        
+                    }
+                }
+            }          
             //string remis = textBox2.Text;
             string montantTotal = label6.Text;
             string clients = comboBox2.Text;
@@ -633,7 +685,7 @@ namespace Pressing.PL.les_form_caisse
             
 
             Form modelBackground = new Form();
-            using (FRM_Paye frm_paye = new FRM_Paye())
+            using (FRM_Paye frm_paye = new FRM_Paye(articles))
             {
                 modelBackground.StartPosition = FormStartPosition.Manual;
                 modelBackground.FormBorderStyle = FormBorderStyle.None;
