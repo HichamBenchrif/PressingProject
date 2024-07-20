@@ -185,5 +185,10 @@ namespace Pressing.PL.les_form_article
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
 using Pressing.BL.repository;
 using Pressing.PL.Les_form_services;
+using LiveCharts;
 
 namespace Pressing.PL
 {
@@ -20,11 +21,22 @@ namespace Pressing.PL
 
     {
         ClientRepository clientrepository = new ClientRepository();
-        
+        ServiceRepository servicerepository = new ServiceRepository();
+        VenteRepository vente = new VenteRepository();
         public FRM_Menu()
         {
             InitializeComponent();
 
+            cartesianChart1.Series = new SeriesCollection
+            {
+                //new LineSeries
+                //{
+                //    Values = new ChartValues<IObservableChartPoint>
+                //    {
+                //        new IObservableChartPoint(0,10),
+                //    }
+                //}
+            };
             //PNL_Menu.Visible = true;
 
 
@@ -81,7 +93,8 @@ namespace Pressing.PL
         private void FRM_Menu_Load(object sender, EventArgs e)
         {
             label1.Text = clientrepository.GetTotal();
-            
+            label2.Text = servicerepository.GetTotal();
+            label3.Text = vente.GetTotal();
             // إنشاء الفورم الجديدة
             Form modelBackground = new Form();
             using (Form1 model = new Form1())

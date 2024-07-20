@@ -22,6 +22,12 @@ namespace Pressing.BL.repository
             return newID;
 
         }
+        public string GetTotal()
+        {
+            var result = (from x in db.SERVICEs
+                          group x by x.ID_SERVICE).Count().ToString();
+            return result;
+        }
         public void Create(string id, string name_ser)
         {
             var service = new SERVICE();

@@ -221,9 +221,9 @@
             this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(111, 108);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 22);
+            this.label11.Size = new System.Drawing.Size(93, 22);
             this.label11.TabIndex = 65;
-            this.label11.Text = "ID Factoure : ";
+            this.label11.Text = "ID reçu : ";
             // 
             // timerarticl
             // 

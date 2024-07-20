@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelArticl = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.PNL_Menu = new System.Windows.Forms.Panel();
+            this.btnRapports = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDépenses = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
@@ -47,12 +50,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRapports = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelArticl.SuspendLayout();
             this.PNL_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelArticl
@@ -61,6 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArticl.BackColor = System.Drawing.Color.Silver;
+            this.panelArticl.Controls.Add(this.panel4);
             this.panelArticl.Controls.Add(this.button6);
             this.panelArticl.Controls.Add(this.label3);
             this.panelArticl.Controls.Add(this.label1);
@@ -118,6 +125,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(109, 22);
             this.dateTimePicker2.TabIndex = 13;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -163,6 +171,25 @@
             this.PNL_Menu.Name = "PNL_Menu";
             this.PNL_Menu.Size = new System.Drawing.Size(80, 519);
             this.PNL_Menu.TabIndex = 12;
+            // 
+            // btnRapports
+            // 
+            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapports.FlatAppearance.BorderSize = 0;
+            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
+            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRapports.Location = new System.Drawing.Point(0, 292);
+            this.btnRapports.Name = "btnRapports";
+            this.btnRapports.Size = new System.Drawing.Size(80, 73);
+            this.btnRapports.TabIndex = 17;
+            this.btnRapports.Text = "Service";
+            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRapports.UseVisualStyleBackColor = false;
+            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
             // 
             // pictureBox2
             // 
@@ -332,24 +359,59 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnRapports
+            // panel4
             // 
-            this.btnRapports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRapports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRapports.FlatAppearance.BorderSize = 0;
-            this.btnRapports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
-            this.btnRapports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRapports.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapports.Image = global::Pressing.Properties.Resources.service_50px1;
-            this.btnRapports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRapports.Location = new System.Drawing.Point(0, 292);
-            this.btnRapports.Name = "btnRapports";
-            this.btnRapports.Size = new System.Drawing.Size(80, 73);
-            this.btnRapports.TabIndex = 17;
-            this.btnRapports.Text = "Service";
-            this.btnRapports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRapports.UseVisualStyleBackColor = false;
-            this.btnRapports.Click += new System.EventHandler(this.btnRapports_Click);
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Location = new System.Drawing.Point(13, 116);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(963, 391);
+            this.panel4.TabIndex = 17;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 51);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DividerHeight = 2;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(903, 275);
+            this.dataGridView1.TabIndex = 0;
             // 
             // FRM_Ventes
             // 
@@ -365,6 +427,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Ventes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FRM_Ventes_Load);
             this.panelArticl.ResumeLayout(false);
             this.panelArticl.PerformLayout();
             this.PNL_Menu.ResumeLayout(false);
@@ -372,6 +435,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +463,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRapports;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

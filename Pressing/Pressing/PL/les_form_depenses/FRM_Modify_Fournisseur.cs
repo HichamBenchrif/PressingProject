@@ -61,5 +61,16 @@ namespace Pressing.PL.les_form_depenses
                 Opacity += 0.03;
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+
+        }
     }
 }

@@ -73,6 +73,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acquisition {
+            get {
+                object obj = ResourceManager.GetObject("acquisition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Actions_list_add_icon {
             get {
                 object obj = ResourceManager.GetObject("Actions-list-add-icon", resourceCulture);
@@ -553,6 +563,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap prestations_de_service {
+            get {
+                object obj = ResourceManager.GetObject("prestations-de-service", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print_18px {
             get {
                 object obj = ResourceManager.GetObject("print_18px", resourceCulture);
@@ -653,6 +673,16 @@ namespace Pressing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap service {
+            get {
+                object obj = ResourceManager.GetObject("service", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap service_50px {
             get {
                 object obj = ResourceManager.GetObject("service_50px", resourceCulture);
@@ -666,6 +696,16 @@ namespace Pressing.Properties {
         internal static System.Drawing.Bitmap service_50px1 {
             get {
                 object obj = ResourceManager.GetObject("service_50px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap service_50px2 {
+            get {
+                object obj = ResourceManager.GetObject("service_50px2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

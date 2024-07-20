@@ -640,16 +640,17 @@ namespace Pressing.PL.les_form_caisse
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            List<ArticleDTO> articles = GetSelectedArticleFromDataGridView();
-            if(articles.Count > 0)
-            {
-                FRM_Paye frm_paye = new FRM_Paye(articles);
-                frm_paye.Show();
-            }
-            else
-            {
-                MessageBox.Show("datagridview null");
-            }
+            //List<ArticleDTO> articles = GetSelectedArticleFromDataGridView();
+
+            //if(articles.Count > 0)
+            //{
+            //    FRM_Paye frm_paye = new FRM_Paye(articles);
+            //    frm_paye.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("datagridview null");
+            //}
             //var articl = ArticleName;
             //var color = comboBox1.SelectedValue.ToString();
             //var service = ServiceName;
@@ -660,23 +661,34 @@ namespace Pressing.PL.les_form_caisse
             //var repository = new CommandeRepository();
             //repository.Create(articl, color, service, quntite, prix, remis);
             //MessageBox.Show("Créé avec succès");
-            string article = ArticleName;
-            string art = selectedArticleID;
+            //string article = ArticleName;
+            //string art = selectedArticleID;
             ////////////////////////string color = comboBox1.SelectedValue.ToString();
-            string service = ServiceName;
-            string srv = selectedServiceID;
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                if (dataGridView2.Rows[i].Cells[3].Value != null)
-                {
-                    double quantite = 0;
-                    
+            //string service = ServiceName;
+            //string srv = selectedServiceID;
 
-                    if (double.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out quantite) )
-                    {
-                        
-                    }
-                }
+            List<B_R> brs = new List<B_R>();
+
+            for (int i = 0; i < dataGridView2.Rows.Count-1; i++)
+            {
+
+                //double quantite = 0;
+
+                var article = dataGridView2.Rows[i].Cells[0].Value.ToString();
+                var articleID = commanderepository.GetByName(article);
+                var color = dataGridView2.Rows[i].Cells[1].Value.ToString();
+                var service = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                var serviceID = commanderepository.GetByService(service);
+                var quntite = int.Parse(dataGridView2.Rows[i].Cells[3].Value.ToString());
+                var prix = decimal.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString());
+
+                var br = new B_R();
+
+                br.REF_ARTICLE = articleID;
+                br.ID_SERVICE = serviceID;
+                br.COLOR = color;
+                br.PRIX = prix;
+                br.QUANTITE = quntite;
             }          
             //string remis = textBox2.Text;
             string montantTotal = label6.Text;
@@ -685,7 +697,8 @@ namespace Pressing.PL.les_form_caisse
             
 
             Form modelBackground = new Form();
-            using (FRM_Paye frm_paye = new FRM_Paye(articles))
+
+            using (FRM_Paye frm_paye = new FRM_Paye(brs))
             {
                 modelBackground.StartPosition = FormStartPosition.Manual;
                 modelBackground.FormBorderStyle = FormBorderStyle.None;
@@ -699,16 +712,16 @@ namespace Pressing.PL.les_form_caisse
 
                 panrentX = this.Location.X;
 
-                
+
                 //frm_paye.Remis = remis;
 
                 frm_paye.MontantTotal = montantTotal;
                 frm_paye.Clients = clients;
                 frm_paye.Clt = clt;
-                frm_paye.Art = art;
-                frm_paye.Article = article;
-                frm_paye.Srv = srv;
-                frm_paye.Service = service;
+                //frm_paye.Art = art;
+                //frm_paye.Article = article;
+                //frm_paye.Srv = srv;
+                //frm_paye.Service = service;
                 frm_paye.ShowDialog();
                 modelBackground.Dispose();
 

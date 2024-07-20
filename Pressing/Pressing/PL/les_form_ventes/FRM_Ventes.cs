@@ -11,11 +11,13 @@ using Pressing.PL.les_form_client;
 using Pressing.PL.les_form_caisse;
 using Pressing.PL.les_form_depenses;
 using Pressing.PL.Les_form_services;
+using Pressing.BL.repository;
 
 namespace Pressing.PL.les_form_ventes
 {
     public partial class FRM_Ventes : Form
     {
+        VenteRepository venterepository = new VenteRepository();
         public FRM_Ventes()
         {
             InitializeComponent();
@@ -86,6 +88,19 @@ namespace Pressing.PL.les_form_ventes
             new FRM_service().Show();
             Close();
 
+        }
+
+        private void FRM_Ventes_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = venterepository.GetAll();
+        }
+        private  void LoadSalesData()
+        {
+            
+        }
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            LoadSalesData();
         }
     }
 }

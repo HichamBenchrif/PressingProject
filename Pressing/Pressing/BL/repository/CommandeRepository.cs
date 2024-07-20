@@ -35,7 +35,7 @@ namespace Pressing.BL.repository
         //    return newID;
 
         //}
-        public void Create(string id, string client, string statut, string date, string heure, string modepaye,string reste, string montant)
+        public void Create(string id, string client, string statut, string date, string heure, string modepaye,string reste, string montant,string paye)
         {
             var commande = new BON_RECEPTION();
             commande.ID_BON_R = id;
@@ -46,7 +46,7 @@ namespace Pressing.BL.repository
             commande.TYPE_PAIEMENT = modepaye;
             commande.RESTE = reste;
             commande.MONTANTSTOTAL =decimal.Parse( montant.Replace(" DH", "").Trim());
-
+            commande.Paye = decimal.Parse( paye);
             db.BON_RECEPTION.Add(commande);
             db.SaveChanges();
 
@@ -62,20 +62,39 @@ namespace Pressing.BL.repository
             //    db.SaveChanges();
             //}
         }
-        //public void Crt(/*string id,*/ string srv, string art,  string remis, string montant)
-        //{
-        //    var commande = new B_R();
-        //    //commande.ID_BON_R = id;
-        //    commande.ID_SERVICE = srv;
-        //    commande.REF_ARTICLE = art;
-           
-        //    commande.REMIS =decimal.Parse( remis);
-        //    commande.MONTANT_TOTAL =decimal.Parse( montant.Replace(" DH", "").Trim());
-        //    db.B_R.Add(commande);
-        //    db.SaveChanges();
+        public void Crt(string id, string srv, string art, string color, string q ,string prix)
+        {
+            var commande = new B_R();
+            commande.ID_BON_R = id;
+            commande.ID_SERVICE = srv;
+            commande.REF_ARTICLE = art;
 
-            
-        //}
+            commande.COLOR = color;
+            commande.QUANTITE =int.Parse( q);
+            commande.PRIX = decimal.Parse(prix.Replace(" DH", "").Trim());
+            db.B_R.Add(commande);
+            db.SaveChanges();
+
+
+        }
+        public dynamic GetByName(string value)
+        {
+
+
+            return (from A in db.ARTICLEs
+                   
+                    where  A.LIB_ARTICLE == value 
+                          
+                    select new { ID = A.REF_ARTICLE }).FirstOrDefault().ID;
+        }
+        public dynamic GetByService(string value)
+        {
+            return (from A in db.SERVICEs
+
+                    where A.LIB_SERVICE == value
+
+                    select new { ID = A.ID_SERVICE }).FirstOrDefault().ID;
+        }
         //public void ajout_articl(string id, string art, string srv, string prix, string color, string quantite)
         //{
         //    var commande = new ARTICLE_AJOUTE();
@@ -86,7 +105,7 @@ namespace Pressing.BL.repository
         //    commande.COLOR = color;
         //    commande.QUANTITE =int.Parse( quantite);
 
-            
+
         //    db.ARTICLE_AJOUTE.Add(commande);
         //    db.SaveChanges();
 

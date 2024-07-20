@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pressing.BL.repository;
 using Pressing.Raports;
+using Pressing.DAL;
 
 namespace Pressing.PL.les_form_caisse
 {
@@ -22,20 +23,23 @@ namespace Pressing.PL.les_form_caisse
         public string Color { get; set; }
         public string Service { get; set; }
         public string Srv { get; set; }
-        public short Quntite { get; set; }
+        public string Quntite { get; set; }
         public string Remis { get; set; }
         public string MontantTotal { get; set; }
         public string Clients { get; set; }
         public string Clt { get; set; }
 
-        private List<ArticleDTO> _article;
-        public FRM_Paye(List<ArticleDTO> articles)
+        List<B_R> BRs = new List<B_R>();
+
+        //private List<ArticleDTO> _article;
+        public FRM_Paye(List<B_R> brs)
         {
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Top = 0;
+            BRs = brs;
 
-            _article = articles;
+            //_article = articles;
             
         }
        
@@ -43,6 +47,7 @@ namespace Pressing.PL.les_form_caisse
         private void FRM_Paye_Load(object sender, EventArgs e)
         {
             this.Location = new Point(FRM_Caisse.panrentX = 460);
+
             textBox1.TextChanged += new EventHandler(textBox1_TextChanged);
             label10.Text = commanderepository.GenerateID();
             label3.Text = Clients;
@@ -67,6 +72,7 @@ namespace Pressing.PL.les_form_caisse
         {
             var id = label10.Text;
             var client = Clt;
+
             if (int.Parse(label9.Text)==0)
             {
                  statut = Text="payé";
@@ -79,26 +85,41 @@ namespace Pressing.PL.les_form_caisse
             {
                 statut = Text = "No payé";
             }
+
             var date = DateTime.Now.ToShortDateString();
             var heure = DateTime.Now.ToShortTimeString();
             var mode_paye = comboBox1.Text;
             var reste = label9.Text;
             var montant = label5.Text;
+            var paye = textBox1.Text;
+
             var repository = new CommandeRepository();
-            repository.Create(id, client, statut, date, heure, mode_paye, reste, montant);
-            //
-            cryfrm frm = new cryfrm(Clt);
-            frm.ShowDialog();
+            repository.Create(id, client, statut, date, heure, mode_paye, reste, montant,paye);
+
+
+            foreach(var br in BRs)
+            {
+                br.ID_BON_R = id;
+            }
+
+            var brRepository = new BRRepository();
+
+            brRepository.Create(BRs);
 
 
             //var ID = label10.Text;
             //var service = Srv;
             //var article = Art;
-            //var remis = Remis;
-            //var montant = MontantTotal;
-            //repository.Crt(ID, service, article, remis, montant);
-            //MessageBox.Show("Créé avec succès");
-            //Close();
+            //var color = Color;
+            //var Q = Quntite;
+            //var prix = MontantTotal;
+            //repository.Crt(ID, service, article, color, Q, prix);
+            MessageBox.Show("Créé avec succès");
+            Close();
+            //
+            cryfrm frm = new cryfrm(id);
+            frm.ShowDialog();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
